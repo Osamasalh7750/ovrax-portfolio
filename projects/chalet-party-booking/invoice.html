@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التقرير الختامي وفاتورة الحجز الرسمية | أثير للمناسبات VIP</title>
+  
+  <!-- خط Cairo و Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- مكتبة الأيقونات FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- الأنماط الفاتحة الراقية -->
+  <link rel="stylesheet" href="assets/css/light-theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    body {
+      background: #fbf9f5;
+      padding: 40px 20px;
+    }
+    .invoice-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-hover);
+      padding: 48px;
+      position: relative;
+    }
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+    .invoice-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+      background: var(--bg-surface-soft);
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid var(--border-light);
+    }
+    .meta-box h5 {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .meta-box p {
+      font-weight: 700;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+    }
+    .expense-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    .expense-table th {
+      background: var(--champagne-soft);
+      color: var(--champagne-primary);
+      text-align: right;
+      padding: 14px 18px;
+      font-weight: 800;
+      border-bottom: 2px solid var(--champagne-light);
+      font-size: 0.92rem;
+    }
+    .expense-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-body);
+      font-size: 0.92rem;
+    }
+    .expense-totals {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 36px;
+    }
+    .totals-card {
+      width: 380px;
+      background: var(--champagne-gradient-soft);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .totals-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 0.92rem;
+      color: var(--text-body);
+    }
+    .totals-row.grand-total {
+      border-top: 2px dashed var(--border-gold);
+      margin-top: 10px;
+      padding-top: 14px;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--champagne-primary);
+    }
+    .invoice-footer {
+      border-top: 1px solid var(--border-light);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .qr-stamp-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .qr-mock {
+      width: 76px;
+      height: 76px;
+      background: #242220;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.8rem;
+    }
+    .print-actions {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      justify-content: flex-end;
+      max-width: 900px;
+      margin: 0 auto 20px;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .print-actions, .header, .footer { display: none !important; }
+      .invoice-wrapper { box-shadow: none; border: 1px solid #ddd; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط أزرار الطباعة والعودة -->
+  <div class="print-actions">
+    <a href="index.html" class="btn btn-soft">
+      <i class="fa-solid fa-arrow-right"></i> العودة للموقع الرئيسي
+    </a>
+    <a href="admin-dashboard.html" class="btn btn-soft">
+      <i class="fa-solid fa-chart-pie"></i> لوحة تحكم الفعاليات
+    </a>
+    <button onclick="window.print()" class="btn btn-champagne">
+      <i class="fa-solid fa-print"></i> طباعة الفاتورة / حفظ كـ PDF
+    </button>
+  </div>
+
+  <div class="invoice-wrapper">
+    <!-- الترويسة الرسمية -->
+    <div class="invoice-header">
+      <div>
+        <div class="logo" style="margin-bottom: 10px;">
+          <div class="logo-icon"><i class="fa-solid fa-crown"></i></div>
+          <div class="logo-text">
+            <span>أثير للمناسبات</span>
+            <small>ATHEER VIP EVENTS</small>
+          </div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">شركة أثير لإدارة الشاليهات وتنظيم الفعاليات والمناسبات الكبرى</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot" style="color:var(--champagne-primary);"></i> الرياض، المملكة العربية السعودية | س.ت: 1010892415</p>
+      </div>
+      <div style="text-align: left;">
+        <span class="badge-pastel badge-sage" style="margin-bottom: 8px; font-size: 0.9rem;">
+          <i class="fa-solid fa-circle-check"></i> تم السداد وتأكيد الحجز
+        </span>
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-dark); margin-top: 6px;">فاتورة ضريبية رسمية</h2>
+        <p style="font-size: 0.9rem; color: var(--champagne-primary); font-weight: 700;" id="inv-number">رقم الفاتورة: ATH-849201</p>
+        <p style="font-size: 0.82rem; color: var(--text-muted);" id="inv-date">تاريخ الإصدار: 2026-09-05</p>
+      </div>
+    </div>
+
+    <!-- شبكة تفاصيل الحجز والمستفيد -->
+    <div class="invoice-meta-grid">
+      <div class="meta-box">
+        <h5>بيانات العميل المستفيد:</h5>
+        <p id="inv-client-name">سعادة الضيف VIP</p>
+        <span style="font-size: 0.85rem; color: var(--text-muted);" id="inv-client-phone">+966 56 800 9474</span>
+      </div>
+      <div class="meta-box">
+        <h5>القاعة / الشاليه المحجوز:</h5>
+        <p id="inv-venue-name">شاليه وقصر الفخامة VIP</p>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">الدرعية، الرياض</span>
+      </div>
+      <div class="meta-box">
+        <h5>الموعد ونوع الفعالية:</h5>
+        <p id="inv-event-type">حفل زفاف ملكي فاخر</p>
+        <span style="font-size: 0.85rem; color: var(--text-muted);" id="inv-date-slot">15 سبتمبر 2026 (الفترة المسائية)</span>
+      </div>
+    </div>
+
+    <!-- جدول المصاريف المفصل (Itemized Expense Table) -->
+    <table class="expense-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>بيان الخدمة / التجهيز</th>
+          <th>الكمية / التفاصيل</th>
+          <th>سعر الوحدة</th>
+          <th>المجموع الإجمالي</th>
+        </tr>
+      </thead>
+      <tbody id="invoice-items-body">
+        <tr>
+          <td>1</td>
+          <td><strong>إيجار الشاليه والقاعة الفندقية</strong><br><small style="color:var(--text-muted);">شامل الواجهات الزجاجية، المسبح الإنفنتي، والجلسات الخارجية</small></td>
+          <td>1 فترة مسائية</td>
+          <td>3,800 ر.س</td>
+          <td>3,800 ر.س</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>تجهيزات نوع الفعالية والمسرح (كوشة VIP)</strong><br><small style="color:var(--text-muted);">أقواس ورود طبيعية، إضاءة مسرحية متقدمة، ممر شرفي للعروسين</small></td>
+          <td>باقة كاملة</td>
+          <td>1,500 ر.س</td>
+          <td>1,500 ر.س</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>خدمات الضيافة والكراسي الملكية للمعازيم</strong><br><small style="color:var(--text-muted);">تجهيز طاولات دائرية، مفارش ساتان، ضيافة قهوة ومشروبات فاخرة</small></td>
+          <td id="inv-guest-count-cell">80 ضيف</td>
+          <td>45 ر.س / ضيف</td>
+          <td id="inv-guest-cost-cell">3,600 ر.س</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>أنظمة الصوت المحيطي والدي جي الاحترافي</strong><br><small style="color:var(--text-muted);">سماعات محيطية متطورة، ميكروفونات لاسلكية، مشغل صوتيات</small></td>
+          <td>تجهيز شامل</td>
+          <td>650 ر.س</td>
+          <td>650 ر.س</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>نظام التكييف المركزي ورذاذ تلطيف الأجواء</strong><br><small style="color:var(--text-muted);">تكييف هوائي موزع بدقة لجميع أركان القاعة والمجلس</small></td>
+          <td>مشمول مجاناً</td>
+          <td>0 ر.س</td>
+          <td>0 ر.س</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ملخص المجموع والضرائب والتأمين المسترد -->
+    <div class="expense-totals">
+      <div class="totals-card">
+        <div class="totals-row">
+          <span>المجموع الفرعي (قبل الضريبة):</span>
+          <strong id="inv-subtotal">9,550 ر.س</strong>
+        </div>
+        <div class="totals-row">
+          <span>ضريبة القيمة المضافة (15% VAT):</span>
+          <strong id="inv-vat">1,433 ر.س</strong>
+        </div>
+        <div class="totals-row">
+          <span>تأمين الأضرار المسترد (Refundable):</span>
+          <strong id="inv-deposit">1,000 ر.س</strong>
+        </div>
+        <div class="totals-row grand-total">
+          <span>المبلغ الإجمالي المدفوع:</span>
+          <span id="inv-total">11,983 ر.س</span>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+          <i class="fa-solid fa-credit-card"></i> طريقة الدفع: بطاقة مدى الإلكترونية (Mada)
+        </div>
+      </div>
+    </div>
+
+    <!-- ذيل الفاتورة وختم ZATCA الإلكتروني -->
+    <div class="invoice-footer">
+      <div class="qr-stamp-box">
+        <div class="qr-mock">
+          <i class="fa-solid fa-qrcode"></i>
+        </div>
+        <div>
+          <h5 style="font-size: 0.95rem; font-weight: 800; color: var(--text-dark);">فاتورة إلكترونية معتمدة</h5>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">تم توثيق هذه الفاتورة إلكترونياً وتأكيد حجز التاريخ بدقة في النظام.</p>
+        </div>
+      </div>
+      <div>
+        <span class="badge-pastel badge-champagne" style="font-size: 0.9rem; padding: 10px 18px;">
+          <i class="fa-solid fa-shield-halved"></i> حجز مضمون ومحمي 100%
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // تحميل أحدث حجز مسجل في المتصفح وتعبئته فورياً
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('latest_booking');
+      if (saved) {
+        try {
+          const b = JSON.parse(saved);
+          if (b.ref) document.getElementById('inv-number').textContent = 'رقم الفاتورة: ' + b.ref;
+          if (b.clientName) document.getElementById('inv-client-name').textContent = b.clientName;
+          if (b.clientPhone) document.getElementById('inv-client-phone').textContent = b.clientPhone;
+          if (b.venueName) document.getElementById('inv-venue-name').textContent = b.venueName;
+          if (b.eventType) document.getElementById('inv-event-type').textContent = b.eventType;
+          if (b.date && b.slot) document.getElementById('inv-date-slot').textContent = `${b.date} (${b.slot})`;
+          if (b.guestCount) {
+            document.getElementById('inv-guest-count-cell').textContent = b.guestCount + ' ضيف';
+            document.getElementById('inv-guest-cost-cell').textContent = (b.guestCount * 45).toLocaleString('ar-SA') + ' ر.س';
+          }
+          if (b.subtotal) document.getElementById('inv-subtotal').textContent = b.subtotal.toLocaleString('ar-SA') + ' ر.س';
+          if (b.vat) document.getElementById('inv-vat').textContent = b.vat.toLocaleString('ar-SA') + ' ر.س';
+          if (b.deposit) document.getElementById('inv-deposit').textContent = b.deposit.toLocaleString('ar-SA') + ' ر.س';
+          if (b.total) document.getElementById('inv-total').textContent = b.total.toLocaleString('ar-SA') + ' ر.س';
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

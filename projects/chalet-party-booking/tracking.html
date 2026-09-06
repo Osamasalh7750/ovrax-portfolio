@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تتبع مسار فعاليتك لحظة بلحظة | أثير للمناسبات VIP</title>
+  
+  <!-- خط Cairo و Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- مكتبة الأيقونات FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- الأنماط الفاخرة بالألوان الفاتحة -->
+  <link rel="stylesheet" href="assets/css/light-theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .tracking-wrapper {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .track-search-box {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      border: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .track-search-input-group {
+      display: flex;
+      gap: 12px;
+      max-width: 540px;
+      margin: 20px auto 0;
+    }
+    .track-search-input-group input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--border-light);
+      background: var(--bg-surface-soft);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .track-search-input-group input:focus {
+      border-color: var(--champagne-primary);
+      background: #fff;
+    }
+    .status-card {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-hover);
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .countdown-box {
+      background: var(--champagne-soft);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+    }
+    .countdown-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--champagne-primary);
+      font-family: 'Outfit', sans-serif;
+    }
+    .countdown-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .timeline-steps {
+      position: relative;
+      margin: 40px 0 20px;
+    }
+    .timeline-step {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 30px;
+      position: relative;
+    }
+    .timeline-step:last-child {
+      padding-bottom: 0;
+    }
+    .timeline-step::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      right: 18px;
+      bottom: 0;
+      width: 3px;
+      background: var(--border-light);
+    }
+    .timeline-step:last-child::before {
+      display: none;
+    }
+    .timeline-step.completed::before {
+      background: #10b981;
+    }
+    .step-icon-bubble {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-surface-soft);
+      border: 3px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .timeline-step.completed .step-icon-bubble {
+      background: #10b981;
+      border-color: #10b981;
+      color: #fff;
+    }
+    .timeline-step.active .step-icon-bubble {
+      background: var(--champagne-primary);
+      border-color: var(--champagne-light);
+      color: #fff;
+      box-shadow: var(--shadow-gold);
+    }
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-surface-soft);
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+    }
+    .checklist-item.ready {
+      border-color: rgba(16, 185, 129, 0.3);
+      background: #f0fdf4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- خلفية التوهج الهادئة -->
+  <div class="ambient-glow-bg"></div>
+
+  <!-- الهيدر -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-crown"></i></div>
+        <div class="logo-text">
+          <span>أثير للمناسبات</span>
+          <small>VIP CHALETS & EVENTS</small>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="index.html#3d-showcase" class="nav-link">استعراض 3D</a>
+        <a href="index.html#venues" class="nav-link">الشاليهات والقاعات</a>
+        <a href="index.html#calculator" class="nav-link">حاسبة الأسعار والتقويم</a>
+        <a href="tracking.html" class="nav-link active">تتبع الفعالية</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#calculator" class="btn btn-champagne">
+          <i class="fa-solid fa-bolt"></i> حجز قاعة جديدة
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="tracking-wrapper">
+    
+    <!-- صندوق البحث عن الحجز -->
+    <div class="track-search-box">
+      <span class="badge-pastel badge-champagne"><i class="fa-solid fa-radar"></i> نظام التتبع الحي المباشر</span>
+      <h1 style="font-size: 2.1rem; font-weight: 900; color: var(--text-dark); margin: 12px 0 6px;">
+        تتبع مسار فعاليتك لحظة بلحظة
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
+        أدخل الرقم المرجعي لحجزك (الموجود في رسالة التأكيد أو الفاتورة) للاطلاع على تقدم تجهيزات القاعة، الديكور، والصوتيات.
+      </p>
+
+      <form id="track-search-form" onsubmit="handleTrackSearch(event)">
+        <div class="track-search-input-group">
+          <input type="text" id="track-ref-input" placeholder="مثال: ATH-849201" value="ATH-849201" required>
+          <button type="submit" class="btn btn-champagne" style="padding: 12px 28px;">
+            <i class="fa-solid fa-magnifying-glass"></i> تتبع الآن
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- بطاقة مسار الفعالية والتجهيزات (Live Status Card) -->
+    <div class="status-card" id="tracking-result-box">
+      
+      <!-- ترويسة تفاصيل الفعالية -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--border-light); padding-bottom: 24px; margin-bottom: 24px;">
+        <div>
+          <span class="badge-pastel badge-sage" id="track-badge-status"><i class="fa-solid fa-circle-check"></i> الحجز مؤكد وقيد التجهيز</span>
+          <h2 style="font-size: 1.65rem; font-weight: 800; color: var(--text-dark); margin: 8px 0 4px;" id="track-venue-title">
+            شاليه وقصر الفخامة الملكي VIP
+          </h2>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            <i class="fa-solid fa-location-dot" style="color:var(--champagne-primary);"></i> الدرعية التاريخية، الرياض | 
+            <i class="fa-solid fa-calendar"></i> <span id="track-event-date">15 سبتمبر 2026 (الفترة المسائية)</span>
+          </p>
+        </div>
+
+        <div style="text-align: left;">
+          <div style="font-size: 0.82rem; color: var(--text-muted);">الرقم المرجعي للحجز:</div>
+          <div style="font-size: 1.4rem; font-weight: 900; color: var(--champagne-primary); font-family: 'Outfit', sans-serif;" id="track-display-ref">
+            ATH-849201
+          </div>
+          <a href="invoice.html" class="btn btn-soft" style="padding: 6px 14px; font-size: 0.82rem; margin-top: 6px;">
+            <i class="fa-solid fa-file-invoice"></i> عرض الفاتورة
+          </a>
+        </div>
+      </div>
+
+      <!-- العد التنازلي لموعد الحفل -->
+      <div style="text-align: center; margin-bottom: 30px;">
+        <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-dark); margin-bottom: 6px;">
+          <i class="fa-solid fa-hourglass-half" style="color:var(--champagne-primary);"></i> الوقت المتبقي لانطلاق حفلكم المميز:
+        </h4>
+        <div class="countdown-grid">
+          <div class="countdown-box">
+            <div class="countdown-num" id="cd-days">09</div>
+            <div class="countdown-label">أيام</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="cd-hours">14</div>
+            <div class="countdown-label">ساعات</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="cd-mins">35</div>
+            <div class="countdown-label">دقائق</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="cd-secs">48</div>
+            <div class="countdown-label">ثواني</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- المخطط الزمني لمسار الفعالية (Timeline Stepper) -->
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-dark); margin-bottom: 20px;">
+        <i class="fa-solid fa-bars-progress" style="color:var(--champagne-primary);"></i> مراحل سير وتجهيز الفعالية:
+      </h3>
+
+      <div class="timeline-steps">
+        
+        <div class="timeline-step completed">
+          <div class="step-icon-bubble"><i class="fa-solid fa-check"></i></div>
+          <div>
+            <strong style="display: block; font-size: 1.05rem; color: var(--text-dark);">1. تأكيد الحجز واعتماد الدفعة</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+              تم استلام الحجز وسداد الدفعة بنجاح، وتثبيت تاريخ القاعة في النظام بصورة نهائية ومؤكدة.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-step completed">
+          <div class="step-icon-bubble"><i class="fa-solid fa-check"></i></div>
+          <div>
+            <strong style="display: block; font-size: 1.05rem; color: var(--text-dark);">2. التنسيق واعتماد تفاصيل الديكور والثيم</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+              تم التواصل مع العميل واعتماد ثيم الزهور الطبيعية الملكي، ترتيب الكوشة، وتأكيد عدد الحضور (80 ضيف).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-step active">
+          <div class="step-icon-bubble"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div>
+            <strong style="display: block; font-size: 1.05rem; color: var(--champagne-primary);">3. تجهيز الديكور والمسرح والصوتيات (قيد التنفيذ الآن)</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+              فريق العمل الميداني يقوم حالياً بتركيب الكوشة، ضبط أجهزة الصوت المحيطي، واختبار التكييف المركزي للمساحات.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-icon-bubble"><i class="fa-solid fa-bell-concierge"></i></div>
+          <div>
+            <strong style="display: block; font-size: 1.05rem; color: var(--text-muted);">4. جاهزية القاعة واستقبال الضيافة</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+              اكتمال تجهيز البوفيه المفتوح ومحطات القهوة والمشروبات، وتواجد كادر المضيفات لاستقبال المعازيم.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-icon-bubble"><i class="fa-solid fa-champagne-glasses"></i></div>
+          <div>
+            <strong style="display: block; font-size: 1.05rem; color: var(--text-muted);">5. انطلاق الحفل والفعالية</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">
+              بدء مراسم الحفل والزفة مع متابعة مباشرة من المنسق الميداني لضمان راحة الحضور.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- قائمة الجاهزية الميدانية اللحظية (Checklist) -->
+      <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border-light);">
+        <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-dark); margin-bottom: 14px;">
+          <i class="fa-solid fa-list-check" style="color:var(--champagne-primary);"></i> حالة جاهزية مرافق وتجهيزات القاعة:
+        </h4>
+
+        <div class="checklist-grid">
+          <div class="checklist-item ready">
+            <i class="fa-solid fa-circle-check" style="color:#10b981; font-size: 1.2rem;"></i>
+            <div>
+              <strong style="font-size: 0.9rem; color:var(--text-dark);">التكييف المركزي</strong>
+              <small style="display:block; color:#10b981;">يعمل بكفاءة 100%</small>
+            </div>
+          </div>
+
+          <div class="checklist-item ready">
+            <i class="fa-solid fa-circle-check" style="color:#10b981; font-size: 1.2rem;"></i>
+            <div>
+              <strong style="font-size: 0.9rem; color:var(--text-dark);">أنظمة الصوت والدي جي</strong>
+              <small style="display:block; color:#10b981;">تم الاختبار بنجاح</small>
+            </div>
+          </div>
+
+          <div class="checklist-item" style="border-color:rgba(201,154,76,0.3); background:var(--champagne-soft);">
+            <i class="fa-solid fa-spinner fa-spin" style="color:var(--champagne-primary); font-size: 1.2rem;"></i>
+            <div>
+              <strong style="font-size: 0.9rem; color:var(--text-dark);">كوشة ومسرح العروس</strong>
+              <small style="display:block; color:var(--champagne-primary);">قيد تنسيق الزهور</small>
+            </div>
+          </div>
+
+          <div class="checklist-item ready">
+            <i class="fa-solid fa-circle-check" style="color:#10b981; font-size: 1.2rem;"></i>
+            <div>
+              <strong style="font-size: 0.9rem; color:var(--text-dark);">حوض السباحة والإضاءات</strong>
+              <small style="display:block; color:#10b981;">نظافة وتعقيم وإضاءة مائية</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- بطاقة منسق الحفل المسؤول -->
+      <div style="margin-top: 36px; background: var(--champagne-gradient-soft); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--champagne-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <div>
+            <strong style="font-size: 1.05rem; color: var(--text-dark);">المنسق الميداني المباشر: أ. ماجد الخالدي</strong>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">متواجد حالياً في مقر القاعة لمتابعة كافة متطلباتكم</p>
+          </div>
+        </div>
+
+        <a href="https://wa.me/966568009474?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%D9%8A%20%D8%B1%D9%82%D9%85%20ATH-849201" target="_blank" class="btn btn-champagne" style="background:#25d366; border:none;">
+          <i class="fa-brands fa-whatsapp"></i> تحدث مع المنسق الآن
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align: center; color: var(--text-muted); font-size: 0.88rem;">
+      جميع الحقوق محفوظة &copy; 2026 منصة أثير للمناسبات والشاليهات VIP.
+    </div>
+  </footer>
+
+  <script>
+    // عداد تنازلي تفاعلي حي
+    function updateCountdown() {
+      const now = new Date();
+      // موعد الحفل: 15 سبتمبر 2026 الساعة 17:00
+      const eventDate = new Date(2026, 8, 15, 17, 0, 0);
+      const diff = eventDate - now;
+
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // البحث عن حجز
+    function handleTrackSearch(e) {
+      e.preventDefault();
+      const ref = document.getElementById('track-ref-input').value.trim().toUpperCase();
+      document.getElementById('track-display-ref').textContent = ref;
+
+      const saved = localStorage.getItem('latest_booking');
+      if (saved) {
+        try {
+          const b = JSON.parse(saved);
+          if (b.venueName) document.getElementById('track-venue-title').textContent = b.venueName;
+          if (b.date && b.slot) document.getElementById('track-event-date').textContent = `${b.date} (${b.slot})`;
+        } catch (err) {}
+      }
+
+      alert(`تم تحميل بيانات الحجز [${ref}] بنجاح، مسار التجهيزات محدث لحظة بلحظة.`);
+    }
+
+    // قراءة الحجز الأخير تلقائياً عند الدخول
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('latest_booking');
+      if (saved) {
+        try {
+          const b = JSON.parse(saved);
+          if (b.ref) {
+            document.getElementById('track-ref-input').value = b.ref;
+            document.getElementById('track-display-ref').textContent = b.ref;
+          }
+          if (b.venueName) document.getElementById('track-venue-title').textContent = b.venueName;
+          if (b.date && b.slot) document.getElementById('track-event-date').textContent = `${b.date} (${b.slot})`;
+        } catch (err) {}
+      }
+    });
+  </script>
+</body>
+</html>

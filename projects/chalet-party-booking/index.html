@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أثير للمناسبات VIP | شاليهات فاخرة وتنظيم حفلات بتصميم 3D ودفع إلكتروني</title>
+  
+  <!-- الخطوط الرسمية: Cairo و Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- مكتبة الأيقونات FontAwesome 6 Pro CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- مكتبة Three.js و OrbitControls للعارض ثلاثي الأبعاد 3D -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  
+  <!-- مكتبة تأثيرات الاحتفال Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- ملفات الأنماط الفاخرة بالألوان الفاتحة المريحة للعين -->
+  <link rel="stylesheet" href="assets/css/light-theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">هذه المنظومة تم تصميمها وتطويرها بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D9%85%D9%85%D8%A7%D8%AB%D9%84" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب مشروع مماثل
+    </a>
+  </div>
+</div>
+  <!-- خلفية التوهج الباستيلية الهادئة والمريحة للعين -->
+  <div class="ambient-glow-bg"></div>
+
+  <!-- 1. شريط المطور والتواصل السريع العلوي -->
+  <div class="top-notice-bar">
+    <div class="container top-notice-content">
+      <div class="top-notice-items">
+        <span class="top-notice-item">
+          <i class="fa-solid fa-code"></i> تطوير المنصة:
+          <strong style="color: var(--text-dark);">م. أسامة صالح درهم راجح</strong> (مهندس برمجيات وذكاء اصطناعي | OVRAX)
+        </span>
+        <span class="top-notice-item">
+          <i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية السعودية
+        </span>
+      </div>
+      <div class="top-notice-items">
+        <a href="https://wa.me/966568009474" target="_blank" class="top-notice-item" style="color: #16a34a; font-weight: 700;">
+          <i class="fa-brands fa-whatsapp"></i> واتساب الحجوزات: +966568009474
+        </a>
+        <a href="admin-dashboard.html" class="top-notice-item" style="color: var(--champagne-primary); font-weight: 700;">
+          <i class="fa-solid fa-gauge-high"></i> لوحة الإدارة
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. الهيدر والشريط العلوي الثابت -->
+  <header class="header" id="mainHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-crown"></i></div>
+        <div class="logo-text">
+          <span data-i18n="brandTitle">أثير للمناسبات</span>
+          <small data-i18n="brandSubtitle">VIP CHALETS & EVENTS</small>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active" data-i18n="navHome">الرئيسية</a>
+        <a href="#3d-showcase" class="nav-link" data-i18n="nav3D">استعراض 3D</a>
+        <a href="#venues" class="nav-link" data-i18n="navVenues">الشاليهات والقاعات</a>
+        <a href="#products-catalog" class="nav-link"><i class="fa-solid fa-box-open" style="color:var(--champagne-primary);"></i> متجر التجهيزات (21 صنفاً)</a>
+        <a href="#amenities" class="nav-link" data-i18n="navChecklist">تجهيزات القاعة</a>
+        <a href="#custom-studio" class="nav-link" data-i18n="navCustom">تصميم مخصص</a>
+        <a href="#calculator" class="nav-link" data-i18n="navCalculator">الأسعار والتقويم</a>
+        <a href="tracking.html" class="nav-link"><i class="fa-solid fa-radar" style="color:var(--champagne-primary);"></i> تتبع الفعالية</a>
+        <a href="#testimonials" class="nav-link" data-i18n="navReviews">آراء العملاء</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- زر مخطط الجلوس وتوزيع الطاولات -->
+        <button type="button" class="btn btn-outline-gold" onclick="window.openSeatingPlanModal()" style="padding: 7px 14px; font-size: 0.85rem;">
+          <i class="fa-solid fa-chair"></i> مخطط الجلوس
+        </button>
+
+        <!-- زر تبديل اللغة (عربي / English) -->
+        <button type="button" class="btn btn-soft" id="lang-switch-btn" onclick="window.toggleLanguage()" style="padding: 7px 14px; font-size: 0.85rem;">
+          <i class="fa-solid fa-globe"></i> English
+        </button>
+
+        <!-- جرس الإشعارات الذكي -->
+        <div style="position: relative;">
+          <button type="button" class="icon-btn" onclick="window.toggleNotificationsDropdown()" aria-label="الإشعارات">
+            <i class="fa-solid fa-bell"></i>
+            <span class="icon-badge" id="notif-unread-badge">2</span>
+          </button>
+          
+          <!-- قائمة الإشعارات المنسدلة -->
+          <div class="notifications-dropdown" id="notifications-dropdown">
+            <div class="notif-header">
+              <strong style="font-size: 0.95rem; color: var(--text-dark);"><i class="fa-solid fa-bell" style="color:var(--champagne-primary);"></i> أحدث التنبيهات</strong>
+              <small style="color: var(--champagne-primary); cursor: pointer;">تحديد كمقروء</small>
+            </div>
+            <div class="notif-list">
+              <div class="notif-item unread">
+                <i class="fa-solid fa-tag" style="color:var(--champagne-primary); margin-top:2px;"></i>
+                <div>
+                  <strong>خصم 15% على حجوزات حفلات التخرج</strong>
+                  <p style="color:var(--text-muted); font-size:0.78rem;">متاح الآن عند الحجز خلال عطلة نهاية الأسبوع.</p>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <i class="fa-solid fa-calendar-check" style="color:#10b981; margin-top:2px;"></i>
+                <div>
+                  <strong>تم فتح تواريخ سبتمبر المتاحة</strong>
+                  <p style="color:var(--text-muted); font-size:0.78rem;">يمكنك الاطلاع على الأيام الشاغرة في التقويم اللحظي.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- زر الحجز المباشر السريع -->
+        <a href="#calculator" class="btn btn-champagne">
+          <i class="fa-solid fa-bolt"></i> <span data-i18n="btnDirectBook">احجز بضغطة زر</span>
+        </a>
+
+        <!-- زر القائمة للجوال -->
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. القسم الترويجي الرئيسي (Hero Section) -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            أرقى منتجعات وشاليهات الرياض وقاعات المناسبات الفاخرة
+          </div>
+          <h1 class="hero-title">
+            احتفل بأجمل اللحظات.. <span class="gold-gradient-text">شاليهك الفاخر مع كامل تجهيزات الديكور</span>
+          </h1>
+          <p class="hero-subtitle">
+            نجمع لك صفوة شاليهات وقاعات مدينة الرياض (الدرعية، العمارية، شمال الرياض) المجهزة بأنظمة صوت احترافية، تكييف مركزي متطور، كوش ورد طبيعية، وبوفيهات ملكية، مع عارض ثلاثي الأبعاد 3D تفاعلي ودفع إلكتروني آمن وفوري.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="#3d-showcase" class="btn btn-champagne">
+              <i class="fa-solid fa-cube"></i> <span data-i18n="btnExplore3D">استكشف الشاليه بـ 3D</span>
+            </a>
+            <a href="#calculator" class="btn btn-outline-gold">
+              <i class="fa-solid fa-calculator"></i> احسب السعر والتوافر فوراً
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <h3>+45</h3>
+              <p>شاليه وقاعة VIP معتمدة</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3>100%</h3>
+              <p>دقة تقويم التوافر اللحظي</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3>4.9★</h3>
+              <p>تقييم أكثر من 1,200 عميل</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- البطاقة البصرية الفاخرة للقسم الرئيسي -->
+        <div class="hero-visual-card">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=80" alt="قاعة احتفالات وشاليه فاخر">
+          <div class="hero-floating-badge">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--champagne-soft); color: var(--champagne-primary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div>
+                <strong style="font-size: 0.95rem; color: var(--text-dark);">حجز مباشر مضمون 100%</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">تأكيد فوري بالرسائل النصية والبريد</p>
+              </div>
+            </div>
+            <span class="badge-pastel badge-sage"><i class="fa-solid fa-bolt"></i> متاح الآن</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. شريط البحث والفلترة المتقدم (Advanced Search Bar) -->
+  <section class="container search-container">
+    <div class="search-box">
+      <div class="search-tabs">
+        <button type="button" class="search-tab active" onclick="document.getElementById('filter-type').value='all'; filterVenues();">
+          <i class="fa-solid fa-gem"></i> جميع الأماكن
+        </button>
+        <button type="button" class="search-tab" onclick="document.getElementById('filter-type').value='wedding'; filterVenues();">
+          <i class="fa-solid fa-heart"></i> حفلات زفاف وملكة
+        </button>
+        <button type="button" class="search-tab" onclick="document.getElementById('filter-type').value='chalet'; filterVenues();">
+          <i class="fa-solid fa-water-ladder"></i> شاليهات بمسبح خاص
+        </button>
+        <button type="button" class="search-tab" onclick="document.getElementById('filter-type').value='corporate'; filterVenues();">
+          <i class="fa-solid fa-briefcase"></i> اجتماعات VIP وشركات
+        </button>
+      </div>
+
+      <div class="search-fields">
+        <div class="search-field">
+          <label><i class="fa-solid fa-map-pin"></i> المنطقة أو الحي</label>
+          <select id="filter-area">
+            <option value="all">كافة مناطق الرياض</option>
+            <option value="diriyah">الدرعية التاريخية</option>
+            <option value="amariyah">العمارية الفاخرة</option>
+            <option value="north">شمال الرياض (حطين، الملقا)</option>
+            <option value="thumama">الثمامة والرمال</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label><i class="fa-solid fa-calendar-day"></i> تاريخ الفعالية المخطط</label>
+          <input type="date" id="filter-date" value="2026-09-15">
+        </div>
+
+        <div class="search-field">
+          <label><i class="fa-solid fa-users"></i> عدد الحضور المتوقع</label>
+          <select id="filter-guests">
+            <option value="0">أي سعة حضور</option>
+            <option value="50">حتى 50 ضيف</option>
+            <option value="100">حتى 100 ضيف</option>
+            <option value="250">حتى 250 ضيف</option>
+            <option value="500">حتى 500 ضيف (قاعات كبرى)</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label><i class="fa-solid fa-magnifying-glass"></i> كلمة مفتاحية</label>
+          <input type="text" id="filter-keyword" placeholder="ابحث باسم الشاليه، مسبح، كوشة...">
+        </div>
+
+        <div>
+          <button type="button" class="btn btn-champagne" onclick="window.filterVenues()" style="width: 100%; height: 48px;">
+            <i class="fa-solid fa-sliders"></i> تصفية الأماكن
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. قسم العارض ثلاثي الأبعاد 3D التفاعلي (Three.js 3D Visualizer) -->
+  <section class="viewer-3d-section" id="3d-showcase">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-cube"></i> تجربة ثلاثية الأبعاد 360°</span>
+        <h2>تصميم واستعراض ثلاثي الأبعاد <span class="gold-gradient-text">3D تفاعلي</span></h2>
+        <p>استكشف الشاليه الفاخر وقاعة الحفلات بزاوية 360 درجة، مع إمكانية تبديل الإضاءة والنقر على أركان المكان لتفقد المسرح والمسبح والضيافة.</p>
+      </div>
+
+      <div class="viewer-3d-wrapper">
+        <!-- حاوية الكانفاس 3D -->
+        <div id="chalet-3d-canvas"></div>
+
+        <!-- عناصر التحكم العلوية للـ 3D -->
+        <div class="viewer-3d-controls">
+          <!-- تبديل أوضاع الإضاءة -->
+          <div class="lighting-modes">
+            <button type="button" class="lighting-btn" data-mode="day">
+              <i class="fa-solid fa-sun"></i> نهار مشمس
+            </button>
+            <button type="button" class="lighting-btn active" data-mode="sunset">
+              <i class="fa-solid fa-cloud-sun"></i> غروب ذهبي
+            </button>
+            <button type="button" class="lighting-btn" data-mode="night">
+              <i class="fa-solid fa-moon"></i> سهرة ليلية
+            </button>
+          </div>
+
+          <!-- زوايا الكاميرا السريعة -->
+          <div class="camera-presets">
+            <button type="button" class="camera-btn" data-view="overview">
+              <i class="fa-solid fa-panorama"></i> بانوراما
+            </button>
+            <button type="button" class="camera-btn" data-view="kosha">
+              <i class="fa-solid fa-crown"></i> الكوشة والمسرح
+            </button>
+            <button type="button" class="camera-btn" data-view="pool">
+              <i class="fa-solid fa-water-ladder"></i> المسبح
+            </button>
+            <button type="button" class="camera-btn" data-view="banquet">
+              <i class="fa-solid fa-utensils"></i> طاولات الضيافة
+            </button>
+          </div>
+        </div>
+
+        <!-- بطاقة تفاصيل النقطة الساخنة التفاعلية -->
+        <div class="hotspot-info-card" id="hotspot-details-box" style="display: none;"></div>
+
+        <!-- تلميح التفاعل -->
+        <div class="viewer-3d-hint">
+          <i class="fa-solid fa-arrow-pointer"></i> اسحب للتدوير 360° | حرك العجلة للتقريب | انقر على النقاط الذهبية للاستكشاف
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. شبكة الشاليهات وقاعات المناسبات الفاخرة (Venues Grid) -->
+  <section class="venues-section" id="venues">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-crown"></i> خيارات مميزة ومختارة بعناية</span>
+        <h2>أرقى الشاليهات وقاعات الحفلات المتاحة</h2>
+        <p id="filter-results-count">استعرض الشاليهات الأكثر طلباً مع أسعارها الدقيقة وإمكانية الحجز المباشر</p>
+      </div>
+
+      <div class="venues-grid" id="venues-grid-container">
+        
+        <!-- بطاقة 1: شاليه وقصر الفخامة VIP -->
+        <div class="venue-card" data-area="diriyah" data-type="wedding chalet" data-capacity="180">
+          <div class="venue-media">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="شاليه وقصر الفخامة">
+            <div class="venue-badges-top">
+              <span class="badge-pastel badge-champagne"><i class="fa-solid fa-star"></i> الأكثر فخامة</span>
+              <span class="badge-pastel badge-sage"><i class="fa-solid fa-circle-check"></i> متاح للحجز</span>
+            </div>
+            <button type="button" class="venue-media-action" onclick="window.focus3DZone('kosha-stage')">
+              <i class="fa-solid fa-cube"></i> استعراض في الـ 3D
+            </button>
+          </div>
+          <div class="venue-body">
+            <div class="venue-location"><i class="fa-solid fa-location-dot"></i> الدرعية التاريخية، الرياض</div>
+            <h3 class="venue-title">شاليه وقصر الفخامة الملكي VIP</h3>
+            <div class="venue-features-row">
+              <span class="venue-feature-pill"><i class="fa-solid fa-users"></i> يتسع لـ 180 ضيف</span>
+              <span class="venue-feature-pill"><i class="fa-solid fa-water-ladder"></i> مسبح إنفنتي</span>
+              <span class="venue-feature-pill"><i class="fa-solid fa-snowflake"></i> تكييف مركزي</span>
+            </div>
+            <div class="venue-amenities-tags">
+              <span class="venue-amenity-tag">أنظمة صوت محيطية</span>
+              <span class="venue-amenity-tag">مسرح كوشة زفاف</span>
+              <span class="venue-amenity-tag">بوفيه مفتوح</span>
+            </div>
+            <div class="venue-footer">
+              <div class="venue-price-box">
+                <span class="price-label">يبدأ السعر من</span>
+                <div>
+                  <span class="price-amount">3,800</span>
+                  <span class="price-period">ر.س / فترة</span>
+                </div>
+              </div>
+              <button class="btn btn-champagne" onclick="window.BookingState.venueName='شاليه وقصر الفخامة VIP (الدرعية)'; window.BookingState.basePrice=3800; window.calculateDynamicPrice(); document.getElementById('calculator').scrollIntoView({behavior:'smooth'});">
+                <i class="fa-solid fa-bolt"></i> احجز الآن
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- بطاقة 2: منتجع الأرياف البانورامي -->
+        <div class="venue-card" data-area="amariyah" data-type="wedding chalet corporate" data-capacity="220">
+          <div class="venue-media">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=80" alt="منتجع الأرياف البانورامي">
+            <div class="venue-badges-top">
+              <span class="badge-pastel badge-blush"><i class="fa-solid fa-leaf"></i> إطلالة جبلية وطبيعة</span>
+              <span class="badge-pastel badge-sage"><i class="fa-solid fa-circle-check"></i> متاح</span>
+            </div>
+            <button type="button" class="venue-media-action" onclick="window.focus3DZone('pool-area')">
+              <i class="fa-solid fa-cube"></i> استعراض في الـ 3D
+            </button>
+          </div>
+          <div class="venue-body">
+            <div class="venue-location"><i class="fa-solid fa-location-dot"></i> العمارية، الرياض</div>
+            <h3 class="venue-title">منتجع الأرياف البانورامي للمناسبات</h3>
+            <div class="venue-features-row">
+              <span class="venue-feature-pill"><i class="fa-solid fa-users"></i> يتسع لـ 220 ضيف</span>
+              <span class="venue-feature-pill"><i class="fa-solid fa-tree"></i> مسطحات خضراء واسعة</span>
+              <span class="venue-feature-pill"><i class="fa-solid fa-fire"></i> تدفئة مسبح</span>
+            </div>
+            <div class="venue-amenities-tags">
+              <span class="venue-amenity-tag">جلسات خارجية ريفية</span>
+              <span class="venue-amenity-tag">ممر عروس مضيء</span>
+              <span class="venue-amenity-tag">مواقف سيارات واسعة</span>
+            </div>
+            <div class="venue-footer">
+              <div class="venue-price-box">
+                <span class="price-label">يبدأ السعر من</span>
+                <div>
+                  <span class="price-amount">4,200</span>
+                  <span class="price-period">ر.س / فترة</span>
+                </div>
+              </div>
+              <button class="btn btn-champagne" onclick="window.BookingState.venueName='منتجع الأرياف البانورامي (العمارية)'; window.BookingState.basePrice=4200; window.calculateDynamicPrice(); document.getElementById('calculator').scrollIntoView({behavior:'smooth'});">
+                <i class="fa-solid fa-bolt"></i> احجز الآن
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- بطاقة 3: قاعة وشاليه اللؤلؤة الملكية -->
+        <div class="venue-card" data-area="north" data-type="wedding corporate" data-capacity="350">
+          <div class="venue-media">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=700&q=80" alt="قاعة اللؤلؤة">
+            <div class="venue-badges-top">
+              <span class="badge-pastel badge-lavender"><i class="fa-solid fa-crown"></i> قاعة حفلات كبرى</span>
+              <span class="badge-pastel badge-sage"><i class="fa-solid fa-circle-check"></i> متاح</span>
+            </div>
+            <button type="button" class="venue-media-action" onclick="window.focus3DZone('indoor-hall')">
+              <i class="fa-solid fa-cube"></i> استعراض في الـ 3D
+            </button>
+          </div>
+          <div class="venue-body">
+            <div class="venue-location"><i class="fa-solid fa-location-dot"></i> حطين، شمال الرياض</div>
+            <h3 class="venue-title">قاعة وشاليه اللؤلؤة الملكية VIP</h3>
+            <div class="venue-features-row">
+              <span class="venue-feature-pill"><i class="fa-solid fa-users"></i> يتسع لـ 350 ضيف</span>
+              <span class="venue-feature-pill"><i class="fa-solid fa-tv"></i> شاشات LED عملاقة</span>
+              <span class="venue-feature-pill"><i class="fa-solid fa-music"></i> دي جي احترافي</span>
+            </div>
+            <div class="venue-amenities-tags">
+              <span class="venue-amenity-tag">صالة زجاجية مغلقة</span>
+              <span class="venue-amenity-tag">جناح عروس خاص</span>
+              <span class="venue-amenity-tag">خدمة صف سيارات (فاليه)</span>
+            </div>
+            <div class="venue-footer">
+              <div class="venue-price-box">
+                <span class="price-label">يبدأ السعر من</span>
+                <div>
+                  <span class="price-amount">5,500</span>
+                  <span class="price-period">ر.س / فترة</span>
+                </div>
+              </div>
+              <button class="btn btn-champagne" onclick="window.BookingState.venueName='قاعة وشاليه اللؤلؤة الملكية (شمال الرياض)'; window.BookingState.basePrice=5500; window.calculateDynamicPrice(); document.getElementById('calculator').scrollIntoView({behavior:'smooth'});">
+                <i class="fa-solid fa-bolt"></i> احجز الآن
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       قسم متجر المنتجات وتجهيزات الحفلات (21 صنفاً مقسمة بحسب النوع)
+       ========================================================================== -->
+  <section class="catalog-section" id="products-catalog">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-box-open"></i> متجر وتجهيزات المناسبات الشاملة</span>
+        <h2>أصناف وتجهيزات الحفلات الفاخرة <span class="gold-gradient-text">(21 صنفاً حسب النوع)</span></h2>
+        <p>تصفح كافة منتجات وباقات الشاليهات، الكوش والمسارح، الصوتيات، البوفيهات، والديكورات الفاخرة مع إمكانية إضافتها فورياً لحساب حجزك</p>
+      </div>
+
+      <!-- شريط تبويبات الفئات مع عدادات الأصناف -->
+      <div class="cat-pills-bar">
+        <button type="button" class="cat-pill-btn active" data-category="all">
+          <i class="fa-solid fa-border-all"></i>
+          <span>جميع الأصناف</span>
+          <span class="cat-pill-counter" id="cat-count-all">21</span>
+        </button>
+
+        <button type="button" class="cat-pill-btn" data-category="chalets">
+          <i class="fa-solid fa-hotel"></i>
+          <span>باقات الشاليهات والقاعات</span>
+          <span class="cat-pill-counter" id="cat-count-chalets">4</span>
+        </button>
+
+        <button type="button" class="cat-pill-btn" data-category="koshas">
+          <i class="fa-solid fa-crown"></i>
+          <span>الكوش والمسارح وممرات العروس</span>
+          <span class="cat-pill-counter" id="cat-count-koshas">4</span>
+        </button>
+
+        <button type="button" class="cat-pill-btn" data-category="sound-light">
+          <i class="fa-solid fa-volume-high"></i>
+          <span>الصوتيات والإضاءات وشاشات LED</span>
+          <span class="cat-pill-counter" id="cat-count-sound-light">4</span>
+        </button>
+
+        <button type="button" class="cat-pill-btn" data-category="catering">
+          <i class="fa-solid fa-utensils"></i>
+          <span>الضيافة والبوفيهات الفندقية والذبائح</span>
+          <span class="cat-pill-counter" id="cat-count-catering">4</span>
+        </button>
+
+        <button type="button" class="cat-pill-btn" data-category="decor-seating">
+          <i class="fa-solid fa-chair"></i>
+          <span>الديكورات وسناتر الطاولات وأطقم الجلوس</span>
+          <span class="cat-pill-counter" id="cat-count-decor-seating">4</span>
+        </button>
+
+        <button type="button" class="cat-pill-btn" data-category="staff">
+          <i class="fa-solid fa-user-tie"></i>
+          <span>الكوادر والخدمات التنظيمية</span>
+          <span class="cat-pill-counter" id="cat-count-staff">1</span>
+        </button>
+      </div>
+
+      <!-- شريط أدوات البحث والفرز وسلة الإضافات -->
+      <div class="catalog-toolbar">
+        <div class="catalog-search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:var(--champagne-primary);"></i>
+          <input type="text" id="catalog-search-input" placeholder="ابحث باسم الصنف، كوشة، دي جي، بوفيه...">
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+          <span class="badge-pastel badge-champagne" id="products-counter-badge">عرض 21 من إجمالي 21 صنفاً</span>
+
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">ترتيب بحسب:</label>
+            <select id="catalog-sort-select" style="padding: 8px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-light); background: var(--bg-surface-soft); font-size: 0.85rem; font-weight: 600;">
+              <option value="featured">الأكثر طلباً وملاءمة</option>
+              <option value="price-asc">السعر: من الأقل للأعلى</option>
+              <option value="price-desc">السعر: من الأعلى للأقل</option>
+              <option value="rating-desc">الأعلى تقييماً (★)</option>
+            </select>
+          </div>
+
+          <a href="#calculator" class="btn btn-champagne" style="padding: 8px 18px; font-size: 0.85rem;">
+            <i class="fa-solid fa-cart-shopping"></i> سلة الإضافات للحجز (<span id="catalog-selected-count" style="display:none; margin:0 2px;">0</span>)
+          </a>
+        </div>
+      </div>
+
+      <!-- شبكة عرض كروت الأصناف الـ 21 -->
+      <div class="catalog-grid" id="products-grid-container">
+        <!-- يتم بناؤه وتعبئته برمجياً بواسطة products-catalog.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. قسم قائمة تجهيزات واحتياجات القاعة (Venue Amenities Checklist) -->
+  <section class="amenities-section" id="amenities">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-list-check"></i> أعلى معايير الجودة والراحة</span>
+        <h2>تجهيزات القاعة والاحتياجات الأساسية المتكاملة</h2>
+        <p>نحرص على فحص وتجهيز كافة المتطلبات التقنية والخدمية مسبقاً لضمان تجربة استثنائية لضيوفك</p>
+      </div>
+
+      <div class="amenities-grid">
+        
+        <!-- كرت أنظمة الصوت -->
+        <div class="amenity-detail-card">
+          <div class="amenity-icon-box"><i class="fa-solid fa-volume-high"></i></div>
+          <h3>أنظمة الصوت والدي جي الاحترافي</h3>
+          <p>أحدث مكبرات الصوت المحيطية الموزعة هندسياً لعزل الصدى وضمان صوت نقي ومتوازن للزفات والكلمات الترحيبية.</p>
+          <ul class="amenity-features-list">
+            <li><i class="fa-solid fa-circle-check"></i> سماعات محيطية ماركة عالمية</li>
+            <li><i class="fa-solid fa-circle-check"></i> ميكروفونات لاسلكية عالية الحساسية</li>
+            <li><i class="fa-solid fa-circle-check"></i> وحدة تحكم ميكسر صوت احترافية</li>
+          </ul>
+        </div>
+
+        <!-- كرت أنظمة التكييف -->
+        <div class="amenity-detail-card">
+          <div class="amenity-icon-box"><i class="fa-solid fa-snowflake"></i></div>
+          <h3>التكييف المركزي وتلطيف الأجواء</h3>
+          <p>تكييف مركزي متطور يغطي كامل المساحات الداخلية بكفاءة تبريد عالية، مع أنظمة رذاذ مائي متطورة للجلسات الخارجية.</p>
+          <ul class="amenity-features-list">
+            <li><i class="fa-solid fa-circle-check"></i> تبريد مركزي ذكي متعدد المناطق</li>
+            <li><i class="fa-solid fa-circle-check"></i> مضخات رذاذ ضبابي للمساحات المفتوحة</li>
+            <li><i class="fa-solid fa-circle-check"></i> عزل حراري متكامل للمباني الزجاجية</li>
+          </ul>
+        </div>
+
+        <!-- كرت تجهيزات الطعام والمشروبات -->
+        <div class="amenity-detail-card">
+          <div class="amenity-icon-box"><i class="fa-solid fa-utensils"></i></div>
+          <h3>تجهيزات الطعام والضيافة المتكاملة</h3>
+          <p>بوفيهات طعام فندقية متكاملة تشمل الأطباق الشرقية والعالمية الفاخرة، مع كاونترات قهوة مختصة وعصائر طازجة.</p>
+          <ul class="amenity-features-list">
+            <li><i class="fa-solid fa-circle-check"></i> أواني سخانات فاخرة ومفارش ساتان</li>
+            <li><i class="fa-solid fa-circle-check"></i> كادر مضيفات وصبابين بالزي الرسمي</li>
+            <li><i class="fa-solid fa-circle-check"></i> أركان حلى ومعجنات ومشروبات VIP</li>
+          </ul>
+        </div>
+
+        <!-- كرت الإضاءات والمسرح -->
+        <div class="amenity-detail-card">
+          <div class="amenity-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>الإضاءات المسرحية والمؤثرات</h3>
+          <p>إضاءات ليزر هادئة، كشافات سبوت لايت موجهة للكوشة، وأجهزة بخار ودخان مائي لزفة ساحرة ومظهر سينمائي.</p>
+          <ul class="amenity-features-list">
+            <li><i class="fa-solid fa-circle-check"></i> أجهزة دخان بارد آمن للملابس</li>
+            <li><i class="fa-solid fa-circle-check"></i> كشافات متابعة العروسين Follow-Spot</li>
+            <li><i class="fa-solid fa-circle-check"></i> شبكات أضواء فيري لايتس معلقة</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. استوديو طلب تجهيزات وديكور مخصص (Bespoke Requests Studio) -->
+  <section class="custom-request-section" id="custom-studio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> بحسب ذوقك وتصميمك الخاص</span>
+        <h2>استوديو الديكور والتجهيزات المخصصة</h2>
+        <p>هل ترغب في كوشة بتصميم جديد أو ثيم ألوان مخصص بالكامل؟ صمم فكرتك وسيتولى فريقنا الهندسي تنفيذها بدقة متناهية</p>
+        <div style="margin-top: 14px;">
+          <button type="button" class="btn btn-champagne" onclick="window.suggestAITheme()">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> اقترح لي ثيم ديكور بالذكاء الاصطناعي ✨
+          </button>
+        </div>
+      </div>
+
+      <div class="custom-box">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+          <div>
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">
+              اختر ثيم الألوان والزهور الطبيعية:
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+              يتم تنسيق كافة المفارش والورود الطبيعية وإضاءات المسرح لتتناغم مع الثيم المختار:
+            </p>
+
+            <div class="theme-options-grid">
+              <div class="theme-option-card selected" data-theme="royal-gold" data-themename="الذهبي والأبيض الملكي">
+                <div class="theme-palette-preview">
+                  <span style="background: #c99a4c;"></span>
+                  <span style="background: #fdfaf3;"></span>
+                  <span style="background: #ecd5a7;"></span>
+                </div>
+                <strong>الذهبي الملكي</strong>
+                <small style="display:block; color:var(--text-muted);">فخامة وأناقة كلاسيكية</small>
+              </div>
+
+              <div class="theme-option-card" data-theme="blush-rose" data-themename="الوردي الباستيل والروز">
+                <div class="theme-palette-preview">
+                  <span style="background: #f4c2c2;"></span>
+                  <span style="background: #fcedea;"></span>
+                  <span style="background: #e09891;"></span>
+                </div>
+                <strong>وردي رومانسي</strong>
+                <small style="display:block; color:var(--text-muted);">نعومة وشاعرية للملكات</small>
+              </div>
+
+              <div class="theme-option-card" data-theme="sage-green" data-themename="الأخضر السيج والطبيعة">
+                <div class="theme-palette-preview">
+                  <span style="background: #7ca982;"></span>
+                  <span style="background: #ecf4ef;"></span>
+                  <span style="background: #b5d6b2;"></span>
+                </div>
+                <strong>طبيعي بوهيمي</strong>
+                <small style="display:block; color:var(--text-muted);">عصري مريح للعين</small>
+              </div>
+
+              <div class="theme-option-card" data-theme="lavender-dream" data-themename="اللافندر والبنفسجي الملكي">
+                <div class="theme-palette-preview">
+                  <span style="background: #9d81ba;"></span>
+                  <span style="background: #f3effc;"></span>
+                  <span style="background: #c8b6e2;"></span>
+                </div>
+                <strong>لافندر ساحر</strong>
+                <small style="display:block; color:var(--text-muted);">تميز وسهرات استثنائية</small>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">
+              اكتب مواصفات الديكور والطلبات الخاصة:
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+              يمكنك كتابة شكل الكوشة، نوع الزهور المطلوبة، أو أي تجهيزات غير اعتيادية:
+            </p>
+            <textarea id="custom-notes-input" style="width: 100%; height: 130px; padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-light); background: var(--bg-surface-soft); font-size: 0.9rem; margin-bottom: 14px;" placeholder="مثال: نرغب في إضافة ممر زجاجي مضيء بطول 15 متراً، مع كوشة دائرية ذات ورود بيضاء طبيعية..."></textarea>
+            
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <button type="button" class="btn btn-outline-gold" onclick="document.getElementById('file-upload-mock').click()">
+                <i class="fa-solid fa-cloud-arrow-up"></i> إرفاق صور أو أفكار ديكور
+              </button>
+              <input type="file" id="file-upload-mock" style="display:none;" onchange="window.showAppNotification('تم رفع الصورة المرجعية بنجاح!', 'success')">
+              <span style="font-size: 0.82rem; color: var(--text-muted);">JPG, PNG, PDF حتى 15 ميجابايت</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. حاسبة الأسعار الديناميكية وتقويم التوافر اللحظي (Booking Engine & Calendar) -->
+  <section class="calculator-section" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-calculator"></i> تسعير دقيق وشفاف لحظة بلحظة</span>
+        <h2>حاسبة الأسعار وتقويم التوافر الدقيق</h2>
+        <p>اختر التاريخ المتاح ونوع الفعالية وعدد الحضور، وسيقوم النظام باحتساب التكلفة الإجمالية بدقة مع خيار الحجز المباشر</p>
+      </div>
+
+      <div class="calculator-card-grid">
+        
+        <!-- الجانب الأيمن: التقويم وخيارات التخصيص -->
+        <div class="calc-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-dark);">
+              <i class="fa-solid fa-calendar-check" style="color:var(--champagne-primary);"></i> تقويم التوافر (سبتمبر 2026)
+            </h3>
+            <span class="badge-pastel badge-champagne" id="selected-date-preview">التاريخ المختار: 2026-09-15 (متاح)</span>
+          </div>
+
+          <!-- أدوات التقويم -->
+          <div class="calendar-widget">
+            <div class="calendar-header">
+              <button type="button" class="calendar-nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+              <div class="calendar-month-title">سبتمبر 2026 (ربيع الأول 1448 هـ)</div>
+              <button type="button" class="calendar-nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
+
+            <div class="calendar-weekdays">
+              <span>الأحد</span><span>الإثنين</span><span>الثلاثاء</span><span>الأربعاء</span><span>الخميس</span><span>الجمعة</span><span>السبت</span>
+            </div>
+
+            <div class="calendar-days-grid" id="calendar-days-grid">
+              <!-- يتم بناؤه بواسطة booking-engine.js -->
+            </div>
+
+            <div class="calendar-legend">
+              <div class="legend-item"><span class="legend-dot dot-available"></span> متاح للحجز</div>
+              <div class="legend-item"><span class="legend-dot dot-booked"></span> محجوز مسبقاً وغير متاح</div>
+              <div class="legend-item"><span class="legend-dot dot-selected"></span> تاريخك المختار</div>
+            </div>
+          </div>
+
+          <!-- اختيار الفترة -->
+          <div style="margin-top: 24px;">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; display: block;">
+              <i class="fa-solid fa-clock" style="color:var(--champagne-primary);"></i> اختر فترة الحجز:
+            </label>
+            <div class="slot-selector">
+              <div class="slot-btn" data-slot="morning">
+                <strong>الفترة الصباحية</strong>
+                <small>9:00 ص - 3:00 م (خصم 20%)</small>
+              </div>
+              <div class="slot-btn active" data-slot="evening">
+                <strong>الفترة المسائية</strong>
+                <small>5:00 م - 2:00 ص (سهرة كاملة)</small>
+              </div>
+              <div class="slot-btn" data-slot="fullday">
+                <strong>يوم كامل VIP</strong>
+                <small>24 ساعة إقامة وتجهيز</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- نوع الفعالية ومؤشر الحضور -->
+          <div style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="search-field">
+              <label><i class="fa-solid fa-cake-candles"></i> نوع الفعالية</label>
+              <select id="event-type-select">
+                <option value="wedding">حفل زفاف ملكي فاخر</option>
+                <option value="engagement">حفل خطوبة وملكة</option>
+                <option value="graduation">حفل تخرج وتفوق</option>
+                <option value="birthday">عيد ميلاد وسهرة خاصة</option>
+                <option value="corporate">لقاء عمل واجتماع VIP</option>
+              </select>
+            </div>
+
+            <div class="search-field">
+              <label><i class="fa-solid fa-users"></i> عدد الحضور: <strong id="guest-count-display" style="color:var(--champagne-primary);">80 ضيف</strong></label>
+              <input type="range" class="slider-input" id="guest-range-slider" min="20" max="350" step="5" value="80">
+            </div>
+          </div>
+
+          <!-- التجهيزات الإضافية المختارة -->
+          <div style="margin-top: 24px;">
+            <label style="font-size: 0.88rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; display: block;">
+              <i class="fa-solid fa-plus-circle" style="color:var(--champagne-primary);"></i> التجهيزات والخدمات المشمولة:
+            </label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <label class="filter-chip-checkbox">
+                <input type="checkbox" class="amenity-checkbox" data-amenity="soundSystem" checked>
+                <span>نظام صوت ودي جي احترافي (+650 ر.س)</span>
+              </label>
+              <label class="filter-chip-checkbox">
+                <input type="checkbox" class="amenity-checkbox" data-amenity="ac" checked disabled>
+                <span>تكييف مركزي متطور (مشمول مجاناً)</span>
+              </label>
+              <label class="filter-chip-checkbox">
+                <input type="checkbox" class="amenity-checkbox" data-amenity="koshaFlowers" checked>
+                <span>كوشة وتنسيق ورود طبيعية (+1,400 ر.س)</span>
+              </label>
+              <label class="filter-chip-checkbox">
+                <input type="checkbox" class="amenity-checkbox" data-amenity="openBuffet">
+                <span>بوفيه عشاء مفتوح VIP متكامل (+2,800 ر.س)</span>
+              </label>
+              <label class="filter-chip-checkbox">
+                <input type="checkbox" class="amenity-checkbox" data-amenity="laserSmoke">
+                <span>إضاءات ليزر ودخان مسرحي (+550 ر.س)</span>
+              </label>
+              <label class="filter-chip-checkbox">
+                <input type="checkbox" class="amenity-checkbox" data-amenity="hospitalityStaff" checked>
+                <span>كادر ضيافة ومضيفات بزي رسمي (+800 ر.س)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- الجانب الأيسر: ملخص الفاتورة التفاعلية وزر الحجز المباشر -->
+        <div class="receipt-summary-box">
+          <div class="receipt-title">
+            <i class="fa-solid fa-receipt" style="color:var(--champagne-primary);"></i> التقرير المالي المباشر وتفاصيل التكلفة
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <span class="badge-pastel badge-champagne" id="receipt-event-badge">حفل زفاف ملكي</span>
+            <span style="font-size:0.85rem; color:var(--text-muted); margin-right:8px;">حساب فوري شامل لكافة البنود</span>
+          </div>
+
+          <div class="receipt-rows">
+            <div class="receipt-row">
+              <span>إيجار الشاليه / القاعة الأساسي:</span>
+              <strong id="calc-base-price">3,800 ر.س</strong>
+            </div>
+            <div class="receipt-row">
+              <span>تجهيز وضيافة الحضور (باقة المعازيم):</span>
+              <strong id="calc-guests-cost">3,600 ر.س</strong>
+            </div>
+            <div class="receipt-row">
+              <span>الخدمات والإضافات المختارة:</span>
+              <strong id="calc-amenities-cost">2,850 ر.س</strong>
+            </div>
+            <div class="receipt-row" id="calc-catalog-extras-row" style="display:none; color:var(--champagne-primary); font-weight:bold;">
+              <span><i class="fa-solid fa-box-open"></i> إضافات متجر التجهيزات:</span>
+              <strong id="calc-catalog-extras-val">0 ر.س</strong>
+            </div>
+            <div class="receipt-row" style="padding-top: 10px; border-top: 1px solid var(--border-light);">
+              <span>المجموع الفرعي (قبل الضريبة):</span>
+              <strong id="calc-subtotal">10,250 ر.س</strong>
+            </div>
+            <div class="receipt-row">
+              <span>ضريبة القيمة المضافة (15% VAT):</span>
+              <strong id="calc-vat">1,538 ر.س</strong>
+            </div>
+            <div class="receipt-row">
+              <span>تأمين الأضرار المسترد (Refundable):</span>
+              <strong id="calc-deposit">1,000 ر.س</strong>
+            </div>
+            <div class="receipt-row total-row">
+              <span>المبلغ الإجمالي النهائي:</span>
+              <span id="calc-total">12,788 ر.س</span>
+            </div>
+          </div>
+
+          <!-- ميزة التقسيط مع تمارا -->
+          <div style="background: var(--champagne-soft); border-radius: var(--radius-md); padding: 12px; margin-bottom: 20px; font-size: 0.85rem; display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <strong style="color:var(--text-dark);"><i class="fa-solid fa-credit-card"></i> أو قسم فاتورتك على 4 دفعات:</strong>
+              <div style="color:var(--text-muted);">بدون أي فوائد أو رسوم تأخير</div>
+            </div>
+            <div style="text-align: left;">
+              <strong style="color:var(--champagne-primary); font-size: 1.05rem;" id="tamara-installment-amt">3,197 ر.س</strong>
+              <small style="display:block; color:var(--text-muted);">شهرياً</small>
+            </div>
+          </div>
+
+          <!-- زر الحجز المباشر عبر الموقع بضغطة زر واحدة -->
+          <button type="button" class="btn btn-champagne" id="btn-open-checkout" style="padding: 16px; font-size: 1.15rem; width: 100%;">
+            <i class="fa-solid fa-lock"></i> احجز القاعة الآن وأكّد الحجز بضغطة زر
+          </button>
+
+          <div style="margin-top: 14px; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa-solid fa-shield-halved" style="color:#10b981;"></i> تأكيد فوري عبر الرسائل النصية + توليد التقرير الختامي والفاتورة
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. آراء وتقييمات العملاء (Customer Testimonials) -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-comments"></i> تجارب حقيقية موثقة</span>
+        <h2>آراء العملاء وتجاربهم في مناسباتهم</h2>
+        <p>نفخر بثقة مئات العائلات ونخبة الشركات الذين أقاموا أجمل مناسباتهم في شاليهاتنا وقاعاتنا</p>
+        <div style="margin-top: 14px;">
+          <button type="button" class="btn btn-outline-gold" onclick="document.getElementById('add-review-modal').classList.add('active')">
+            <i class="fa-solid fa-pen-to-square"></i> شاركنا تقييمك وتجربتك في الحفل
+          </button>
+        </div>
+      </div>
+
+      <div class="testimonials-grid" id="testimonials-grid-container">
+        
+        <!-- رأي 1 -->
+        <div class="review-card">
+          <div class="review-user-info">
+            <div class="review-avatar">ف.ع</div>
+            <div>
+              <strong style="display:block; font-size: 0.98rem; color:var(--text-dark);">فيصل العنزي</strong>
+              <small style="color:var(--text-muted);">حفل زواج في شاليه الفخامة VIP (الدرعية)</small>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p style="font-size: 0.92rem; color:var(--text-body); line-height: 1.7;">
+            "تجربة تفوق الوصف! دقة التكييف وأنظمة الصوت جعلت الحفل انسيابياً ومبهراً، استوديو الديكور جهز لنا كوشة خيالية تفوقت على الصور. وسرعة الحجز والتأكيد الإلكتروني ممتازة جداً."
+          </p>
+        </div>
+
+        <!-- رأي 2 -->
+        <div class="review-card">
+          <div class="review-user-info">
+            <div class="review-avatar">س.م</div>
+            <div>
+              <strong style="display:block; font-size: 0.98rem; color:var(--text-dark);">سارة المنصور</strong>
+              <small style="color:var(--text-muted);">حفل تخرج في منتجع الأرياف (العمارية)</small>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p style="font-size: 0.92rem; color:var(--text-body); line-height: 1.7;">
+            "العارض ثلاثي الأبعاد 3D كان بمثابة جولة حقيقية ساعدتنا على توزيع الطاولات والمسبح قبل الوصول. البوفيه المفتوح والقهوة كانت راقية جداً وبيضت وجيهنا أمام المعازيم."
+          </p>
+        </div>
+
+        <!-- رأي 3 -->
+        <div class="review-card">
+          <div class="review-user-info">
+            <div class="review-avatar">خ.د</div>
+            <div>
+              <strong style="display:block; font-size: 0.98rem; color:var(--text-dark);">م. خالد الدوسري</strong>
+              <small style="color:var(--text-muted);">ملتقى سنوي VIP في قاعة اللؤلؤة (حطين)</small>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p style="font-size: 0.92rem; color:var(--text-body); line-height: 1.7;">
+            "التقرير الختامي المالي والفاتورة الضريبية الرسمية تم استلامها مباشرة بعد الدفع، تعامل راقي ومنسق الحفلات كان متواجداً لحظة بلحظة لضمان نجاح الفعالية."
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. الفوتر الفاخر (Footer) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 14px;">
+            <div class="logo-icon"><i class="fa-solid fa-crown"></i></div>
+            <div class="logo-text">
+              <span>أثير للمناسبات</span>
+              <small>ATHEER VIP EVENTS</small>
+            </div>
+          </div>
+          <p style="color:var(--text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 20px;">
+            منصة حجوزات الشاليهات الفاخرة وقاعات الاحتفالات الكبرى بالرياض، نقدم تجربة متكاملة تجمع بين التصميم ثلاثي الأبعاد، حاسبة التكاليف التفاعلية، وبوابة الدفع الآمنة.
+          </p>
+          <div style="display: flex; gap: 12px;">
+            <a href="#" class="icon-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="icon-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="icon-btn"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="https://wa.me/966568009474" target="_blank" class="icon-btn" style="color:#25d366;"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="#3d-showcase">العارض ثلاثي الأبعاد 3D</a></li>
+            <li><a href="#venues">قائمة الشاليهات والقاعات</a></li>
+            <li><a href="#amenities">تجهيزات واحتياجات القاعة</a></li>
+            <li><a href="#custom-studio">طلب تصميم وديكور مخصص</a></li>
+            <li><a href="#calculator">حاسبة الأسعار والتقويم</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>مناطق الرياض</h4>
+          <ul class="footer-links">
+            <li><a href="#venues">شاليهات الدرعية التاريخية</a></li>
+            <li><a href="#venues">منتجعات العمارية البانورامية</a></li>
+            <li><a href="#venues">قاعات شمال الرياض (حطين، الملقا)</a></li>
+            <li><a href="#venues">شاليهات الثمامة والرمال</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>التواصل والدعم</h4>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:10px;">
+            <i class="fa-solid fa-phone" style="color:var(--champagne-primary);"></i> الدعم المباشر: 0568009474
+          </p>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:10px;">
+            <i class="fa-solid fa-envelope" style="color:var(--champagne-primary);"></i> info@atheer-vip.com
+          </p>
+          <a href="admin-dashboard.html" class="btn btn-soft" style="width: 100%; margin-top: 10px;">
+            <i class="fa-solid fa-chart-pie"></i> لوحة تحكم الإدارة
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          جميع الحقوق محفوظة &copy; 2026 منصة أثير للمناسبات والشاليهات VIP.
+        </div>
+        <div>
+          تطوير وابتكار: <strong>م. أسامة صالح درهم راجح</strong> (OVRAX)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       النوافذ المنبثقة التفاعلية (Interactive Modals)
+       ========================================================================== -->
+
+  <!-- نافذة بوابة الدفع الإلكتروني المتكاملة والآمنة -->
+  <div class="modal-overlay" id="payment-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-dark);">
+          <i class="fa-solid fa-shield-halved" style="color:var(--champagne-primary);"></i> بوابة الدفع الإلكتروني الآمنة
+        </h3>
+        <button type="button" onclick="window.closePaymentModal()" style="background:none; border:none; font-size: 1.4rem; color:var(--text-muted); cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- اختيار طريقة الدفع -->
+        <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 8px;">اختر وسيلة السداد:</label>
+        <div class="payment-methods-grid">
+          <div class="payment-method-card active" data-method="mada">
+            <strong style="color:#00754a;">مدى (Mada)</strong>
+          </div>
+          <div class="payment-method-card" data-method="visa">
+            <strong>Visa / Master</strong>
+          </div>
+          <div class="payment-method-card" data-method="applepay">
+            <i class="fa-brands fa-apple"></i> Apple Pay
+          </div>
+          <div class="payment-method-card" data-method="tamara">
+            <span style="color:#f26938; font-weight:bold;">تمارا (4 أقساط)</span>
+          </div>
+        </div>
+
+        <!-- معاينة البطاقة الائتمانية -->
+        <div class="credit-card-preview" id="credit-card-preview-box">
+          <div class="card-chip"></div>
+          <div class="card-number" id="card-preview-num">•••• •••• •••• 4291</div>
+          <div style="display:flex; justify-content:space-between; font-size: 0.85rem;">
+            <div>
+              <small style="opacity:0.7; display:block;">صاحب البطاقة</small>
+              <strong id="card-preview-name">سعادة الضيف VIP</strong>
+            </div>
+            <div>
+              <small style="opacity:0.7; display:block;">تاريخ الانتهاء</small>
+              <strong id="card-preview-exp">09/28</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- نموذج الدفع -->
+        <form id="payment-checkout-form">
+          <div id="card-input-fields">
+            <div class="search-field" style="margin-bottom: 12px;">
+              <label>الاسم الكامل كما في البطاقة</label>
+              <input type="text" id="card-holder-name" value="سعادة الضيف VIP" required oninput="document.getElementById('card-preview-name').textContent = this.value || 'صاحب البطاقة'">
+            </div>
+
+            <div class="search-field" style="margin-bottom: 12px;">
+              <label>رقم البطاقة الائتمانية / مدى</label>
+              <input type="text" id="card-number-input" value="4847 1928 3491 4291" maxlength="19" required oninput="document.getElementById('card-preview-num').textContent = this.value || '•••• •••• •••• ••••'">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+              <div class="search-field">
+                <label>تاريخ الانتهاء</label>
+                <input type="text" placeholder="MM/YY" value="09/28" required>
+              </div>
+              <div class="search-field">
+                <label>رمز التحقق CVV</label>
+                <input type="password" placeholder="123" value="789" maxlength="3" required>
+              </div>
+              <div class="search-field">
+                <label>رقم الجوال للإشعار</label>
+                <input type="tel" id="client-phone-input" value="0568009474" required>
+              </div>
+            </div>
+          </div>
+
+          <div id="apple-pay-box" style="display:none; text-align:center; padding: 20px;">
+            <button type="button" class="btn" style="background:#000; color:#fff; width:100%; padding:14px; font-size:1.1rem; border-radius:12px;">
+              <i class="fa-brands fa-apple"></i> Pay with Apple Pay
+            </button>
+          </div>
+
+          <button type="submit" class="btn btn-champagne" id="btn-confirm-payment" style="width: 100%; padding: 14px; font-size: 1.1rem;">
+            <i class="fa-solid fa-lock"></i> إتمام الدفع الآمن بمبلغ: <span id="pay-now-btn-amount">12,788 ر.س</span>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة التأكيد الفوري الشاملة بعد إتمام الحجز -->
+  <div class="modal-overlay" id="confirmation-modal">
+    <div class="modal-card" style="max-width: 500px; text-align: center;">
+      <div class="modal-body" style="padding: 36px 28px;">
+        <div style="width: 72px; height: 72px; border-radius: 50%; background: #ecfdf5; color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 18px;">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-dark); margin-bottom: 6px;">تم تأكيد حجزك بنجاح!</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+          تم تسجيل الحجز وسداد الدفعة وحفظ التاريخ في النظام. تم إرسال إشعار فوري لك ولإدارة القاعة.
+        </p>
+
+        <div style="background: var(--bg-surface-soft); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 16px; margin-bottom: 24px; text-align: right; font-size: 0.9rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+            <span style="color:var(--text-muted);">الرقم المرجعي للحجز:</span>
+            <strong id="conf-booking-ref" style="color:var(--champagne-primary);">ATH-849201</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+            <span style="color:var(--text-muted);">المكان:</span>
+            <strong id="conf-venue-name">شاليه وقصر الفخامة VIP</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+            <span style="color:var(--text-muted);">الموعد:</span>
+            <strong id="conf-date">2026-09-15 (فترة مسائية)</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding-top:6px; border-top:1px solid var(--border-light);">
+            <span style="color:var(--text-muted);">المبلغ المسدد:</span>
+            <strong id="conf-total" style="color:#10b981; font-size:1.1rem;">12,788 ر.س</strong>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="invoice.html" class="btn btn-champagne">
+            <i class="fa-solid fa-file-invoice"></i> عرض وطباعة الفاتورة والتقرير الختامي
+          </a>
+          <button type="button" class="btn btn-outline-gold" onclick="window.openInvitationModal(); window.closeConfirmationModal();">
+            <i class="fa-solid fa-envelope-open-text"></i> إنشاء بطاقة دعوة إلكترونية للمعازيم
+          </button>
+          <button type="button" class="btn btn-soft" onclick="window.closeConfirmationModal()">
+            إغلاق
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة بطاقة الدعوة الإلكترونية الذكية للمناسبات (Digital RSVP Card) -->
+  <div class="modal-overlay" id="invitation-modal">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-dark);">
+          <i class="fa-solid fa-envelope" style="color:var(--champagne-primary);"></i> بطاقة الدعوة الإلكترونية الذكية
+        </h3>
+        <button type="button" onclick="window.closeInvitationModal()" style="background:none; border:none; font-size:1.3rem; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <div style="border: 2px solid var(--border-gold); background: var(--champagne-gradient-soft); border-radius: 16px; padding: 24px; margin-bottom: 20px;">
+          <div style="font-size: 1.8rem; color: var(--champagne-primary); margin-bottom: 8px;"><i class="fa-solid fa-crown"></i></div>
+          <h4 style="font-size: 1.3rem; font-weight: 900; color: var(--text-dark); margin-bottom: 6px;">بطاقة دعوة لحضور حفلنا</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">يسرنا دعوتكم لمشاركتنا فرحتنا بأرقى الأوقات</p>
+          <div style="background:#fff; border-radius:10px; padding:12px; margin-bottom:14px; font-weight:700; color:var(--text-dark);">
+            <div id="invite-card-venue">شاليه وقصر الفخامة VIP</div>
+            <small id="invite-card-date" style="color:var(--champagne-primary);">15 سبتمبر 2026</small>
+          </div>
+          <div style="display:flex; justify-content:center;">
+            <div style="width:70px; height:70px; background:#221f1d; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.8rem;">
+              <i class="fa-solid fa-qrcode"></i>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-champagne" style="width: 100%;" onclick="navigator.clipboard.writeText(window.location.href); window.showAppNotification('تم نسخ رابط بطاقة الدعوة لمشاركتها عبر واتساب!', 'success');">
+          <i class="fa-brands fa-whatsapp"></i> نسخ رابط الدعوة ومشاركتها مع المعازيم
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة مخطط الجلوس وتوزيع الطاولات التفاعلي (Interactive Floor Plan Modal) -->
+  <div class="modal-overlay" id="floor-plan-modal">
+    <div class="modal-card" style="max-width: 840px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-dark);">
+          <i class="fa-solid fa-chair" style="color:var(--champagne-primary);"></i> مخطط الجلوس وتوزيع طاولات المعازيم (سعة 80 ضيف)
+        </h3>
+        <button type="button" onclick="window.closeSeatingPlanModal()" style="background:none; border:none; font-size: 1.4rem; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
+          انقر على أي طاولة لتخصيص اسم العائلة أو فئة الضيوف ومعرفة عدد المقاعد المخصصة لها في القاعة.
+        </p>
+
+        <!-- المخطط البصري للقاعة -->
+        <div id="floor-plan-schematic" style="position:relative; width:100%; height:460px; background:var(--champagne-gradient-soft); border:2px dashed var(--border-gold); border-radius:var(--radius-xl); overflow:hidden; margin-bottom:16px;">
+        </div>
+
+        <!-- صندوق تفاصيل وتعديل الطاولة المختارة -->
+        <div id="floor-table-info-box" style="background:var(--bg-surface-soft); border:1px solid var(--border-light); border-radius:var(--radius-md); padding:16px; display:none;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة إضافة تقييم ومشاركة التجربة (Add Review Modal) -->
+  <div class="modal-overlay" id="add-review-modal">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-dark);">
+          <i class="fa-solid fa-star" style="color:#f59e0b;"></i> شاركنا تقييمك وتجربتك في الحفل
+        </h3>
+        <button type="button" onclick="document.getElementById('add-review-modal').classList.remove('active')" style="background:none; border:none; font-size: 1.3rem; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="new-review-form" onsubmit="window.handleReviewSubmit(event)">
+          <div class="search-field" style="margin-bottom: 12px;">
+            <label>اسمك الكريم</label>
+            <input type="text" id="rev-name" placeholder="مثال: عبد الله السعدي" required>
+          </div>
+          <div class="search-field" style="margin-bottom: 12px;">
+            <label>نوع الفعالية والمكان</label>
+            <input type="text" id="rev-event" placeholder="مثال: حفل زواج في شاليه الفخامة VIP" required>
+          </div>
+          <div class="search-field" style="margin-bottom: 12px;">
+            <label>التقييم بالنجوم</label>
+            <select id="rev-stars">
+              <option value="5">⭐⭐⭐⭐⭐ (5 نجوم - ممتاز واستثنائي)</option>
+              <option value="4">⭐⭐⭐⭐ (4 نجوم - رائع جداً)</option>
+              <option value="3">⭐⭐⭐ (3 نجوم - جيد)</option>
+            </select>
+          </div>
+          <div class="search-field" style="margin-bottom: 16px;">
+            <label>كلمتك وتجربتك عن التجهيزات والديكور</label>
+            <textarea id="rev-comment" style="width:100%; height:100px; padding:12px; border-radius:var(--radius-md); border:1px solid var(--border-light); font-size:0.9rem;" placeholder="اكتب ملاحظاتك عن الصوتيات، التكييف، والضيافة..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-champagne" style="width:100%; padding:12px;">
+            <i class="fa-solid fa-paper-plane"></i> نشر التقييم الآن
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. أداة الدردشة المباشرة للدعم الفني التفاعلي (Floating Live Chat) -->
+  <div class="chat-widget-btn" onclick="window.toggleLiveChat()" title="الدعم الفني المباشر ومناقشة التفاصيل">
+    <i class="fa-solid fa-headset"></i>
+  </div>
+
+  <div class="chat-window" id="live-chat-window">
+    <div class="chat-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e;"></div>
+        <div>
+          <strong style="display: block; font-size: 0.95rem;">منسق مناسبات أثير VIP</strong>
+          <small style="opacity: 0.85; font-size: 0.75rem;" data-i18n="supportOnline">متصل الآن لمناقشة التفاصيل</small>
+        </div>
+      </div>
+      <button type="button" onclick="window.toggleLiveChat()" style="background:none; border:none; color:#fff; font-size: 1.2rem; cursor:pointer;">&times;</button>
+    </div>
+
+    <div class="chat-messages" id="chat-messages-container">
+      <div class="chat-msg bot">
+        أهلاً بك في أثير للمناسبات والشاليهات الفاخرة! يسعدني مساعدتك في استعراض القاعات، تجهيزات الصوت والإضاءة، أو مناقشة ثيم ديكور مخصص لحفلك. كيف يمكنني خدمتك اليوم؟
+      </div>
+    </div>
+
+    <form class="chat-input-area" id="live-chat-form">
+      <input type="text" id="chat-input-text" placeholder="اكتب استفسارك هنا..." autocomplete="off">
+      <button type="submit" class="btn btn-champagne" style="padding: 10px 14px; border-radius: var(--radius-full);">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- نافذة المعاينة السريعة للمنتج (Product Quick View Modal) -->
+  <div class="modal-overlay" id="product-quickview-modal"></div>
+
+  <!-- حاوية إشعارات التوست الذكية -->
+  <div id="toast-container" style="position: fixed; top: 90px; left: 24px; z-index: 99999; display: flex; flex-direction: column; gap: 10px;"></div>
+
+  <!-- ملفات الجافاسكريبت التفاعلية -->
+  <script src="assets/js/3d-chalet.js"></script>
+  <script src="assets/js/booking-engine.js"></script>
+  <script src="assets/js/floor-plan.js"></script>
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/products-catalog.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

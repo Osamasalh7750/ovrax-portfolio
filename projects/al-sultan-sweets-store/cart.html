@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="متجر حلويات السلطان الفاخرة - تشكيلة ملكية من الحلويات الشرقية، البقلاوة، الكنافة، الكيك، والشوكولاتة مع طلب فوري عبر واتساب وفاتورة إلكترونية.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <title>سلة المشتريات | حلويات السلطان الفاخرة</title>
+  <style>
+    .cart-page-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 30px;
+      padding: 40px 0 60px;
+    }
+    .cart-table-wrap {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .cart-table th {
+      text-align: right;
+      padding: 12px;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--primary-dark);
+      font-size: 0.95rem;
+    }
+    .cart-table td {
+      padding: 16px 12px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+    .cart-summary-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+    .summary-row.total {
+      border-top: 2px solid var(--border-color);
+      padding-top: 14px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    @media (max-width: 900px) {
+      .cart-page-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span><i class="fas fa-phone-alt"></i> خدمة العملاء: <strong>+966 11 400 0000</strong></span>
+        <span><i class="fas fa-clock"></i> مفتوح يومياً من 9:00 ص - 12:00 م</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-promo"><i class="fas fa-truck"></i> توصيل مجاني للطلبات فوق 200 ر.س! كود الخصم: <strong>SWEET20</strong></span>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" title="تغيير المظهر">
+          <i id="themeToggleIcon" class="fas fa-moon"></i>
+          <span id="themeToggleText">الوضع الليلي</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fas fa-crown"></i></div>
+        <div class="brand-text">
+          <h1>حلويات السلطان</h1>
+          <span>AL-SULTAN SWEETS &bull; فاخرة منذ 1995</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link "><i class="fas fa-home"></i> الرئيسية</a>
+        <a href="shop.html" class="nav-link active"><i class="fas fa-cookie"></i> قائمة الحلويات</a>
+        <a href="shop.html?cat=boxes" class="nav-link"><i class="fas fa-gift"></i> بوكسات الهدايا</a>
+        <a href="about.html" class="nav-link "><i class="fas fa-award"></i> قصة المتجر</a>
+        <a href="contact.html" class="nav-link "><i class="fas fa-envelope"></i> اتصل بنا</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html" class="action-btn" title="البحث">
+          <i class="fas fa-search"></i>
+        </a>
+        <a href="wishlist.html" class="action-btn" title="المفضلة">
+          <i class="fas fa-heart"></i>
+          <span class="action-badge wishlist-count">0</span>
+        </a>
+        <button class="action-btn" onclick="toggleCartDrawer()" title="سلة المشتريات">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="action-badge cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Page Banner -->
+  <div style="background: linear-gradient(135deg, var(--primary-dark), #4a0d20); color: #fff; padding: 40px 0; text-align: center;">
+    <div class="container">
+      <h1 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 6px;">سلة المشتريات</h1>
+      <p style="color: var(--gold-light);">راجع قائمة حلوياتك الفاخرة وطبق كود الخصم قبل المتابعة للدفع</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cart-page-layout">
+      <!-- Items Table Area -->
+      <div class="cart-table-wrap" id="cartTableWrap">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>الصنف</th>
+              <th>الحجم / الوزن</th>
+              <th>السعر</th>
+              <th>الكمية</th>
+              <th>الإجمالي</th>
+              <th>حذف</th>
+            </tr>
+          </thead>
+          <tbody id="cartTableBody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 24px; flex-wrap: wrap; gap: 14px;">
+          <a href="shop.html" class="btn btn-outline"><i class="fas fa-arrow-right"></i> متابعة التسوق</a>
+          <button class="btn btn-outline" style="color: #e74c3c; border-color: #e74c3c;" onclick="Cart.clearCart()">
+            <i class="fas fa-trash"></i> تفريغ السلة بالكامل
+          </button>
+        </div>
+      </div>
+
+      <!-- Summary Column -->
+      <div class="cart-summary-box">
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 20px; border-bottom: 2px solid var(--gold); padding-bottom: 8px;">
+          ملخص الطلب
+        </h3>
+
+        <!-- Coupon Form -->
+        <div style="margin-bottom: 20px;">
+          <label style="font-weight: 700; font-size: 0.88rem; display: block; margin-bottom: 8px;">هل لديك كود خصم؟</label>
+          <div style="display: flex; gap: 8px;">
+            <input type="text" id="cartCouponInput" placeholder="أدخل الكوبون مثل SWEET20" style="background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 8px 12px; flex: 1; text-transform: uppercase;">
+            <button class="btn btn-gold" style="padding: 8px 16px; font-size: 0.85rem;" onclick="applyCartPageCoupon()">تطبيق</button>
+          </div>
+          <div id="appliedCouponBadge" style="margin-top: 8px;"></div>
+        </div>
+
+        <div class="summary-row">
+          <span style="color: var(--text-muted);">المجموع الفرعي:</span>
+          <span id="pageSubtotal" style="font-weight: 700;">0.00 ر.س</span>
+        </div>
+        <div class="summary-row" id="pageDiscountRow" style="display: none; color: var(--pistachio);">
+          <span>الخصم المطبق:</span>
+          <span id="pageDiscount" style="font-weight: 700;">-0.00 ر.س</span>
+        </div>
+        <div class="summary-row">
+          <span style="color: var(--text-muted);">رسوم التوصيل:</span>
+          <span id="pageDelivery" style="font-weight: 700;">15.00 ر.س</span>
+        </div>
+        <div class="summary-row">
+          <span style="color: var(--text-muted);">ضريبة القيمة المضافة (15%):</span>
+          <span id="pageVat" style="font-weight: 700;">0.00 ر.س</span>
+        </div>
+        <div class="summary-row total">
+          <span>المبلغ الإجمالي:</span>
+          <span id="pageGrandTotal">0.00 ر.س</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px;">
+          <a href="checkout.html" class="btn btn-primary" style="padding: 14px; font-size: 1.05rem;">
+            <i class="fas fa-lock"></i> الانتقال لإتمام الطلب
+          </a>
+          <button class="btn btn-whatsapp" onclick="processWhatsAppOrder()">
+            <i class="fab fa-whatsapp"></i> طلب مباشر وسريع عبر واتساب
+          </button>
+        </div>
+
+        <div style="margin-top: 20px; font-size: 0.82rem; color: var(--text-muted); text-align: center;">
+          <i class="fas fa-shield-alt" style="color: var(--gold-dark);"></i> تسوق آمن 100% ومضمون الجودة
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon"><i class="fas fa-crown"></i></div>
+            <div class="brand-text">
+              <h2>حلويات السلطان</h2>
+              <span style="color: var(--gold-light);">AL-SULTAN LUXURY SWEETS</span>
+            </div>
+          </div>
+          <p>نقدم لكم أرقى الحلويات الشرقية والغربية المحضرة يدوياً بأيدي أمهر الطهاة وباستخدام أجود المكونات الطبيعية والسمن البلدي والفستق الحلبي الفاخر.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-link" title="تويتر (X)"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="footer-social-link" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="footer-social-link" title="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="#" class="footer-social-link" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>أقسام الحلويات</h3>
+          <ul class="footer-links">
+            <li><a href="shop.html?cat=oriental"><i class="fas fa-angle-left"></i> حلويات شرقية فاخرة</a></li>
+            <li><a href="shop.html?cat=western"><i class="fas fa-angle-left"></i> كيك وتشيز كيك غربي</a></li>
+            <li><a href="shop.html?cat=chocolate"><i class="fas fa-angle-left"></i> شوكولاتة وترافل</a></li>
+            <li><a href="shop.html?cat=boxes"><i class="fas fa-angle-left"></i> بوكسات ضيافة وهدايا</a></li>
+            <li><a href="shop.html?cat=healthy"><i class="fas fa-angle-left"></i> حلويات صحية ودايت</a></li>
+            <li><a href="shop.html?cat=drinks"><i class="fas fa-angle-left"></i> بوظة ومشروبات قهوة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="shop.html"><i class="fas fa-angle-left"></i> تصفح جميع المنتجات</a></li>
+            <li><a href="cart.html"><i class="fas fa-angle-left"></i> سلة المشتريات</a></li>
+            <li><a href="checkout.html"><i class="fas fa-angle-left"></i> إتمام الطلب والفاتورة</a></li>
+            <li><a href="wishlist.html"><i class="fas fa-angle-left"></i> قائمة أمنياتي</a></li>
+            <li><a href="about.html"><i class="fas fa-angle-left"></i> قصة المتجر والمعايير</a></li>
+            <li><a href="contact.html"><i class="fas fa-angle-left"></i> فروعنا وتواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h3>النشرة البريدية والعروض</h3>
+          <p>اشترك معنا لتصلك أحدث العروض والخصومات الخاصة بمواسم الأعياد والمناسبات.</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" placeholder="أدخل بريدك الإلكتروني..." required>
+            <button type="submit">اشتراك</button>
+          </form>
+          <div style="margin-top: 20px; font-size: 0.85rem; color: #eed5dc;">
+            <p><i class="fas fa-map-marker-alt" style="color: var(--gold-light);"></i> الرياض، طريق الملك فهد</p>
+            <p style="margin-top: 4px;"><i class="fas fa-phone-alt" style="color: var(--gold-light);"></i> الرقم الموحد: 920000000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 جميع الحقوق محفوظة لـ <strong>حلويات السلطان الفاخرة</strong> &bull; تم التطوير بأعلى معايير الجودة</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+          <i class="fas fa-credit-card" title="Mada"></i>
+          <i class="fas fa-money-bill-wave" title="الدفع عند الاستلام"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fas fa-shopping-bag"></i> سلة مشترياتك</h3>
+      <button class="close-drawer-btn" onclick="toggleCartDrawer()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <!-- يتم تعبئة السلة تلقائياً عبر JavaScript -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>المجموع الإجمالي:</span>
+        <span id="drawerSubtotal">0.00 ر.س</span>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="checkout.html" class="btn btn-primary"><i class="fas fa-credit-card"></i> إتمام الطلب الآن</a>
+        <a href="cart.html" class="btn btn-outline"><i class="fas fa-shopping-cart"></i> عرض السلة الكاملة</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal Container -->
+  <div class="modal-overlay" id="quickViewModal"></div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/966500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D9%86" target="_blank" class="floating-whatsapp" title="تحدث معنا على واتساب مباشرة">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/checkout.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    function renderCartPage() {
+      const items = Cart.getItems();
+      const totals = Cart.calculateTotals();
+      const tbody = document.getElementById('cartTableBody');
+      const tableWrap = document.getElementById('cartTableWrap');
+
+      if (items.length === 0) {
+        tableWrap.innerHTML = `
+          <div style="text-align: center; padding: 60px 20px;">
+            <i class="fas fa-shopping-basket" style="font-size: 4rem; color: #d0c7cb; margin-bottom: 20px;"></i>
+            <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 10px;">سلة المشتريات فارغة</h2>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">لم تقم بإضافة أي أصناف حلوى إلى سلتك بعد.</p>
+            <a href="shop.html" class="btn btn-primary"><i class="fas fa-cookie"></i> تصفح متجر الحلويات الآن</a>
+          </div>
+        `;
+      } else {
+        tbody.innerHTML = items.map((item, idx) => `
+          <tr>
+            <td>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; border-radius: var(--radius-sm); object-fit: cover;">
+                <strong style="font-size: 0.95rem;">${item.name}</strong>
+              </div>
+            </td>
+            <td><span class="badge badge-gold">${item.weight}</span></td>
+            <td style="font-weight: 700;">${item.price.toFixed(2)} ${STORE_CONFIG.currency}</td>
+            <td>
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="Cart.updateQuantity(${idx}, ${item.quantity - 1})">-</button>
+                <span class="qty-value">${item.quantity}</span>
+                <button class="qty-btn" onclick="Cart.updateQuantity(${idx}, ${item.quantity + 1})">+</button>
+              </div>
+            </td>
+            <td style="font-weight: 800; color: var(--primary);">${(item.price * item.quantity).toFixed(2)} ${STORE_CONFIG.currency}</td>
+            <td>
+              <button onclick="Cart.removeItem(${idx})" style="color: #e74c3c; font-size: 1.1rem;" title="حذف">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      document.getElementById('pageSubtotal').textContent = `${totals.subtotal.toFixed(2)} ${STORE_CONFIG.currency}`;
+      document.getElementById('pageDelivery').textContent = totals.delivery === 0 ? 'مجاني 🎉' : `${totals.delivery.toFixed(2)} ${STORE_CONFIG.currency}`;
+      document.getElementById('pageVat').textContent = `${totals.vat.toFixed(2)} ${STORE_CONFIG.currency}`;
+      document.getElementById('pageGrandTotal').textContent = `${totals.grandTotal.toFixed(2)} ${STORE_CONFIG.currency}`;
+
+      const discountRow = document.getElementById('pageDiscountRow');
+      const couponBadge = document.getElementById('appliedCouponBadge');
+      if (totals.discount > 0) {
+        discountRow.style.display = 'flex';
+        document.getElementById('pageDiscount').textContent = `-${totals.discount.toFixed(2)} ${STORE_CONFIG.currency}`;
+        couponBadge.innerHTML = `
+          <span class="badge badge-pistachio" style="display: inline-flex; gap: 8px;">
+            الكود (${totals.couponCode}) مفعل (خصم ${totals.couponInfo.discountPercent}%)
+            <button onclick="Cart.removeCoupon()" style="color: #e74c3c; cursor: pointer;">✕</button>
+          </span>
+        `;
+      } else {
+        discountRow.style.display = 'none';
+        couponBadge.innerHTML = '';
+      }
+    }
+
+    function applyCartPageCoupon() {
+      const code = document.getElementById('cartCouponInput').value;
+      if (code) {
+        Cart.applyCoupon(code);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartPage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة صروح | SOROUH - المنصة المتكاملة للعقارات والخدمات الهندسية</title>
+    
+    <!-- الأنماط والتصميم -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم تصميم وتطوير هذه المنصة بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D9%86%D8%B5%D8%A9%20%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9%20%D9%88%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%D8%A9%20%D9%84%D9%85%D9%86%D8%B5%D8%A9%20%D8%B5%D8%B1%D9%88%D8%AD" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب منصة مماثلة
+    </a>
+  </div>
+</div>
+    <!-- شريط وضع المشرف السريع (Admin Bar) عند التبديل للوحة الإدارة -->
+    <div id="adminTopBar" class="admin-mode-banner" style="display: none;">
+        <div class="admin-banner-info">
+            <span style="font-size: 1.2rem;">⚙️</span>
+            <span>أنت الآن في وضع «لوحة إدارة المنصة (Admin)» - يمكنك تعديل حالات الطلبات وإدارة العقارات مباشرة</span>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <button class="btn-admin-reset" onclick="App.resetAllPlatformData()">إعادة ضبط بيانات الـ Prototype</button>
+            <button class="role-tab-btn active" onclick="App.navigate('home')">العودة للواجهة الرئيسية</button>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         الهيدر وشريط التنقل العلوي (Navbar)
+         ========================================================================= -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <!-- الشعار -->
+            <a href="#home" class="brand-logo" data-nav="home">
+                <div class="logo-symbol">🏛️</div>
+                <div class="brand-text">
+                    <div class="brand-title">صـُـرُوح <span>SOROUH</span></div>
+                    <div class="brand-sub">العقارات والحلول الهندسية المتكاملة</div>
+                </div>
+            </a>
+
+            <!-- روابط التنقل الرئيسية -->
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" data-nav="home"><span class="nav-icon">🏠</span> الرئيسية</a></li>
+                <li><a href="#buy" class="nav-link" data-nav="buy"><span class="nav-icon">🏡</span> شراء</a></li>
+                <li><a href="#rent" class="nav-link" data-nav="rent"><span class="nav-icon">🔑</span> إيجار</a></li>
+                <li><a href="#construction" class="nav-link" data-nav="construction"><span class="nav-icon">🏗️</span> بناء وتشييد</a></li>
+                <li><a href="#renovation" class="nav-link" data-nav="renovation"><span class="nav-icon">🔨</span> ترميم وتجديد</a></li>
+                <li><a href="#engineering" class="nav-link" data-nav="engineering"><span class="nav-icon">📐</span> خدمات هندسية</a></li>
+                <li><a href="#dashboard" class="nav-link" data-nav="dashboard"><span class="nav-icon">👤</span> حسابي</a></li>
+            </ul>
+
+            <!-- الإجراءات السريعة في الهيدر -->
+            <div class="nav-actions">
+                <!-- زر التبديل بين وضع المستخدم والمشرف -->
+                <div class="role-badge-toggle" title="التبديل بين وضع المستخدم والإدارة">
+                    <button class="role-tab-btn" id="btnRoleUser" onclick="App.navigate('dashboard')">مستخدم</button>
+                    <button class="role-tab-btn" id="btnRoleAdmin" onclick="App.navigate('admin')">إدارة</button>
+                </div>
+
+                <!-- زر المفضلة -->
+                <button class="action-btn" title="المفضلة" onclick="App.navigate('dashboard'); App.switchDashTab('favorites');">
+                    <span>❤️</span>
+                    <span id="navFavCount" class="badge-count">2</span>
+                </button>
+
+                <!-- زر الإشعارات -->
+                <button class="action-btn" title="الإشعارات" onclick="App.navigate('dashboard'); App.switchDashTab('notifications');">
+                    <span>🔔</span>
+                    <span id="navNotifCount" class="badge-count">2</span>
+                </button>
+
+                <!-- زر أضف عقارك للبيع أو الإيجار -->
+                <button class="btn-gold" onclick="App.openAddPropertyModal()">
+                    <span>➕</span>
+                    <span>أضف عقارك</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         القسم 1: الصفحة الرئيسية (Home Section)
+         ========================================================================= -->
+    <main id="section-home" class="page-section">
+        <!-- قسم الـ Hero الفاخر -->
+        <section class="hero-section">
+            <div class="hero-backdrop"></div>
+            <div class="container hero-content">
+                <div class="hero-pill-badge">
+                    <span>✨</span>
+                    <span>المنصة الأولى المعتمدة لدمج العقارات الفاخرة مع المقاولات الهندسية</span>
+                </div>
+
+                <h1 class="hero-title">
+                    ابنِ، امتلك، استأجر، رمّم، وبِع عقارك<br>
+                    <span>من مكان واحد وبأعلى معايير الهندسة</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    منظومة متكاملة تجمع بين صفقات العقارات الحصرية، حاسبات البناء الذكية، خدمات الترميم الفوري، والاستشارات الهندسية المعتمدة تحت سقف واحد.
+                </p>
+
+                <!-- أزرار الاختيار السريع للقطاعات -->
+                <div class="hero-sector-pills">
+                    <button class="sector-pill-btn active" onclick="App.navigate('buy')">🏡 شراء عقار</button>
+                    <button class="sector-pill-btn" onclick="App.navigate('rent')">🔑 استئجار (يومي / شهري / سنوي)</button>
+                    <button class="sector-pill-btn" onclick="App.openAddPropertyModal()">💰 عرض عقار للبيع</button>
+                    <button class="sector-pill-btn" onclick="App.navigate('construction')">🏗️ تخطيط وبناء عقار</button>
+                    <button class="sector-pill-btn" onclick="App.navigate('renovation')">🔨 ترميم وتجديد</button>
+                    <button class="sector-pill-btn" onclick="App.navigate('engineering')">📐 استشارات وخدمات هندسية</button>
+                </div>
+
+                <!-- محرك البحث المتطور -->
+                <div class="hero-search-box">
+                    <div class="search-fields-row">
+                        <!-- القطاع -->
+                        <div class="search-field-group">
+                            <label class="search-field-label"><span>🎯</span> ماذا تريد أن تفعل؟</label>
+                            <select id="heroSectorSelect" class="search-select">
+                                <option value="buy">شراء عقار فاخر</option>
+                                <option value="rent">استئجار عقار (يومي/شهري/سنوي)</option>
+                                <option value="construction">بناء وتشييد جديد</option>
+                                <option value="renovation">ترميم وتجديد</option>
+                                <option value="engineering">طلب خدمة هندسية</option>
+                            </select>
+                        </div>
+
+                        <!-- المدينة -->
+                        <div class="search-field-group">
+                            <label class="search-field-label"><span>📍</span> المدينة</label>
+                            <select id="heroCitySelect" class="search-select">
+                                <option value="all">كافة المدن (الرياض، جدة، الخبر...)</option>
+                                <option value="الرياض">الرياض</option>
+                                <option value="جدة">جدة</option>
+                                <option value="الخبر">الخبر</option>
+                            </select>
+                        </div>
+
+                        <!-- نوع العقار -->
+                        <div class="search-field-group">
+                            <label class="search-field-label"><span>🏢</span> نوع العقار</label>
+                            <select id="heroTypeSelect" class="search-select">
+                                <option value="all">كافة الأنواع</option>
+                                <option value="فيلا">فيلا مودرن</option>
+                                <option value="شقة">شقة فاخرة</option>
+                                <option value="بنتهاوس">بنتهاوس</option>
+                                <option value="تاون هاوس">تاون هاوس</option>
+                                <option value="شاليه">شاليه واستراحة</option>
+                                <option value="مبنى تجاري">مبنى تجاري وإداري</option>
+                            </select>
+                        </div>
+
+                        <!-- الميزانية -->
+                        <div class="search-field-group">
+                            <label class="search-field-label"><span>💵</span> الميزانية القصوى</label>
+                            <select id="heroPriceSelect" class="search-select">
+                                <option value="0">بدون حد أقصى</option>
+                                <option value="500000">حتى 500,000 ريال</option>
+                                <option value="1500000">حتى 1,500,000 ريال</option>
+                                <option value="3000000">حتى 3,000,000 ريال</option>
+                                <option value="10000000">حتى 10,000,000 ريال</option>
+                            </select>
+                        </div>
+
+                        <!-- زر البحث -->
+                        <button id="heroSearchBtn" class="search-btn-hero">
+                            <span>🔍</span>
+                            <span>بحث متقدم</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- شريط الإحصائيات -->
+        <section class="stats-banner">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon-wrapper">🏛️</div>
+                    <div class="stat-content">
+                        <div class="stat-number">1,480+</div>
+                        <div class="stat-label">عقار فاخر موثق بالمنصة</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-wrapper">🏗️</div>
+                    <div class="stat-content">
+                        <div class="stat-number">620+</div>
+                        <div class="stat-label">مشروع بناء وإشراف منجز</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-wrapper">📐</div>
+                    <div class="stat-content">
+                        <div class="stat-number">180+</div>
+                        <div class="stat-label">مهندس واستشاري معتمد</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-wrapper">⭐</div>
+                    <div class="stat-content">
+                        <div class="stat-number">99.4%</div>
+                        <div class="stat-label">نسبة رضا وثقة العملاء</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم العقارات المميزة للشراء -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <div class="section-tag"><span>✨</span> عروض حصرية للشراء</div>
+                        <h2 class="section-title">أحدث العقارات المتاحة للبيع</h2>
+                        <p class="section-desc">عقارات مفحوصة إنشائياً وموثقة برخص فال الرسمية مع إمكانية طلب المعاينة المباشرة.</p>
+                    </div>
+                    <button class="btn-outline-dark" onclick="App.navigate('buy')">استعراض كافة عقارات الشراء ←</button>
+                </div>
+
+                <div class="properties-grid" id="buyPropertiesGrid">
+                    <!-- يتم توليد العقارات ديناميكياً عبر JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- لافتة حاسبة البناء الذكية -->
+        <section class="section-padding" style="background: linear-gradient(135deg, #0B0F17 0%, #151D2A 100%); color: #FFFFFF;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+                    <div>
+                        <div class="section-tag" style="color: #C5A059;"><span>🏗️</span> حلول التشييد والبناء الذكي</div>
+                        <h2 class="section-title" style="color: #FFFFFF; font-size: 2.5rem; margin-bottom: 16px;">
+                            هل تخطط لبناء فيلتك أو مشروعك القادم؟
+                        </h2>
+                        <p style="color: #CBD5E1; font-size: 1.08rem; line-height: 1.8; margin-bottom: 24px;">
+                            احسب تكلفة البناء التقديرية بدقة خلال دقيقة واحدة، واختر مستوى التشطيب، واحصل على عرض سعر رسمي معتمد يضمن لك الإشراف الهندسي الكامل والمطابقة التامة لكود البناء السعودي.
+                        </p>
+                        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                            <button class="btn-gold" onclick="App.navigate('construction')">ابدأ حاسبة البناء الذكية الآن ←</button>
+                            <button class="btn-outline-dark" style="border-color: #CBD5E1; color: #FFFFFF;" onclick="App.navigate('engineering')">استشارات هندسية</button>
+                        </div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.06); padding: 30px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.3); backdrop-filter: blur(10px);">
+                        <h3 style="color: #C5A059; font-size: 1.3rem; margin-bottom: 16px;">مزايا البناء مع «صروح»:</h3>
+                        <div style="display: flex; flex-direction: column; gap: 14px;">
+                            <div style="display: flex; gap: 12px; align-items: center;">
+                                <span style="color: #10B981; font-size: 1.2rem;">✓</span>
+                                <span>إشراف هندسي ميداني موثق بتقارير زيارة مصورة</span>
+                            </div>
+                            <div style="display: flex; gap: 12px; align-items: center;">
+                                <span style="color: #10B981; font-size: 1.2rem;">✓</span>
+                                <span>جدول كميات هندسي دقيق يمنع الهدر وتغير الأسعار</span>
+                            </div>
+                            <div style="display: flex; gap: 12px; align-items: center;">
+                                <span style="color: #10B981; font-size: 1.2rem;">✓</span>
+                                <span>ضمان 10 سنوات على الهيكل الإنشائي والخرسانة</span>
+                            </div>
+                            <div style="display: flex; gap: 12px; align-items: center;">
+                                <span style="color: #10B981; font-size: 1.2rem;">✓</span>
+                                <span>دفعات مالية مرتبطة بنسب الإنجاز الفعلي على الأرض</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم العقارات المميزة للإيجار -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <div class="section-tag"><span>🔑</span> مرونة وخيارات متعددة</div>
+                        <h2 class="section-title">عقارات الإيجار (يومي - شهري - سنوي)</h2>
+                        <p class="section-desc">شقق مفروشة، فلل عائلية، وشاليهات استجمام بخدمات فندقية وحجز فوري مؤكد.</p>
+                    </div>
+                    <button class="btn-outline-dark" onclick="App.navigate('rent')">استعراض كافة عقارات الإيجار ←</button>
+                </div>
+
+                <div class="properties-grid" id="rentPropertiesGrid">
+                    <!-- يتم توليد العقارات ديناميكياً عبر JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================================
+         القسم 2: قسم الشراء (Buy Section)
+         ========================================================================= -->
+    <section id="section-buy" class="page-section section-padding" style="display: none;">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="section-tag"><span>🏡</span> سوق التملك والاستثمار</div>
+                    <h1 class="section-title">عقارات حصرية للبيع</h1>
+                    <p class="section-desc">استعرض أرقى الفلل والأبراج والوحدات السكنية والتجارية المفحوصة والموثقة قانونياً.</p>
+                </div>
+            </div>
+
+            <!-- أشرطة التصفية المخصصة للشراء -->
+            <div style="background: #FFFFFF; padding: 20px; border-radius: 16px; border: 1px solid #E2E8F0; margin-bottom: 24px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+                <span style="font-weight: 800; color: #0B0F17;">تصفية سريعة:</span>
+                <select id="buyCityFilter" class="search-select" style="max-width: 180px; background: #F8FAFC; padding: 8px 12px; border-radius: 8px; border: 1px solid #E2E8F0;" onchange="App.renderProperties('buy', { city: this.value })">
+                    <option value="all">كافة المدن (100+ عقار)</option>
+                    <option value="الرياض">الرياض</option>
+                    <option value="جدة">جدة</option>
+                    <option value="الخبر">الخبر</option>
+                    <option value="الدمام">الدمام</option>
+                    <option value="مكة المكرمة">مكة المكرمة</option>
+                    <option value="المدينة المنورة">المدينة المنورة</option>
+                    <option value="أبها">أبها</option>
+                </select>
+                <select id="buyTypeFilter" class="search-select" style="max-width: 180px; background: #F8FAFC; padding: 8px 12px; border-radius: 8px; border: 1px solid #E2E8F0;" onchange="App.renderProperties('buy', { type: this.value })">
+                    <option value="all">كافة الأنواع</option>
+                    <option value="فيلا">فلل</option>
+                    <option value="بنتهاوس">بنتهاوس</option>
+                    <option value="تاون هاوس">تاون هاوس</option>
+                    <option value="شقة">شقق</option>
+                    <option value="شاليه">شاليهات</option>
+                    <option value="مبنى تجاري">مباني تجارية</option>
+                </select>
+                <button class="btn-card-action" onclick="App.renderProperties('buy')">إعادة تعيين الفلاتر</button>
+            </div>
+
+            <!-- عداد النتائج المتاحة -->
+            <div id="buyResultsCountBadge" style="font-size: 0.95rem; color: #475569; margin-bottom: 20px; background: #FFFFFF; padding: 12px 20px; border-radius: 12px; border: 1px solid #E2E8F0; display: inline-block;"></div>
+
+            <div class="properties-grid" id="buyPropertiesGridPage">
+                <!-- يتم التوليد عبر App.renderProperties -->
+            </div>
+
+            <!-- زر تحميل المزيد -->
+            <div id="buyLoadMoreContainer" style="text-align: center; margin-top: 40px;"></div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         القسم 3: قسم الإيجار (Rent Section)
+         ========================================================================= -->
+    <section id="section-rent" class="page-section section-padding" style="display: none;">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="section-tag"><span>🔑</span> إقامة مرنة وفندقية</div>
+                    <h1 class="section-title">عقارات ووحدات للإيجار</h1>
+                    <p class="section-desc">اختر مدة إقامتك المناسبة واستمتع بوحدات مؤثثة ومجهزة بأعلى معايير الرفاهية.</p>
+                </div>
+            </div>
+
+            <!-- أزرار فترات الإيجار المطلوبة بالطلب -->
+            <div style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
+                <button class="sector-pill-btn active" data-rent-period="all" onclick="App.filterRentByPeriod('all')">كافة الفترات (45+)</button>
+                <button class="sector-pill-btn" data-rent-period="يومي" onclick="App.filterRentByPeriod('يومي')">☀️ إيجار يومي</button>
+                <button class="sector-pill-btn" data-rent-period="أسبوعي" onclick="App.filterRentByPeriod('أسبوعي')">📅 إيجار أسبوعي</button>
+                <button class="sector-pill-btn" data-rent-period="شهري" onclick="App.filterRentByPeriod('شهري')">🏢 إيجار شهري</button>
+                <button class="sector-pill-btn" data-rent-period="سنوي" onclick="App.filterRentByPeriod('سنوي')">🏠 إيجار سنوي</button>
+            </div>
+
+            <!-- عداد النتائج المتاحة للإيجار -->
+            <div id="rentResultsCountBadge" style="font-size: 0.95rem; color: #475569; margin-bottom: 20px; background: #FFFFFF; padding: 12px 20px; border-radius: 12px; border: 1px solid #E2E8F0; display: inline-block;"></div>
+
+            <div class="properties-grid" id="rentPropertiesGridPage">
+                <!-- يتم التوليد عبر App.renderProperties -->
+            </div>
+
+            <!-- زر تحميل المزيد -->
+            <div id="rentLoadMoreContainer" style="text-align: center; margin-top: 40px;"></div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         القسم 4: البناء والتشييد الذكي (Construction Workflow)
+         ========================================================================= -->
+    <section id="section-construction" class="page-section section-padding" style="display: none;">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="section-tag"><span>🏗️</span> محرك التخطيط والتسعير</div>
+                    <h1 class="section-title">معالج حاسبة وطلب تكلفة البناء</h1>
+                    <p class="section-desc">حدد معالم مشروعك خطوة بخطوة واحصل على تكلفة تقديرية فورية مع طلب عرض سعر رسمي.</p>
+                </div>
+            </div>
+
+            <div class="construction-wizard-card">
+                <!-- الخطوة 1: نوع المشروع -->
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-bottom: 8px;">الخطوة 1: اختر نوع المشروع الإنشائي</h3>
+                <div class="selection-cards-grid" id="constructionTypesGrid">
+                    <!-- يتم توليد الأنواع عبر JS -->
+                </div>
+
+                <!-- الخطوة 2: مساحة الأرض -->
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-top: 30px; margin-bottom: 8px;">الخطوة 2: حدد مساحة الأرض (م²)</h3>
+                <div class="slider-group">
+                    <div class="slider-val-display">
+                        <span style="font-weight: 700; color: #64748B;">مساحة الأرض الإجمالية:</span>
+                        <span class="slider-big-num"><span id="calcAreaDisplay">450</span> <span>م²</span></span>
+                    </div>
+                    <input type="range" id="calcAreaSlider" class="custom-range" min="150" max="2500" step="25" value="450">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #94A3B8; margin-top: 8px;">
+                        <span>150 م²</span>
+                        <span>1000 م²</span>
+                        <span>2500 م²</span>
+                    </div>
+                </div>
+
+                <!-- الخطوة 3: عدد الأدوار -->
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-top: 24px; margin-bottom: 12px;">الخطوة 3: عدد الأدوار المطلوبة</h3>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="role-tab-btn" data-floors-btn="1" onclick="App.setConstructionFloors(1)">دور أرضي فقط (1)</button>
+                    <button class="role-tab-btn active" data-floors-btn="2" onclick="App.setConstructionFloors(2)">دورين (2)</button>
+                    <button class="role-tab-btn" data-floors-btn="3" onclick="App.setConstructionFloors(3)">دورين وملحق (3)</button>
+                    <button class="role-tab-btn" data-floors-btn="4" onclick="App.setConstructionFloors(4)">4 أدوار متكررة</button>
+                </div>
+
+                <!-- الخطوة 4: مستوى التشطيب -->
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-top: 32px; margin-bottom: 8px;">الخطوة 4: حدد مستوى التشطيب والمواصفات</h3>
+                <div class="finishing-tiers-grid" id="finishingTiersGrid">
+                    <!-- يتم توليد المستويات عبر JS -->
+                </div>
+
+                <!-- الخطوة 5: حزم الخدمات المطلوبة -->
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-top: 32px; margin-bottom: 8px;">الخطوة 5: حزم الخدمات الهندسية والمقاولات</h3>
+                <div class="services-checkbox-list" id="constructionServicesGrid">
+                    <!-- يتم توليد الخدمات عبر JS -->
+                </div>
+
+                <!-- ملخص المشروع وعرض السعر التقديري الفوري -->
+                <div class="construction-summary-box">
+                    <div>
+                        <h4 style="color: #C5A059; font-size: 1.3rem; margin-bottom: 14px;">ملخص دراسة المشروع والمساحات</h4>
+                        <div class="summary-details-grid">
+                            <div class="summary-detail-item">
+                                <span class="summary-detail-label">نوع المشروع</span>
+                                <span id="summaryProjectType" class="summary-detail-val">فيلا سكنية مودرن</span>
+                            </div>
+                            <div class="summary-detail-item">
+                                <span class="summary-detail-label">المساحة المبنية التقديرية</span>
+                                <span id="summaryBuiltArea" class="summary-detail-val">585 م²</span>
+                            </div>
+                            <div class="summary-detail-item">
+                                <span class="summary-detail-label">مستوى التشطيب</span>
+                                <span id="summaryTier" class="summary-detail-val">VIP سوبر ديلوكس</span>
+                            </div>
+                            <div class="summary-detail-item">
+                                <span class="summary-detail-label">الإشراف الهندسي الميداني</span>
+                                <span class="summary-detail-val" style="color: #10B981;">شامل ومعتمد ✓</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="summary-total-col">
+                        <div class="total-quote-label">التكلفة التقديرية الشاملة:</div>
+                        <div id="summaryTotalCost" class="total-quote-price">1,550,000 ريال</div>
+                        <button class="btn-submit-quote" onclick="App.submitConstructionRequest()">
+                            <span>📩</span>
+                            <span>إرسال طلب عرض سعر رسمي</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         القسم 5: معالج الترميم والتجديد (Renovation Section)
+         ========================================================================= -->
+    <section id="section-renovation" class="page-section section-padding" style="display: none;">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="section-tag"><span>🔨</span> التجديد وإعادة التأهيل</div>
+                    <h1 class="section-title">معالج طلبات الترميم والتحديث المعماري</h1>
+                    <p class="section-desc">جدد منزلك أو واجهتك بدقة هندسية، ارفع الصور واحصل على دراسة وتكلفة تقديرية مباشرة.</p>
+                </div>
+            </div>
+
+            <div class="construction-wizard-card">
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-bottom: 12px;">ما الذي ترغب في ترميمه أو تجديده؟</h3>
+                <div class="selection-cards-grid" id="renoScopesGrid">
+                    <!-- يتم توليده عبر JS -->
+                </div>
+
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-top: 30px; margin-bottom: 12px;">تقييم حالة العقار الراهنة</h3>
+                <div class="finishing-tiers-grid" id="renoConditionsGrid">
+                    <!-- يتم توليده عبر JS -->
+                </div>
+
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-top: 30px; margin-bottom: 8px;">رفع صور العقار الراهنة للمعاينة الفنية</h3>
+                <p style="color: #64748B; font-size: 0.9rem;">يمكنك رفع صور المكان الحالي مباشرة وسيقوم النظام باستعراضها محلياً لدراستها من قبل المهندس.</p>
+
+                <div class="dropzone-upload-area" onclick="document.getElementById('renoPhotoInput').click()">
+                    <div class="dropzone-icon">📷</div>
+                    <div class="dropzone-text">اضغط هنا لرفع صور العقار قبل الترميم</div>
+                    <div class="dropzone-sub">يدعم صور JPG, PNG (تُعرض محلياً فوراً في الصفحة)</div>
+                    <input type="file" id="renoPhotoInput" style="display: none;" multiple accept="image/*" onchange="App.handleRenoPhotoUpload(event)">
+                </div>
+                <div id="renoPhotosPreview" class="uploaded-previews-grid"></div>
+
+                <div style="margin-top: 24px;">
+                    <label style="display: block; font-weight: 700; color: #0B0F17; margin-bottom: 8px;">ملاحظات وتفاصيل إضافية عن رغباتك:</label>
+                    <textarea id="renoNotesInput" style="width: 100%; height: 100px; padding: 14px; border-radius: 10px; border: 1px solid #CBD5E1; font-family: inherit; font-size: 0.95rem;" placeholder="مثال: نرغب في استبدال أرضيات الصالة ببورسلان كبير الحجم، وتحديث إضاءة الجبس مع تمديد سباكة معلقة..."></textarea>
+                </div>
+
+                <div class="construction-summary-box" style="margin-top: 30px;">
+                    <div>
+                        <h4 style="color: #C5A059; font-size: 1.3rem; margin-bottom: 8px;">التقدير المالي الأولي لأعمال الترميم</h4>
+                        <p style="color: #CBD5E1; font-size: 0.92rem;">يتضمن تفكيك العناصر القديمة، التأسيس، المواد الجديدة، وأجور اليد العاملة الهندسية المتخصصة.</p>
+                    </div>
+                    <div class="summary-total-col">
+                        <div class="total-quote-label">التكلفة المبدئية المتوقعة:</div>
+                        <div id="renoEstimatedCostDisplay" class="total-quote-price">150,000 ريال</div>
+                        <button class="btn-submit-quote" onclick="App.submitRenovationRequest()">
+                            <span>🔨</span>
+                            <span>إنشاء طلب ترميم رسمي</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         القسم 6: الخدمات الهندسية الشاملة (Engineering Services)
+         ========================================================================= -->
+    <section id="section-engineering" class="page-section section-padding" style="display: none;">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="section-tag"><span>📐</span> استشارات واعتمادات رسمية</div>
+                    <h1 class="section-title">الخدمات الهندسية التخصصية</h1>
+                    <p class="section-desc">نخبة من المكاتب والمهندسين الاستشاريين المعتمدين لخدمتكم في التصميم والإشراف والفحص.</p>
+                </div>
+            </div>
+
+            <div class="properties-grid" id="engineeringServicesGrid">
+                <!-- يتم توليد بطاقات الخدمات الهندسية الـ 8 عبر JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         القسم 7: لوحة تحكم المستخدم (User Dashboard - حسابي)
+         ========================================================================= -->
+    <section id="section-dashboard" class="page-section section-padding" style="display: none; background: #F8FAFC;">
+        <div class="container">
+            <div class="section-head" style="margin-bottom: 20px;">
+                <div>
+                    <div class="section-tag"><span>👤</span> بوابة العميل والمستثمر</div>
+                    <h1 class="section-title">لوحة التحكم الشخصية</h1>
+                    <p class="section-desc">تابع عقاراتك المنشورة، مشاريعك وطلبات البناء، الحجوزات، والرسائل المباشرة.</p>
+                </div>
+            </div>
+
+            <div class="dashboard-layout">
+                <!-- الشريط الجانبي للوحة التحكم -->
+                <aside class="dashboard-sidebar">
+                    <div class="user-profile-summary">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" class="user-avatar-large dyn-user-avatar" alt="User">
+                        <div class="user-name dyn-user-name">سلطان الراشد</div>
+                        <div class="user-role-tag dyn-user-role">مستثمر ومالك عقار</div>
+                    </div>
+
+                    <ul class="dashboard-nav-list">
+                        <li>
+                            <button class="dash-nav-btn active" data-dash-tab="overview">
+                                <div class="dash-btn-icon-group"><span>📊</span><span>نظرة عامة</span></div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dash-nav-btn" data-dash-tab="my_properties">
+                                <div class="dash-btn-icon-group"><span>🏠</span><span>عقاراتي المعروضة</span></div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dash-nav-btn" data-dash-tab="favorites">
+                                <div class="dash-btn-icon-group"><span>❤️</span><span>المفضلة</span></div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dash-nav-btn" data-dash-tab="my_requests">
+                                <div class="dash-btn-icon-group"><span>🏗️</span><span>طلباتي ومشاريعي</span></div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dash-nav-btn" data-dash-tab="my_bookings">
+                                <div class="dash-btn-icon-group"><span>🔑</span><span>حجوزات الإيجار</span></div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dash-nav-btn" data-dash-tab="messages">
+                                <div class="dash-btn-icon-group"><span>💬</span><span>المحادثات والرسائل</span></div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dash-nav-btn" data-dash-tab="notifications">
+                                <div class="dash-btn-icon-group"><span>🔔</span><span>مركز الإشعارات</span></div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dash-nav-btn" data-dash-tab="profile">
+                                <div class="dash-btn-icon-group"><span>⚙️</span><span>الملف الشخصي</span></div>
+                            </button>
+                        </li>
+                    </ul>
+                </aside>
+
+                <!-- المساحة التفاعلية لعرض محتوى التبويب المختار -->
+                <div class="dashboard-content-panel">
+                    <!-- تبويب: نظرة عامة -->
+                    <div id="dash-panel-overview" class="dash-tab-content">
+                        <h2 style="font-size: 1.4rem; color: #0B0F17; margin-bottom: 20px;">مرحباً بك مجدداً، <span class="dyn-user-name">سلطان</span> 👋</h2>
+                        <div class="kpi-cards-grid" id="dashOverviewKpis"></div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0 16px;">
+                            <h3 style="font-size: 1.15rem; color: #0B0F17;">آخر الطلبات والمشاريع النشطة</h3>
+                            <button class="btn-card-action" onclick="App.switchDashTab('my_requests')">عرض الكل ←</button>
+                        </div>
+                        <div id="dashRecentRequestsList"></div>
+                    </div>
+
+                    <!-- تبويب: عقاراتي -->
+                    <div id="dash-panel-my_properties" class="dash-tab-content" style="display: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h2 style="font-size: 1.3rem; color: #0B0F17;">العقارات المنشورة بواسطتي</h2>
+                            <button class="btn-gold" onclick="App.openAddPropertyModal()">+ إضافة عقار جديد للبيع أو الإيجار</button>
+                        </div>
+                        <div id="myPropertiesList"></div>
+                    </div>
+
+                    <!-- تبويب: المفضلة -->
+                    <div id="dash-panel-favorites" class="dash-tab-content" style="display: none;">
+                        <h2 style="font-size: 1.3rem; color: #0B0F17; margin-bottom: 20px;">العقارات المحفوظة في المفضلة</h2>
+                        <div class="properties-grid" id="myFavoritesGrid"></div>
+                    </div>
+
+                    <!-- تبويب: طلباتي ومشاريعي -->
+                    <div id="dash-panel-my_requests" class="dash-tab-content" style="display: none;">
+                        <h2 style="font-size: 1.3rem; color: #0B0F17; margin-bottom: 20px;">متابعة حالة الطلبات والمشاريع الهندسية</h2>
+                        <div id="myRequestsList"></div>
+                    </div>
+
+                    <!-- تبويب: حجوزات الإيجار -->
+                    <div id="dash-panel-my_bookings" class="dash-tab-content" style="display: none;">
+                        <h2 style="font-size: 1.3rem; color: #0B0F17; margin-bottom: 20px;">حجوزات الإيجار المؤكدة</h2>
+                        <div id="myBookingsList"></div>
+                    </div>
+
+                    <!-- تبويب: المحادثات والرسائل -->
+                    <div id="dash-panel-messages" class="dash-tab-content" style="display: none;">
+                        <h2 style="font-size: 1.3rem; color: #0B0F17; margin-bottom: 18px;">المحادثات المباشرة مع المهندسين والوسطاء</h2>
+                        <div class="chat-window-layout">
+                            <div class="chat-threads-sidebar" id="chatThreadsList"></div>
+                            <div class="chat-messages-pane">
+                                <div class="chat-pane-header">
+                                    <img id="activeChatContactAvatar" src="" class="broker-thumb" alt="Avatar">
+                                    <div>
+                                        <div id="activeChatContactName" style="font-weight: 800; color: #0B0F17;"></div>
+                                        <div id="activeChatContactRole" style="font-size: 0.78rem; color: #64748B;"></div>
+                                    </div>
+                                </div>
+                                <div class="chat-messages-body" id="chatMessagesBody"></div>
+                                <div class="chat-input-bar">
+                                    <input type="text" id="chatMessageInput" class="chat-text-input" placeholder="اكتب رسالتك أو استفسارك هنا..." onkeypress="if(event.key==='Enter') App.sendChatMessage()">
+                                    <button class="chat-send-btn" onclick="App.sendChatMessage()">➤</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- تبويب: الإشعارات -->
+                    <div id="dash-panel-notifications" class="dash-tab-content" style="display: none;">
+                        <div id="myNotificationsList"></div>
+                    </div>
+
+                    <!-- تبويب: الملف الشخصي -->
+                    <div id="dash-panel-profile" class="dash-tab-content" style="display: none;">
+                        <h2 style="font-size: 1.3rem; color: #0B0F17; margin-bottom: 20px;">إعدادات الملف الشخصي والبيانات</h2>
+                        <div style="max-width: 600px; display: flex; flex-direction: column; gap: 16px;">
+                            <div>
+                                <label style="display: block; font-weight: 700; margin-bottom: 6px;">الاسم الكامل:</label>
+                                <input type="text" id="profileNameInput" class="search-input" style="width: 100%; padding: 10px 14px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 700; margin-bottom: 6px;">رقم الجوال:</label>
+                                <input type="text" id="profilePhoneInput" class="search-input" style="width: 100%; padding: 10px 14px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 700; margin-bottom: 6px;">البريد الإلكتروني:</label>
+                                <input type="email" id="profileEmailInput" class="search-input" style="width: 100%; padding: 10px 14px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 700; margin-bottom: 6px;">المدينة:</label>
+                                <input type="text" id="profileCityInput" class="search-input" style="width: 100%; padding: 10px 14px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                            </div>
+                            <button class="btn-gold" style="align-self: flex-start; margin-top: 10px;" onclick="App.saveUserProfile()">حفظ التعديلات</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         القسم 8: لوحة إدارة المنصة (Admin Dashboard)
+         ========================================================================= -->
+    <section id="section-admin" class="page-section section-padding" style="display: none; background: #F1F5F9;">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="section-tag" style="color: #2563EB;"><span>⚙️</span> نظام الإشراف والتحكم المركزي</div>
+                    <h1 class="section-title">لوحة إدارة منصة صروح (Admin Dashboard)</h1>
+                    <p class="section-desc">إدارة وتحديث حالات طلبات البناء والترميم والخدمات الهندسية ومتابعة العقارات النشطة.</p>
+                </div>
+                <button class="btn-admin-reset" onclick="App.resetAllPlatformData()">إعادة ضبط بيانات النظام المبدئية</button>
+            </div>
+
+            <!-- مؤشرات الإدارة -->
+            <div class="kpi-cards-grid" id="adminKpisGrid"></div>
+
+            <!-- إدارة طلبات العملاء مع إمكانية تحديث الحالة اللحظي -->
+            <div class="dashboard-content-panel" style="margin-bottom: 30px;">
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-bottom: 16px;">
+                    إدارة الطلبات والمشاريع (تغيير الحالة ينعكس فوراً في حساب المستخدم)
+                </h3>
+                <div class="data-table-container">
+                    <table class="custom-data-table">
+                        <thead>
+                            <tr>
+                                <th>رقم الطلب</th>
+                                <th>عنوان الطلب</th>
+                                <th>النوع</th>
+                                <th>الميزانية</th>
+                                <th>تحديث الحالة الإدارية</th>
+                                <th>تاريخ الطلب</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminRequestsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- إدارة العقارات المنشورة -->
+            <div class="dashboard-content-panel">
+                <h3 style="font-size: 1.25rem; color: #0B0F17; margin-bottom: 16px;">إدارة العقارات المعروضة بالمنصة</h3>
+                <div class="data-table-container">
+                    <table class="custom-data-table">
+                        <thead>
+                            <tr>
+                                <th>العقار</th>
+                                <th>القسم</th>
+                                <th>السعر</th>
+                                <th>المدينة</th>
+                                <th>إجراء الإدارة</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminPropertiesTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         التذييل الفاخر (Footer)
+         ========================================================================= -->
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>صـُـرُوح <span>SOROUH</span></h3>
+                    <p>
+                        المنصة السعودية الرائدة التي تجمع بين العقارات الفاخرة والاستشارات الهندسية والمقاولات الحديثة تحت سقف واحد وبأعلى معايير الحوكمة والجودة.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>القطاعات العقارية</h4>
+                    <ul class="footer-links">
+                        <li><a href="#buy" onclick="App.navigate('buy')">شراء عقارات فاخرة</a></li>
+                        <li><a href="#rent" onclick="App.navigate('rent')">إيجار يومي وشهري وسنوي</a></li>
+                        <li><a href="#sell" onclick="App.openAddPropertyModal()">عرض عقار للبيع</a></li>
+                        <li><a href="#construction" onclick="App.navigate('construction')">حاسبة تكلفة البناء</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>الخدمات الهندسية</h4>
+                    <ul class="footer-links">
+                        <li><a href="#engineering" onclick="App.navigate('engineering')">التصميم المعماري 3D</a></li>
+                        <li><a href="#engineering" onclick="App.navigate('engineering')">التصميم الإنشائي وحساب الأحمال</a></li>
+                        <li><a href="#engineering" onclick="App.navigate('engineering')">الإشراف الهندسي الموقعي</a></li>
+                        <li><a href="#renovation" onclick="App.navigate('renovation')">ترميم وتأهيل المباني</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>الضمان والاعتمادات</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">رخصة فال للوساطة العقارية</a></li>
+                        <li><a href="#">اعتماد الهيئة السعودية للمهندسين</a></li>
+                        <li><a href="#">مطابقة كود البناء السعودي (SBC)</a></li>
+                        <li><a href="#">تقييم معتمد من هيئة (تقييم)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>جميع الحقوق محفوظة © 2026 لمنصة صروح (Sorouh Real Estate & Engineering Platform)</div>
+                <div>نموذج تفاعلي متكامل Prototype يعمل مباشرة عبر المتصفح Localhost & File Protocol</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================================
+         النوافذ المنبثقة التفاعلية (Modals)
+         ========================================================================= -->
+
+    <!-- 1. نافذة تفاصيل العقار الشاملة -->
+    <div id="propertyDetailModal" class="modal-overlay">
+        <div class="modal-container lg">
+            <div class="modal-header">
+                <div class="modal-title">تفاصيل العقار والمواصفات الكاملة</div>
+                <button class="modal-close-btn" onclick="App.closeModal('propertyDetailModal')">✕</button>
+            </div>
+            <div class="modal-body" id="propModalContent">
+                <!-- يتم تعبئة المحتوى ديناميكياً عبر JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. نافذة طلب معاينة ميدانية -->
+    <div id="scheduleViewingModal" class="modal-overlay">
+        <div class="modal-container sm">
+            <div class="modal-header">
+                <div class="modal-title">طلب موعد معاينة ميدانية</div>
+                <button class="modal-close-btn" onclick="App.closeModal('scheduleViewingModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <p id="viewingModalPropTitle" style="font-weight: 800; color: #0B0F17; margin-bottom: 16px;"></p>
+                <input type="hidden" id="viewingModalPropId">
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">تاريخ الزيارة المقترح:</label>
+                        <input type="date" id="viewingDate" class="search-input" value="2026-09-10" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">الوقت المفضل:</label>
+                        <select id="viewingTime" class="search-select" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #FFFFFF;">
+                            <option value="10:00 صباحاً">الفترة الصباحية (10:00 ص - 12:00 م)</option>
+                            <option value="05:00 عصراً" selected>فترة العصر (04:30 م - 06:30 م)</option>
+                            <option value="08:00 مساءً">الفترة المسائية (07:30 م - 09:30 م)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-card-action" onclick="App.closeModal('scheduleViewingModal')">إلغاء</button>
+                <button class="btn-gold" onclick="App.submitScheduleViewing()">تأكيد وإرسال طلب المعاينة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. نافذة حجز الإيجار الفوري -->
+    <div id="rentBookingModal" class="modal-overlay">
+        <div class="modal-container sm">
+            <div class="modal-header">
+                <div class="modal-title">حجز وحدة إيجار فوري</div>
+                <button class="modal-close-btn" onclick="App.closeModal('rentBookingModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <p id="bookingModalPropTitle" style="font-weight: 800; color: #0B0F17; margin-bottom: 8px;"></p>
+                <div id="bookingModalPriceDisplay" style="font-size: 1.3rem; font-weight: 900; color: #C5A059; margin-bottom: 16px;"></div>
+                <input type="hidden" id="bookingModalPropId">
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">تاريخ بدء الإقامة:</label>
+                        <input type="date" id="bookingStartDate" class="search-input" value="2026-09-15" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">المدة المطلوبة:</label>
+                        <select id="bookingDuration" class="search-select" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #FFFFFF;">
+                            <option value="1">فترة واحدة (1)</option>
+                            <option value="2">فترتين (2)</option>
+                            <option value="3">3 فترات</option>
+                            <option value="6">6 فترات</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-card-action" onclick="App.closeModal('rentBookingModal')">إلغاء</button>
+                <button class="btn-gold" onclick="App.submitRentBooking()">تأكيد الحجز الفوري</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. معالج إدراج عقار جديد للبيع أو الإيجار (Sell / List Property) -->
+    <div id="addPropertyModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title">إدراج عقار جديد في منصة صروح</div>
+                <button class="modal-close-btn" onclick="App.closeModal('addPropertyModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div style="grid-column: 1 / -1;">
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">عنوان الإعلان:</label>
+                        <input type="text" id="sellPropTitle" class="search-input" placeholder="مثال: فيلا مودرن فاخرة مع حديقة ومسبح" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">الغرض:</label>
+                        <select id="sellPropCategory" class="search-select" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #FFFFFF;">
+                            <option value="buy">للبيع</option>
+                            <option value="rent">للإيجار</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">فترة الإيجار (إن كان للإيجار):</label>
+                        <select id="sellPropRentPeriod" class="search-select" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #FFFFFF;">
+                            <option value="شهري">شهري</option>
+                            <option value="سنوي">سنوي</option>
+                            <option value="يومي">يومي</option>
+                            <option value="أسبوعي">أسبوعي</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">نوع العقار:</label>
+                        <select id="sellPropType" class="search-select" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #FFFFFF;">
+                            <option value="فيلا">فيلا</option>
+                            <option value="شقة">شقة</option>
+                            <option value="بنتهاوس">بنتهاوس</option>
+                            <option value="تاون هاوس">تاون هاوس</option>
+                            <option value="شاليه">شاليه</option>
+                            <option value="مبنى تجاري">مبنى تجاري</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">المدينة:</label>
+                        <select id="sellPropCity" class="search-select" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #FFFFFF;">
+                            <option value="الرياض">الرياض</option>
+                            <option value="جدة">جدة</option>
+                            <option value="الخبر">الخبر</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">الحي:</label>
+                        <input type="text" id="sellPropDistrict" class="search-input" value="حي النرجس" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">السعر المطلوب (ريال):</label>
+                        <input type="number" id="sellPropPrice" class="search-input" value="2500000" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">المساحة (م²):</label>
+                        <input type="number" id="sellPropArea" class="search-input" value="400" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">عدد الغرف:</label>
+                        <input type="number" id="sellPropRooms" class="search-input" value="5" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">عدد الحمامات:</label>
+                        <input type="number" id="sellPropBaths" class="search-input" value="5" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px; background: #F8FAFC;">
+                    </div>
+
+                    <div style="grid-column: 1 / -1;">
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">وصف العقار والمميزات:</label>
+                        <textarea id="sellPropDesc" style="width: 100%; height: 80px; padding: 10px; border-radius: 8px; border: 1px solid #CBD5E1; font-family: inherit;" placeholder="أضف تفاصيل وتشطيبات العقار والمواقف والضمانات..."></textarea>
+                    </div>
+
+                    <!-- رفع الصور محلياً مع معاينة فورية -->
+                    <div style="grid-column: 1 / -1;">
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">صور العقار (محاكاة رفع حقيقي عبر المتصفح):</label>
+                        <div class="dropzone-upload-area" onclick="document.getElementById('sellPhotoInput').click()" style="padding: 20px;">
+                            <div style="font-size: 1.8rem; margin-bottom: 6px;">📷</div>
+                            <div style="font-weight: 700;">اضغط هنا لاختيار صور من جهازك</div>
+                            <div style="font-size: 0.8rem; color: #94A3B8;">ستظهر وتُحفظ فوراً في المتصفح LocalStorage</div>
+                            <input type="file" id="sellPhotoInput" style="display: none;" multiple accept="image/*" onchange="App.handleSellPhotoUpload(event)">
+                        </div>
+                        <div id="sellPhotosPreview" class="uploaded-previews-grid"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-card-action" onclick="App.closeModal('addPropertyModal')">إلغاء</button>
+                <button class="btn-gold" onclick="App.submitNewProperty()">نشر العقار فوراً</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. نافذة طلب خدمة هندسية -->
+    <div id="engineeringModal" class="modal-overlay">
+        <div class="modal-container sm">
+            <div class="modal-header">
+                <div class="modal-title">طلب استشارة أو خدمة هندسية</div>
+                <button class="modal-close-btn" onclick="App.closeModal('engineeringModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <h4 id="engModalServiceTitle" style="color: #2563EB; font-size: 1.15rem; margin-bottom: 16px;"></h4>
+                <input type="hidden" id="engModalServiceId">
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">المدينة / الموقع:</label>
+                        <input type="text" id="engReqCity" class="search-input" value="الرياض" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">مساحة العقار التقريبية (م²):</label>
+                        <input type="number" id="engReqArea" class="search-input" value="450" style="width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 700; margin-bottom: 6px;">تفاصيل وملاحظات إضافية:</label>
+                        <textarea id="engReqNotes" style="width: 100%; height: 80px; padding: 10px; border-radius: 8px; border: 1px solid #CBD5E1; font-family: inherit;" placeholder="أخبرنا بما تريده بالتحديد، موعد الزيارة أو تسليم المخططات..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-card-action" onclick="App.closeModal('engineeringModal')">إلغاء</button>
+                <button class="btn-gold" onclick="App.submitEngineeringRequest()">إرسال طلب الخدمة الهندسية</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- حاوية رسائل التنبيه العائمة (Toasts) -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- ملفات الجافاسكريبت المضمنة لضمان التشغيل بالنقر المزدوج file:/// دون أي CORS -->
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

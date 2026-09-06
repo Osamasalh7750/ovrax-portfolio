@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة شفاء للجراحين | حجز نخبة كبار الجراحين الاستشاريين (20 عملية و 60 جراح متخصص)</title>
+  
+  <!-- SEO & Description -->
+  <meta name="description" content="المنصة الطبية الأولى لحجز كبار الجراحين الاستشاريين لـ 20 نوع من العمليات الجراحية الدقيقة. 60 جراحاً عالمياً مع توثيق شامل للشهادات والدراسات ونسب النجاح.">
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم تصميم وتطوير هذه المنصة بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D9%86%D8%B5%D8%A9%20%D8%B7%D8%A8%D9%8A%D8%A9%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%D8%A9%20%D9%84%D9%85%D9%86%D8%B5%D8%A9%20%D8%B4%D9%81%D8%A7%D8%A1" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب منصة مماثلة
+    </a>
+  </div>
+</div>
+  <!-- ========================================================================
+       Top Navigation Bar
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" onclick="navigateTo('home')">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            <path d="M12 5v14"/>
+            <path d="M5 12h14"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">شفاء للجراحين</span>
+          <span class="brand-subtitle">ShifaSurgeons Platform</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link active" data-view="home" onclick="navigateTo('home')">الرئيسية</a>
+        <a href="#surgeries" class="nav-link" data-view="surgeries" onclick="navigateTo('surgeries')">العمليات الجراحية (20)</a>
+        <a href="#surgeons" class="nav-link" data-view="surgeons" onclick="navigateTo('surgeons')">كبار الجراحين (60)</a>
+        <a href="#patient-guide" class="nav-link" data-view="patient-guide" onclick="navigateTo('patient-guide')">دليل المريض</a>
+        <a href="#about" class="nav-link" data-view="about" onclick="navigateTo('about')">عن المنصة</a>
+        <a href="#my-bookings" class="nav-link" data-view="my-bookings" onclick="navigateTo('my-bookings')">
+          حجوزاتي
+          <span class="nav-badge" id="bookingsCountBadge" style="display: none;">0</span>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Search Trigger Button -->
+        <button type="button" class="search-trigger-btn" id="headerSearchBtn" title="بحث سريع في العمليات والجراحين">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>بحث سريع...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <!-- Dark/Light Theme Toggle Button -->
+        <button type="button" class="btn-icon theme-toggle-btn" id="themeToggleBtn" title="تبديل المظهر">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <!-- CTA Fast Booking Button -->
+        <button type="button" class="btn-primary btn-sm" onclick="startBooking()">
+          احجز استشارة
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN VIEWS CONTAINER (Single-Page App)
+       ======================================================================== -->
+  <main>
+
+    <!-- VIEW 1: HOME PAGE -->
+    <div id="view-home" class="page-view active">
+      
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container hero-content">
+          <div class="hero-pill">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            المنصة الأولى المعتمدة لحجز كبار الجراحين الاستشاريين في الشرق الأوسط
+          </div>
+          
+          <h1 class="hero-title">
+            احجز مع نخبة كبار الجراحين الاستشاريين لـ <span class="text-gradient">20 نوع من العمليات الجراحية الدقيقة</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            منظومة جراحية موثقة تضم 60 جراحاً استشارياً عالمياً من حملة الزمالات والبورد (الأمريكي، البريطاني، الألماني، والكندي)، مع توثيق معتمد لنسب النجاح والأبحاث وسجل العمليات.
+          </p>
+
+          <!-- Hero Search Box -->
+          <div class="hero-search-box">
+            <div class="search-input-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="heroSearchInput" class="hero-search-input" placeholder="ابحث باسم الجراح، المستشفى، أو نوع الإجراء الجراحي...">
+            </div>
+
+            <div class="search-select-wrap">
+              <select id="heroCategorySelect" class="hero-category-select">
+                <!-- Populated dynamically via JS -->
+              </select>
+            </div>
+
+            <button type="button" class="btn-primary" id="heroSearchBtn">
+              بحث فوري
+            </button>
+          </div>
+
+          <!-- Hero Stats Bar -->
+          <div class="hero-stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon emerald">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value">20</span>
+                <span class="stat-label">تخصصاً جراحياً دقيقاً</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value">60</span>
+                <span class="stat-label">جراحاً استشارياً معتمداً</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon amber">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value">99.1%</span>
+                <span class="stat-label">متوسط نسب النجاح والأمان</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon rose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value">+140,000</span>
+                <span class="stat-label">جراحة ناجحة موثقة</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Featured Surgeries Section Preview -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-tag">التخصصات الجراحية المتقدمة</span>
+              <h2 class="section-title">دليل العمليات الجراحية التخصصية (20 نوعاً)</h2>
+              <p class="section-desc">نغطي كافة الجراحات الكبرى والدقيقة، ولكل عملية تم اختيار 3 من أمهر كبار الجراحين الاستشاريين بعناية فائقة.</p>
+            </div>
+            <button class="btn-primary" onclick="navigateTo('surgeries')">
+              استعراض كافة العمليات (20) &larr;
+            </button>
+          </div>
+
+          <!-- Filter Tabs for Surgeries -->
+          <div class="filter-tabs-wrapper" id="homeFilterTabs">
+            <button class="filter-tab-btn active" onclick="filterCategory('all', this)">كافة العمليات (20)</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات كبرى وحرجة', this)">جراحات كبرى وحرجة</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات العظام والمفاصل', this)">العظام والمفاصل والعمود الفقري</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات دقيقة ومناظير', this)">جراحات دقيقة ومناظير</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات الجهاز الهضمي', this)">الجهاز الهضمي والسمنة</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات تخصصية', this)">جراحات تخصصية</button>
+          </div>
+
+          <!-- Surgeries Cards Container -->
+          <div class="surgeries-grid" id="surgeriesGrid">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="section" style="background: var(--bg-surface-alt); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+          <div class="section-header" style="text-align: center; justify-content: center; margin-bottom: 3rem;">
+            <div class="section-title-wrap">
+              <span class="section-tag">سهولة وموثوقية مطلقة</span>
+              <h2 class="section-title">كيف تعمل منصة شفاء في 4 خطوات بسيطة؟</h2>
+              <p class="section-desc">من اختيار الجراحة وحتى استلام تذكرة الحجز الطبية الرقمية المعتمدة</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+            <div style="background: var(--bg-card); padding: 1.75rem; border-radius: var(--radius-xl); border: 1px solid var(--border-color); text-align: center;">
+              <div style="width: 50px; height: 50px; border-radius: var(--radius-full); background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; margin: 0 auto 1.25rem;">1</div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">اختر نوع الجراحة</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary);">تصفح الـ 20 تخصصاً جراحياً واطلع على مدة التعافي ونسب النجاح والتحضيرات.</p>
+            </div>
+
+            <div style="background: var(--bg-card); padding: 1.75rem; border-radius: var(--radius-xl); border: 1px solid var(--border-color); text-align: center;">
+              <div style="width: 50px; height: 50px; border-radius: var(--radius-full); background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; margin: 0 auto 1.25rem;">2</div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">قارن كبار الجراحين</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary);">راجع الشهادات والدراسات والزمالات وأبرز الإنجازات والعمليات المنفذة لكل جراح.</p>
+            </div>
+
+            <div style="background: var(--bg-card); padding: 1.75rem; border-radius: var(--radius-xl); border: 1px solid var(--border-color); text-align: center;">
+              <div style="width: 50px; height: 50px; border-radius: var(--radius-full); background: rgba(245, 158, 11, 0.12); color: var(--amber); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; margin: 0 auto 1.25rem;">3</div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">حدد الموعد المناسب</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary);">اختر نوع الاستشارة (عيادة، فيديو، أو تقييم ما قبل العملية) والوقت المتاح.</p>
+            </div>
+
+            <div style="background: var(--bg-card); padding: 1.75rem; border-radius: var(--radius-xl); border: 1px solid var(--border-color); text-align: center;">
+              <div style="width: 50px; height: 50px; border-radius: var(--radius-full); background: rgba(16, 185, 129, 0.12); color: var(--emerald); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; margin: 0 auto 1.25rem;">4</div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">استلم التذكرة الطبية</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary);">تأكيد فوري مع إصدار تذكرة طبية رقمية تحمل باركود الحجز وإمكانية الطباعة والحفظ.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hospital Network Accreditation -->
+      <section class="section">
+        <div class="container" style="text-align: center;">
+          <span class="section-tag">شراكات طبية رفيعة المستوى</span>
+          <h2 class="section-title" style="margin-bottom: 1.5rem;">المستشفيات والمراكز الطبية المعتمدة</h2>
+          <p class="section-desc" style="max-width: 720px; margin: 0 auto 2.5rem;">
+            يمارس جراحونا الاستشاريون عملياتهم في كبرى الصروح الطبية الحائزة على شهادات الاعتماد الدولي JCI والاعتماد الوطني CBAHI.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+            <div style="padding: 1rem 1.75rem; background: var(--bg-surface-alt); border-radius: var(--radius-lg); font-weight: 800; color: var(--text-secondary); border: 1px solid var(--border-color);">
+              🏥 مستشفى الملك فيصل التخصصي
+            </div>
+            <div style="padding: 1rem 1.75rem; background: var(--bg-surface-alt); border-radius: var(--radius-lg); font-weight: 800; color: var(--text-secondary); border: 1px solid var(--border-color);">
+              🏥 كليفلاند كلينك أبوظبي
+            </div>
+            <div style="padding: 1rem 1.75rem; background: var(--bg-surface-alt); border-radius: var(--radius-lg); font-weight: 800; color: var(--text-secondary); border: 1px solid var(--border-color);">
+              🏥 مدينة الملك سعود الطبية
+            </div>
+            <div style="padding: 1rem 1.75rem; background: var(--bg-surface-alt); border-radius: var(--radius-lg); font-weight: 800; color: var(--text-secondary); border: 1px solid var(--border-color);">
+              🏥 مستشفى مورفيلدز للعيون
+            </div>
+            <div style="padding: 1rem 1.75rem; background: var(--bg-surface-alt); border-radius: var(--radius-lg); font-weight: 800; color: var(--text-secondary); border: 1px solid var(--border-color);">
+              🏥 مجموعة د. سليمان الحبيب الطبية
+            </div>
+            <div style="padding: 1rem 1.75rem; background: var(--bg-surface-alt); border-radius: var(--radius-lg); font-weight: 800; color: var(--text-secondary); border: 1px solid var(--border-color);">
+              🏥 معهد كينغز كوليدج لندن
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- VIEW 2: SURGERIES CATALOG (20 Types) -->
+    <div id="view-surgeries" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-tag">الدليل الجراحي الموحد</span>
+              <h2 class="section-title">دليل العمليات الجراحية الـ 20</h2>
+              <p class="section-desc">اختر العملية الجراحية للتعرف على تفاصيل الإجراء ومدته ونسبة نجاحه، والانتقال المباشر للجراحين الثلاثة المتخصصين في هذا الإجراء.</p>
+            </div>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="filter-tabs-wrapper" id="surgeriesFilterTabs">
+            <button class="filter-tab-btn active" onclick="filterCategory('all', this)">جميع العمليات الـ 20</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات كبرى وحرجة', this)">جراحات كبرى وحرجة (7)</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات العظام والمفاصل', this)">العظام والعمود الفقري (2)</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات دقيقة ومناظير', this)">جراحات دقيقة ومناظير (3)</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات الجهاز الهضمي', this)">الجهاز الهضمي والنساء (3)</button>
+            <button class="filter-tab-btn" onclick="filterCategory('جراحات تخصصية', this)">جراحات تخصصية متقدمة (5)</button>
+          </div>
+
+          <div class="surgeries-grid" id="allSurgeriesGrid">
+            <!-- Populated via JavaScript -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- VIEW 3: SURGEONS DIRECTORY (60 Specialists - 3 per surgery) -->
+    <div id="view-surgeons" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-tag">نخبة الجراحين الاستشاريين</span>
+              <h2 class="section-title">دليل كبار الجراحين الاستشاريين (60 جراحاً)</h2>
+              <p class="section-desc">استعرض السير الذاتية والشهادات الأكاديمية والزمالات والإنجازات السريرية، واحجز موعدك مباشرة.</p>
+            </div>
+            <div id="surgeonsCountDisplay" style="font-weight: 700; color: var(--accent); font-size: 1rem;">
+              عرض (60) جراح استشاري متاح
+            </div>
+          </div>
+
+          <!-- Surgeons Filter & Search Toolbar -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.25rem; margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <div style="flex: 1; min-width: 260px; display: flex; align-items: center; gap: 0.75rem; background: var(--bg-surface-alt); padding: 0.6rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="surgeonSearchInput" placeholder="ابحث باسم الجراح، المستشفى، أو الإجراء..." style="width: 100%; background: transparent; font-size: 0.95rem; color: var(--text-main);">
+            </div>
+
+            <div style="min-width: 260px;">
+              <select id="surgeonSurgerySelect" class="form-control" style="cursor: pointer; font-weight: 700;">
+                <!-- Populated via JS -->
+              </select>
+            </div>
+
+            <button type="button" class="btn-outline btn-sm" onclick="resetSurgeonFilters()">
+              إعادة ضبط الفلاتر
+            </button>
+          </div>
+
+          <!-- Surgeons Grid Container -->
+          <div class="surgeons-grid" id="surgeonsGrid">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- VIEW 4: PATIENT GUIDE (دليل المريض) -->
+    <div id="view-patient-guide" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div class="section-header" style="text-align: center; justify-content: center; margin-bottom: 3rem;">
+            <div class="section-title-wrap">
+              <span class="section-tag">إرشادات السلامة الطبية</span>
+              <h2 class="section-title">دليل المريض للتحضير والتعافي من العمليات الجراحية</h2>
+              <p class="section-desc">كل ما تحتاج لمعرفته قبل دخول غرفة العمليات لضمان أقصى درجات الأمان وسرعة التعافي</p>
+            </div>
+          </div>
+
+          <div class="guide-cards-grid">
+            
+            <div class="guide-card">
+              <div class="guide-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3>1. قواعد الصيام قبل التخدير العام</h3>
+              <p>يجب الامتناع التام عن الأطعمة الصلبة لمدة 8 ساعات قبل موعد العملية، وعن السوائل الشفافة (كالماء) لمدة ساعتين إلى 3 ساعات، لتجنب ارتجاع محتويات المعدة أثناء التخدير.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <h3>2. الفحوصات والتحاليل الإلزامية</h3>
+              <p>تشمل صورة دم كاملة (CBC)، وظائف كلى وكبد، سرعة وتجلط الدم (PT/INR)، تخطيط القلب الكهربائي (ECG)، وأشعة الصدر للتأكد من جاهزية الجسم الكاملة للتخدير.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+              </div>
+              <h3>3. أدوية السيولة والمكملات</h3>
+              <p>يجب إبلاغ الجراح بكافة الأدوية المسيلة للدم (مثل الأسبرين، البلافيكس، والوارفارين)، والمكملات كأوميغا 3، حيث يلزم إيقاف بعضها قبل العملية بـ 5 إلى 7 أيام بتنسيق طبي.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h3>4. يوم الجراحة ودخول المستشفى</h3>
+              <p>احضر في الموعد المحدد مع هوية المريض والتقارير الطبية السابقة، وارتدِ ملابس فضفاضة مريحة، مع نزع العدسات اللاصقة والمجوهرات والحلي ومستحضرات التجميل.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3>5. التحكم في الألم بعد العملية</h3>
+              <p>يطبق أطباؤنا أحدث أساليب التسكين متعدد الوسائط (Multimodal Analgesia) وحصر الأعصاب الموضعي لمنع الشعور بالألم وتمكينك من الحركة المبكرة في أول يوم.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              </div>
+              <h3>6. مرحلة النقاهة والتعافي المنزلي</h3>
+              <p>التزم بتعليمات الجراح بخصوص العناية بالجروح، شرب كميات كافية من الماء، المشي الخفيف لتنشيط الدورة الدموية، والالتزام بموعد مراجعة العيادة لفك الغرز والاطمئنان.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- VIEW 5: ABOUT PLATFORM (عن المنصة) -->
+    <div id="view-about" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div class="section-header" style="text-align: center; justify-content: center; margin-bottom: 3rem;">
+            <div class="section-title-wrap">
+              <span class="section-tag">رؤيتنا ورسالتنا الطبية</span>
+              <h2 class="section-title">عن منصة شفاء للجراحين</h2>
+              <p class="section-desc">المعايير الصارمة التي نعتمدها في اختيار صفوة كبار الجراحين الاستشاريين</p>
+            </div>
+          </div>
+
+          <div style="max-width: 860px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2.5rem; box-shadow: var(--shadow-sm); line-height: 1.8;">
+            <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-main);">
+              رسالتنا: تمكين المريض من الوصول المباشر لأعلى درجات الكفاءة الجراحية
+            </h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+              تأسست منصة شفاء للجراحين لسد الفجوة بين المرضى الباحثين عن أعلى نسب أمان في العمليات الجراحية المعقدة، وبين كبار الجراحين الاستشاريين الذين يمتلكون عقوداً من الخبرة وسجلات جراحية ناصعة.
+            </p>
+
+            <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--text-main);">
+              معايير اعتماد الجراحين في المنصة (3 جراحين فقط لكل تخصص):
+            </h4>
+            <ul style="list-style: disc; padding-right: 1.5rem; color: var(--text-secondary); margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li><strong>الشهادات والزمالات الدولية:</strong> حصول الجراح على زمالة الكلية الملكية للجراحين (FRCS) أو البورد الأمريكي أو الألماني أو الكندي.</li>
+              <li><strong>الخبرة السريرية:</strong> حد أدنى 15 عاماً من الممارسة الجراحية الموثقة في مستشفيات جامعية ومراكز مرجعية كبرى.</li>
+              <li><strong>سجل العمليات والنجاح:</strong> اشتراط نسبة نجاح موثقة تتجاوز 97% في التخصص الدقيق، مع صفر وفيات في العمليات التخصصية المجدولة.</li>
+              <li><strong>الأبحاث والابتكارات:</strong> مساهمات بحثية دولية وتدريب للأجيال الجراحية الشابة ورئاسة أقسام طبية مرموقة.</li>
+            </ul>
+
+            <div style="background: var(--accent-light); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid rgba(13, 148, 136, 0.2); color: var(--accent); font-weight: 700;">
+              ✨ ضمان الشفافية الطبية: جميع بيانات الجراحين وشهاداتهم ونسب نجاحهم يتم تدقيقها ومراجعتها بانتظام من قبل مجلس استشاري جراحي مستقل.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- VIEW 6: MY BOOKINGS (حجوزاتي) -->
+    <div id="view-my-bookings" class="page-view">
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-tag">إدارة المواعيد والتذاكر</span>
+              <h2 class="section-title">مواعيدي وحجوزاتي الطبية</h2>
+              <p class="section-desc">استعرض تذاكر حجزك، مواعيد الاستشارات القادمة، واطبع إشعارات وتذاكر الحجز في أي وقت.</p>
+            </div>
+            <button class="btn-primary" onclick="startBooking()">
+              حجز موعد جراحي جديد +
+            </button>
+          </div>
+
+          <!-- Bookings Container populated from LocalStorage -->
+          <div id="myBookingsList" class="bookings-list-wrap">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ========================================================================
+       MODAL: DOCTOR FULL PROFILE
+       ======================================================================== -->
+  <div class="modal-backdrop" id="doctorProfileModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <span class="brand-icon" style="width: 34px; height: 34px;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <h3 class="modal-title">الملف الطبي الاستشاري الكامل</h3>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeModal('doctorProfileModal')">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body" id="doctorProfileModalBody">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-outline" onclick="closeModal('doctorProfileModal')">إغلاق</button>
+        <button type="button" class="btn-primary" id="doctorModalBookBtn">احجز موعد كشف مع الجراح</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL: INTERACTIVE BOOKING STEPPER (5 Steps)
+       ======================================================================== -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-dialog" style="max-width: 820px;">
+      
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <span class="brand-icon" style="width: 34px; height: 34px;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </span>
+          <h3 class="modal-title">حجز استشارة وكشف جراحي متقدم</h3>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeModal('bookingModal')">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- 5-Step Stepper Header -->
+        <div class="booking-stepper">
+          <div class="step-indicator active" id="step-ind-1">
+            <div class="step-circle">1</div>
+            <span class="step-label">العملية والجراح</span>
+          </div>
+          <div class="step-indicator" id="step-ind-2">
+            <div class="step-circle">2</div>
+            <span class="step-label">نوع الكشف</span>
+          </div>
+          <div class="step-indicator" id="step-ind-3">
+            <div class="step-circle">3</div>
+            <span class="step-label">الموعد والوقت</span>
+          </div>
+          <div class="step-indicator" id="step-ind-4">
+            <div class="step-circle">4</div>
+            <span class="step-label">بيانات المريض</span>
+          </div>
+          <div class="step-indicator" id="step-ind-5">
+            <div class="step-circle">5</div>
+            <span class="step-label">التذكرة الطبية</span>
+          </div>
+        </div>
+
+        <!-- STEP 1: Select Surgery & Surgeon -->
+        <div class="booking-step-content active" id="bookingStep1">
+          <div class="form-group">
+            <label class="form-label">1. نوع العملية الجراحية المطلوبة:</label>
+            <select id="bookingSurgerySelect" class="form-control">
+              <!-- Populated via JS -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">2. الجراح الاستشاري المتخصص:</label>
+            <select id="bookingSurgeonSelect" class="form-control" disabled>
+              <option value="">-- يرجى اختيار نوع العملية أولاً --</option>
+            </select>
+          </div>
+
+          <!-- Surgeon Preview Box -->
+          <div id="bookingSurgeonPreview"></div>
+        </div>
+
+        <!-- STEP 2: Consultation Type -->
+        <div class="booking-step-content" id="bookingStep2">
+          <label class="form-label" style="margin-bottom: 1rem;">اختر طريقة ونوع المقابلة الطبية:</label>
+          
+          <div class="consult-types-grid">
+            <div class="consult-type-card selected" data-type="clinic">
+              <div class="consult-type-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+              </div>
+              <h4 class="consult-type-name">كشف حضوري بالعيادة</h4>
+              <p class="consult-type-desc">فحص سريري كامل ومناظرة الفحوصات بمقر المستشفى المعتمد</p>
+            </div>
+
+            <div class="consult-type-card" data-type="preop">
+              <div class="consult-type-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+              </div>
+              <h4 class="consult-type-name">تقييم شامل ما قبل الجراحة</h4>
+              <p class="consult-type-desc">استشارة مطولة مع مراجعة خطة التخدير والفحوصات وتحديد تاريخ العملية</p>
+            </div>
+
+            <div class="consult-type-card" data-type="video">
+              <div class="consult-type-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              </div>
+              <h4 class="consult-type-name">استشارة فيديو عن بعد</h4>
+              <p class="consult-type-desc">مناقشة الحالة والتقارير عبر مكالمة فيديو مشفرة وعالية الدقة</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Date & Time Selection -->
+        <div class="booking-step-content" id="bookingStep3">
+          <div class="form-group">
+            <label class="form-label">اختر تاريخ الكشف المناسب:</label>
+            <input type="date" id="bookingDateInput" class="form-control" style="font-weight: 700;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">اختر الموعد المتاح لدى الجراح:</label>
+            <div class="time-slots-grid" id="bookingTimeSlotsGrid">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Patient Info Form -->
+        <div class="booking-step-content" id="bookingStep4">
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">الاسم الكامل للمريض *</label>
+              <input type="text" id="patientNameInput" class="form-control" placeholder="الاسم الثلاثي أو الرباعي">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">رقم الجوال للتواصل *</label>
+              <input type="tel" id="patientPhoneInput" class="form-control" placeholder="05xxxxxxxx" dir="ltr" style="text-align: right;">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">العمر (بالسنوات)</label>
+              <input type="number" id="patientAgeInput" class="form-control" placeholder="مثال: 45" min="0" max="120">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">الجنس</label>
+              <select id="patientGenderSelect" class="form-control">
+                <option value="male">ذكر</option>
+                <option value="female">أنثى</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">ملاحظات طبية أو تاريخ مرضي أو عمليات سابقة:</label>
+            <textarea id="patientNotesInput" class="form-control" rows="3" placeholder="اذكر أي حساسية أدوية، أمراض مزمنة (سكر/ضغط)، أو استفسار محدد للجراح..."></textarea>
+          </div>
+        </div>
+
+        <!-- STEP 5: Medical Ticket Slip (Confirmation) -->
+        <div class="booking-step-content" id="bookingStep5">
+          <div class="ticket-container" id="bookingTicketSlip">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer" id="bookingModalFooter">
+        <button type="button" class="btn-outline" id="bookingPrevBtn" style="display: none;" onclick="prevBookingStep()">السابق</button>
+        <button type="button" class="btn-primary" id="bookingNextBtn" onclick="nextBookingStep()">المتابعة للخطوة التالية</button>
+        
+        <!-- Action buttons shown on step 5 -->
+        <button type="button" class="btn-outline" id="bookingPrintBtn" style="display: none;" onclick="window.print()">
+          طباعة التذكرة الطبية
+        </button>
+        <button type="button" class="btn-primary" id="bookingFinishBtn" style="display: none;" onclick="closeModal('bookingModal'); navigateTo('my-bookings');">
+          عرض في حجوزاتي
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL: QUICK SEARCH PALETTE (Ctrl + K)
+       ======================================================================== -->
+  <div class="modal-backdrop" id="quickSearchModal">
+    <div class="modal-dialog quick-search-box">
+      <div class="quick-search-input-wrap">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="paletteSearchInput" placeholder="ابحث فوراً في الـ 20 عملية والـ 60 جراحاً..." autofocus>
+        <button type="button" class="modal-close-btn" onclick="closeModal('quickSearchModal')">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="quick-search-results" id="paletteSearchResults">
+        <!-- Live search results rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.5rem;">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            </div>
+            <span class="brand-title">منصة شفاء للجراحين</span>
+          </div>
+          <p>
+            المنصة الأولى المعتمدة لربط المرضى بنخبة كبار الجراحين الاستشاريين في 20 تخصصاً جراحياً دقيقاً، مع التزام تام بأعلى معايير الأمان والجودة العالمية.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>أقسام المنصة</h5>
+          <div class="footer-links">
+            <a href="#home" onclick="navigateTo('home')">الرئيسية</a>
+            <a href="#surgeries" onclick="navigateTo('surgeries')">دليل العمليات (20)</a>
+            <a href="#surgeons" onclick="navigateTo('surgeons')">كبار الجراحين (60)</a>
+            <a href="#my-bookings" onclick="navigateTo('my-bookings')">إدارة حجوزاتي</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>أدلة المرضى</h5>
+          <div class="footer-links">
+            <a href="#patient-guide" onclick="navigateTo('patient-guide')">تعليمات الصيام والتخدير</a>
+            <a href="#patient-guide" onclick="navigateTo('patient-guide')">الفحوصات الإلزامية</a>
+            <a href="#patient-guide" onclick="navigateTo('patient-guide')">أدوية السيولة</a>
+            <a href="#patient-guide" onclick="navigateTo('patient-guide')">التعافي المنزلي</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>الاعتماد والرقابة</h5>
+          <div class="footer-links">
+            <a href="#about" onclick="navigateTo('about')">معايير اختيار الجراحين</a>
+            <a href="#about" onclick="navigateTo('about')">المستشفيات المعتمدة</a>
+            <a href="#about" onclick="navigateTo('about')">حقوق وسلامة المريض</a>
+            <a href="#about" onclick="navigateTo('about')">السياسات والخصوصية</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          جميع الحقوق محفوظة &copy; 2026 - منصة شفاء للجراحين الاستشاريين | موقع Static يعمل مباشرة بدون خادم
+        </div>
+        <div>
+          تطوير وإشراف طبي معتمد
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts (Zero-dependency, offline-ready) -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

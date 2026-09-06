@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="carBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad)" />
+  
+  <!-- Subtle Grid lines -->
+  <line x1="0" y1="400" x2="800" y2="400" stroke="#334155" stroke-width="2" />
+  <line x1="0" y1="430" x2="800" y2="430" stroke="#1e293b" stroke-width="1" />
+  
+  <!-- Sleek Modern Car Silhouette -->
+  <g transform="translate(100, 160)">
+    <!-- Shadow -->
+    <ellipse cx="300" cy="225" rx="280" ry="18" fill="#000" opacity="0.6" />
+    
+    <!-- Main Body Chassis -->
+    <path d="M 60,170 
+             C 70,160 110,130 180,120 
+             C 240,70 340,65 420,70 
+             C 480,75 520,110 540,140 
+             C 560,150 570,170 560,185 
+             C 550,195 530,195 510,195 
+             C 490,165 430,165 410,195 
+             L 210,195 
+             C 190,165 130,165 110,195 
+             L 50,195 
+             C 40,190 45,175 60,170 Z" 
+          fill="url(#carBody)" />
+          
+    <!-- Roof & Cabin Glass -->
+    <path d="M 195,115 
+             C 250,78 330,74 405,78 
+             C 455,82 485,110 495,120 
+             L 195,120 Z" 
+          fill="#0b0f19" opacity="0.85" />
+          
+    <!-- Window dividers -->
+    <line x1="330" y1="76" x2="330" y2="120" stroke="#60a5fa" stroke-width="3" />
+    
+    <!-- Gold Trim Line -->
+    <path d="M 65,168 Q 280,145 550,168" stroke="url(#goldAccent)" stroke-width="3" fill="none" opacity="0.8" />
+
+    <!-- Headlight glow -->
+    <polygon points="535,145 555,148 550,162 530,158" fill="#fef08a" />
+    <!-- Taillight -->
+    <polygon points="50,170 65,168 62,180 48,180" fill="#ef4444" />
+
+    <!-- Front Wheel -->
+    <g transform="translate(450, 195)">
+      <circle cx="0" cy="0" r="42" fill="#0f172a" stroke="#475569" stroke-width="6" />
+      <circle cx="0" cy="0" r="28" fill="#1e293b" stroke="#94a3b8" stroke-width="3" />
+      <!-- Rim spokes -->
+      <line x1="-20" y1="0" x2="20" y2="0" stroke="#f59e0b" stroke-width="3" />
+      <line x1="0" y1="-20" x2="0" y2="20" stroke="#f59e0b" stroke-width="3" />
+      <circle cx="0" cy="0" r="8" fill="#f59e0b" />
+    </g>
+
+    <!-- Rear Wheel -->
+    <g transform="translate(150, 195)">
+      <circle cx="0" cy="0" r="42" fill="#0f172a" stroke="#475569" stroke-width="6" />
+      <circle cx="0" cy="0" r="28" fill="#1e293b" stroke="#94a3b8" stroke-width="3" />
+      <!-- Rim spokes -->
+      <line x1="-20" y1="0" x2="20" y2="0" stroke="#f59e0b" stroke-width="3" />
+      <line x1="0" y1="-20" x2="0" y2="20" stroke="#f59e0b" stroke-width="3" />
+      <circle cx="0" cy="0" r="8" fill="#f59e0b" />
+    </g>
+  </g>
+  
+  <text x="400" y="440" fill="#94a3b8" font-size="18" font-family="'Cairo', sans-serif" font-weight="700" text-anchor="middle">
+    منصة الصفوة لتأجير السيارات • SAFWA CAR RENTAL
+  </text>
+</svg>

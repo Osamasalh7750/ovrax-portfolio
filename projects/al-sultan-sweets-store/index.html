@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="متجر حلويات السلطان الفاخرة - تشكيلة ملكية من الحلويات الشرقية، البقلاوة، الكنافة، الكيك، والشوكولاتة مع طلب فوري عبر واتساب وفاتورة إلكترونية.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <title>حلويات السلطان الفاخرة | أصالة المذاق الشرقي والغربي</title>
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">هذه المنظومة تم تصميمها وتطويرها بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D9%85%D9%85%D8%A7%D8%AB%D9%84" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب مشروع مماثل
+    </a>
+  </div>
+</div>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span><i class="fas fa-phone-alt"></i> خدمة العملاء: <strong>+966 11 400 0000</strong></span>
+        <span><i class="fas fa-clock"></i> مفتوح يومياً من 9:00 ص - 12:00 م</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-promo"><i class="fas fa-truck"></i> توصيل مجاني للطلبات فوق 200 ر.س! كود الخصم: <strong>SWEET20</strong></span>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" title="تغيير المظهر">
+          <i id="themeToggleIcon" class="fas fa-moon"></i>
+          <span id="themeToggleText">الوضع الليلي</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fas fa-crown"></i></div>
+        <div class="brand-text">
+          <h1>حلويات السلطان</h1>
+          <span>AL-SULTAN SWEETS &bull; فاخرة منذ 1995</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> الرئيسية</a>
+        <a href="shop.html" class="nav-link "><i class="fas fa-cookie"></i> قائمة الحلويات</a>
+        <a href="shop.html?cat=boxes" class="nav-link"><i class="fas fa-gift"></i> بوكسات الهدايا</a>
+        <a href="about.html" class="nav-link "><i class="fas fa-award"></i> قصة المتجر</a>
+        <a href="contact.html" class="nav-link "><i class="fas fa-envelope"></i> اتصل بنا</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html" class="action-btn" title="البحث">
+          <i class="fas fa-search"></i>
+        </a>
+        <a href="wishlist.html" class="action-btn" title="المفضلة">
+          <i class="fas fa-heart"></i>
+          <span class="action-badge wishlist-count">0</span>
+        </a>
+        <button class="action-btn" onclick="toggleCartDrawer()" title="سلة المشتريات">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="action-badge cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag pulse-badge">
+          <i class="fas fa-crown"></i> المذاق الملكي الأكثر تميزاً في المملكة
+        </div>
+        <h1 class="hero-title">
+          عالم من <span>الحلويات الفاخرة</span> التي تأسر الحواس
+        </h1>
+        <p class="hero-description">
+          نصنع بكل شغف وإتقان أشهى أطباق الكنافة النابلسية، البقلاوة بالفستق الحلبي، كعكات التشيزكيك الأوروبية، وشوكولاتة دبي المقرمشة بالسمن البلدي الفاخر ومكونات طازجة يومياً.
+        </p>
+        <div class="hero-buttons">
+          <a href="shop.html" class="btn btn-primary">
+            <i class="fas fa-shopping-bag"></i> استكشف قائمة الحلويات
+          </a>
+          <a href="https://wa.me/966500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA%20%D9%85%D9%86%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> طلب مباشر عبر واتساب
+          </a>
+        </div>
+        <div class="hero-features">
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fas fa-truck-fast"></i></div>
+            <div class="hero-feat-text">
+              <h4>توصيل سريع وساخن</h4>
+              <p>يصلك مغلفاً بعناية فائقة</p>
+            </div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fas fa-seedling"></i></div>
+            <div class="hero-feat-text">
+              <h4>مكونات طبيعية 100%</h4>
+              <p>سمن بلدي وفستق درجة أولى</p>
+            </div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fas fa-gift"></i></div>
+            <div class="hero-feat-text">
+              <h4>تغليف هدايا ملكي</h4>
+              <p>جاهز لضيافة مناسباتكم</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=1000&q=80" alt="كنافة وبقلاوة حلويات السلطان">
+        </div>
+        <div class="floating-card card-top">
+          <div class="floating-icon gold-icon"><i class="fas fa-star"></i></div>
+          <div class="floating-info">
+            <h5>تقييم 4.9 / 5.0</h5>
+            <span>من أكثر من 15,000 عميل سعيد</span>
+          </div>
+        </div>
+        <div class="floating-card card-bottom">
+          <div class="floating-icon green-icon"><i class="fas fa-award"></i></div>
+          <div class="floating-info">
+            <h5>طازج ومخبوز يومياً</h5>
+            <span>بدون أي مواد حافظة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">أقسام المتجر</span>
+        <h2 class="section-title">تشكيلة مختارة لكل الأذواق والمناسبات</h2>
+        <p class="section-desc">اختر قسمك المفضل واستمتع بأشهى الابتكارات المصنوعة بحرفية عالية</p>
+      </div>
+
+      <div class="categories-grid">
+        <a href="shop.html?cat=oriental" class="category-card">
+          <div class="cat-icon-wrap"><i class="fas fa-moon"></i></div>
+          <h3>حلويات شرقية</h3>
+          <span>كنافة، بقلاوة، بسبوسة</span>
+        </a>
+        <a href="shop.html?cat=western" class="category-card">
+          <div class="cat-icon-wrap"><i class="fas fa-birthday-cake"></i></div>
+          <h3>كيك وحلويات غربية</h3>
+          <span>سان سيباستيان، تشيز كيك</span>
+        </a>
+        <a href="shop.html?cat=chocolate" class="category-card">
+          <div class="cat-icon-wrap"><i class="fas fa-cookie-bite"></i></div>
+          <h3>شوكولاتة وترافل</h3>
+          <span>شوكولاتة دبي، برالين سويسري</span>
+        </a>
+        <a href="shop.html?cat=boxes" class="category-card">
+          <div class="cat-icon-wrap"><i class="fas fa-gift"></i></div>
+          <h3>بوكسات الهدايا</h3>
+          <span>صواني ضيافة ومناسبات VIP</span>
+        </a>
+        <a href="shop.html?cat=healthy" class="category-card">
+          <div class="cat-icon-wrap"><i class="fas fa-leaf"></i></div>
+          <h3>حلويات صحية ودايت</h3>
+          <span>خالي من السكر، كيتو، شوفان</span>
+        </a>
+        <a href="shop.html?cat=drinks" class="category-card">
+          <div class="cat-icon-wrap"><i class="fas fa-ice-cream"></i></div>
+          <h3>بوظة ومشروبات</h3>
+          <span>بوظة عربية، قهوة سعودية</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="section" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">المختارات الملكية</span>
+        <h2 class="section-title">الأكثر طلباً والأعلى تقييماً</h2>
+        <p class="section-desc">أصناف نالت إعجاب الآلاف من عشاق الحلويات في جميع المناسبات</p>
+      </div>
+
+      <div class="products-grid" id="homeFeaturedGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <div style="text-align: center; margin-top: 45px;">
+        <a href="shop.html" class="btn btn-primary" style="padding: 14px 36px; font-size: 1.05rem;">
+          <i class="fas fa-th-large"></i> عرض قائمة الحلويات بالكامل (24 صنف)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Deal & Countdown Banner -->
+  <div class="container">
+    <section class="deal-section">
+      <div class="deal-grid">
+        <div class="deal-content">
+          <span class="badge badge-gold" style="margin-bottom: 12px;">عرض اليوم الخاص ⚡</span>
+          <h2>خصم 25% على بوكس ضيافة السلطان VIP وكعكة سان سيباستيان</h2>
+          <p>استخدم كود الخصم <strong>RAMADAN</strong> أو <strong>SWEET20</strong> عند إتمام الطلب واحصل على توصيل مجاني وبطاقة إهداء فاخرة مجاناً.</p>
+          
+          <div class="countdown">
+            <div class="countdown-box">
+              <span class="countdown-number" id="countHours">08</span>
+              <span class="countdown-label">ساعة</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-number" id="countMins">45</span>
+              <span class="countdown-label">دقيقة</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-number" id="countSecs">30</span>
+              <span class="countdown-label">ثانية</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="shop.html?cat=boxes" class="btn btn-gold">
+              <i class="fas fa-shopping-cart"></i> اطلب العرض الآن
+            </a>
+            <button class="btn btn-outline" style="border-color: #fff; color: #fff;" onclick="Cart.applyCoupon('SWEET20')">
+              <i class="fas fa-tags"></i> تفعيل كود الخصم (SWEET20)
+            </button>
+          </div>
+        </div>
+
+        <div class="deal-visual">
+          <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=700&q=80" alt="عرض سان سيباستيان">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Why Choose Us -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">سر تميزنا</span>
+        <h2 class="section-title">لماذا تختار حلويات السلطان؟</h2>
+        <p class="section-desc">نلتزم بأعلى معايير الجودة لنمنحكم تجربة تذوق تفوق التوقعات في كل لقمة</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box"><i class="fas fa-mortar-pestle"></i></div>
+          <h3>وصفات أصيلة متوارثة</h3>
+          <p>نحافظ على أسرار الصنعة الشامية والتركية الأصيلة بأيدي أمهر المعلمين المختصين.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box"><i class="fas fa-gem"></i></div>
+          <h3>مكونات فاخرة ونقية</h3>
+          <p>نستخدم أفخر أنواع السمن البلدي الطبيعي، الفستق الحلبي البكتاش، والشوكولاتة البلجيكية 70%.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box"><i class="fas fa-box-open"></i></div>
+          <h3>تغليف حراري ومحكم</h3>
+          <p>علب مصممة خصيصاً لتحافظ على قرمشة البقلاوة وسخونة الكنافة وبرودة الكيك كما لو خرجت للتو من الفرن.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box"><i class="fab fa-whatsapp"></i></div>
+          <h3>طلب فوري عبر واتساب</h3>
+          <p>خدمة عملاء سريعة لتجهيز وتخصيص طلبات الحفلات والمناسبات بالكميات المرغوبة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">آراء عملائنا</span>
+        <h2 class="section-title">ماذا يقول عشاق حلويات السلطان؟</h2>
+        <p class="section-desc">فخورون بثقة آلاف العائلات في جميع أنحاء المملكة</p>
+      </div>
+
+      <div class="testimonials-grid" id="testimonialsContainer">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon"><i class="fas fa-crown"></i></div>
+            <div class="brand-text">
+              <h2>حلويات السلطان</h2>
+              <span style="color: var(--gold-light);">AL-SULTAN LUXURY SWEETS</span>
+            </div>
+          </div>
+          <p>نقدم لكم أرقى الحلويات الشرقية والغربية المحضرة يدوياً بأيدي أمهر الطهاة وباستخدام أجود المكونات الطبيعية والسمن البلدي والفستق الحلبي الفاخر.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-link" title="تويتر (X)"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="footer-social-link" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="footer-social-link" title="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="#" class="footer-social-link" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>أقسام الحلويات</h3>
+          <ul class="footer-links">
+            <li><a href="shop.html?cat=oriental"><i class="fas fa-angle-left"></i> حلويات شرقية فاخرة</a></li>
+            <li><a href="shop.html?cat=western"><i class="fas fa-angle-left"></i> كيك وتشيز كيك غربي</a></li>
+            <li><a href="shop.html?cat=chocolate"><i class="fas fa-angle-left"></i> شوكولاتة وترافل</a></li>
+            <li><a href="shop.html?cat=boxes"><i class="fas fa-angle-left"></i> بوكسات ضيافة وهدايا</a></li>
+            <li><a href="shop.html?cat=healthy"><i class="fas fa-angle-left"></i> حلويات صحية ودايت</a></li>
+            <li><a href="shop.html?cat=drinks"><i class="fas fa-angle-left"></i> بوظة ومشروبات قهوة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="shop.html"><i class="fas fa-angle-left"></i> تصفح جميع المنتجات</a></li>
+            <li><a href="cart.html"><i class="fas fa-angle-left"></i> سلة المشتريات</a></li>
+            <li><a href="checkout.html"><i class="fas fa-angle-left"></i> إتمام الطلب والفاتورة</a></li>
+            <li><a href="wishlist.html"><i class="fas fa-angle-left"></i> قائمة أمنياتي</a></li>
+            <li><a href="about.html"><i class="fas fa-angle-left"></i> قصة المتجر والمعايير</a></li>
+            <li><a href="contact.html"><i class="fas fa-angle-left"></i> فروعنا وتواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h3>النشرة البريدية والعروض</h3>
+          <p>اشترك معنا لتصلك أحدث العروض والخصومات الخاصة بمواسم الأعياد والمناسبات.</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" placeholder="أدخل بريدك الإلكتروني..." required>
+            <button type="submit">اشتراك</button>
+          </form>
+          <div style="margin-top: 20px; font-size: 0.85rem; color: #eed5dc;">
+            <p><i class="fas fa-map-marker-alt" style="color: var(--gold-light);"></i> الرياض، طريق الملك فهد</p>
+            <p style="margin-top: 4px;"><i class="fas fa-phone-alt" style="color: var(--gold-light);"></i> الرقم الموحد: 920000000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 جميع الحقوق محفوظة لـ <strong>حلويات السلطان الفاخرة</strong> &bull; تم التطوير بأعلى معايير الجودة</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+          <i class="fas fa-credit-card" title="Mada"></i>
+          <i class="fas fa-money-bill-wave" title="الدفع عند الاستلام"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fas fa-shopping-bag"></i> سلة مشترياتك</h3>
+      <button class="close-drawer-btn" onclick="toggleCartDrawer()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <!-- يتم تعبئة السلة تلقائياً عبر JavaScript -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>المجموع الإجمالي:</span>
+        <span id="drawerSubtotal">0.00 ر.س</span>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="checkout.html" class="btn btn-primary"><i class="fas fa-credit-card"></i> إتمام الطلب الآن</a>
+        <a href="cart.html" class="btn btn-outline"><i class="fas fa-shopping-cart"></i> عرض السلة الكاملة</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal Container -->
+  <div class="modal-overlay" id="quickViewModal"></div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/966500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D9%86" target="_blank" class="floating-whatsapp" title="تحدث معنا على واتساب مباشرة">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+  <!-- Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const homeGrid = document.getElementById('homeFeaturedGrid');
+      if (homeGrid) {
+        const featured = SWEETS_DATA.filter(p => p.isFeatured).slice(0, 8);
+        homeGrid.innerHTML = featured.map(createProductCardHTML).join('');
+      }
+
+      const testContainer = document.getElementById('testimonialsContainer');
+      if (testContainer && typeof TESTIMONIALS !== 'undefined') {
+        testContainer.innerHTML = TESTIMONIALS.map(t => `
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <img src="${t.avatar}" alt="${t.name}" class="testi-avatar">
+              <div class="testi-info">
+                <h4>${t.name}</h4>
+                <span><i class="fas fa-map-marker-alt"></i> ${t.city}</span>
+              </div>
+            </div>
+            <div class="testi-stars">
+              ${'<i class="fas fa-star"></i>'.repeat(t.rating)}
+            </div>
+            <p class="testi-text">"${t.comment}"</p>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

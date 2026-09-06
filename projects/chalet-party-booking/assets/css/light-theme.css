@@ -1,0 +1,163 @@
+/* ==========================================================================
+   LIGHT-THEME.CSS - هوية بصرية راقية بتدرجات ألوان فاتحة ومريحة للعين
+   منصة أثير لحجوزات الشاليهات وتنظيم الحفلات والمناسبات VIP
+   ========================================================================== */
+
+:root {
+  /* التدرجات الفاتحة واللؤلؤية */
+  --bg-body: #fbf9f5;
+  --bg-surface: #ffffff;
+  --bg-surface-soft: #f7f3eb;
+  --bg-surface-alt: #f3ede2;
+  
+  /* تدرجات الذهبي الشامبيني والباستيل */
+  --champagne-primary: #c99a4c;
+  --champagne-light: #e6ca92;
+  --champagne-soft: #f9f3e6;
+  --champagne-gradient: linear-gradient(135deg, #d8ad64 0%, #ba8937 100%);
+  --champagne-gradient-soft: linear-gradient(135deg, #fdf9f2 0%, #f6ecdb 100%);
+  
+  /* ألوان الباستيل المريحة للعين */
+  --pastel-blush: #fcedea;
+  --pastel-blush-text: #964f43;
+  --pastel-sage: #ecf4ef;
+  --pastel-sage-text: #2f6b4d;
+  --pastel-lavender: #f3effc;
+  --pastel-lavender-text: #594582;
+  --pastel-sky: #edf5fc;
+  --pastel-sky-text: #345c85;
+
+  /* نصوص راقية ومتناسقة مع الخلفيات الفاتحة */
+  --text-dark: #221f1d;
+  --text-body: #4a453f;
+  --text-muted: #7d766d;
+  --text-soft: #a39c92;
+  
+  /* الحدود والظلال الزجاجية الناعمة */
+  --border-light: #eae3d5;
+  --border-gold: rgba(201, 154, 76, 0.28);
+  --border-focus: #c99a4c;
+  
+  --shadow-subtle: 0 4px 20px rgba(74, 58, 30, 0.05);
+  --shadow-card: 0 10px 30px -6px rgba(160, 120, 60, 0.08), 0 2px 8px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 18px 40px -8px rgba(160, 120, 60, 0.14), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-gold: 0 8px 24px rgba(201, 154, 76, 0.22);
+  
+  /* الحالات */
+  --status-available: #10b981;
+  --status-available-bg: #ecfdf5;
+  --status-booked: #f43f5e;
+  --status-booked-bg: #fff1f2;
+  --status-reserved: #f59e0b;
+  --status-reserved-bg: #fef3c7;
+  
+  /* الأبعاد */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  
+  /* الانتقالات */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* التنسيق العام للخلفية */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-body);
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.75;
+}
+
+/* خلفية زخرفية ناعمة جداً تمنح الموقع إحساساً بالفخامة والرحابة */
+.ambient-glow-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 10% 15%, rgba(249, 243, 230, 0.8) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(236, 244, 239, 0.7) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(252, 237, 234, 0.5) 0%, transparent 50%),
+    #fbf9f5;
+}
+
+/* نمط الكروت الفاتحة والزجاجية */
+.luxury-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--champagne-light);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 154, 76, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* تدرج ذهبي شامبيني للنصوص والعناوين */
+.gold-gradient-text {
+  background: var(--champagne-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 800;
+}
+
+/* الشارات الباستيلية */
+.badge-pastel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.badge-blush {
+  background: var(--pastel-blush);
+  color: var(--pastel-blush-text);
+  border: 1px solid rgba(150, 79, 67, 0.15);
+}
+
+.badge-sage {
+  background: var(--pastel-sage);
+  color: var(--pastel-sage-text);
+  border: 1px solid rgba(47, 107, 77, 0.15);
+}
+
+.badge-champagne {
+  background: var(--champagne-soft);
+  color: var(--champagne-primary);
+  border: 1px solid rgba(201, 154, 76, 0.25);
+}
+
+.badge-lavender {
+  background: var(--pastel-lavender);
+  color: var(--pastel-lavender-text);
+  border: 1px solid rgba(89, 69, 130, 0.15);
+}
+
+.badge-sky {
+  background: var(--pastel-sky);
+  color: var(--pastel-sky-text);
+  border: 1px solid rgba(52, 92, 133, 0.15);
+}

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OVRAX - بوابة وحلول البرمجيات والذكاء الاصطناعي للمهندس أسامة صالح درهم راجح. سوق برمجي، استشارات ذكاء اصطناعي، وتطوير أنظمة سحابية وتجارية متقدمة.">
+  <meta name="keywords" content="أسامة صالح, OVRAX, مهندس برمجيات, ذكاء اصطناعي, سوق برمجي, Generative AI, Full-Stack, أتمتة إعلانات, اليمن, السعودية, الرياض">
+  <meta name="author" content="أسامة صالح درهم راجح - Osama Saleh">
+  <title>OVRAX | المهندس أسامة صالح - بوابة البرمجيات وسوق حلول الذكاء الاصطناعي</title>
+
+  <!-- Google Fonts: Cairo & Orbitron & Rajdhani -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/3d-effects.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/ovrax_logo.jpg">
+</head>
+<body class="cyber-theme">
+  <!-- Background 3D Canvas -->
+  <div id="canvas3d-container"></div>
+  <div class="cyber-grid-overlay"></div>
+  <div class="ambient-glow cyan-glow"></div>
+  <div class="ambient-glow amber-glow"></div>
+
+  <!-- Top Cyber Status Bar -->
+  <div class="top-status-bar">
+    <div class="container status-bar-content">
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span class="status-text">النظام متصل: <strong class="neon-cyan">OVRAX Core v3.4 Active</strong></span>
+        <span class="divider">|</span>
+        <span class="status-text visitor-counter-pill">
+          <i class="fas fa-eye text-cyan"></i> إجمالي الزيارات: <strong id="visitorCountDisplay" class="neon-amber">...</strong>
+        </span>
+      </div>
+      <div class="quick-contacts">
+        <a href="tel:+966553074762" class="quick-link"><i class="fas fa-phone-alt"></i> +966 55 307 4762</a>
+        <span class="divider">|</span>
+        <a href="mailto:osamasalh7750@gmail.com" class="quick-link"><i class="fas fa-envelope"></i> osamasalh7750@gmail.com</a>
+        <span class="divider">|</span>
+        <span class="location-badge"><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="navbar-wrapper" id="mainHeader">
+    <div class="container navbar-container">
+      <!-- Logo Branding -->
+      <a href="#hero" class="brand-logo">
+        <div class="logo-img-wrapper">
+          <img src="assets/images/ovrax_logo.jpg" alt="OVRAX 3D Logo" class="nav-logo">
+          <div class="logo-glow"></div>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">OVRAX</span>
+          <span class="brand-sub">ENGINEERING & AI</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active"><i class="fas fa-home"></i> الرئيسية</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><i class="fas fa-user-astronaut"></i> عن المهندس</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link"><i class="fas fa-cubes"></i> الخدمات</a></li>
+          <li class="nav-item"><a href="#marketplace" class="nav-link highlight-link"><i class="fas fa-store"></i> سوق البرمجيات <span class="badge-new">PRO</span></a></li>
+          <li class="nav-item"><a href="#ai-consultant" class="nav-link ai-link"><i class="fas fa-brain"></i> المستشار الذكي <span class="badge-ai">AI Chat</span></a></li>
+          <li class="nav-item"><a href="#custom-order" class="nav-link"><i class="fas fa-calculator"></i> طلب مشروع</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i> تواصل معي</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="nav-actions">
+        <a href="#custom-order" class="cyber-btn cyber-btn-primary nav-cta">
+          <span class="btn-text">ابدأ مشروعك</span>
+          <i class="fas fa-bolt"></i>
+        </a>
+        <button class="sound-toggle-btn" id="soundToggleBtn" title="تشغيل / كتم التأثيرات الصوتية">
+          <i class="fas fa-volume-up" id="soundIcon"></i>
+        </button>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="قائمة التصفح">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION (3D Futuristic Landing) -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <!-- Hero Text & Bio Hook -->
+        <div class="hero-content">
+          <div class="terminal-badge">
+            <span class="terminal-dot green"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot red"></span>
+            <span class="terminal-code">SYS://OSAMA_SALEH.AI_CORE_ONLINE</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="greeting">مرحباً بك، أنا</span>
+            <span class="name-highlight">المهندس أسامة صالح</span>
+            <span class="typing-container">
+              <span id="typedText" class="typed-text"></span><span class="cursor">&nbsp;</span>
+            </span>
+          </h1>
+
+          <p class="hero-description">
+            مهندس برمجيات وذكاء اصطناعي متخصص في حلول <strong class="neon-amber">الذكاء الاصطناعي التوليدي (Generative AI)</strong>، بناء الوكلاء الذكية، هندسة الأنظمة الشاملة (Full-Stack)، وأتمتة العمليات التجارية والتسويقية المعقدة لرفع الكفاءة التشغيلية وتحقيق التحول الرقمي.
+          </p>
+
+          <!-- Action CTA Group -->
+          <div class="hero-cta-group">
+            <a href="#marketplace" class="cyber-btn cyber-btn-glow">
+              <i class="fas fa-shopping-bag"></i>
+              <span>استكشف السوق البرمجي</span>
+            </a>
+            <a href="#ai-consultant" class="cyber-btn cyber-btn-ai">
+              <i class="fas fa-microchip"></i>
+              <span>اشرح فكرتك للذكاء الاصطناعي</span>
+            </a>
+            <a href="https://wa.me/966553074762" target="_blank" class="cyber-btn cyber-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i>
+              <span>محادثة فورية</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics & Highlights -->
+          <div class="hero-stats-grid">
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+              <div class="stat-info">
+                <span class="stat-number" data-target="15">0</span><span class="plus">+</span>
+                <span class="stat-label">منظومة وحل برمجي</span>
+              </div>
+            </div>
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon"><i class="fas fa-brain"></i></div>
+              <div class="stat-info">
+                <span class="stat-number" data-target="99">0</span><span class="plus">%</span>
+                <span class="stat-label">دقة حلول الـ AI والأتمتة</span>
+              </div>
+            </div>
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon"><i class="fas fa-network-wired"></i></div>
+              <div class="stat-info">
+                <span class="stat-number" data-target="100">0</span><span class="plus">%</span>
+                <span class="stat-label">أمان واستقرار الشبكات</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero 3D Profile Showcase -->
+        <div class="hero-visual">
+          <div class="profile-3d-card" data-tilt>
+            <div class="card-glass-frame">
+              <div class="hologram-scanner"></div>
+              <div class="photo-wrapper">
+                <img src="assets/images/osama_profile.png" alt="المهندس أسامة صالح درهم راجح" class="profile-img">
+                <div class="photo-glow-ring"></div>
+              </div>
+              <div class="profile-badge-overlay">
+                <div class="badge-title">أسامة صالح درهم راجح</div>
+                <div class="badge-role">Software & AI Engineer</div>
+                <div class="badge-status">
+                  <span class="status-live-dot"></span> متاح للمشاريع والتعاقدات
+                </div>
+              </div>
+              
+              <!-- Floating 3D Cyber Badges -->
+              <div class="floating-cyber-pill pill-1">
+                <i class="fas fa-robot text-cyan"></i> Generative AI & LLMs
+              </div>
+              <div class="floating-cyber-pill pill-2">
+                <i class="fas fa-layer-group text-amber"></i> Full-Stack Architecture
+              </div>
+              <div class="floating-cyber-pill pill-3">
+                <i class="fas fa-shield-alt text-cyan"></i> Network & API Security
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <a href="#about">
+          <span>اكتشف المزيد</span>
+          <div class="mouse-icon">
+            <div class="wheel"></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT & CAREER SECTION -->
+    <section id="about" class="section-wrapper about-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fas fa-id-card"></i> السيرة والمسار المهني</div>
+          <h2 class="section-title">من هو <span class="neon-cyan">المهندس أسامة صالح</span>؟</h2>
+          <p class="section-subtitle">شغف عميق بهندسة البرمجيات، تصميم النظم الذكية، وقيادة التحول الرقمي بالأثر الملموس</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Biography Card -->
+          <div class="about-bio-card cyber-glass" data-tilt>
+            <div class="card-header-line">
+              <i class="fas fa-terminal neon-cyan"></i>
+              <h3>الملخص المهني الشامل</h3>
+            </div>
+            <p class="bio-text">
+              مهندس برمجيات موجه بالنتائج وخريج تقنية المعلومات من <strong>جامعة الجزيرة</strong>، متخصص في حلول <strong>الذكاء الاصطناعي التوليدي (Generative AI)</strong> وهندسة الأنظمة المؤتمتة. خبير في بناء المنصات الذكية التي ترفع من كفاءة الأعمال عبر التكامل المتقدم لواجهات برمجة التطبيقات (APIs) ونماذج اللغات الكبيرة (LLMs).
+            </p>
+            <p class="bio-text">
+              يمتلك سجلاً حافلاً في تحويل المتطلبات المعقدة إلى حلول قابلة للتوسع، وتصميم وبناء منصات التسويق الرقمي الذكي، وإدارة البنية التحتية والشبكات لضمان أقصى درجات الأمان واستمرارية الخدمة.
+            </p>
+
+            <div class="bio-meta-grid">
+              <div class="meta-item">
+                <i class="fas fa-graduation-cap neon-amber"></i>
+                <div>
+                  <strong>التعليم الأكاديمي:</strong>
+                  <span>بكالوريوس تقنية المعلومات - جامعة الجزيرة</span>
+                </div>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-certificate neon-cyan"></i>
+                <div>
+                  <strong>الشهادات الاحترافية:</strong>
+                  <span>ICDL الدولية + مهارات الاتصال المهني</span>
+                </div>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-map-pin neon-amber"></i>
+                <div>
+                  <strong>المقر الحالي:</strong>
+                  <span>الرياض، المملكة العربية السعودية (يمني الجنسية)</span>
+                </div>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-language neon-cyan"></i>
+                <div>
+                  <strong>اللغات:</strong>
+                  <span>العربية (اللغة الأم) - الإنجليزية (إجادة مهنية للعمل)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Download CV / Social Connect -->
+            <div class="bio-actions">
+              <a href="https://linkedin.com/in/osama-saleh-ai" target="_blank" class="cyber-btn cyber-btn-outline">
+                <i class="fab fa-linkedin"></i> حساب LinkedIn
+              </a>
+              <a href="mailto:osamasalh7750@gmail.com" class="cyber-btn cyber-btn-outline">
+                <i class="fas fa-envelope"></i> راسلني بريدياً
+              </a>
+            </div>
+          </div>
+
+          <!-- Professional Timeline -->
+          <div class="timeline-wrapper cyber-glass">
+            <div class="card-header-line">
+              <i class="fas fa-history neon-amber"></i>
+              <h3>الخبرات والمسار الوظيفي</h3>
+            </div>
+
+            <div class="timeline-track">
+              <!-- Item 1: Al-Rubban -->
+              <div class="timeline-item">
+                <div class="timeline-dot active"></div>
+                <div class="timeline-date">11/2025 - 04/2026 | جدة، السعودية</div>
+                <h4 class="timeline-role">مهندس ذكاء اصطناعي (AI Engineer)</h4>
+                <div class="timeline-company">الربان (Al-Rubban)</div>
+                <p class="timeline-desc">
+                  تصميم وتطوير حلول متقدمة باستخدام الذكاء الاصطناعي التوليدي والوكلاء الحواريين، أتمتة العمليات التجارية، وتطوير منصة "AI-X-Marketing" لأتمتة الحملات الإعلانية عبر Google Ads, Meta, TikTok, X, Snapchat.
+                </p>
+              </div>
+
+              <!-- Item 2: Al-Yamani Network -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">01/2022 - 12/2024 | إب، اليمن</div>
+                <h4 class="timeline-role">مهندس شبكات (Network Engineer)</h4>
+                <div class="timeline-company">شبكة اليماني (Al-Yamani Network)</div>
+                <p class="timeline-desc">
+                  تطبيق بروتوكولات الأمان وهندسة الشبكات لضمان استمرارية وكفاءة الاتصالات، صيانة البنية التحتية، وأتمتة مهام إدارة الشبكة وحل المشكلات الفنية المعقدة.
+                </p>
+              </div>
+
+              <!-- Item 3: Yemen Mobile -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">06/2023 - 09/2023 | إب، اليمن</div>
+                <h4 class="timeline-role">خدمة العملاء والدعم الفني التقني</h4>
+                <div class="timeline-company">يمن موبايل (Yemen Mobile)</div>
+                <p class="timeline-desc">
+                  تقديم الدعم الفني لبرمجة الهواتف الذكية، إدارة حسابات الفوترة وتدقيق اتصالات الشبكة وتهيئة الأجهزة للمستخدمين.
+                </p>
+              </div>
+
+              <!-- Item 4: Abu Dhar School -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">01/2020 - 12/2022 | إب، اليمن</div>
+                <h4 class="timeline-role">سكرتير وأمين صندوق وإدارة مالية</h4>
+                <div class="timeline-company">مدرسة أبو ذر الغفاري</div>
+                <p class="timeline-desc">
+                  إدارة العمليات المالية والمحافظة على سجلات مالية دقيقة، تنظيم العمليات الإدارية والتعليمية مع إظهار مهارات تنظيمية وقيادية قوية.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Matrix -->
+        <div class="skills-matrix-wrapper mt-5">
+          <div class="section-header small">
+            <h3 class="section-title-sm"><i class="fas fa-sliders-h neon-cyan"></i> الترسانة التقنية والمهارات البرمجية</h3>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-category-card cyber-glass" data-tilt>
+              <div class="skill-cat-header">
+                <i class="fas fa-brain text-cyan"></i>
+                <h4>الذكاء الاصطناعي و LLMs</h4>
+              </div>
+              <ul class="skill-list">
+                <li><span>Generative AI (الذكاء التوليدي)</span> <span class="skill-bar"><span style="width: 95%"></span></span></li>
+                <li><span>Prompt Engineering (الهندسة الفورية)</span> <span class="skill-bar"><span style="width: 98%"></span></span></li>
+                <li><span>Fine-tuning & RAG (الضبط الدقيق)</span> <span class="skill-bar"><span style="width: 90%"></span></span></li>
+                <li><span>AI Agents (روبوتات ووكلاء المحادثة)</span> <span class="skill-bar"><span style="width: 94%"></span></span></li>
+              </ul>
+            </div>
+
+            <div class="skill-category-card cyber-glass" data-tilt>
+              <div class="skill-cat-header">
+                <i class="fas fa-laptop-code text-amber"></i>
+                <h4>تطوير الويب والأنظمة</h4>
+              </div>
+              <ul class="skill-list">
+                <li><span>Full-stack Web Architecture</span> <span class="skill-bar"><span style="width: 92%"></span></span></li>
+                <li><span>Database Management (قواعد البيانات)</span> <span class="skill-bar"><span style="width: 90%"></span></span></li>
+                <li><span>RESTful APIs & Webhooks</span> <span class="skill-bar"><span style="width: 96%"></span></span></li>
+                <li><span>Microservices & Cloud Backend</span> <span class="skill-bar"><span style="width: 88%"></span></span></li>
+              </ul>
+            </div>
+
+            <div class="skill-category-card cyber-glass" data-tilt>
+              <div class="skill-cat-header">
+                <i class="fas fa-network-wired text-cyan"></i>
+                <h4>الشبكات والأتمتة والـ APIs</h4>
+              </div>
+              <ul class="skill-list">
+                <li><span>Marketing APIs (TikTok, Meta, Google)</span> <span class="skill-bar"><span style="width: 95%"></span></span></li>
+                <li><span>Network Security & Protocols</span> <span class="skill-bar"><span style="width: 92%"></span></span></li>
+                <li><span>IT Infrastructure Management</span> <span class="skill-bar"><span style="width: 89%"></span></span></li>
+                <li><span>IoT Systems (إنترنت الأشياء)</span> <span class="skill-bar"><span style="width: 85%"></span></span></li>
+              </ul>
+            </div>
+
+            <div class="skill-category-card cyber-glass" data-tilt>
+              <div class="skill-cat-header">
+                <i class="fas fa-tasks text-amber"></i>
+                <h4>إدارة المشاريع والقيادة</h4>
+              </div>
+              <ul class="skill-list">
+                <li><span>Agile & Scrum Methodologies</span> <span class="skill-bar"><span style="width: 90%"></span></span></li>
+                <li><span>Problem Solving & Innovation</span> <span class="skill-bar"><span style="width: 96%"></span></span></li>
+                <li><span>Data Analysis (تحليل البيانات)</span> <span class="skill-bar"><span style="width: 88%"></span></span></li>
+                <li><span>Professional Communication</span> <span class="skill-bar"><span style="width: 94%"></span></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section-wrapper services-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fas fa-gem"></i> ماذا أقدم لعملائي؟</div>
+          <h2 class="section-title">خدمات وحلول <span class="neon-amber">الأعمال البرمجية</span></h2>
+          <p class="section-subtitle">منظومات رقمية ذكية مصممة خصيصاً لمضاعفة إنتاجية شركتك ونمو مبيعاتك</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card cyber-glass" data-tilt>
+            <div class="service-icon-box">
+              <i class="fas fa-brain"></i>
+              <div class="icon-pulse"></div>
+            </div>
+            <h3 class="service-title">بناء وتكامل أنظمة الذكاء الاصطناعي التوليدي</h3>
+            <p class="service-desc">
+              تطوير روبوتات ووكلاء ذكاء اصطناعي (AI Agents) مخصصة لخدمة العملاء، وتوليد المحتوى والوسائط، وربط نماذج LLMs ببيانات ومستندات شركتك الداخلية بنظام RAG فائق الدقة.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle text-cyan"></i> محركات محادثة ذكية متخصصة</li>
+              <li><i class="fas fa-check-circle text-cyan"></i> معالجة المستندات واستخراج البيانات</li>
+              <li><i class="fas fa-check-circle text-cyan"></i> توليد الصور والفيديوهات بالأوامر</li>
+            </ul>
+            <a href="#custom-order" class="service-btn" data-service="ai-integration">طلب الخدمة الآن <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card cyber-glass" data-tilt>
+            <div class="service-icon-box amber">
+              <i class="fas fa-ad"></i>
+              <div class="icon-pulse"></div>
+            </div>
+            <h3 class="service-title">أتمتة الحملات الإعلانية وربط الـ APIs</h3>
+            <p class="service-desc">
+              إنشاء أنظمة برمجية لأتمتة إعلانات المنصات الكبرى (Meta, Google Ads, TikTok, Snapchat, X)، وإدارة الميزانيات وتوليد التقارير الذكية وربط الـ Webhooks لتتبع التحويلات لحظياً.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle text-amber"></i> أتمتة إطلاق الإعلانات وتحسينها</li>
+              <li><i class="fas fa-check-circle text-amber"></i> تكامل RESTful APIs متعدد المنصات</li>
+              <li><i class="fas fa-check-circle text-amber"></i> لوحات تحكم تحليلية مباشرة ROI</li>
+            </ul>
+            <a href="#custom-order" class="service-btn" data-service="ad-automation">طلب الخدمة الآن <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card cyber-glass" data-tilt>
+            <div class="service-icon-box">
+              <i class="fas fa-laptop-code"></i>
+              <div class="icon-pulse"></div>
+            </div>
+            <h3 class="service-title">تطوير مواقع الويب والمنظومات الإدارية المخصصة</h3>
+            <p class="service-desc">
+              هندسة وبرمجة مواقع الشركات، المتاجر الإلكترونية، ومنظومات إدارة تجارة التجزئة (POS & ERP) بنية معمارية قوية (Full-Stack) سريعة الاستجابة وعالية الأمان.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle text-cyan"></i> واجهات مستخدم عصرية وسريعة جداً</li>
+              <li><i class="fas fa-check-circle text-cyan"></i> ربط بوابات الدفع الإلكتروني والشحن</li>
+              <li><i class="fas fa-check-circle text-cyan"></i> لوحات تحكم متقدمة لإدارة المخزون والمبيعات</li>
+            </ul>
+            <a href="#custom-order" class="service-btn" data-service="web-dev">طلب الخدمة الآن <i class="fas fa-arrow-left"></i></a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card cyber-glass" data-tilt>
+            <div class="service-icon-box amber">
+              <i class="fas fa-network-wired"></i>
+              <div class="icon-pulse"></div>
+            </div>
+            <h3 class="service-title">هندسة الشبكات وحلول إنترنت الأشياء (IoT)</h3>
+            <p class="service-desc">
+              تخطيط وتنفيذ البنى التحتية للشبكات السلكية واللاسلكية، بروتوكولات الأمان والحماية، وتطوير أجهزة ونظم مراقبة IoT المتصلة سحابياً لتحليل المؤشرات الحيوية والتشغيلية.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle text-amber"></i> تأمين وحماية خوادم وشبكات الشركات</li>
+              <li><i class="fas fa-check-circle text-amber"></i> دمج أجهزة الاستشعار مع اللوحات السحابية</li>
+              <li><i class="fas fa-check-circle text-amber"></i> مراقبة الأداء وتنبيهات الأعطال الفورية</li>
+            </ul>
+            <a href="#custom-order" class="service-btn" data-service="network-iot">طلب الخدمة الآن <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFTWARE MARKETPLACE SECTION -->
+    <section id="marketplace" class="section-wrapper marketplace-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag marketplace-tag"><i class="fas fa-store"></i> متجر OVRAX للحلول والأنظمة الجاهزة</div>
+          <h2 class="section-title">سوق <span class="neon-cyan">OVRAX</span> البرمجي</h2>
+          <p class="section-subtitle">اقتنِ أنظمة متكاملة ومجربة جاهزة للتشغيل الفوري مع خيارات التخصيص أو شراء الكود المصدري</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="marketplace-filters">
+          <button class="filter-btn active" data-filter="all"><i class="fas fa-th-large"></i> جميع الأنظمة</button>
+          <button class="filter-btn" data-filter="ai"><i class="fas fa-brain"></i> الذكاء الاصطناعي</button>
+          <button class="filter-btn" data-filter="retail"><i class="fas fa-shopping-cart"></i> إدارة التجزئة والمتاجر</button>
+          <button class="filter-btn" data-filter="marketing"><i class="fas fa-bullhorn"></i> التسويق والأتمتة</button>
+          <button class="filter-btn" data-filter="iot"><i class="fas fa-microchip"></i> إنترنت الأشياء والشبكات</button>
+        </div>
+
+        <!-- Marketplace Products Grid -->
+        <div class="products-grid" id="productsContainer">
+          <!-- Products dynamically injected via marketplace.js with fallback content -->
+        </div>
+
+        <!-- Marketplace Banner Box -->
+        <div class="custom-solution-banner cyber-glass">
+          <div class="banner-content">
+            <div class="banner-icon"><i class="fas fa-laptop-code neon-amber"></i></div>
+            <div class="banner-text">
+              <h3>هل تحتاج إلى نظام مخصص بمواصفات حصرية لشركتك؟</h3>
+              <p>يمكننا تعديل أي من هذه الأنظمة أو بناء منظومة كاملة مخصصة وفقاً لمتطلبات عملك الدقيقة مع توقيع اتفاقيات سرية وتراخيص تجارية كاملة.</p>
+            </div>
+          </div>
+          <div class="banner-action">
+            <a href="#custom-order" class="cyber-btn cyber-btn-primary">
+              <span>طلب تخصيص نظام</span>
+              <i class="fas fa-cog"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI CONSULTANT CHAT STUDIO SECTION -->
+    <section id="ai-consultant" class="section-wrapper ai-chat-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag ai-tag"><i class="fas fa-robot"></i> الذكاء الاصطناعي في خدمتك</div>
+          <h2 class="section-title">المستشار الذكي <span class="neon-cyan">OVRAX AI Architect</span></h2>
+          <p class="section-subtitle">اشرح فكرتك البرمجية بأي صيغة، ودع الذكاء الاصطناعي يحللها، يحدد معماريتها، ويجهز لك خطة عمل فورية!</p>
+        </div>
+
+        <div class="ai-studio-grid">
+          <!-- AI Chat Window -->
+          <div class="ai-chat-window cyber-glass">
+            <!-- Chat Header -->
+            <div class="chat-header">
+              <div class="chat-agent-info">
+                <div class="agent-avatar">
+                  <i class="fas fa-brain"></i>
+                  <span class="online-indicator"></span>
+                </div>
+                <div>
+                  <h4 class="agent-name">OVRAX AI Project Consultant</h4>
+                  <span class="agent-status">متصل وجاهز لتحليل وتفكيك مشروعك</span>
+                </div>
+              </div>
+              <div class="chat-header-actions">
+                <button class="chat-tool-btn" id="clearChatBtn" title="تفريغ المحادثة"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+
+            <!-- Chat Messages Log -->
+            <div class="chat-messages" id="chatMessages">
+              <div class="chat-message ai-message">
+                <div class="msg-avatar"><i class="fas fa-brain"></i></div>
+                <div class="msg-bubble">
+                  <div class="msg-header"><strong>المستشار الذكي (OVRAX AI)</strong> <span class="msg-time">الآن</span></div>
+                  <div class="msg-body">
+                    مرحباً بك! أنا مستشارك الذكي للمشاريع البرمجية لدى المهندس <strong>أسامة صالح</strong>.
+                    <br><br>
+                    💡 <strong>كيف أساعدك اليوم؟</strong>
+                    اكتب لي فكرة موقعك، تطبيقك، أو النظام الذي تحلم ببنائه (مثلاً: <em>"أريد تطبيق لتوصيل الطلبات مع لوحة تحكم وذكاء اصطناعي لترشيح المنتجات"</em>)، وسأقوم فوراً بـ:
+                    <ul class="chat-features-list">
+                      <li>تحديد المعمارية التقنية الأمثل (Frontend, Backend, AI Models).</li>
+                      <li>تفكيك الميزات الأساسية وتقدير الوقت اللازم للتنفيذ.</li>
+                      <li>تجهيز ملخص مواصفات تستطيع إرساله مباشرة للمهندس أسامة للبدء في التنفيذ.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Prompt Suggestions -->
+            <div class="quick-prompts-bar">
+              <span class="prompts-label"><i class="fas fa-lightbulb neon-amber"></i> اقتراحات سريعة:</span>
+              <button class="prompt-chip" data-prompt="أريد منصة SaaS تسويقية تؤتمت إعلانات TikTok وMeta وتولد محتوى ذكي">منصة SaaS للتسويق والذكاء الاصطناعي</button>
+              <button class="prompt-chip" data-prompt="أريد متجر إلكتروني متكامل ونظام POS لإدارة المخزون والمبيعات والفروع">نظام إدارة تجارة التجزئة والمخزون</button>
+              <button class="prompt-chip" data-prompt="أريد نظام روبوت محادثة AI يجيب العملاء على الواتساب والموقع من قاعدة بيانات شركتنا">وكيل ذكاء اصطناعي لخدمة العملاء</button>
+              <button class="prompt-chip" data-prompt="أريد موقع تعريفي احترافي ثلاثي الأبعاد لشركتي مع بوابة دفع وتكامل CRM">موقع ثلاثي الأبعاد وبوابة دفع</button>
+            </div>
+
+            <!-- Chat Input Area -->
+            <form class="chat-input-form" id="chatForm">
+              <div class="chat-input-wrapper">
+                <textarea id="chatInput" placeholder="اكتب فكرتك بالتفصيل هنا (مثال: أريد نظام لإدارة العيادات الطبية مع حجز إلكتروني)..." rows="2"></textarea>
+                <button type="submit" class="send-btn" id="sendBtn">
+                  <span>إرسال</span>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- AI Architecture Output Card -->
+          <div class="ai-summary-card cyber-glass" id="aiSummaryCard">
+            <div class="card-header-line">
+              <i class="fas fa-file-invoice-dollar neon-cyan"></i>
+              <h3>ملخص المواصفات الفنية المولد</h3>
+            </div>
+            <div class="summary-body" id="summaryBody">
+              <div class="summary-placeholder">
+                <i class="fas fa-robot floating-icon"></i>
+                <p>بمجرد أن تشرح فكرتك في المحادثة، سيظهر هنا المخطط الفني والتقدير المبدئي لمشروعك، وستتمكن من تحويله فوراً إلى طلب مشروع للمهندس أسامة!</p>
+              </div>
+            </div>
+            <div class="summary-footer" id="summaryFooter" style="display: none;">
+              <button class="cyber-btn cyber-btn-primary w-100" id="transferToOrderBtn">
+                <i class="fas fa-arrow-down"></i>
+                <span>تحويل هذه المواصفات إلى طلب مشروع رسمي</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMERCIAL PROJECT ORDER & COST CALCULATOR SECTION -->
+    <section id="custom-order" class="section-wrapper order-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fas fa-file-signature"></i> تقديم الطلبات والتعاقد التجاري</div>
+          <h2 class="section-title">طلب مشروع أو <span class="neon-amber">نظام برمجي مخصص</span></h2>
+          <p class="section-subtitle">حدد مواصفات وميزات نظامك، احصل على تقدير فوري، وأرسل طلبك مباشرة لتحديد موعد بدء التنفيذ</p>
+        </div>
+
+        <div class="order-grid">
+          <!-- Order Configuration Form -->
+          <form class="order-form cyber-glass" id="projectOrderForm">
+            <!-- Step 1: Project Type -->
+            <div class="form-step">
+              <div class="step-title">
+                <span class="step-num">01</span>
+                <h4>نوع المشروع المطلوب</h4>
+              </div>
+              <div class="option-grid project-types">
+                <label class="option-card active">
+                  <input type="radio" name="projectType" value="ai-system" checked>
+                  <i class="fas fa-brain"></i>
+                  <span class="opt-name">نظام أو تطبيق ذكاء اصطناعي</span>
+                  <span class="opt-desc">وكلاء محادثة، LLMs، RAG، توليد وسائط</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="projectType" value="web-ecommerce">
+                  <i class="fas fa-shopping-bag"></i>
+                  <span class="opt-name">متجر إلكتروني / موقع تجاري</span>
+                  <span class="opt-desc">بوابات دفع، إدارة منتجات، سلة تسوق</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="projectType" value="pos-erp">
+                  <i class="fas fa-cash-register"></i>
+                  <span class="opt-name">منظومة إدارة شركات / POS & ERP</span>
+                  <span class="opt-desc">مخزون، مبيعات، فواتير، تقارير مالية</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="projectType" value="ad-automation">
+                  <i class="fas fa-bullhorn"></i>
+                  <span class="opt-name">نظام أتمتة إعلانات وتسويق</span>
+                  <span class="opt-desc">ربط APIs المنصات الكبرى وتتبع الأداء</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="projectType" value="custom-fullstack">
+                  <i class="fas fa-code"></i>
+                  <span class="opt-name">برمجية مخصصة (Custom Full-Stack)</span>
+                  <span class="opt-desc">نظام سحابي مبني من الصفر حسب الطلب</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="projectType" value="network-infrastructure">
+                  <i class="fas fa-network-wired"></i>
+                  <span class="opt-name">هندسة شبكات وأمن معلومات</span>
+                  <span class="opt-desc">بنية تحتية، سيرفرات، أجهزة IoT</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Desired Features -->
+            <div class="form-step">
+              <div class="step-title">
+                <span class="step-num">02</span>
+                <h4>الميزات والملحقات الإضافية المطلوبة</h4>
+              </div>
+              <div class="feature-checkboxes">
+                <label class="feature-chip">
+                  <input type="checkbox" name="features" value="admin-dashboard" checked>
+                  <span class="chip-box"><i class="fas fa-tachometer-alt"></i> لوحة تحكم إدارية متقدمة</span>
+                </label>
+                <label class="feature-chip">
+                  <input type="checkbox" name="features" value="ai-bot" checked>
+                  <span class="chip-box"><i class="fas fa-robot"></i> دمج روبوت محادثة ذكي (AI)</span>
+                </label>
+                <label class="feature-chip">
+                  <input type="checkbox" name="features" value="payment-gateway">
+                  <span class="chip-box"><i class="fas fa-credit-card"></i> بوابات دفع إلكتروني (Visa/Mada/StcPay)</span>
+                </label>
+                <label class="feature-chip">
+                  <input type="checkbox" name="features" value="multi-lang">
+                  <span class="chip-box"><i class="fas fa-language"></i> دعم متعدد اللغات (عربي / إنجليزي)</span>
+                </label>
+                <label class="feature-chip">
+                  <input type="checkbox" name="features" value="api-integration">
+                  <span class="chip-box"><i class="fas fa-plug"></i> تكامل APIs خارجية وWebhooks</span>
+                </label>
+                <label class="feature-chip">
+                  <input type="checkbox" name="features" value="cloud-hosting">
+                  <span class="chip-box"><i class="fas fa-cloud"></i> إعداد الاستضافة السحابية والدومين</span>
+                </label>
+                <label class="feature-chip">
+                  <input type="checkbox" name="features" value="source-code">
+                  <span class="chip-box"><i class="fas fa-file-code"></i> تسليم الكود المصدري كاملاً (Full Source Code)</span>
+                </label>
+                <label class="feature-chip">
+                  <input type="checkbox" name="features" value="support-contract">
+                  <span class="chip-box"><i class="fas fa-shield-alt"></i> عقد صيانة ودعم فني سنوي</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 3: Project Details & Client Contact -->
+            <div class="form-step">
+              <div class="step-title">
+                <span class="step-num">03</span>
+                <h4>بيانات العميل وتفاصيل الفكرة</h4>
+              </div>
+              <div class="inputs-grid">
+                <div class="input-group">
+                  <label for="clientName"><i class="fas fa-user"></i> اسمك الكامل / اسم الشركة *</label>
+                  <input type="text" id="clientName" required placeholder="مثال: عبدالله القحطاني / شركة التقنية الحديثة">
+                </div>
+                <div class="input-group">
+                  <label for="clientPhone"><i class="fas fa-phone-alt"></i> رقم الهاتف أو الواتساب *</label>
+                  <input type="tel" id="clientPhone" required placeholder="مثال: +966 50 000 0000">
+                </div>
+                <div class="input-group">
+                  <label for="clientEmail"><i class="fas fa-envelope"></i> البريد الإلكتروني *</label>
+                  <input type="email" id="clientEmail" required placeholder="name@company.com">
+                </div>
+                <div class="input-group">
+                  <label for="projectTimeline"><i class="fas fa-calendar-alt"></i> الإطار الزمني المرغوب للتسليم</label>
+                  <select id="projectTimeline">
+                    <option value="urgent">عاجل جداً (خلال 7 - 14 يوم)</option>
+                    <option value="standard" selected>قياسي (خلال 3 - 5 أسابيع)</option>
+                    <option value="flexible">مرن (1 - 2 شهر)</option>
+                  </select>
+                </div>
+                <div class="input-group full-width">
+                  <label for="projectDescription"><i class="fas fa-pencil-alt"></i> وصف الفكرة والمتطلبات بالتفصيل *</label>
+                  <textarea id="projectDescription" required rows="4" placeholder="اكتب هنا تفاصيل مشروعك، أهدافه، وأي ميزات محددة ترغب بإضافتها..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submission Actions -->
+            <div class="form-actions">
+              <button type="button" class="cyber-btn cyber-btn-whatsapp" id="sendWhatsAppOrderBtn">
+                <i class="fab fa-whatsapp"></i>
+                <span>إرسال الطلب فوراً عبر WhatsApp للمهندس</span>
+              </button>
+              <button type="submit" class="cyber-btn cyber-btn-primary" id="submitEmailOrderBtn">
+                <i class="fas fa-paper-plane"></i>
+                <span>إرسال الطلب بريدياً وتسجيله</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Real-Time Cost & Summary Card -->
+          <div class="order-estimate-card cyber-glass" data-tilt>
+            <div class="card-header-line">
+              <i class="fas fa-calculator neon-cyan"></i>
+              <h3>التقدير المالي والزمني المبدئي</h3>
+            </div>
+            
+            <div class="estimate-stats">
+              <div class="estimate-box">
+                <span class="est-label">التقدير المالي المتوقع</span>
+                <div class="est-value" id="estimatedCostDisplay">$1,200 - $2,400</div>
+                <span class="est-sub">قابل للتخصيص حسب تفاصيل العقد</span>
+              </div>
+              <div class="estimate-box">
+                <span class="est-label">المدة الزمنية المتوقعة</span>
+                <div class="est-value" id="estimatedTimeDisplay">3 - 4 أسابيع</div>
+                <span class="est-sub">تسليم على مراحل متتابعة (Agile)</span>
+              </div>
+            </div>
+
+            <div class="guarantees-list">
+              <h4><i class="fas fa-check-double text-cyan"></i> ما يضمنه لك التعاقد مع OVRAX:</h4>
+              <ul>
+                <li><i class="fas fa-shield-alt text-amber"></i> كود نظيف وتوثيق فني شامل (Documentation).</li>
+                <li><i class="fas fa-shield-alt text-amber"></i> تدريب كامل لفريقك على إدارة واستخدام النظام.</li>
+                <li><i class="fas fa-shield-alt text-amber"></i> فترة ضمان ودعم فني مجاني بعد التسليم (30 يوماً).</li>
+                <li><i class="fas fa-shield-alt text-amber"></i> حماية وأمان عالي ومطابقة لمعايير الحماية العالمية.</li>
+              </ul>
+            </div>
+
+            <div class="direct-contact-pill">
+              <p>هل تود نقاشاً صوتياً سريعاً؟</p>
+              <a href="tel:+966553074762" class="phone-link"><i class="fas fa-phone-volume"></i> اتصال مباشر: +966 55 307 4762</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section id="contact" class="section-wrapper contact-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fas fa-satellite-dish"></i> قنوات التواصل المباشر</div>
+          <h2 class="section-title">تواصل مع <span class="neon-cyan">المهندس أسامة</span></h2>
+          <p class="section-subtitle">جاهز لمناقشة شراكات الأعمال، الاستشارات التقنية، وتطوير المنتجات البرمجية</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Card 1: WhatsApp -->
+          <a href="https://wa.me/966553074762" target="_blank" class="contact-card cyber-glass" data-tilt>
+            <div class="contact-icon wa"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-info">
+              <h4>محادثة واتساب فورية</h4>
+              <p dir="ltr">+966 55 307 4762</p>
+              <span class="action-hint">متاح للرد السريع <i class="fas fa-arrow-left"></i></span>
+            </div>
+          </a>
+
+          <!-- Card 2: Email -->
+          <a href="mailto:osamasalh7750@gmail.com" class="contact-card cyber-glass" data-tilt>
+            <div class="contact-icon mail"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info">
+              <h4>البريد الإلكتروني المباشر</h4>
+              <p>osamasalh7750@gmail.com</p>
+              <span class="action-hint">إرسال استفسار أو ملفات <i class="fas fa-arrow-left"></i></span>
+            </div>
+          </a>
+
+          <!-- Card 3: LinkedIn -->
+          <a href="https://linkedin.com/in/osama-saleh-ai" target="_blank" class="contact-card cyber-glass" data-tilt>
+            <div class="contact-icon in"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-info">
+              <h4>الملف المهني على LinkedIn</h4>
+              <p>linkedin.com/in/osama-saleh-ai</p>
+              <span class="action-hint">استعراض الشبكة المهنية <i class="fas fa-arrow-left"></i></span>
+            </div>
+          </a>
+
+          <!-- Card 4: Location -->
+          <div class="contact-card cyber-glass" data-tilt>
+            <div class="contact-icon loc"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="contact-info">
+              <h4>الموقع والعمل عن بعد</h4>
+              <p>الرياض، السعودية / متاح عالمياً عن بعد</p>
+              <span class="action-hint text-cyan">استشارات وحلول عابرة للحدود</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL: Product Live Preview & Purchase Modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-card cyber-glass" id="modalCard">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      <div class="modal-header" id="modalHeader">
+        <!-- Injected via JS -->
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via JS -->
+      </div>
+      <div class="modal-footer" id="modalFooter">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- FOOTER -->
+  <footer class="cyber-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="logo-wrapper-small">
+          <img src="assets/images/ovrax_logo.jpg" alt="OVRAX" class="footer-logo">
+          <span class="footer-brand-name">OVRAX</span>
+        </div>
+        <p class="footer-tagline">العلامة البرمجية والحلول الذكية للمهندس أسامة صالح درهم راجح.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">الرئيسية</a>
+        <a href="#about">عن المهندس</a>
+        <a href="#marketplace">السوق البرمجي</a>
+        <a href="#ai-consultant">المستشار الذكي</a>
+        <a href="#custom-order">طلب مشروع</a>
+      </div>
+
+      <div class="footer-copyright">
+        <p>© 2026 جميع الحقوق محفوظة لـ <strong>OVRAX</strong> | المهندس أسامة صالح</p>
+        <span class="tech-badge"><i class="fas fa-bolt text-cyan"></i> Built with 3D Cyber Core & AI</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js 3D Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Custom JS Modules -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/marketplace.js"></script>
+  <script src="js/ai-consultant.js"></script>
+  <script src="js/quote-calculator.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Safwa Car Rental - Directional Utilities (RTL Arabic / LTR English)
+   ========================================================================== */
+
+/* --- RTL (Default Arabic) --- */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .toast-container {
+  right: 24px;
+  left: auto;
+}
+
+html[dir="rtl"] .floating-whatsapp {
+  left: 24px;
+  right: auto;
+}
+
+html[dir="rtl"] .category-pill {
+  right: 12px;
+  left: auto;
+}
+
+html[dir="rtl"] .car-status-badge {
+  left: 12px;
+  right: auto;
+}
+
+html[dir="rtl"] .wishlist-btn {
+  left: 12px;
+  right: auto;
+}
+
+/* --- LTR (English Mode) --- */
+html[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir="ltr"] .toast-container {
+  left: 24px;
+  right: auto;
+}
+
+html[dir="ltr"] .floating-whatsapp {
+  right: 24px;
+  left: auto;
+}
+
+html[dir="ltr"] .category-pill {
+  left: 12px;
+  right: auto;
+}
+
+html[dir="ltr"] .car-status-badge {
+  right: 12px;
+  left: auto;
+}
+
+html[dir="ltr"] .wishlist-btn {
+  right: 12px;
+  left: auto;
+}
+
+html[dir="ltr"] .toast-success { border-left: 4px solid var(--success); border-right: none; }
+html[dir="ltr"] .toast-warning { border-left: 4px solid var(--warning); border-right: none; }
+html[dir="ltr"] .toast-error { border-left: 4px solid var(--danger); border-right: none; }
+html[dir="ltr"] .toast-info { border-left: 4px solid var(--primary); border-right: none; }
+
+html[dir="ltr"] .notification-dropdown {
+  left: auto;
+  right: 20px;
+}

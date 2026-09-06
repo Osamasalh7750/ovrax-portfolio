@@ -1,0 +1,153 @@
+/* ==========================================================================
+   3D EFFECTS, HOLOGRAMS, LIGHT BEAMS & CYBER ANIMATIONS
+   ========================================================================== */
+
+/* Hologram Scanner Animation on Profile & Cards */
+.hologram-scanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--cyan-primary), transparent);
+  box-shadow: 0 0 15px var(--cyan-primary);
+  opacity: 0.8;
+  animation: scan3d 3.5s linear infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes scan3d {
+  0% { top: 0%; opacity: 0; }
+  15% { opacity: 0.9; }
+  85% { opacity: 0.9; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* 3D Tilt Card Effects */
+[data-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Photo Glow Ring Rotation */
+.photo-glow-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px dashed rgba(0, 229, 255, 0.5);
+  animation: rotateRing 14s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Glowing Border Beams on Hover */
+.cyber-glass::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 40%, rgba(0, 229, 255, 0.4), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+.cyber-glass:hover::after {
+  opacity: 1;
+}
+
+/* Neon Pulsing Dot */
+.icon-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid var(--cyan-primary);
+  opacity: 0;
+  animation: iconPulseAnim 2.5s ease-out infinite;
+}
+
+.service-icon-box.amber .icon-pulse {
+  border-color: var(--amber-primary);
+}
+
+@keyframes iconPulseAnim {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* 3D Interactive Interactive Modal Demo Box */
+.demo-live-canvas-box {
+  background: #020408;
+  border: 1px solid var(--metal-border-cyan);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 16px 0;
+  position: relative;
+}
+
+.demo-screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.screen-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.screen-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.screen-dots span:nth-child(1) { background: #ef4444; }
+.screen-dots span:nth-child(2) { background: #f59e0b; }
+.screen-dots span:nth-child(3) { background: #10b981; }
+
+.screen-title {
+  font-family: var(--font-cyber);
+  font-size: 0.78rem;
+  color: var(--cyan-primary);
+}
+
+/* Interactive simulation metrics in modal */
+.sim-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.sim-metric-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.sim-val {
+  font-family: var(--font-cyber);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  display: block;
+}
+
+.sim-lbl {
+  font-size: 0.72rem;
+  color: var(--metal-muted);
+}

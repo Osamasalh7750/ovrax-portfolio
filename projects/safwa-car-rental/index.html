@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="site_title">الصفوة لتأجير السيارات | منصة الحجز الفوري في المملكة</title>
+  <meta name="description" content="منصة الصفوة الرائدة لتأجير السيارات بالمملكة العربية السعودية. أسلوب فاخر وبسيط، أسعار شفافة، وتأمين شامل بدون رسوم خفية.">
+  
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/rtl-ltr.css">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم تصميم وتطوير هذه المنصة بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D9%86%D8%B5%D8%A9%20%D8%AA%D8%A3%D8%AC%D9%8A%D8%B1%20%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%D8%A9%20%D9%84%D9%85%D9%86%D8%B5%D8%A9%20%D8%A7%D9%84%D8%B5%D9%81%D9%88%D8%A9" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب منصة مماثلة
+    </a>
+  </div>
+</div>
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="header-navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" onclick="window.app.switchView('home')">
+        <div class="brand-symbol">🚗</div>
+        <div>
+          <div class="brand-name">الصفوة <span>SAFWA</span></div>
+          <span class="brand-tagline">PREMIUM CAR RENTAL</span>
+        </div>
+      </a>
+
+      <!-- Main Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="mainNavLinks">
+          <li><a href="#home" class="nav-link active" data-i18n="nav_home" onclick="window.app.switchView('home')">الرئيسية</a></li>
+          <li><a href="#cars" class="nav-link" data-i18n="nav_cars" onclick="window.app.switchView('cars')">السيارات</a></li>
+          <li><a href="#categories" class="nav-link" data-i18n="nav_categories" onclick="window.app.switchView('home'); document.getElementById('categoriesSection')?.scrollIntoView({behavior:'smooth'});">أنواع السيارات</a></li>
+          <li><a href="#offers" class="nav-link" data-i18n="nav_offers" onclick="window.app.switchView('home'); document.getElementById('offersSection')?.scrollIntoView({behavior:'smooth'});">العروض</a></li>
+          <li><a href="#how-it-works" class="nav-link" data-i18n="nav_how_it_works" onclick="window.app.switchView('home'); document.getElementById('howSection')?.scrollIntoView({behavior:'smooth'});">كيف تحجز؟</a></li>
+          <li><a href="#faq" class="nav-link" data-i18n="nav_faq" onclick="window.app.switchView('faq')">الأسئلة الشائعة</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact" onclick="window.app.switchView('contact')">تواصل معنا</a></li>
+          <li><a href="#admin" class="nav-link admin-link" data-i18n="nav_admin" onclick="window.app.switchView('admin')">⚙️ لوحة الإدارة</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action & Auth Buttons -->
+      <div class="nav-actions">
+        <!-- Wishlist -->
+        <button class="icon-btn" onclick="window.location.hash='#my-account'; window.app.switchView('account'); window.app.switchAccountTab('favorites');" title="المفضلة">
+          ❤️
+          <span class="icon-badge wishlist-counter-badge">2</span>
+        </button>
+
+        <!-- Notification Bell -->
+        <div style="position:relative;">
+          <button class="icon-btn" onclick="window.app.toggleNotificationDropdown()" title="الإشعارات">
+            🔔
+            <span class="icon-badge" id="notifBadgeCounter">1</span>
+          </button>
+          <div class="notification-dropdown" id="notificationDropdown">
+            <div class="notif-header d-flex justify-content-between">
+              <span>🔔 الإشعارات الواردة</span>
+              <button class="btn-sm btn-outline" style="border:none;" onclick="window.appStore.markNotificationsRead(); window.app.updateNotificationBadge();">تحديد كمقروء</button>
+            </div>
+            <div id="notificationListItems"></div>
+          </div>
+        </div>
+
+        <!-- Auth Shortcut Buttons -->
+        <button class="btn btn-outline btn-sm" onclick="window.app.openAuthModal('login')" data-i18n="nav_login">تسجيل الدخول</button>
+        <button class="btn btn-primary btn-sm" onclick="window.location.hash='#my-account'; window.app.switchView('account');" data-i18n="nav_my_account">حسابي</button>
+
+        <!-- Language Switcher -->
+        <button class="btn btn-secondary btn-sm" id="langToggleBtn" onclick="window.i18n.toggleLang()">
+          <span class="flag-icon">🇬🇧</span> English
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle-btn" onclick="window.app.toggleMobileMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== VIEW 1: HOME PAGE ==================== -->
+  <main id="view-home" class="view-container active">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="badge-text" data-i18n="hero_badge">✨ منصة تأجير السيارات الفاخرة الأولى بالمملكة</span>
+          </div>
+          <h1 class="hero-title" data-i18n="hero_title">احجز سيارتك المثالية بسهولة</h1>
+          <p class="hero-desc" data-i18n="hero_desc">اختر سيارتك، حدد موعد الاستلام والتسليم، واحصل على أفضل تجربة تأجير بأسعار واضحة وتأمين شامل بدون رسوم خفية.</p>
+        </div>
+
+        <!-- Hero Instant Booking Search Card -->
+        <div class="hero-search-card">
+          <form id="heroSearchForm" onsubmit="event.preventDefault(); window.app.executeHeroSearch();">
+            <div class="search-grid">
+              <div class="form-group">
+                <label data-i18n="search_pickup_location">موقع الاستلام</label>
+                <select id="heroPickupLoc" class="form-control" required></select>
+              </div>
+
+              <div class="form-group" id="returnLocationGroup" style="display:none;">
+                <label data-i18n="search_return_location">موقع التسليم</label>
+                <select id="heroReturnLoc" class="form-control"></select>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="search_pickup_date">تاريخ الاستلام</label>
+                <input type="date" id="heroPickupDate" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="search_pickup_time">وقت الاستلام</label>
+                <input type="time" id="heroPickupTime" class="form-control" value="10:00" required>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="search_return_date">تاريخ التسليم</label>
+                <input type="date" id="heroReturnDate" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="search_return_time">وقت التسليم</label>
+                <input type="time" id="heroReturnTime" class="form-control" value="10:00" required>
+              </div>
+            </div>
+
+            <label class="search-checkbox-row">
+              <input type="checkbox" id="sameLocationCheck" checked onchange="window.app.toggleSameReturnLocation(this)">
+              <span data-i18n="search_same_location">التسليم في نفس موقع الاستلام</span>
+            </label>
+
+            <div class="text-center mt-2">
+              <button type="submit" class="btn btn-primary btn-search-hero" data-i18n="search_btn">
+                🔍 ابحث عن السيارات
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Section: Categories (أنواع السيارات) -->
+      <section class="categories-section" id="categoriesSection">
+        <div class="section-header text-center">
+          <h2 data-i18n="section_categories_title">أنواع وفئات السيارات</h2>
+          <p data-i18n="section_categories_subtitle">اختر الفئة التي تلائم أسلوب رحلتك من أسطولنا الحديث</p>
+        </div>
+
+        <div class="category-cards-grid">
+          <div class="category-card-item" onclick="window.app.filterByCategoryFromHome('economy')">
+            <span class="cat-icon-emoji">🚗</span>
+            <div class="cat-name-label" data-i18n="cat_economy">اقتصادية</div>
+            <div class="cat-count-label" id="catCount_economy">2 سيارات متاحة</div>
+          </div>
+          <div class="category-card-item" onclick="window.app.filterByCategoryFromHome('sedan')">
+            <span class="cat-icon-emoji">🚘</span>
+            <div class="cat-name-label" data-i18n="cat_sedan">سيدان</div>
+            <div class="cat-count-label" id="catCount_sedan">2 سيارات متاحة</div>
+          </div>
+          <div class="category-card-item" onclick="window.app.filterByCategoryFromHome('suv')">
+            <span class="cat-icon-emoji">🚙</span>
+            <div class="cat-name-label" data-i18n="cat_suv">SUV ودفع رباعي</div>
+            <div class="cat-count-label" id="catCount_suv">2 سيارات متاحة</div>
+          </div>
+          <div class="category-card-item" onclick="window.app.filterByCategoryFromHome('luxury')">
+            <span class="cat-icon-emoji">🏎️</span>
+            <div class="cat-name-label" data-i18n="cat_luxury">فاخرة</div>
+            <div class="cat-count-label" id="catCount_luxury">2 سيارات متاحة</div>
+          </div>
+          <div class="category-card-item" onclick="window.app.filterByCategoryFromHome('electric')">
+            <span class="cat-icon-emoji">⚡</span>
+            <div class="cat-name-label">كهربائية</div>
+            <div class="cat-count-label" id="catCount_electric">1 سيارة متاحة</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Featured Cars (السيارات المميزة) -->
+      <section class="mt-5">
+        <div class="section-header d-flex justify-content-between align-items-baseline">
+          <div>
+            <h2 data-i18n="section_featured_title">السيارات المميزة</h2>
+            <p data-i18n="section_featured_subtitle">سيارات فاخرة وحديثة معقمة وجاهزة للاستلام الفوري</p>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="window.location.hash='#cars'; window.app.switchView('cars');" data-i18n="btn_view_fleet">
+            مشاهدة الأسطول كاملاً ←
+          </button>
+        </div>
+        <div class="cars-grid" id="homeFeaturedCarsGrid">
+          <!-- Rendered by app.js -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Section: Why Choose Us (لماذا تختارنا؟) -->
+    <section class="why-us-section" id="whySection">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 data-i18n="section_why_title">لماذا تختار الصفوة؟</h2>
+          <p data-i18n="section_why_subtitle">نقدم معايير استثنائية تجعل رحلتك سلسة ومريحة</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-box">
+            <div class="why-icon-wrap">🚘</div>
+            <h4 data-i18n="why_1_title">سيارات حديثة 2025 - 2026</h4>
+            <p data-i18n="why_1_desc">أسطول كامل من أحدث الموديلات العالمية يخضع لفحص دوري شامل وتعقيم مستمر.</p>
+          </div>
+          <div class="why-box">
+            <div class="why-icon-wrap">💎</div>
+            <h4 data-i18n="why_2_title">أسعار شفافة 100%</h4>
+            <p data-i18n="why_2_desc">لا رسوم خفية ولا تكاليف مفاجئة عند الاستلام؛ السعر يشمل الضريبة وكافة التفاصيل.</p>
+          </div>
+          <div class="why-box">
+            <div class="why-icon-wrap">🛡️</div>
+            <h4 data-i18n="why_3_title">تأمين واضح ومرن</h4>
+            <p data-i18n="why_3_desc">باقات تأمينية تلائم احتياجك مع خيار الإعفاء التام من نسبة التحمل (0 ريال).</p>
+          </div>
+          <div class="why-box">
+            <div class="why-icon-wrap">⚡</div>
+            <h4 data-i18n="why_4_title">حجز فوري في دقيقتين</h4>
+            <p data-i18n="why_4_desc">إجراءات رقمية بالكامل بدون انتظار؛ احجز واستلم مفتاحك في المطار فور وصولك.</p>
+          </div>
+          <div class="why-box">
+            <div class="why-icon-wrap">📞</div>
+            <h4 data-i18n="why_5_title">دعم العملاء على مدار 24/7</h4>
+            <p data-i18n="why_5_desc">فريق خدمة عملاء ومساعدة على الطريق متواجد على مدار الساعة لخدمتك.</p>
+          </div>
+          <div class="why-box">
+            <div class="why-icon-wrap">📍</div>
+            <h4 data-i18n="why_6_title">مواقع استلام متعددة</h4>
+            <p data-i18n="why_6_desc">فروع في جميع صالات مطارات المملكة الرئيسية ومراكز المدن مع إمكانية التسليم بفرع مختلف.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Section: Current Offers (العروض الحالية) -->
+      <section class="mt-4" id="offersSection">
+        <div class="section-header">
+          <h2 data-i18n="section_offers_title">العروض الحالية والخصومات</h2>
+          <p data-i18n="section_offers_subtitle">استفد من كوبونات الخصم الحصرية عند إتمام حجزك اليوم</p>
+        </div>
+
+        <div class="deals-grid">
+          <div class="deal-card">
+            <div class="deal-header">
+              <span class="deal-code-pill">SAFWA2026</span>
+              <span class="badge badge-gold">خصم 15%</span>
+            </div>
+            <h4>عرض ترحيبي لجميع العملاء</h4>
+            <p class="text-muted small">احصل على خصم 15% بحد أقصى 200 ريال على كافة الحجوزات أكثر من يومين.</p>
+            <button class="btn btn-outline btn-sm mt-3" onclick="window.location.hash='#cars'; window.app.switchView('cars');">استخدم الكود الآن</button>
+          </div>
+
+          <div class="deal-card">
+            <div class="deal-header">
+              <span class="deal-code-pill">WEEKEND20</span>
+              <span class="badge badge-gold">خصم 20%</span>
+            </div>
+            <h4>باقة عطلة نهاية الأسبوع</h4>
+            <p class="text-muted small">خصم 20% على إيجارات عطلة نهاية الأسبوع (الخميس والجمعة والسبت).</p>
+            <button class="btn btn-outline btn-sm mt-3" onclick="window.location.hash='#cars'; window.app.switchView('cars');">استخدم الكود الآن</button>
+          </div>
+
+          <div class="deal-card">
+            <div class="deal-header">
+              <span class="deal-code-pill">VIP100</span>
+              <span class="badge badge-gold">خصم 100 ريال</span>
+            </div>
+            <h4>خصم الحجوزات الطويلة</h4>
+            <p class="text-muted small">خصم فوري بقيمة 100 ريال لأي حجز يمتد إلى 4 أيام فأكثر من الأسطول الفاخر.</p>
+            <button class="btn btn-outline btn-sm mt-3" onclick="window.location.hash='#cars'; window.app.switchView('cars');">استخدم الكود الآن</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: How to Book (كيف تحجز؟) -->
+      <section class="how-it-works-section" id="howSection">
+        <div class="section-header text-center">
+          <h2 data-i18n="section_how_title">كيف تحجز سيارتك؟</h2>
+          <p data-i18n="section_how_subtitle">أربع خطوات بسيطة وسريعة تفصلك عن قيادة سيارتك المفضلة</p>
+        </div>
+
+        <div class="steps-cards-grid">
+          <div class="step-process-card">
+            <span class="step-big-number">01</span>
+            <h4 data-i18n="step_num_1_title">1. اختر السيارة</h4>
+            <p data-i18n="step_num_1_desc">تصفح أسطولنا المتنوع وقارن بين المواصفات والأسعار لاختيار الأنسب لك.</p>
+          </div>
+          <div class="step-process-card">
+            <span class="step-big-number">02</span>
+            <h4 data-i18n="step_num_2_title">2. حدد التاريخ والموقع</h4>
+            <p data-i18n="step_num_2_desc">اختر فرع الاستلام والتسليم ومواعيد رحلتك لحساب التكلفة بدقة.</p>
+          </div>
+          <div class="step-process-card">
+            <span class="step-big-number">03</span>
+            <h4 data-i18n="step_num_3_title">3. أدخل بياناتك</h4>
+            <p data-i18n="step_num_3_desc">أدخل معلومات الهوية ورخصة القيادة لإصدار التفويض الإلكتروني المعتمد.</p>
+          </div>
+          <div class="step-process-card">
+            <span class="step-big-number">04</span>
+            <h4 data-i18n="step_num_4_title">4. ادفع واستلم السيارة</h4>
+            <p data-i18n="step_num_4_desc">ادفع بأمان عبر مدى أو البطاقة واستلم سيارتك جاهزة ونظيفة فوراً.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Section: Testimonials (تقييمات العملاء) -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 data-i18n="section_reviews_title">تقييمات وآراء العملاء</h2>
+          <p data-i18n="section_reviews_subtitle">نفخر بثقة آلاف العملاء في جميع مدن ومطارات المملكة</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="mb-2 text-warning">★★★★★</div>
+            <p class="testimonial-quote">"تجربة استلام من مطار الملك خالد كانت فائقة السرعة، استلمت الكامري نظيفة جداً وبدون أي تعقيد. أفضل منصة تأجير تعاملت معها."</p>
+            <div class="testimonial-user">
+              <div class="user-avatar">ع.ش</div>
+              <div>
+                <strong>عبدالرحمن الشهري</strong>
+                <small class="text-muted d-block">الرياض • استأجر تويوتا كامري</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="mb-2 text-warning">★★★★★</div>
+            <p class="testimonial-quote">"الأسعار واضحة تماماً وبدون أي مبالغ خفية، والتأمين الشامل بدون تحمل يعطيك راحة بال مطلقة خلال السفر العائلي."</p>
+            <div class="testimonial-user">
+              <div class="user-avatar">ف.ع</div>
+              <div>
+                <strong>فهد العتيبي</strong>
+                <small class="text-muted d-block">جدة • استأجر لاندكروزر VXR</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="mb-2 text-warning">★★★★★</div>
+            <p class="testimonial-quote">"استرداد مبلغ التأمين تم في غضون 4 أيام عمل دون الحاجة للمتابعة. احترافية عالية وخدمة عملاء راقية تستحق 5 نجوم."</p>
+            <div class="testimonial-user">
+              <div class="user-avatar">س.د</div>
+              <div>
+                <strong>سارة الدوسري</strong>
+                <small class="text-muted d-block">الدمام • استأجرت هيونداي إلنترا</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== VIEW 2: CAR CATALOG & FILTERS ==================== -->
+  <main id="view-cars" class="view-container">
+    <div class="container" style="padding-top: 2rem;">
+      <div class="section-header">
+        <h2 data-i18n="nav_cars">أسطول السيارات المتاح</h2>
+        <p class="text-muted" id="catalogResultsCount">عرض السيارات المتاحة للحجز الفوري</p>
+      </div>
+
+      <!-- Search Summary Bar (24 سيارة متاحة مع الفروع والتواريخ) -->
+      <div class="catalog-summary-bar">
+        <div class="catalog-summary-tags" id="catalogSearchSummaryTags">
+          <!-- Rendered by app.js -->
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="window.location.hash='#home'; window.app.switchView('home');">تعديل المواعيد والفروع ✏️</button>
+      </div>
+
+      <!-- Integrated Filters Toolbar -->
+      <div class="catalog-filters-wrap">
+        <!-- Category Pills Scroll -->
+        <div class="category-tabs-scroll">
+          <button class="cat-tab-btn active" data-category="all" onclick="window.app.setCategoryFilter('all')">الكل (All)</button>
+          <button class="cat-tab-btn" data-category="economy" onclick="window.app.setCategoryFilter('economy')">اقتصادية (Economy)</button>
+          <button class="cat-tab-btn" data-category="sedan" onclick="window.app.setCategoryFilter('sedan')">سيدان (Sedan)</button>
+          <button class="cat-tab-btn" data-category="suv" onclick="window.app.setCategoryFilter('suv')">عائلية و SUV</button>
+          <button class="cat-tab-btn" data-category="luxury" onclick="window.app.setCategoryFilter('luxury')">فاخرة (Luxury)</button>
+          <button class="cat-tab-btn" data-category="electric" onclick="window.app.setCategoryFilter('electric')">كهربائية (Electric)</button>
+        </div>
+
+        <!-- Filter Controls Grid -->
+        <div class="secondary-filters-grid">
+          <!-- Text Search -->
+          <div class="form-group">
+            <label>بحث بالاسم أو الموديل</label>
+            <input type="text" id="catalogSearchInput" class="form-control" placeholder="كامري، لاندكروزر، مرسيدس..." oninput="window.app.setSearchQuery(this.value)">
+          </div>
+
+          <!-- Price Slider -->
+          <div class="form-group">
+            <div class="d-flex justify-content-between">
+              <label data-i18n="filter_price">الحد الأقصى للسعر اليومي</label>
+              <strong id="priceFilterDisplay" class="font-bold">3000 ريال</strong>
+            </div>
+            <input type="range" id="priceFilterInput" min="100" max="3000" step="50" value="3000" class="form-control" oninput="window.app.setPriceFilter(this.value)">
+          </div>
+
+          <!-- Transmission -->
+          <div class="form-group">
+            <label data-i18n="filter_transmission">ناقل الحركة</label>
+            <select class="form-control filter-select" onchange="window.app.setTransmissionFilter(this.value)">
+              <option value="all">الكل</option>
+              <option value="automatic">أوتوماتيك</option>
+              <option value="manual">يدوي</option>
+            </select>
+          </div>
+
+          <!-- Seats -->
+          <div class="form-group">
+            <label data-i18n="filter_seats">عدد المقاعد</label>
+            <select class="form-control filter-select" onchange="window.app.setSeatsFilter(this.value)">
+              <option value="all">الكل</option>
+              <option value="5">5 مقاعد فأكثر</option>
+              <option value="7">7 مقاعد عائلية فأكثر</option>
+            </select>
+          </div>
+
+          <!-- Brand (20 Brands) -->
+          <div class="form-group">
+            <label data-i18n="filter_brand">الشركة المصنعة</label>
+            <select class="form-control filter-select" onchange="window.app.setBrandFilter(this.value)">
+              <option value="all">كافة الشركات (All Brands - 20)</option>
+              <option value="Toyota">تويوتا Toyota</option>
+              <option value="Lexus">لكزس Lexus</option>
+              <option value="Hyundai">هيونداي Hyundai</option>
+              <option value="Genesis">جينيسيس Genesis</option>
+              <option value="Mercedes-Benz">مرسيدس بنز Mercedes-Benz</option>
+              <option value="BMW">بي إم دبليو BMW</option>
+              <option value="Audi">أودي Audi</option>
+              <option value="Porsche">بورشه Porsche</option>
+              <option value="Land Rover">لاند روفر Land Rover</option>
+              <option value="Nissan">نيسان Nissan</option>
+              <option value="Infiniti">إنفينيتي Infiniti</option>
+              <option value="Kia">كيا Kia</option>
+              <option value="Ford">فورد Ford</option>
+              <option value="Chevrolet">شفروليه Chevrolet</option>
+              <option value="GMC">جي إم سي GMC</option>
+              <option value="Cadillac">كاديلاك Cadillac</option>
+              <option value="Tesla">تسلا Tesla</option>
+              <option value="Lucid">لوسيد Lucid</option>
+              <option value="Changan">شانجان Changan</option>
+              <option value="Geely">جيلي Geely</option>
+            </select>
+          </div>
+
+          <!-- Sort -->
+          <div class="form-group">
+            <label data-i18n="filter_sort">ترتيب النتائج</label>
+            <select class="form-control filter-select" onchange="window.app.setSortFilter(this.value)">
+              <option value="featured">الأكثر طلباً</option>
+              <option value="price_asc">الأقل سعراً</option>
+              <option value="price_desc">الأعلى سعراً</option>
+              <option value="rating">الأعلى تقييماً</option>
+            </select>
+          </div>
+
+          <!-- Reset -->
+          <div>
+            <button class="btn btn-outline w-100" onclick="window.app.resetFilters()" data-i18n="clear_filters">إعادة ضبط</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cars Display Grid -->
+      <div class="catalog-cars-grid" id="catalogCarsGrid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== VIEW 3: DEDICATED CAR DETAILS ==================== -->
+  <main id="view-car-details" class="view-container">
+    <div class="container" id="carDetailsDedicatedContent">
+      <!-- Rendered dynamically by app.js -->
+    </div>
+  </main>
+
+  <!-- ==================== VIEW 4: CUSTOMER ACCOUNT DASHBOARD ==================== -->
+  <main id="view-account" class="view-container">
+    <div class="container" style="padding-top: 2rem;">
+      <div class="section-header">
+        <h2 data-i18n="account_title">لوحة حساب العميل</h2>
+        <p class="text-muted">متابعة الحجوزات النشطة والسابقة، طباعة الفواتير، والسيارات المفضلة</p>
+      </div>
+
+      <!-- Account Tabs -->
+      <div class="admin-navbar-tabs">
+        <button class="admin-nav-item account-tab-btn active" data-tab="active" onclick="window.app.switchAccountTab('active')" data-i18n="tab_active_bookings">الحجوزات الحالية</button>
+        <button class="admin-nav-item account-tab-btn" data-tab="past" onclick="window.app.switchAccountTab('past')" data-i18n="tab_past_bookings">الحجوزات السابقة</button>
+        <button class="admin-nav-item account-tab-btn" data-tab="cancelled" onclick="window.app.switchAccountTab('cancelled')" data-i18n="tab_cancelled_bookings">الحجوزات الملغاة</button>
+        <button class="admin-nav-item account-tab-btn" data-tab="favorites" onclick="window.app.switchAccountTab('favorites')" data-i18n="tab_favorites">السيارات المفضلة ❤️</button>
+        <button class="admin-nav-item account-tab-btn" data-tab="profile" onclick="window.app.switchAccountTab('profile')" data-i18n="tab_profile">البيانات الشخصية</button>
+      </div>
+
+      <div id="accountTabContent">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Profile Form Tab -->
+      <div id="profileTabWrapper" class="card p-4 mt-3 d-none">
+        <h3 style="font-weight:800;">👤 تعديل البيانات الشخصية</h3>
+        <form onsubmit="window.app.saveProfile(event)" class="mt-3">
+          <div class="grid-2-col">
+            <div class="form-group">
+              <label>الاسم الكامل</label>
+              <input type="text" id="profile_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>رقم الجوال</label>
+              <input type="tel" id="profile_phone" class="form-control" required>
+            </div>
+          </div>
+          <div class="grid-2-col mt-2">
+            <div class="form-group">
+              <label>البريد الإلكتروني</label>
+              <input type="email" id="profile_email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>رقم الهوية الوطنية / الإقامة</label>
+              <input type="text" id="profile_id" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group mt-2">
+            <label>رقم رخصة القيادة</label>
+            <input type="text" id="profile_license" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">حفظ البيانات</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== VIEW 5: ADMIN DASHBOARD ==================== -->
+  <main id="view-admin" class="view-container">
+    <div class="container" style="padding-top: 2rem;">
+      <div class="section-header">
+        <h2 data-i18n="admin_title">لوحة تحكم الإدارة - منصة الصفوة</h2>
+        <p data-i18n="admin_subtitle">إدارة الأسطول، الحجوزات، العملاء، الأسعار، والكوبونات والتقارير</p>
+      </div>
+
+      <!-- KPI Metrics -->
+      <div class="stats-cards-grid">
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div>
+            <div class="stat-value" id="adminStatRevenue">0 ر.س</div>
+            <div class="stat-label">إجمالي الإيرادات المسجلة</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📑</div>
+          <div>
+            <div class="stat-value" id="adminStatBookings">0</div>
+            <div class="stat-label">إجمالي عدد الحجوزات</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🚗</div>
+          <div>
+            <div class="stat-value" id="adminStatActive">0 سيارة</div>
+            <div class="stat-label">السيارات المؤجرة والنشطة</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div>
+            <div class="stat-value" id="adminStatOccupancy">0%</div>
+            <div class="stat-label">نسبة إشغال الأسطول</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Tabs Navigation -->
+      <div class="admin-navbar-tabs">
+        <button class="admin-nav-item active" data-tab="fleet" onclick="window.adminCtrl.switchTab('fleet')">🚗 إدارة أسطول السيارات</button>
+        <button class="admin-nav-item" data-tab="reservations" onclick="window.adminCtrl.switchTab('reservations')">📑 إدارة الحجوزات</button>
+        <button class="admin-nav-item" data-tab="customers" onclick="window.adminCtrl.switchTab('customers')">👥 إدارة العملاء</button>
+        <button class="admin-nav-item" data-tab="coupons" onclick="window.adminCtrl.switchTab('coupons')">🏷️ إدارة الكوبونات</button>
+        <button class="admin-nav-item" data-tab="reports" onclick="window.adminCtrl.switchTab('reports')">📊 التقارير المالية</button>
+      </div>
+
+      <div id="adminTabContent">
+        <!-- Rendered by admin.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== VIEW 6: FAQ ACCORDION ==================== -->
+  <main id="view-faq" class="view-container">
+    <div class="container" style="padding-top: 2rem; max-width: 840px;">
+      <div class="section-header text-center">
+        <h2>❓ الأسئلة الشائعة</h2>
+        <p class="text-muted">إجابات واضحة ومفصلة حول شروط الاستئجار والتأمين واسترداد الوديعة في السعودية</p>
+      </div>
+
+      <div class="mt-4">
+        <div class="card p-4 mb-3">
+          <h4 style="font-weight:700;">1. ما هي الوثائق والشروط المطلوبة لاستئجار سيارة في المملكة؟</h4>
+          <p class="text-muted mt-2">يشترط توفر: 1) هوية وطنية سارية أو إقامة للمقيمين، أو جواز سفر ساري وتأشيرة دخول للزوار والسيّاح. 2) رخصة قيادة سعودية سارية أو رخصة دولية معتمدة. 3) ألا يقل عمر المستأجر عن 21 عاماً (25 عاماً للسيارات الفارهة). 4) بطاقة دفع بنكية إلكترونية (مدى أو فيزا أو ماستركارد).</p>
+        </div>
+        <div class="card p-4 mb-3">
+          <h4 style="font-weight:700;">2. كيف ومتى يتم استرداد مبلغ التأمين (Deposit)؟</h4>
+          <p class="text-muted mt-2">يتم فك الحجز المالي عن مبلغ التأمين فور تسليم السيارة والتأكد من سلامتها وعدم وجود مخالفات مرورية حديثة، ويصل المبلغ لحسابك البنكي خلال مدة تتراوح بين 3 إلى 7 أيام عمل بحسب سياسة البنك المصدر لبطاقتك.</p>
+        </div>
+        <div class="card p-4 mb-3">
+          <h4 style="font-weight:700;">3. هل يمكنني استلام السيارة في مطار وتسليمها في فرع أو مدينة أخرى؟</h4>
+          <p class="text-muted mt-2">نعم بكل تأكيد! توفر منصة الصفوة خدمة التسليم في فرع أو مدينة مختلفة، وتضاف رسوم خدمة الانتقال البسيطة تلقائياً في ملخص الفاتورة قبل الدفع.</p>
+        </div>
+        <div class="card p-4 mb-3">
+          <h4 style="font-weight:700;">4. ماذا أفعل في حالة وقوع حادث أو عطل لا قدر الله؟</h4>
+          <p class="text-muted mt-2">في حال الحادث: اتصل فوراً بنجم (920000560) أو المرور لإصدار التقرير الرسمي، ثم تواصل مع رقم طوارئ الصفوة الموحد وسنوفر لك سيارة بديلة على الفور. في حال الأعطال: فريق المساعدة على الطريق يعمل 24/7 لمساعدتك أينما كنت.</p>
+        </div>
+        <div class="card p-4 mb-3">
+          <h4 style="font-weight:700;">5. ما هي سياسة الكيلومترات والوقود؟</h4>
+          <p class="text-muted mt-2">تشمل جميع سياراتنا 300 كم يومياً مجاناً، ويتم احتساب الكيلومتر الإضافي بتكلفة رمزية تتراوح بين 0.40 إلى 1.20 ريال حسب فئة السيارة. سياسة الوقود هي (استلام ممتلئ - تسليم ممتلئ) دون أي رسوم إضافية.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== VIEW 7: CONTACT US ==================== -->
+  <main id="view-contact" class="view-container">
+    <div class="container" style="padding-top: 2rem; max-width: 880px;">
+      <div class="section-header text-center">
+        <h2>📞 تواصل معنا</h2>
+        <p class="text-muted">فريق خدمة العملاء متواجد على مدار 24 ساعة لخدمتك في جميع أنحاء المملكة</p>
+      </div>
+
+      <div class="grid-2-col mt-4">
+        <div class="card p-4">
+          <h4 style="font-weight:700;">معلومات الاتصال المباشر</h4>
+          <ul class="mt-3" style="list-style:none; line-height:2.2; font-size:0.92rem;">
+            <li>📍 <strong>المقر الرئيسي:</strong> طريق الملك فهد، العليا، الرياض، المملكة العربية السعودية</li>
+            <li>📞 <strong>الرقم الموحد 24/7:</strong> 9200 88990</li>
+            <li>💬 <strong>واتساب مباشر:</strong> +966 50 123 4567</li>
+            <li>✉️ <strong>البريد الإلكتروني:</strong> care@safwa-rent.sa</li>
+            <li>⏰ <strong>ساعات العمل:</strong> فروع المطارات (24 ساعة / 7 أيام) - فروع المدن (8 صباحاً إلى 11 مساءً)</li>
+          </ul>
+        </div>
+
+        <div class="card p-4">
+          <h4 style="font-weight:700;">أرسل استفسارك</h4>
+          <form onsubmit="event.preventDefault(); window.app.showToast('تم إرسال استفسارك بنجاح! سيتواصل معك ممثل الخدمة قريباً.', 'success'); this.reset();" class="mt-2">
+            <div class="form-group mb-2">
+              <label>الاسم الكامل</label>
+              <input type="text" class="form-control" required placeholder="اسمك الكريم">
+            </div>
+            <div class="form-group mb-2">
+              <label>رقم الجوال</label>
+              <input type="tel" class="form-control" required placeholder="+9665xxxxxxxx">
+            </div>
+            <div class="form-group mb-3">
+              <label>نص الرسالة</label>
+              <textarea class="form-control" rows="3" required placeholder="كيف يمكننا مساعدتك؟"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">إرسال الرسالة</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== BOOKING CHECKOUT MODAL ==================== -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-dialog modal-lg animate-scale">
+      <div class="modal-header">
+        <h3 id="bookingModalMainTitle" style="font-weight:800;">🚗 منصة تأجير السيارات - الصفوة</h3>
+        <button class="close-btn" onclick="window.bookingEngine.closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="bookingModalContent">
+        <!-- Rendered dynamically by booking.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Modal Containers -->
+  <div id="detailsModalContainer"></div>
+  <div id="adminModalContainer"></div>
+  <div id="otpModalContainer"></div>
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Floating WhatsApp Action -->
+  <div class="floating-whatsapp" onclick="window.app.openWhatsApp()" title="تواصل عبر واتساب">
+    💬
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo mb-3">
+            <div class="brand-symbol">🚗</div>
+            <div class="brand-name">الصفوة <span>SAFWA</span></div>
+          </div>
+          <p class="footer-desc" style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">
+            منصة الصفوة الرائدة لتأجير السيارات في المملكة العربية السعودية. نوفر أحدث موديلات السيارات وخدمات التأجير اليومي والشهري بأسلوب فاخر وشفافية مطلقة.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#home" onclick="window.app.switchView('home')">الرئيسية</a></li>
+            <li><a href="#cars" onclick="window.app.switchView('cars')">أسطول السيارات</a></li>
+            <li><a href="#my-account" onclick="window.app.switchView('account')">حسابي وحجوزاتي</a></li>
+            <li><a href="#admin" onclick="window.app.switchView('admin')">لوحة التحكم الإدارية</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>الشروط والسياسات</h4>
+          <ul>
+            <li><a href="#faq" onclick="window.app.switchView('faq')">شروط التأجير الموحد</a></li>
+            <li><a href="#faq" onclick="window.app.switchView('faq')">سياسة الإلغاء والاسترداد</a></li>
+            <li><a href="#faq" onclick="window.app.switchView('faq')">سياسة التأمين والتحمل</a></li>
+            <li><a href="#faq" onclick="window.app.switchView('faq')">سياسة الخصوصية</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li>📞 الرقم الموحد: 9200 88990</li>
+            <li>💬 واتساب: +966 50 123 4567</li>
+            <li>📍 الرياض • جدة • الدمام • المدينة</li>
+            <li>🛡️ مرخص ومعتمد بالمملكة</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة لمنصة الصفوة لتأجير السيارات © 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts in dependency order -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

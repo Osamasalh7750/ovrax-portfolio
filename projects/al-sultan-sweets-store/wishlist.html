@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="متجر حلويات السلطان الفاخرة - تشكيلة ملكية من الحلويات الشرقية، البقلاوة، الكنافة، الكيك، والشوكولاتة مع طلب فوري عبر واتساب وفاتورة إلكترونية.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <title>قائمة المفضلة | حلويات السلطان الفاخرة</title>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span><i class="fas fa-phone-alt"></i> خدمة العملاء: <strong>+966 11 400 0000</strong></span>
+        <span><i class="fas fa-clock"></i> مفتوح يومياً من 9:00 ص - 12:00 م</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-promo"><i class="fas fa-truck"></i> توصيل مجاني للطلبات فوق 200 ر.س! كود الخصم: <strong>SWEET20</strong></span>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" title="تغيير المظهر">
+          <i id="themeToggleIcon" class="fas fa-moon"></i>
+          <span id="themeToggleText">الوضع الليلي</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fas fa-crown"></i></div>
+        <div class="brand-text">
+          <h1>حلويات السلطان</h1>
+          <span>AL-SULTAN SWEETS &bull; فاخرة منذ 1995</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link "><i class="fas fa-home"></i> الرئيسية</a>
+        <a href="shop.html" class="nav-link active"><i class="fas fa-cookie"></i> قائمة الحلويات</a>
+        <a href="shop.html?cat=boxes" class="nav-link"><i class="fas fa-gift"></i> بوكسات الهدايا</a>
+        <a href="about.html" class="nav-link "><i class="fas fa-award"></i> قصة المتجر</a>
+        <a href="contact.html" class="nav-link "><i class="fas fa-envelope"></i> اتصل بنا</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html" class="action-btn" title="البحث">
+          <i class="fas fa-search"></i>
+        </a>
+        <a href="wishlist.html" class="action-btn" title="المفضلة">
+          <i class="fas fa-heart"></i>
+          <span class="action-badge wishlist-count">0</span>
+        </a>
+        <button class="action-btn" onclick="toggleCartDrawer()" title="سلة المشتريات">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="action-badge cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Page Banner -->
+  <div style="background: linear-gradient(135deg, var(--primary-dark), #4a0d20); color: #fff; padding: 40px 0; text-align: center;">
+    <div class="container">
+      <h1 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 6px;"><i class="fas fa-heart" style="color: #e74c3c;"></i> قائمة أمنياتي المفضلة</h1>
+      <p style="color: var(--gold-light);">الحلويات التي قمت بحفظها لتطلبها في مناسباتك الخاصة</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding: 40px 0 70px;">
+    <div class="products-grid" id="wishlistGrid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon"><i class="fas fa-crown"></i></div>
+            <div class="brand-text">
+              <h2>حلويات السلطان</h2>
+              <span style="color: var(--gold-light);">AL-SULTAN LUXURY SWEETS</span>
+            </div>
+          </div>
+          <p>نقدم لكم أرقى الحلويات الشرقية والغربية المحضرة يدوياً بأيدي أمهر الطهاة وباستخدام أجود المكونات الطبيعية والسمن البلدي والفستق الحلبي الفاخر.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-link" title="تويتر (X)"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="footer-social-link" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="footer-social-link" title="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="#" class="footer-social-link" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>أقسام الحلويات</h3>
+          <ul class="footer-links">
+            <li><a href="shop.html?cat=oriental"><i class="fas fa-angle-left"></i> حلويات شرقية فاخرة</a></li>
+            <li><a href="shop.html?cat=western"><i class="fas fa-angle-left"></i> كيك وتشيز كيك غربي</a></li>
+            <li><a href="shop.html?cat=chocolate"><i class="fas fa-angle-left"></i> شوكولاتة وترافل</a></li>
+            <li><a href="shop.html?cat=boxes"><i class="fas fa-angle-left"></i> بوكسات ضيافة وهدايا</a></li>
+            <li><a href="shop.html?cat=healthy"><i class="fas fa-angle-left"></i> حلويات صحية ودايت</a></li>
+            <li><a href="shop.html?cat=drinks"><i class="fas fa-angle-left"></i> بوظة ومشروبات قهوة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="shop.html"><i class="fas fa-angle-left"></i> تصفح جميع المنتجات</a></li>
+            <li><a href="cart.html"><i class="fas fa-angle-left"></i> سلة المشتريات</a></li>
+            <li><a href="checkout.html"><i class="fas fa-angle-left"></i> إتمام الطلب والفاتورة</a></li>
+            <li><a href="wishlist.html"><i class="fas fa-angle-left"></i> قائمة أمنياتي</a></li>
+            <li><a href="about.html"><i class="fas fa-angle-left"></i> قصة المتجر والمعايير</a></li>
+            <li><a href="contact.html"><i class="fas fa-angle-left"></i> فروعنا وتواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h3>النشرة البريدية والعروض</h3>
+          <p>اشترك معنا لتصلك أحدث العروض والخصومات الخاصة بمواسم الأعياد والمناسبات.</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" placeholder="أدخل بريدك الإلكتروني..." required>
+            <button type="submit">اشتراك</button>
+          </form>
+          <div style="margin-top: 20px; font-size: 0.85rem; color: #eed5dc;">
+            <p><i class="fas fa-map-marker-alt" style="color: var(--gold-light);"></i> الرياض، طريق الملك فهد</p>
+            <p style="margin-top: 4px;"><i class="fas fa-phone-alt" style="color: var(--gold-light);"></i> الرقم الموحد: 920000000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 جميع الحقوق محفوظة لـ <strong>حلويات السلطان الفاخرة</strong> &bull; تم التطوير بأعلى معايير الجودة</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+          <i class="fas fa-credit-card" title="Mada"></i>
+          <i class="fas fa-money-bill-wave" title="الدفع عند الاستلام"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fas fa-shopping-bag"></i> سلة مشترياتك</h3>
+      <button class="close-drawer-btn" onclick="toggleCartDrawer()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <!-- يتم تعبئة السلة تلقائياً عبر JavaScript -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>المجموع الإجمالي:</span>
+        <span id="drawerSubtotal">0.00 ر.س</span>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="checkout.html" class="btn btn-primary"><i class="fas fa-credit-card"></i> إتمام الطلب الآن</a>
+        <a href="cart.html" class="btn btn-outline"><i class="fas fa-shopping-cart"></i> عرض السلة الكاملة</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal Container -->
+  <div class="modal-overlay" id="quickViewModal"></div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/966500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D9%86" target="_blank" class="floating-whatsapp" title="تحدث معنا على واتساب مباشرة">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    function renderWishlistPage() {
+      const items = Wishlist.getItems();
+      const grid = document.getElementById('wishlistGrid');
+      if (!grid) return;
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 70px 20px;">
+            <i class="far fa-heart" style="font-size: 4rem; color: #d0c7cb; margin-bottom: 20px;"></i>
+            <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 10px;">قائمة المفضلة فارغة</h2>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">انقر على أيقونة القلب على أي صنف حلوى لحفظه هنا والرجوع إليه لاحقاً.</p>
+            <a href="shop.html" class="btn btn-primary"><i class="fas fa-cookie"></i> تصفح الحلويات وأضف لمفضلتك</a>
+          </div>
+        `;
+        return;
+      }
+
+      const favProducts = SWEETS_DATA.filter(p => items.includes(p.id));
+      grid.innerHTML = favProducts.map(createProductCardHTML).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderWishlistPage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم المتقدمة لإدارة وتتبع الفعاليات | أثير VIP</title>
+  
+  <!-- خط Cairo من Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- مكتبة الأيقونات FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- الأنماط الفاخرة بالألوان الفاتحة -->
+  <link rel="stylesheet" href="assets/css/light-theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- 1. القائمة الجانبية (Sidebar) -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo" style="font-size: 1.2rem;">
+          <div class="logo-icon" style="width: 36px; height: 36px; font-size: 1rem;"><i class="fa-solid fa-crown"></i></div>
+          <div class="logo-text">
+            <span>أثير VIP</span>
+            <small>لوحة الإدارة</small>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-menu">
+        <a href="admin-dashboard.html" class="active">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>نظرة عامة وتتبع الفعاليات</span>
+        </a>
+        <a href="#pipeline-section">
+          <i class="fa-solid fa-route"></i>
+          <span>مسار سير الفعالية لحظة بلحظة</span>
+          <span class="badge-pastel badge-sage" style="margin-right:auto; font-size:0.75rem;">مباشر</span>
+        </a>
+        <a href="#bookings-section">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>إدارة الحجوزات والطلبات</span>
+        </a>
+        <a href="index.html#calculator">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>تقويم التوافر اللحظي</span>
+        </a>
+        <a href="invoice.html">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>التقارير المالية والفوترة</span>
+        </a>
+        <a href="index.html">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>العودة للموقع الرئيسي</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- 2. المحتوى الرئيسي (Main Content) -->
+    <main class="admin-main">
+      
+      <!-- الشريط العلوي للوحة الإدارة -->
+      <header class="admin-topbar">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-dark); margin: 0;">
+            لوحة إدارة الفعاليات وتتبع تقدمها لحظة بلحظة
+          </h2>
+          <span class="badge-pastel badge-sage"><i class="fa-solid fa-circle-dot"></i> النظام نشط ومتصل</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="index.html" class="btn btn-outline-gold" style="padding: 8px 18px; font-size: 0.88rem;">
+            <i class="fa-solid fa-eye"></i> معاينة الموقع
+          </a>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--champagne-soft); color: var(--champagne-primary); display: flex; align-items: center; justify-content: center; font-weight: bold;">
+              VIP
+            </div>
+            <div>
+              <strong style="display: block; font-size: 0.88rem; color: var(--text-dark);">إدارة أثير للمناسبات</strong>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">مشرف عام</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-body">
+        
+        <!-- بطاقات الإحصائيات العامة (Metrics) -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-info">
+              <h4>إجمالي الحجوزات المؤكدة</h4>
+              <div class="metric-num" id="metric-total-bookings">3</div>
+            </div>
+            <div class="metric-icon icon-champagne">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-info">
+              <h4>إجمالي الإيرادات المالية</h4>
+              <div class="metric-num" id="metric-total-revenue">34,100 ر.س</div>
+            </div>
+            <div class="metric-icon icon-sage">
+              <i class="fa-solid fa-wallet"></i>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-info">
+              <h4>فعاليات قيد التجهيز الآن</h4>
+              <div class="metric-num" id="metric-active-events">2</div>
+            </div>
+            <div class="metric-icon icon-blush">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-info">
+              <h4>نسبة الإشغال العام</h4>
+              <div class="metric-num">88%</div>
+            </div>
+            <div class="metric-icon icon-lavender">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. مسار تتبع الفعالية لحظة بلحظة (Live Event Pipeline) -->
+        <section class="pipeline-section" id="pipeline-section">
+          <div class="pipeline-header">
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-dark); margin-bottom: 4px;">
+                <i class="fa-solid fa-route" style="color:var(--champagne-primary);"></i> تتبع مسار الفعاليات الجارية لحظة بلحظة
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+                يمكن لمدير المناسبات تحديث مرحلة الفعالية بنقرة واحدة لينعكس فورياً للعميل وفريق التجهيزات.
+              </p>
+            </div>
+            <span class="badge-pastel badge-champagne">
+              <i class="fa-solid fa-rotate"></i> تحديث تلقائي لحظي
+            </span>
+          </div>
+
+          <!-- بطاقات الفعاليات في المسار -->
+          <div id="live-pipeline-cards">
+            <!-- يتم تعبئتها بواسطة admin.js -->
+          </div>
+        </section>
+
+        <!-- 4. جدول إدارة الحجوزات الشامل (Bookings Table) -->
+        <section class="data-table-card" id="bookings-section">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 14px;">
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-dark); margin-bottom: 4px;">
+                <i class="fa-solid fa-list-check" style="color:var(--champagne-primary);"></i> سجل الحجوزات والطلبات الإلكترونية
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+                استعراض كافة الحجوزات، المبالغ المسددة، وتفاصيل الحضور والمناسبات.
+              </p>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <input type="text" placeholder="ابحث برقم الحجز أو العميل..." oninput="window.filterAdminTable(this.value)" style="padding: 10px 16px; border-radius: var(--radius-full); border: 1px solid var(--border-light); background: var(--bg-surface-soft); font-size: 0.88rem; width: 240px;">
+              <a href="invoice.html" class="btn btn-champagne" style="padding: 8px 16px; font-size: 0.88rem;">
+                <i class="fa-solid fa-file-invoice"></i> استعراض الفواتير
+              </a>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>الرقم المرجعي</th>
+                  <th>بيانات العميل</th>
+                  <th>القاعة / الشاليه</th>
+                  <th>نوع الفعالية</th>
+                  <th>التاريخ والفترة</th>
+                  <th>الضيوف</th>
+                  <th>المبلغ الإجمالي</th>
+                  <th>حالة الفعالية</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="admin-bookings-tbody">
+                <!-- يتم تعبئتها بواسطة admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوق النخبة | Elite Store - المتجر الإلكتروني العصري المتكامل</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم تصميم وتطوير هذه المنصة بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D8%AA%D8%AC%D8%B1%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D9%84%D8%B3%D9%88%D9%82%20%D8%A7%D9%84%D9%86%D8%AE%D8%A8%D8%A9" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب متجر مماثل
+    </a>
+  </div>
+</div>
+    <!-- شريط الإعلانات الترويجي العلوي -->
+    <div class="top-announcement">
+        <span>⚡ عروض حصرية لفترة محدودة! استخدم كود الخصم:</span>
+        <span class="code-pill">ELITE10</span>
+        <span>للحصول على خصم 10% فوري على كافة المشتريات</span>
+    </div>
+
+    <!-- ترويسة المتجر الرئيسية (Header) -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-inner">
+                <!-- الشعار -->
+                <a href="#" class="brand-logo" id="navBrandLogo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M10 12h4"/></svg>
+                    </div>
+                    <div class="brand-text">سوق <span>النخبة</span></div>
+                </a>
+
+                <!-- شريط البحث المباشر -->
+                <div class="header-search">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" id="mainSearchInput" placeholder="ابحث عن سماعات، عطور، ساعات، كاميرات، قهوة...">
+                    </div>
+                    <div class="search-results-dropdown" id="searchResultsDropdown"></div>
+                </div>
+
+                <!-- أزرار الإجراءات -->
+                <div class="header-actions">
+                    <button class="action-btn" id="btnThemeToggle" title="تبديل المظهر الداكن/الفاتح">
+                        <svg id="themeIconSun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        <svg id="themeIconMoon" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    </button>
+
+                    <button class="action-btn" id="btnWishlistOpen" title="المفضلة">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        <span class="badge-count" id="wishlistCountBadge">0</span>
+                    </button>
+
+                    <button class="action-btn" id="btnCartOpen" title="سلة المشتريات">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                        <span class="badge-count" id="cartCountBadge">0</span>
+                    </button>
+
+                    <button class="btn-switch-admin" id="btnToggleAdminView">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                        <span id="adminSwitchBtnText">لوحة الإدارة</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- شريط التنقل الفرعي -->
+    <nav class="sub-nav">
+        <div class="container">
+            <div class="sub-nav-inner">
+                <ul class="nav-links">
+                    <li><a href="#" class="active" id="navLinkHome"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> الرئيسية</a></li>
+                    <li><a href="#catalogSection" id="navLinkProducts"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> جميع المنتجات</a></li>
+                    <li><a href="#trackingSection" id="navLinkTrack"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="13" x="6" y="5" rx="2"/><path d="M2 8v9a2 2 0 0 0 2 2h14"/><circle cx="14" cy="11" r="2"/></svg> تتبع طلبك</a></li>
+                </ul>
+                <div style="font-size: 0.85rem; color: #10b981; font-weight: 700; display: flex; align-items: center; gap: 0.4rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                    ضمان ذهبي سنتين وشحن سريع
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- محتوى المتجر الرئيسي للعميل -->
+    <main id="storefrontView">
+        <div class="container">
+            <!-- البانر الترويجي الفاخر -->
+            <section class="hero-section">
+                <div class="hero-banner">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            عروض وتخفيضات موسمية حصرية تصل إلى 40%
+                        </div>
+                        <h1 class="hero-title">
+                            تسوق أرقى المنتجات العصرية<br>
+                            <span class="highlight">بأعلى معايير الفخامة والضمان</span>
+                        </h1>
+                        <p class="hero-description">
+                            اكتشف تشكيلة منتقاة بعناية من أحدث السماعات العازلة للضوضاء، العطور الملكية، الساعات الذكية الفاخرة، ومكائن القهوة المختصة بأفضل الأسعار.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#catalogSection" class="btn-primary">
+                                <span>ابدأ التسوق الآن</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                            </a>
+                            <button class="btn-secondary" id="btnExploreDeals">
+                                <span>استعراض عروض اليوم</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="سماعات بريميوم" id="heroFeaturedImg">
+                    </div>
+                </div>
+            </section>
+
+            <!-- شريط الميزات الأربع -->
+            <section class="features-bar">
+                <div class="feature-box">
+                    <div class="feature-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+                    </div>
+                    <div class="feature-info">
+                        <h4>شحن سريع ومجاني</h4>
+                        <p>للطلبات الأكثر من 500 ر.س</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                    </div>
+                    <div class="feature-info">
+                        <h4>دفع آمن ومشفر 100%</h4>
+                        <p>مدى، فيزا، ماستركارد ودفع عند الاستلام</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                    </div>
+                    <div class="feature-info">
+                        <h4>ضمان أصلي معتمد</h4>
+                        <p>ضمان سنتين على كافة المنتجات</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+                    </div>
+                    <div class="feature-info">
+                        <h4>استرجاع واستبدال مرن</h4>
+                        <p>خلال 14 يوماً بكل سهولة</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- استعراض التصنيفات -->
+            <section style="margin-bottom: 2.5rem;">
+                <div class="section-header">
+                    <h2 class="section-title">تصفح المنتجات حسب الفئة</h2>
+                </div>
+                <div class="categories-slider" id="categoryChipsContainer">
+                    <!-- يتم توليد شرائح التصنيفات عبر JavaScript -->
+                </div>
+            </section>
+
+            <!-- الكتالوج الرئيسي للمنتجات والفلاتر -->
+            <section id="catalogSection" class="catalog-layout">
+                <!-- الشريط الجانبي للفلاتر -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <div class="filter-group-title">
+                            <span>الفئات والتصنيفات</span>
+                        </div>
+                        <div class="filter-options-list" id="categoriesFilterList">
+                            <!-- خيارات الفئات -->
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-group-title">
+                            <span>نطاق السعر</span>
+                            <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700;" id="priceFilterDisplay">حتى 6000 ر.س</span>
+                        </div>
+                        <div class="price-slider-wrapper">
+                            <input type="range" id="priceRangeInput" min="100" max="6000" step="50" value="6000">
+                            <div class="price-values-display">
+                                <span>100 ر.س</span>
+                                <span>6000 ر.س</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-group-title">
+                            <span>حالة التوفر</span>
+                        </div>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" id="inStockOnlyToggle">
+                            <span>المنتجات المتوفرة فقط بالمخزون</span>
+                        </label>
+                    </div>
+
+                    <button class="btn-reset-filters" id="btnResetFilters">
+                        إعادة ضبط الفلاتر
+                    </button>
+                </aside>
+
+                <!-- منطقة المنتجات والترتيب -->
+                <div>
+                    <div class="catalog-toolbar">
+                        <div class="products-count-text">
+                            يتم عرض <span id="productsCountDisplay">12</span> منتجاً
+                        </div>
+                        <div class="sort-select-wrapper">
+                            <label for="sortSelect">ترتيب حسب:</label>
+                            <select id="sortSelect">
+                                <option value="featured">المقترح والمميز</option>
+                                <option value="price-low">السعر: من الأقل للأعلى</option>
+                                <option value="price-high">السعر: من الأعلى للأقل</option>
+                                <option value="rating">الأعلى تقييماً</option>
+                                <option value="name">الاسم أبجدياً</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- شبكة المنتجات -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- تُعرض كروت المنتجات هنا -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم تتبع الطلب للعميل -->
+            <section id="trackingSection" style="margin: 4rem 0;">
+                <div class="section-header" style="justify-content: center; text-align: center;">
+                    <h2 class="section-title">تتبع حالة طلبك في أي وقت</h2>
+                </div>
+                <div class="tracking-card">
+                    <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">
+                        أدخل رقم الطلب (مثال: ORD-8812) أو رقم جوالك لمتابعة مراحل الشحن والتسليم فوراً:
+                    </p>
+                    <div style="display: flex; gap: 0.75rem; max-width: 500px; margin: 0 auto;">
+                        <input type="text" id="trackingInput" class="form-control" placeholder="رقم الطلب أو الجوال...">
+                        <button class="btn-primary" id="btnSearchTracking" style="border-radius: var(--radius-md); padding: 0.65rem 1.5rem;">
+                            بحث
+                        </button>
+                    </div>
+                    <div id="trackingResultArea" style="margin-top: 2rem; display: none;">
+                        <!-- نتائج التتبع وخط التقدم -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- واجهة لوحة تحكم إدارة المتجر المتكاملة (Admin Dashboard) -->
+    <section id="adminView" class="admin-view-wrapper">
+        <div class="admin-header-bar">
+            <div class="container">
+                <div class="admin-header-inner">
+                    <div class="admin-title-box">
+                        <h1>لوحة إدارة سوق النخبة</h1>
+                        <p>متابعة المبيعات الحية، إدارة المنتجات، تحديث حالات الطلبات، وإعدادات المتجر</p>
+                    </div>
+                    <button class="btn-primary" id="btnBackToStore" style="background: var(--bg-surface-soft); color: var(--text-main); border: 1px solid var(--border-color); box-shadow: none;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                        العودة إلى واجهة المتجر
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- تبويبات لوحة التحكم -->
+            <div class="admin-tabs-nav" style="margin-bottom: 1.5rem;">
+                <button class="admin-tab-btn active" data-tab="overview">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                    نظرة عامة ومؤشرات
+                </button>
+                <button class="admin-tab-btn" data-tab="products">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                    إدارة المنتجات
+                </button>
+                <button class="admin-tab-btn" data-tab="orders">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    الطلبات والمبيعات
+                </button>
+                <button class="admin-tab-btn" data-tab="coupons">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
+                    الكوبونات والعروض
+                </button>
+                <button class="admin-tab-btn" data-tab="settings">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    إعدادات المتجر والنسخ
+                </button>
+            </div>
+
+            <!-- محتوى تبويب النظرة العامة -->
+            <div id="adminTabContentOverview" class="admin-tab-pane active">
+                <div class="stats-cards-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h5>إجمالي المبيعات</h5>
+                            <div class="stat-number" id="statTotalRevenue">0 ر.س</div>
+                        </div>
+                        <div class="stat-icon blue">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h5>إجمالي الطلبات</h5>
+                            <div class="stat-number" id="statTotalOrders">0</div>
+                        </div>
+                        <div class="stat-icon green">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h5>المنتجات المعروضة</h5>
+                            <div class="stat-number" id="statTotalProducts">0</div>
+                        </div>
+                        <div class="stat-icon amber">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h5>تنبيهات المخزون المنخفض</h5>
+                            <div class="stat-number" id="statLowStock">0</div>
+                        </div>
+                        <div class="stat-icon rose">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- رسم بياني تفاعلي للمبيعات -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h3 style="font-weight: 800; font-size: 1.15rem;">حركة المبيعات الأسبوعية (ر.س)</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">مخطط تحليلي للإيرادات اليومية</p>
+                        </div>
+                        <span style="background: var(--accent-emerald-soft); color: var(--accent-emerald); padding: 0.3rem 0.8rem; border-radius: var(--radius-full); font-weight: 700; font-size: 0.85rem;">
+                            +24.5% نمو هذا الأسبوع
+                        </span>
+                    </div>
+                    <div id="chartContainer">
+                        <!-- SVG Chart Rendered via JS -->
+                    </div>
+                </div>
+
+                <!-- جدول أحدث الطلبات المصغر -->
+                <div class="admin-table-card">
+                    <div class="admin-table-header">
+                        <h3 style="font-weight: 800; font-size: 1.1rem;">أحدث الطلبات الواردة</h3>
+                        <button class="btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem;" id="btnGoToOrders">عرض كافة الطلبات</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>العميل</th>
+                                    <th>المدينة</th>
+                                    <th>المبلغ الإجمالي</th>
+                                    <th>طريقة الدفع</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentOrdersTableBody">
+                                <!-- تملأ عبر JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى تبويب إدارة المنتجات -->
+            <div id="adminTabContentProducts" class="admin-tab-pane" style="display: none;">
+                <div class="admin-table-card">
+                    <div class="admin-table-header">
+                        <div style="display: flex; align-items: center; gap: 1rem; flex: 1; max-width: 600px;">
+                            <input type="text" id="adminProductsSearchInput" class="form-control" placeholder="بحث بالاسم أو المعرف...">
+                            <select id="adminProductCategoryFilter" class="form-control" style="width: 220px;">
+                                <option value="all">جميع التصنيفات</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary" id="btnOpenAddProductModal">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                            إضافة منتج جديد
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>الصورة</th>
+                                    <th>اسم المنتج</th>
+                                    <th>التصنيف</th>
+                                    <th>السعر</th>
+                                    <th>المخزون</th>
+                                    <th>التقييم</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminProductsTableBody">
+                                <!-- قائمة المنتجات -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى تبويب إدارة الطلبات -->
+            <div id="adminTabContentOrders" class="admin-tab-pane" style="display: none;">
+                <div class="admin-table-card">
+                    <div class="admin-table-header">
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;" id="orderFilterButtons">
+                            <button class="admin-tab-btn active" data-status="all">الكل</button>
+                            <button class="admin-tab-btn" data-status="pending">قيد الانتظار</button>
+                            <button class="admin-tab-btn" data-status="processing">جارِ التجهيز</button>
+                            <button class="admin-tab-btn" data-status="shipped">تم الشحن</button>
+                            <button class="admin-tab-btn" data-status="delivered">تم التوصيل</button>
+                            <button class="admin-tab-btn" data-status="cancelled">ملغي</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>تاريخ الطلب</th>
+                                    <th>بيانات العميل</th>
+                                    <th>المدينة</th>
+                                    <th>الإجمالي</th>
+                                    <th>طريقة الدفع</th>
+                                    <th>حالة الطلب</th>
+                                    <th>الفاتورة</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminOrdersTableBody">
+                                <!-- قائمة الطلبات -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى تبويب الكوبونات والعروض -->
+            <div id="adminTabContentCoupons" class="admin-tab-pane" style="display: none;">
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;">
+                    <!-- نموذج إضافة كوبون جديد -->
+                    <div class="admin-table-card" style="padding: 1.5rem;">
+                        <h3 style="font-weight: 800; font-size: 1.1rem; margin-bottom: 1rem;">إنشاء كود خصم جديد</h3>
+                        <form id="couponForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div class="form-group">
+                                <label for="inputCouponCode">كود الخصم (بالحروف الإنجليزية الكبيرة):</label>
+                                <input type="text" id="inputCouponCode" class="form-control" placeholder="مثال: MEGA30" required style="text-transform: uppercase;">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputCouponPercent">نسبة الخصم (%):</label>
+                                <input type="number" id="inputCouponPercent" class="form-control" min="1" max="90" placeholder="مثال: 20" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputCouponMinSpend">الحد الأدنى للطلب (ر.س):</label>
+                                <input type="number" id="inputCouponMinSpend" class="form-control" min="0" placeholder="مثال: 200" required>
+                            </div>
+                            <button type="submit" class="btn-primary" style="margin-top: 0.5rem; justify-content: center;">
+                                حفظ وتفعيل الكوبون
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- جدول الكوبونات النشطة -->
+                    <div class="admin-table-card">
+                        <div class="admin-table-header">
+                            <h3 style="font-weight: 800; font-size: 1.1rem;">الكوبونات الفعالة</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>الكود</th>
+                                        <th>نسبة الخصم</th>
+                                        <th>الحد الأدنى</th>
+                                        <th>الحالة</th>
+                                        <th>حذف</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminCouponsTableBody">
+                                    <!-- تملأ الكوبونات عبر JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى تبويب الإعدادات والنسخ الاحتياطي -->
+            <div id="adminTabContentSettings" class="admin-tab-pane" style="display: none;">
+                <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem;">
+                    <!-- إعدادات المتجر العامة -->
+                    <div class="admin-table-card" style="padding: 1.75rem;">
+                        <h3 style="font-weight: 800; font-size: 1.2rem; margin-bottom: 1.25rem;">بيانات وإعدادات المتجر</h3>
+                        <form id="storeSettingsForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>اسم المتجر:</label>
+                                    <input type="text" id="settingStoreName" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>العملة:</label>
+                                    <input type="text" id="settingCurrency" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>رقم هاتف الدعم:</label>
+                                    <input type="text" id="settingPhone" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>البريد الإلكتروني:</label>
+                                    <input type="email" id="settingEmail" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>نسبة الضريبة المضافة (%):</label>
+                                    <input type="number" id="settingTaxRate" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>تكلفة الشحن القياسي (ر.س):</label>
+                                    <input type="number" id="settingShippingCost" class="form-control">
+                                </div>
+                                <div class="form-group full">
+                                    <label>الحد الأدنى للشحن المجاني (ر.س):</label>
+                                    <input type="number" id="settingFreeShippingThreshold" class="form-control">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary" style="margin-top: 1rem; align-self: flex-start;">
+                                حفظ التعديلات
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- إدارة قاعدة البيانات والتخزين المحلي -->
+                    <div class="admin-table-card" style="padding: 1.75rem;">
+                        <h3 style="font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem;">النسخ الاحتياطي وقاعدة البيانات</h3>
+                        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                            يتم حفظ كافة المنتجات، الطلبات، والكوبونات محلياً في متصفحك (LocalStorage). يمكنك استخراج نسخة احتياطية أو استيرادها في أي وقت.
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <button class="btn-secondary" id="btnExportDatabase" style="background: var(--bg-surface-soft); color: var(--text-main); border-color: var(--border-color); justify-content: center;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                تصدير نسخة احتياطية (JSON)
+                            </button>
+
+                            <label class="btn-secondary" style="background: var(--bg-surface-soft); color: var(--text-main); border-color: var(--border-color); justify-content: center; cursor: pointer;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                                استيراد بيانات من ملف (JSON)
+                                <input type="file" id="importJsonInput" accept=".json" style="display: none;">
+                            </label>
+
+                            <hr style="border: 0; border-top: 1px solid var(--border-soft); margin: 0.5rem 0;">
+
+                            <button class="btn-secondary" id="btnResetAllData" style="background: var(--accent-rose-soft); color: var(--accent-rose); border-color: rgba(244, 63, 94, 0.3); justify-content: center;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+                                استعادة البيانات الافتراضية للمتجر
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة السلة الجانبية (Drawer Cart) -->
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h3>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                سلة المشتريات
+                (<span id="drawerCartCount">0</span>)
+            </h3>
+            <button class="btn-close-drawer" id="btnCloseCartDrawer" title="إغلاق">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+        </div>
+
+        <div class="free-shipping-progress" id="freeShippingBanner">
+            <div id="freeShippingText">أضف المزيد للحصول على شحن مجاني!</div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="freeShippingFill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <div class="cart-items-container" id="drawerCartItemsList">
+            <!-- عناصر السلة -->
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="coupon-input-group">
+                <input type="text" id="drawerCouponInput" placeholder="كود الخصم (مثال: ELITE10)">
+                <button id="btnApplyDrawerCoupon">تطبيق</button>
+            </div>
+            <div id="couponFeedbackMessage" style="font-size: 0.82rem; margin-bottom: 0.6rem; display: none;"></div>
+
+            <div class="cart-summary-row">
+                <span>المجموع الفرعي:</span>
+                <span id="drawerSubtotal">0 ر.س</span>
+            </div>
+            <div class="cart-summary-row discount" id="drawerDiscountRow" style="display: none;">
+                <span>الخصم المطبق:</span>
+                <span id="drawerDiscount">- 0 ر.س</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>الشحن:</span>
+                <span id="drawerShipping">0 ر.س</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>ضريبة القيمة المضافة (15%):</span>
+                <span id="drawerTax">0 ر.س</span>
+            </div>
+            <div class="cart-summary-row total">
+                <span>المجموع الكلي:</span>
+                <span id="drawerGrandTotal" style="color: var(--primary);">0 ر.س</span>
+            </div>
+
+            <button class="btn-checkout-now" id="btnOpenCheckoutModal">
+                <span>إتمام الطلب والدفع</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- نافذة معاينة المنتج السريعة (Product Modal) -->
+    <div class="modal-backdrop" id="productQuickModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" id="btnCloseProductModal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+            <div class="product-modal-content" id="productModalBody">
+                <!-- يُحقن محتوى المنتج عبر JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة إتمام الطلب (Checkout Modal) -->
+    <div class="modal-backdrop" id="checkoutModal">
+        <div class="modal-dialog" style="max-width: 860px;">
+            <button class="modal-close-btn" id="btnCloseCheckoutModal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+            <div class="checkout-modal-content">
+                <div class="form-section-title">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    إتمام الشراء والشحن
+                </div>
+                <form id="checkoutForm">
+                    <div class="checkout-steps">
+                        <!-- الخطوة 1: بيانات المشتري والعنوان -->
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">1. بيانات التوصيل والتسليم</h4>
+                            <div class="form-grid">
+                                <div class="form-group full">
+                                    <label>الاسم الكامل *</label>
+                                    <input type="text" id="custName" class="form-control" required placeholder="مثال: عبد العزيز الشمري">
+                                </div>
+                                <div class="form-group">
+                                    <label>رقم الجوال *</label>
+                                    <input type="tel" id="custPhone" class="form-control" required placeholder="05XXXXXXXX">
+                                </div>
+                                <div class="form-group">
+                                    <label>البريد الإلكتروني</label>
+                                    <input type="email" id="custEmail" class="form-control" placeholder="name@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>المدينة *</label>
+                                    <select id="custCity" class="form-control" required>
+                                        <option value="الرياض">الرياض</option>
+                                        <option value="جدة">جدة</option>
+                                        <option value="الدمام">الدمام</option>
+                                        <option value="مكة المكرمة">مكة المكرمة</option>
+                                        <option value="المدينة المنورة">المدينة المنورة</option>
+                                        <option value="الخبر">الخبر</option>
+                                        <option value="أبها">أبها</option>
+                                        <option value="تبوك">تبوك</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>الحي والشارع *</label>
+                                    <input type="text" id="custAddress" class="form-control" required placeholder="مثال: حي النرجس، شارع النخيل">
+                                </div>
+                                <div class="form-group full">
+                                    <label>ملاحظات التوصيل (اختياري)</label>
+                                    <textarea id="custNotes" class="form-control" rows="2" placeholder="أي تفاصيل خاصة بتسليم الطلب..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- الخطوة 2: الدفع وملخص الطلب -->
+                        <div>
+                            <h4 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">2. طريقة الدفع</h4>
+                            <div class="payment-methods-grid">
+                                <div class="payment-card-option selected" data-method="mada">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                                    <span>مدى / بطاقة</span>
+                                </div>
+                                <div class="payment-card-option" data-method="apple_pay">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>
+                                    <span>Apple Pay</span>
+                                </div>
+                                <div class="payment-card-option" data-method="cod">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                    <span>عند الاستلام</span>
+                                </div>
+                            </div>
+
+                            <div style="background: var(--bg-surface-soft); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1.25rem;">
+                                <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem;">ملخص الفاتورة النهائية:</div>
+                                <div class="cart-summary-row">
+                                    <span>المجموع الفرعي:</span>
+                                    <span id="checkoutSubtotal">0 ر.س</span>
+                                </div>
+                                <div class="cart-summary-row discount" id="checkoutDiscountRow" style="display: none;">
+                                    <span>الخصم المطبق:</span>
+                                    <span id="checkoutDiscount">- 0 ر.س</span>
+                                </div>
+                                <div class="cart-summary-row">
+                                    <span>الشحن:</span>
+                                    <span id="checkoutShipping">0 ر.س</span>
+                                </div>
+                                <div class="cart-summary-row">
+                                    <span>الضريبة (15%):</span>
+                                    <span id="checkoutTax">0 ر.س</span>
+                                </div>
+                                <div class="cart-summary-row total">
+                                    <span>المبلغ الإجمالي المستحق:</span>
+                                    <span id="checkoutGrandTotal" style="color: var(--primary);">0 ر.س</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.9rem;">
+                                تأكيد ودفع الطلب الآن
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة الفاتورة الإلكترونية القابلة للطباعة (Invoice Modal) -->
+    <div class="modal-backdrop" id="invoiceModal">
+        <div class="modal-dialog" style="max-width: 780px;">
+            <button class="modal-close-btn no-print" id="btnCloseInvoiceModal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+            <div style="padding: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;" class="no-print">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--accent-emerald); font-weight: 800;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        تم تسجيل طلبك بنجاح!
+                    </div>
+                    <button class="btn-primary" id="btnPrintInvoiceBtn" style="padding: 0.5rem 1.25rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+                        طباعة الفاتورة (PDF)
+                    </button>
+                </div>
+
+                <!-- ورقة الفاتورة الرسمية المطبوعة -->
+                <div class="printable-invoice invoice-container" id="printableInvoiceArea">
+                    <!-- محتوى الفاتورة المنسق -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة إضافة وتعديل المنتجات (Admin Product Form Modal) -->
+    <div class="modal-backdrop" id="productFormModal">
+        <div class="modal-dialog" style="max-width: 720px;">
+            <button class="modal-close-btn" id="btnCloseProductFormModal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+            <div style="padding: 2.25rem;">
+                <h3 id="productFormTitle" style="font-weight: 900; font-size: 1.3rem; margin-bottom: 1.5rem;">إضافة منتج جديد للمتجر</h3>
+                <form id="productEditForm">
+                    <input type="hidden" id="editProductId">
+                    <div class="form-grid">
+                        <div class="form-group full">
+                            <label>اسم المنتج *</label>
+                            <input type="text" id="formProdName" class="form-control" required placeholder="مثال: سماعات لاسلكية عازلة للضوضاء">
+                        </div>
+                        <div class="form-group">
+                            <label>التصنيف *</label>
+                            <select id="formProdCategory" class="form-control" required>
+                                <!-- تصنيفات المتجر -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>الشارة الترويجية (Badge)</label>
+                            <input type="text" id="formProdBadge" class="form-control" placeholder="مثال: الأكثر مبيعاً، خصم 20%">
+                        </div>
+                        <div class="form-group">
+                            <label>السعر الأساسي (ر.س) *</label>
+                            <input type="number" id="formProdPrice" class="form-control" min="1" required placeholder="مثال: 450">
+                        </div>
+                        <div class="form-group">
+                            <label>السعر السابق قبل الخصم (ر.س)</label>
+                            <input type="number" id="formProdOldPrice" class="form-control" min="0" placeholder="مثال: 600">
+                        </div>
+                        <div class="form-group">
+                            <label>الكمية في المخزون *</label>
+                            <input type="number" id="formProdStock" class="form-control" min="0" required placeholder="مثال: 15">
+                        </div>
+                        <div class="form-group">
+                            <label>تمييز المنتج (عرض في الرئيسية)</label>
+                            <select id="formProdFeatured" class="form-control">
+                                <option value="true">نعم، منتج مميز</option>
+                                <option value="false">عادي</option>
+                            </select>
+                        </div>
+
+                        <!-- مصدر الصورة: رفع من الكمبيوتر أو رابط مباشر -->
+                        <div class="form-group full">
+                            <label>صورة المنتج (اختر رفع ملف من جهازك أو ضع رابطاً):</label>
+                            <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem;">
+                                <input type="file" id="formProdFileInput" accept="image/*" class="form-control" style="flex: 1;">
+                                <span style="font-size: 0.85rem; color: var(--text-muted);">أو</span>
+                                <input type="url" id="formProdImageUrl" class="form-control" placeholder="رابط صورة مباشر https://..." style="flex: 1.5;">
+                            </div>
+                            <div id="imagePreviewBox" style="margin-top: 0.5rem; display: flex; align-items: center; gap: 1rem;">
+                                <img id="formImgPreview" src="" alt="معاينة الصورة" style="width: 70px; height: 70px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: none;">
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">يمكنك أيضاً اختيار صورة جاهزة عالية الدقة بنقرة واحدة:</span>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;" id="sampleImagePickers">
+                                <button type="button" class="btn-secondary" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; background: var(--bg-surface-soft); color: var(--text-muted);" data-img="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80">صورة سماعات</button>
+                                <button type="button" class="btn-secondary" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; background: var(--bg-surface-soft); color: var(--text-muted);" data-img="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80">صورة عطر</button>
+                                <button type="button" class="btn-secondary" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; background: var(--bg-surface-soft); color: var(--text-muted);" data-img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80">صورة ساعة</button>
+                                <button type="button" class="btn-secondary" style="padding: 0.25rem 0.6rem; font-size: 0.78rem; background: var(--bg-surface-soft); color: var(--text-muted);" data-img="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=800&q=80">صورة قهوة</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label>وصف المنتج *</label>
+                            <textarea id="formProdDescription" class="form-control" rows="3" required placeholder="اكتب وصفاً مفصلاً يبرز مميزات ومواصفات المنتج..."></textarea>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
+                        <button type="button" class="btn-secondary" id="btnCancelProductForm" style="background: var(--bg-surface-soft); color: var(--text-main); border-color: var(--border-color);">إلغاء</button>
+                        <button type="submit" class="btn-primary">حفظ المنتج الآن</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة المفضلة (Wishlist Modal) -->
+    <div class="modal-backdrop" id="wishlistModal">
+        <div class="modal-dialog" style="max-width: 680px;">
+            <button class="modal-close-btn" id="btnCloseWishlistModal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+            <div style="padding: 2.25rem;">
+                <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    قائمة رغباتي ومفضلاتي
+                </h3>
+                <div id="wishlistItemsContainer" style="display: flex; flex-direction: column; gap: 1rem; max-height: 60vh; overflow-y: auto;">
+                    <!-- عناصر المفضلة -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- حاوية الإشعارات العائمة (Toast Container) -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- تذييل الصفحة الرئيسي (Footer) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="brand-logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M10 12h4"/></svg>
+                        </div>
+                        <div class="brand-text">سوق <span>النخبة</span></div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.25rem;">
+                        منصتكم الأولى للتسوق الفاخر والإلكترونيات العصرية في الشرق الأوسط. نلتزم بأعلى معايير الجودة والأصالة والضمان المعتمد.
+                    </p>
+                    <div style="font-size: 0.85rem; color: var(--text-light);">
+                        المملكة العربية السعودية - الرياض
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#catalogSection">أحدث المنتجات</a></li>
+                        <li><a href="#trackingSection">تتبع الشحنات</a></li>
+                        <li><a href="#" id="footerAdminLink">لوحة إدارة المتجر</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>أقسام المتجر</h4>
+                    <ul>
+                        <li><a href="#catalogSection">إلكترونيات وأجهزة</a></li>
+                        <li><a href="#catalogSection">عطور ملكية فاخرة</a></li>
+                        <li><a href="#catalogSection">ساعات ذكية وإكسسوارات</a></li>
+                        <li><a href="#catalogSection">أدوات ومكائن القهوة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>خدمة العملاء</h4>
+                    <ul>
+                        <li><a href="#">الضمان الذهبي سنتين</a></li>
+                        <li><a href="#">سياسة الاسترجاع والاستبدال</a></li>
+                        <li><a href="#">طرق الدفع والشحن</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>جميع الحقوق محفوظة &copy; 2026 سوق النخبة | Elite Store</div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <span style="font-size: 0.8rem;">وسائل الدفع المعتمدة:</span>
+                    <span style="font-weight: 700; color: var(--text-main);">مدى | Visa | Mastercard | Apple Pay | الدفع عند الاستلام</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- تضمين ملفات السكربت بالترتيب لضمان العمل بدون خادم -->
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

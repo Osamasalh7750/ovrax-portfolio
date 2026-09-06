@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة مَنار التعليمية لطلاب المدارس | شرح الدروس وحجز المعلمين ودورات المدارس</title>
+  
+  <!-- الخطوط العربية الراقية (مع التوافق التام دون اتصال بالإنترنت عبر خطوط النظام) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- التنسيقات المحلية الهادئة والمريحة للعين -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم تصميم وتطوير هذه المنصة بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D9%86%D8%B5%D8%A9%20%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D9%8A%D8%A9%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%D8%A9%20%D9%84%D9%85%D9%86%D8%B5%D8%A9%20%D9%85%D9%8E%D9%86%D8%A7%D8%B1" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب منصة مماثلة
+    </a>
+  </div>
+</div>
+  <!-- شريط التنبيه الأكاديمي العلوي -->
+  <aside class="top-notice-bar">
+    <div class="badges-group">
+      <span class="tag-pill">نسخة دراسية ثابتة (Static)</span>
+      <span>تشغيل فوري بالنقر المزدوج • لا يتطلب أي خادم أو تثبيت برامج</span>
+    </div>
+    <div style="font-size: 0.8rem; opacity: 0.9;">
+      العام الدراسي 1448 / 2026 - 2027 • معتمد لجميع المراحل المدرسية
+    </div>
+  </aside>
+
+  <!-- ترويسة الموقع والقائمة الرئيسية -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- الشعار والهوية -->
+      <a class="brand-logo" href="#home" title="منصة مَنار العلمية">
+        <div class="brand-symbol">
+          <span>مـ</span>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-name">مَنار التعليمية</span>
+          <span class="brand-slogan">المنصة العلمية الرصينة لطلاب المدارس</span>
+        </div>
+      </a>
+
+      <!-- روابط التنقل بين الشاشات والأقسام -->
+      <nav class="main-nav" aria-label="التنقل الرئيسي">
+        <a class="nav-link active" data-view="home" href="#home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          الرئيسية
+        </a>
+        <a class="nav-link" data-view="lessons" href="#lessons">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          شروحات الدروس
+        </a>
+        <a class="nav-link" data-view="teachers" href="#teachers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          حجز المدرسين (حضوري / أونلاين)
+        </a>
+        <a class="nav-link" data-view="courses" href="#courses">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          دورات المدارس
+        </a>
+        <a class="nav-link" data-view="library" href="#library">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          المكتبة والكتب
+        </a>
+        <a class="nav-link" data-view="videos" href="#videos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+          فيديوهات الكورسات
+        </a>
+        <a class="nav-link" data-view="dashboard" href="#dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          لوحة تحكم الطالب
+        </a>
+      </nav>
+
+      <!-- شارة حساب الطالب السريعة -->
+      <div class="header-actions">
+        <button class="btn-profile-badge" id="btn-open-profile" title="الانتقال إلى لوحة تحكم الطالب">
+          <div class="avatar-circle" id="header-student-avatar">س</div>
+          <span id="header-student-name">سعد التميمي</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- الحاوية الديناميكية لمحتوى الشاشات -->
+  <main class="main-content" id="view-container">
+    <!-- يتم بناء المحتوى هنا تلقائياً بواسطة app.js دون الحاجة لإعادة تحميل الصفحة -->
+  </main>
+
+  <!-- تذييل الصفحة الأكاديمي الوقور -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>منصة «مَنار» التعليمية</h4>
+        <p>
+          مشروع علمي مصمم لخدمة طلاب المدارس بمراحلها المختلفة، يقدم شروحات تعليمية عميقة، وحجزاً مرناً للمعلمين الخصوصيين إما في منزل الطالب أو عبر الفصول الافتراضية، مع شراكات فاعلة مع كبرى المدارس والمجمعات التعليمية لتوفير دورات معتمدة ومكتبة عملية تفاعلية.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>أقسام المنصة</h5>
+        <ul class="footer-links">
+          <li><a href="#lessons" onclick="ManarApp.switchView('lessons')">شروحات المناهج والدروس</a></li>
+          <li><a href="#teachers" onclick="ManarApp.switchView('teachers')">حجز معلم في المنزل أو أونلاين</a></li>
+          <li><a href="#courses" onclick="ManarApp.switchView('courses')">دورات المدارس المعتمدة</a></li>
+          <li><a href="#library" onclick="ManarApp.switchView('library')">كتب المناهج والمذكرات المدرسية</a></li>
+          <li><a href="#videos" onclick="ManarApp.switchView('videos')">مشغل الفيديوهات التعليمية</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>المدارس الشريكة</h5>
+        <ul class="footer-links">
+          <li><a href="#courses">مدارس النور الأهلية النموذجية</a></li>
+          <li><a href="#courses">ثانوية الرواد للموهوبين</a></li>
+          <li><a href="#courses">مجمع الفكر والبيان التعليمي</a></li>
+          <li><a href="#courses">أكاديمية الأندلس لعلوم المستقبل</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>عن التصميم الأكاديمي</h5>
+        <p style="font-size: 0.85rem; color: #9EAFBF; line-height: 1.7;">
+          صُممت المنصة بذوق أصيل وهادئ خالٍ من البهرجة البصرية المشتتة، لتمكين الطالب من القراءة والمذاكرة لساعات طويلة براحة بصرية تامة وبحفظ تلقائي لكافة البيانات محلياً.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>جميع الحقوق محفوظة © لمنصة مَنار التعليمية 2026 - للتشغيل الفوري بالنقر المزدوج (Static Version)</div>
+      <div>مبني بتقنيات الويب النظيفة والخفيفة (HTML5 • CSS3 • Vanilla JS)</div>
+    </div>
+  </footer>
+
+  <!-- 1. النافذة المنبثقة العامة (المودال العام للدروس، الحجوزات، الدورات، الملف الشخصي) -->
+  <div class="modal-overlay" id="general-modal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="general-modal-title">عنوان النافذة</h3>
+          <p id="general-modal-subtitle">وصف أو تفاصيل إضافية</p>
+        </div>
+        <button class="btn-close-modal" onclick="ManarApp.closeModal('general-modal')" title="إغلاق">✕</button>
+      </div>
+      <div class="modal-body" id="general-modal-body">
+        <!-- محتوى ديناميكي يتم تعبئته بواسطة الجافاسكريبت -->
+      </div>
+      <div class="modal-footer" id="general-modal-footer">
+        <button class="btn-secondary" onclick="ManarApp.closeModal('general-modal')">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. نافذة القارئ الرقمي المدمج للكتب والمذكرات المدرسية (In-App Document Reader) -->
+  <div class="modal-overlay" id="reader-modal">
+    <div class="modal-window large-window" style="height: 90vh;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="reader-modal-title">قارئ الكتب والمذكرات المدرسية</h3>
+          <p>تصفح الكتاب، قلب الصفحات، ودوّن ملاحظاتك مباشرة على الهامش</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span id="reader-current-page-num" style="font-size: 0.85rem; font-weight: 600; color: var(--academic-blue);">1 / 3</span>
+          <button class="btn-close-modal" onclick="ManarApp.closeModal('reader-modal')" title="إغلاق القارئ">✕</button>
+        </div>
+      </div>
+      <div class="modal-body" style="padding: 16px; display: flex; flex-direction: column;">
+        <div class="reader-container" style="flex: 1;">
+          <!-- شريط الفهرس والملاحظات -->
+          <div class="reader-sidebar" id="reader-sidebar-toc">
+            <!-- يُرسم بالـ JS -->
+          </div>
+          <!-- صفحة الكتاب التفاعلية -->
+          <div class="reader-paper-sheet" id="reader-paper-content">
+            <!-- يُرسم بالـ JS -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="justify-content: space-between;">
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-secondary" onclick="ManarApp.prevReaderPage()">الصفحة السابقة &rarr;</button>
+          <button class="btn-secondary" onclick="ManarApp.nextReaderPage()">&larr; الصفحة التالية</button>
+        </div>
+        <div>
+          <button class="btn-primary" onclick="ManarApp.showToast('تم حفظ ملاحظاتك على الكتاب تلقائياً!'); ManarApp.closeModal('reader-modal');">
+            إغلاق وحفظ الملاحظات
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. نافذة مشغل الفيديو التعليمي التفاعلي (Interactive Video Player Modal) -->
+  <div class="modal-overlay" id="video-player-modal">
+    <div class="modal-window large-window" style="height: 92vh;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="video-player-modal-title">مشغل الفيديوهات التعليمية</h3>
+          <p>شرح مرئي تفاعلي مع سبورة ذكية ودفتر ملاحظات واختبار ختامي</p>
+        </div>
+        <button class="btn-close-modal" onclick="ManarApp.closeModal('video-player-modal')" title="إغلاق المشغل">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="video-player-modal-layout">
+          <!-- شاشة الفيديو والسبورة والتحكم -->
+          <div class="video-screen-col">
+            <div class="video-stage-canvas">
+              <div class="simulated-blackboard">
+                <span class="board-lesson-tag" id="sim-board-tag">الفيزياء | الحلقة 1</span>
+                <h4 class="board-title" id="sim-board-title">كيف ترى الحركة بعيون فيزيائية؟</h4>
+                <div class="board-formula-box">
+                  v = Δd / Δt &nbsp;|&nbsp; a = Δv / Δt
+                </div>
+                <p style="font-size: 0.85rem; color: #CFD8DC; margin-top: 14px;">
+                  استمع إلى شرح المعلم وتابع المعادلات المدونة على السبورة الذكية
+                </p>
+              </div>
+            </div>
+
+            <!-- أزرار التحكم بالمشغل -->
+            <div class="player-controls-bar">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button class="player-btn" id="vid-play-pause-btn" onclick="ManarApp.toggleVideoPlay()">
+                  إيقاف مؤقت
+                </button>
+                <span style="font-size: 0.82rem; color: #B0BEC5;">03:45 / 14:20</span>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span style="font-size: 0.8rem; color: #90A4AE;">سرعة العرض: 1x</span>
+                <button class="player-btn" onclick="ManarApp.showToast('جاري إعادة تشغيل المقطع')">↺ إعادة</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- العمود الجانبي: الحلقات والملاحظات والاختبار -->
+          <div class="video-sidebar-col">
+            <div class="video-sidebar-tabs">
+              <button class="vid-tab-btn active" id="btn-vidtab-playlist" onclick="ManarApp.switchVideoSidebarTab('playlist')">قائمة الحلقات</button>
+              <button class="vid-tab-btn" id="btn-vidtab-takeaways" onclick="ManarApp.switchVideoSidebarTab('takeaways')">المفاهيم</button>
+              <button class="vid-tab-btn" id="btn-vidtab-notes" onclick="ManarApp.switchVideoSidebarTab('notes')">ملاحظاتي</button>
+              <button class="vid-tab-btn" id="btn-vidtab-quiz" onclick="ManarApp.switchVideoSidebarTab('quiz')">سؤال الحلقة</button>
+            </div>
+
+            <!-- محتوى التبويبات -->
+            <div id="vidtab-content-playlist">
+              <div id="video-episodes-playlist"></div>
+            </div>
+
+            <div id="vidtab-content-takeaways" style="display: none;">
+              <div id="video-takeaways-container"></div>
+            </div>
+
+            <div id="vidtab-content-notes" style="display: none;">
+              <h5 style="font-size: 0.9rem; color: var(--academic-blue); margin-bottom: 8px;">دفتر ملاحظات الطالب:</h5>
+              <textarea class="student-notebook-area" id="video-student-notebook" placeholder="دوّن أفكارك وقوانينك أثناء متابعة الفيديو (تُحفظ تلقائياً)..." oninput="ManarApp.saveVideoNotebook(this.value)"></textarea>
+              <small style="color: var(--academic-green); display: block; margin-top: 4px;">✓ تُحفظ ملاحظاتك مباشرة في متصفحك.</small>
+            </div>
+
+            <div id="vidtab-content-quiz" style="display: none;">
+              <div id="video-quiz-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="ManarApp.closeModal('video-player-modal')">إغلاق المشغل</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- عنصر الإشعارات المنبثقة (Toast Notification) -->
+  <div id="global-toast" class="toast-notice" role="alert"></div>
+
+  <!-- البرمجيات الأساسية بالترتيب الصحيح لضمان العمل التام بالنقر المزدوج (file:///) -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

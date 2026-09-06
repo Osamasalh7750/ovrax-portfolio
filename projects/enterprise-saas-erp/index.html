@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة العاصمة المؤسسية لإدارة الشركات | Enterprise SaaS ERP</title>
+  <meta name="description" content="منصة متكاملة لإدارة الشركات، المشاريع، الموارد البشرية، المبيعات والمالية بنظام سحابي خفيف وحديث">
+  
+  <!-- Arabic Enterprise Fonts (Google Fonts with System Fallbacks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Enterprise Light Theme Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم تصميم وتطوير هذه المنصة بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20ERP%20%D8%B3%D8%AD%D8%A7%D8%A8%D9%8A%D8%A9%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%D8%A9%20%D9%84%D9%85%D9%86%D8%B5%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب منظومة مماثلة
+    </a>
+  </div>
+</div>
+  <!-- Main Application Wrapper -->
+  <div id="app-root">
+    <!-- Sidebar Navigation Slot -->
+    <div id="sidebar-slot"></div>
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="window.ERP.closeMobileSidebar()"></div>
+
+    <!-- Content Viewport Shell -->
+    <div class="app-content-shell">
+      <!-- Top Application Header -->
+      <header id="header-slot"></header>
+
+      <!-- Main Viewport for Active Screen -->
+      <main class="main-viewport" id="main-view-slot"></main>
+    </div>
+  </div>
+
+  <!-- Global Modal Overlay Container -->
+  <div class="modal-overlay" id="app-modal-overlay">
+    <div id="modal-content-slot"></div>
+  </div>
+
+  <!-- Global Slide-Over Drawer Container -->
+  <div class="drawer-overlay" id="app-drawer-overlay" onclick="if(event.target === this) window.ERP.state.closeDrawer();">
+    <div id="drawer-content-slot"></div>
+  </div>
+
+  <!-- Global Toast Notification Stack -->
+  <div class="toast-stack" id="toast-stack"></div>
+
+  <!-- Script Modules (Standalone Standard Tags - Works seamlessly locally on file:///) -->
+  <script src="js/icons.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+
+  <!-- Views Modules -->
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/companies.js"></script>
+  <script src="js/views/hr.js"></script>
+  <script src="js/views/crm.js"></script>
+  <script src="js/views/sales.js"></script>
+  <script src="js/views/purchases.js"></script>
+  <script src="js/views/suppliers.js"></script>
+  <script src="js/views/projects.js"></script>
+  <script src="js/views/tasks.js"></script>
+  <script src="js/views/contracts.js"></script>
+  <script src="js/views/invoices.js"></script>
+  <script src="js/views/expenses.js"></script>
+  <script src="js/views/inventory.js"></script>
+  <script src="js/views/attendance.js"></script>
+  <script src="js/views/documents.js"></script>
+  <script src="js/views/meetings.js"></script>
+  <script src="js/views/notifications.js"></script>
+  <script src="js/views/reports.js"></script>
+  <script src="js/views/approvals.js"></script>
+  <script src="js/views/users.js"></script>
+  <script src="js/views/settings.js"></script>
+
+  <!-- Main App Controller -->
+  <script src="js/app.js"></script>
+</body>
+</html>

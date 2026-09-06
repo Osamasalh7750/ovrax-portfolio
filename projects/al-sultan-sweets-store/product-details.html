@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="متجر حلويات السلطان الفاخرة - تشكيلة ملكية من الحلويات الشرقية، البقلاوة، الكنافة، الكيك، والشوكولاتة مع طلب فوري عبر واتساب وفاتورة إلكترونية.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <title>تفاصيل المنتج | حلويات السلطان الفاخرة</title>
+  <style>
+    .details-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 45px;
+      padding: 40px 0 60px;
+    }
+    .details-gallery img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 4px solid var(--card-bg);
+      box-shadow: var(--shadow-lg);
+    }
+    .details-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+    .details-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .details-price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .details-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 26px;
+    }
+    .nutrition-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 26px;
+    }
+    .nutrition-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      text-align: center;
+    }
+    .nutri-box h5 {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .nutri-box span {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .qty-picker {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    @media (max-width: 850px) {
+      .details-layout {
+        grid-template-columns: 1fr;
+      }
+      .details-gallery img {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span><i class="fas fa-phone-alt"></i> خدمة العملاء: <strong>+966 11 400 0000</strong></span>
+        <span><i class="fas fa-clock"></i> مفتوح يومياً من 9:00 ص - 12:00 م</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-promo"><i class="fas fa-truck"></i> توصيل مجاني للطلبات فوق 200 ر.س! كود الخصم: <strong>SWEET20</strong></span>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" title="تغيير المظهر">
+          <i id="themeToggleIcon" class="fas fa-moon"></i>
+          <span id="themeToggleText">الوضع الليلي</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fas fa-crown"></i></div>
+        <div class="brand-text">
+          <h1>حلويات السلطان</h1>
+          <span>AL-SULTAN SWEETS &bull; فاخرة منذ 1995</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link "><i class="fas fa-home"></i> الرئيسية</a>
+        <a href="shop.html" class="nav-link active"><i class="fas fa-cookie"></i> قائمة الحلويات</a>
+        <a href="shop.html?cat=boxes" class="nav-link"><i class="fas fa-gift"></i> بوكسات الهدايا</a>
+        <a href="about.html" class="nav-link "><i class="fas fa-award"></i> قصة المتجر</a>
+        <a href="contact.html" class="nav-link "><i class="fas fa-envelope"></i> اتصل بنا</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html" class="action-btn" title="البحث">
+          <i class="fas fa-search"></i>
+        </a>
+        <a href="wishlist.html" class="action-btn" title="المفضلة">
+          <i class="fas fa-heart"></i>
+          <span class="action-badge wishlist-count">0</span>
+        </a>
+        <button class="action-btn" onclick="toggleCartDrawer()" title="سلة المشتريات">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="action-badge cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="container" style="padding-top: 30px;">
+    <!-- Breadcrumb -->
+    <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+      <a href="index.html">الرئيسية</a> &bull;
+      <a href="shop.html">قائمة الحلويات</a> &bull;
+      <span id="breadcrumbCategory">حلويات شرقية</span> &bull;
+      <strong id="breadcrumbTitle" style="color: var(--primary);">اسم الصنف</strong>
+    </div>
+
+    <div class="details-layout" id="productDetailsWrap">
+      <!-- Gallery Column -->
+      <div class="details-gallery">
+        <img id="detailImg" src="" alt="صورة المنتج">
+      </div>
+
+      <!-- Information Column -->
+      <div class="details-info">
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px;">
+          <span class="badge badge-gold" id="detailCatBadge">حلويات شرقية</span>
+          <span class="badge badge-primary" id="detailBadge">الأكثر طلباً 🔥</span>
+        </div>
+
+        <h1 class="details-title" id="detailTitle">اسم الصنف</h1>
+
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+          <div class="product-rating" style="font-size: 1.1rem;">
+            <i class="fas fa-star"></i>
+            <span id="detailRating">4.9</span>
+          </div>
+          <span style="color: var(--text-muted);" id="detailReviewsCount">(142 تقييم عملاء موثق)</span>
+        </div>
+
+        <div class="details-price-wrap">
+          <span class="details-price" id="detailPrice">65.00 ر.س</span>
+          <span class="old-price" id="detailOldPrice" style="font-size: 1.1rem;">80.00 ر.س</span>
+        </div>
+
+        <p class="details-desc" id="detailDesc">وصف المنتج الكامل...</p>
+
+        <!-- Nutrition & Details Card -->
+        <div class="nutrition-card">
+          <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 12px; color: var(--primary-dark);">
+            <i class="fas fa-info-circle"></i> القيمة الغذائية والمكونات
+          </h4>
+          <div class="nutrition-grid">
+            <div class="nutri-box">
+              <h5>السعرات الحرارية</h5>
+              <span id="detailCalories">380 سعرة</span>
+            </div>
+            <div class="nutri-box">
+              <h5>مسببات الحساسية</h5>
+              <span id="detailAllergens">حليب، مكسرات</span>
+            </div>
+            <div class="nutri-box">
+              <h5>الحالة</h5>
+              <span style="color: var(--pistachio);"><i class="fas fa-check-circle"></i> طازج ومتاح</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weight Selection -->
+        <div class="weight-selector">
+          <label style="font-weight: 800; font-size: 1rem; margin-bottom: 10px;">اختر الحجم أو الوزن:</label>
+          <div class="weight-options" id="detailWeightOptions">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Quantity & Actions -->
+        <div class="qty-picker">
+          <div class="qty-controls" style="padding: 6px;">
+            <button class="qty-btn" style="width: 36px; height: 36px; font-size: 1.1rem;" onclick="changeDetailQty(-1)">-</button>
+            <span class="qty-value" id="detailQty" style="width: 45px; font-size: 1.1rem;">1</span>
+            <button class="qty-btn" style="width: 36px; height: 36px; font-size: 1.1rem;" onclick="changeDetailQty(1)">+</button>
+          </div>
+          <button class="btn btn-primary" style="flex: 1; padding: 14px;" onclick="addCurrentDetailToCart()">
+            <i class="fas fa-cart-plus"></i> أضف إلى سلة المشتريات
+          </button>
+          <button class="action-btn" id="detailWishlistBtn" onclick="toggleDetailWishlist()" style="width: 52px; height: 52px;" title="المفضلة">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+
+        <div style="display: flex; gap: 12px;">
+          <button class="btn btn-whatsapp" style="width: 100%;" onclick="orderCurrentItemViaWhatsApp()">
+            <i class="fab fa-whatsapp"></i> اطلب هذا الصنف عبر واتساب مباشرة
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Sweets Section -->
+    <div style="margin-top: 70px;">
+      <div class="section-header">
+        <span class="section-subtitle">تشكيلة مشابهة</span>
+        <h2 class="section-title">قد يعجبك أيضاً من نفس القسم</h2>
+      </div>
+      <div class="products-grid" id="relatedProductsGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon"><i class="fas fa-crown"></i></div>
+            <div class="brand-text">
+              <h2>حلويات السلطان</h2>
+              <span style="color: var(--gold-light);">AL-SULTAN LUXURY SWEETS</span>
+            </div>
+          </div>
+          <p>نقدم لكم أرقى الحلويات الشرقية والغربية المحضرة يدوياً بأيدي أمهر الطهاة وباستخدام أجود المكونات الطبيعية والسمن البلدي والفستق الحلبي الفاخر.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-link" title="تويتر (X)"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="footer-social-link" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="footer-social-link" title="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="#" class="footer-social-link" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>أقسام الحلويات</h3>
+          <ul class="footer-links">
+            <li><a href="shop.html?cat=oriental"><i class="fas fa-angle-left"></i> حلويات شرقية فاخرة</a></li>
+            <li><a href="shop.html?cat=western"><i class="fas fa-angle-left"></i> كيك وتشيز كيك غربي</a></li>
+            <li><a href="shop.html?cat=chocolate"><i class="fas fa-angle-left"></i> شوكولاتة وترافل</a></li>
+            <li><a href="shop.html?cat=boxes"><i class="fas fa-angle-left"></i> بوكسات ضيافة وهدايا</a></li>
+            <li><a href="shop.html?cat=healthy"><i class="fas fa-angle-left"></i> حلويات صحية ودايت</a></li>
+            <li><a href="shop.html?cat=drinks"><i class="fas fa-angle-left"></i> بوظة ومشروبات قهوة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="shop.html"><i class="fas fa-angle-left"></i> تصفح جميع المنتجات</a></li>
+            <li><a href="cart.html"><i class="fas fa-angle-left"></i> سلة المشتريات</a></li>
+            <li><a href="checkout.html"><i class="fas fa-angle-left"></i> إتمام الطلب والفاتورة</a></li>
+            <li><a href="wishlist.html"><i class="fas fa-angle-left"></i> قائمة أمنياتي</a></li>
+            <li><a href="about.html"><i class="fas fa-angle-left"></i> قصة المتجر والمعايير</a></li>
+            <li><a href="contact.html"><i class="fas fa-angle-left"></i> فروعنا وتواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h3>النشرة البريدية والعروض</h3>
+          <p>اشترك معنا لتصلك أحدث العروض والخصومات الخاصة بمواسم الأعياد والمناسبات.</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" placeholder="أدخل بريدك الإلكتروني..." required>
+            <button type="submit">اشتراك</button>
+          </form>
+          <div style="margin-top: 20px; font-size: 0.85rem; color: #eed5dc;">
+            <p><i class="fas fa-map-marker-alt" style="color: var(--gold-light);"></i> الرياض، طريق الملك فهد</p>
+            <p style="margin-top: 4px;"><i class="fas fa-phone-alt" style="color: var(--gold-light);"></i> الرقم الموحد: 920000000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 جميع الحقوق محفوظة لـ <strong>حلويات السلطان الفاخرة</strong> &bull; تم التطوير بأعلى معايير الجودة</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+          <i class="fas fa-credit-card" title="Mada"></i>
+          <i class="fas fa-money-bill-wave" title="الدفع عند الاستلام"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fas fa-shopping-bag"></i> سلة مشترياتك</h3>
+      <button class="close-drawer-btn" onclick="toggleCartDrawer()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <!-- يتم تعبئة السلة تلقائياً عبر JavaScript -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>المجموع الإجمالي:</span>
+        <span id="drawerSubtotal">0.00 ر.س</span>
+      </div>
+      <div class="cart-drawer-actions">
+        <a href="checkout.html" class="btn btn-primary"><i class="fas fa-credit-card"></i> إتمام الطلب الآن</a>
+        <a href="cart.html" class="btn btn-outline"><i class="fas fa-shopping-cart"></i> عرض السلة الكاملة</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal Container -->
+  <div class="modal-overlay" id="quickViewModal"></div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/966500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D9%86" target="_blank" class="floating-whatsapp" title="تحدث معنا على واتساب مباشرة">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    let currentProduct = null;
+    let selectedWeightOption = '';
+    let currentQuantity = 1;
+
+    function changeDetailQty(delta) {
+      currentQuantity = Math.max(1, currentQuantity + delta);
+      document.getElementById('detailQty').textContent = currentQuantity;
+    }
+
+    function selectDetailWeight(weight, price, btn) {
+      selectedWeightOption = weight;
+      document.querySelectorAll('#detailWeightOptions .weight-chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('detailPrice').textContent = `${price} ${STORE_CONFIG.currency}`;
+    }
+
+    function addCurrentDetailToCart() {
+      if (!currentProduct) return;
+      Cart.addItem(currentProduct.id, selectedWeightOption, currentQuantity);
+    }
+
+    function toggleDetailWishlist() {
+      if (!currentProduct) return;
+      Wishlist.toggleItem(currentProduct.id);
+      const btn = document.getElementById('detailWishlistBtn');
+      if (btn) btn.classList.toggle('active', Wishlist.hasItem(currentProduct.id));
+    }
+
+    function orderCurrentItemViaWhatsApp() {
+      if (!currentProduct) return;
+      const unitPrice = currentProduct.weightsPricing[selectedWeightOption] || currentProduct.price;
+      const total = (unitPrice * currentQuantity).toFixed(2);
+      const text = `مرحباً حلويات السلطان 👑\nأرغب بطلب الصنف التالي:\n\n▫️ *الصنف:* ${currentProduct.name}\n▫️ *الحجم:* ${selectedWeightOption}\n▫️ *الكمية:* ${currentQuantity}\n▫️ *السعر الإجمالي:* ${total} ${STORE_CONFIG.currency}\n\nيرجى تأكيد توفر الطلب ووقت التوصيل. شكراً لكم!`;
+      window.open(`https://wa.me/${STORE_CONFIG.whatsappFormatted}?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const prodId = params.get('id') || 'sweet-01';
+      currentProduct = SWEETS_DATA.find(p => p.id === prodId) || SWEETS_DATA[0];
+
+      selectedWeightOption = currentProduct.weightOptions[0];
+      const initialPrice = currentProduct.weightsPricing[selectedWeightOption] || currentProduct.price;
+
+      document.getElementById('detailImg').src = currentProduct.image;
+      document.getElementById('detailTitle').textContent = currentProduct.name;
+      document.getElementById('breadcrumbTitle').textContent = currentProduct.name;
+      document.getElementById('breadcrumbCategory').textContent = currentProduct.categoryName;
+      document.getElementById('detailCatBadge').textContent = currentProduct.categoryName;
+      document.getElementById('detailBadge').textContent = currentProduct.badge;
+      document.getElementById('detailRating').textContent = currentProduct.rating;
+      document.getElementById('detailReviewsCount').textContent = `(${currentProduct.reviewsCount} تقييم عملاء موثق)`;
+      document.getElementById('detailPrice').textContent = `${initialPrice} ${STORE_CONFIG.currency}`;
+      
+      if (currentProduct.oldPrice) {
+        document.getElementById('detailOldPrice').textContent = `${currentProduct.oldPrice} ${STORE_CONFIG.currency}`;
+      } else {
+        document.getElementById('detailOldPrice').style.display = 'none';
+      }
+
+      document.getElementById('detailDesc').textContent = currentProduct.description;
+      document.getElementById('detailCalories').textContent = currentProduct.calories;
+      document.getElementById('detailAllergens').textContent = currentProduct.allergens.length ? currentProduct.allergens.join('، ') : 'خالٍ من المسببات الشائعة';
+
+      const weightsWrap = document.getElementById('detailWeightOptions');
+      weightsWrap.innerHTML = currentProduct.weightOptions.map((w, idx) => {
+        const p = currentProduct.weightsPricing[w] || currentProduct.price;
+        return `
+          <button class="weight-chip ${idx === 0 ? 'active' : ''}" onclick="selectDetailWeight('${w}', ${p}, this)">
+            ${w} - ${p} ${STORE_CONFIG.currency}
+          </button>
+        `;
+      }).join('');
+
+      const wishBtn = document.getElementById('detailWishlistBtn');
+      if (wishBtn && Wishlist.hasItem(currentProduct.id)) {
+        wishBtn.classList.add('active');
+      }
+
+      const related = SWEETS_DATA.filter(p => p.category === currentProduct.category && p.id !== currentProduct.id).slice(0, 4);
+      const relGrid = document.getElementById('relatedProductsGrid');
+      if (relGrid) {
+        relGrid.innerHTML = related.map(createProductCardHTML).join('');
+      }
+    });
+  </script>
+</body>
+</html>
