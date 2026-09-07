@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="fresnelFill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="earthGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#166534"/>
+      <stop offset="10%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#052e16"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect x="0" y="0" width="750" height="320" fill="url(#skyGrad)"/>
+
+  <!-- Earth Curvature Bulge -->
+  <path d="M 0 280 Q 375 250 750 280 L 750 320 L 0 320 Z" fill="url(#earthGrad)"/>
+  <text x="375" y="300" text-anchor="middle" font-size="10" fill="#86efac" font-family="sans-serif">انحناء سطح الأرض (Earth Curvature)</text>
+
+  <!-- TX Tower (Left - Master Tower) -->
+  <g transform="translate(60, 110)">
+    <!-- Tower Lattice Truss -->
+    <polygon points="15,0 0,160 30,160" fill="none" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="2" y1="130" x2="28" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="5" y1="90" x2="25" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="8" y1="50" x2="22" y2="50" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="2" y1="130" x2="25" y2="90" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="28" y1="130" x2="5" y2="90" stroke="#94a3b8" stroke-width="1"/>
+    <!-- Antenna Unit -->
+    <rect x="22" y="-10" width="10" height="24" rx="2" fill="#38bdf8"/>
+    <circle cx="27" cy="2" r="3" fill="#ffffff"/>
+    <text x="15" y="180" text-anchor="middle" font-size="10" fill="#e2e8f0" font-weight="bold" font-family="sans-serif">برج الإرسال (TX Master)</text>
+    <text x="15" y="195" text-anchor="middle" font-size="8" fill="#38bdf8" font-family="monospace">ارتفاع: 30m</text>
+  </g>
+
+  <!-- RX Tower (Right - Branch Tower) -->
+  <g transform="translate(660, 110)">
+    <!-- Tower Lattice Truss -->
+    <polygon points="15,0 0,160 30,160" fill="none" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="2" y1="130" x2="28" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="5" y1="90" x2="25" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="8" y1="50" x2="22" y2="50" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="2" y1="130" x2="25" y2="90" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="28" y1="130" x2="5" y2="90" stroke="#94a3b8" stroke-width="1"/>
+    <!-- Antenna Unit -->
+    <rect x="-2" y="-10" width="10" height="24" rx="2" fill="#38bdf8"/>
+    <circle cx="3" cy="2" r="3" fill="#ffffff"/>
+    <text x="15" y="180" text-anchor="middle" font-size="10" fill="#e2e8f0" font-weight="bold" font-family="sans-serif">محطة الاستقبال (RX Station)</text>
+    <text x="15" y="195" text-anchor="middle" font-size="8" fill="#38bdf8" font-family="monospace">ارتفاع: 25m</text>
+  </g>
+
+  <!-- 1st Fresnel Zone Ellipse (منطقة فرينل الأولى) -->
+  <ellipse cx="375" cy="112" rx="285" ry="62" fill="url(#fresnelFill)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- 60% Clearance Boundary (حد الخلو الإلزامي 60%) -->
+  <ellipse cx="375" cy="112" rx="285" ry="37" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- Direct Line of Sight (LOS) Axis -->
+  <line x1="88" y1="112" x2="662" y2="112" stroke="#ef4444" stroke-width="2"/>
+  <text x="375" y="105" text-anchor="middle" font-size="10" fill="#fca5a5" font-weight="bold" font-family="sans-serif">خط الرؤية المباشر (Line of Sight - LOS)</text>
+
+  <!-- Center Radius Dimensions Markers -->
+  <line x1="375" y1="112" x2="375" y2="50" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="375" cy="50" r="3" fill="#38bdf8"/>
+  <text x="385" y="75" font-size="10" fill="#38bdf8" font-weight="bold" font-family="monospace">r1 (Fresnel Radius = 8.65m)</text>
+
+  <line x1="375" y1="112" x2="375" y2="75" stroke="#f59e0b" stroke-width="1.5"/>
+  <circle cx="375" cy="75" r="3" fill="#f59e0b"/>
+  <text x="385" y="92" font-size="9" fill="#f59e0b" font-family="monospace">60% Clearance = 5.2m</text>
+
+  <!-- Obstacle Simulation (شجرة أو مبنى في المسار) -->
+  <g transform="translate(240, 185)">
+    <!-- Building / Tree -->
+    <rect x="0" y="0" width="30" height="75" fill="#334155" stroke="#64748b"/>
+    <!-- Tree crown -->
+    <circle cx="15" cy="0" r="22" fill="#15803d" stroke="#166534" stroke-width="2"/>
+    <text x="15" y="-28" text-anchor="middle" font-size="9" fill="#fca5a5" font-weight="bold" font-family="sans-serif">عائق (شجرة / مبنى)</text>
+    <!-- Warning Line -->
+    <line x1="15" y1="-22" x2="15" y2="112" stroke="#ef4444" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(180, 12)">
+    <rect x="0" y="0" width="390" height="28" rx="4" fill="#0f172a" stroke="#334155"/>
+    <circle cx="20" cy="14" r="5" fill="#38bdf8"/>
+    <text x="30" y="17" font-size="8" fill="#cbd5e1" font-family="sans-serif">منطقة فرينل الأولى 100%</text>
+
+    <circle cx="150" cy="14" r="5" fill="#f59e0b"/>
+    <text x="160" y="17" font-size="8" fill="#cbd5e1" font-family="sans-serif">حد الخلو الإلزامي 60%</text>
+
+    <line x1="260" y1="14" x2="280" y2="14" stroke="#ef4444" stroke-width="2"/>
+    <text x="290" y="17" font-size="8" fill="#cbd5e1" font-family="sans-serif">مسار الإشارة المباشر LOS</text>
+  </g>
+</svg>

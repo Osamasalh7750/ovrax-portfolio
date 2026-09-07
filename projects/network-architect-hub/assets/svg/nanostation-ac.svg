@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nanoPlastic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="ledGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- NanoStation 5AC Body (Streamlined Outdoor CPE) -->
+  <g transform="translate(130, 20)">
+    <!-- Main Shell -->
+    <rect x="0" y="10" width="140" height="280" rx="20" fill="url(#nanoPlastic)" stroke="#94a3b8" stroke-width="2"/>
+
+    <!-- Ubiquiti Logo Emboss -->
+    <circle cx="70" cy="50" r="14" fill="#0284c7"/>
+    <path d="M 65 47 C 65 57, 75 57, 75 47" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="70" cy="45" r="2" fill="#ffffff"/>
+
+    <text x="70" y="80" text-anchor="middle" font-family="Segoe UI, sans-serif" font-weight="bold" font-size="12" fill="#1e293b">NanoStation</text>
+    <text x="70" y="94" text-anchor="middle" font-family="monospace" font-size="10" fill="#0284c7" font-weight="bold">5AC (airMAX AC)</text>
+
+    <!-- Center decorative groove -->
+    <line x1="70" y1="110" x2="70" y2="180" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- Signal Strength & Status LEDs (Back / Side Indicator) -->
+    <g transform="translate(25, 195)">
+      <rect x="0" y="0" width="90" height="40" rx="4" fill="#0f172a"/>
+      
+      <!-- Power & LAN LEDs -->
+      <circle cx="15" cy="14" r="3" fill="#22c55e"/>
+      <text x="15" y="28" font-size="7" fill="#64748b" text-anchor="middle" font-family="monospace">PWR</text>
+
+      <circle cx="32" cy="14" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.3;1" dur="0.5s" repeatCount="indefinite"/></circle>
+      <text x="32" y="28" font-size="7" fill="#64748b" text-anchor="middle" font-family="monospace">LAN</text>
+
+      <!-- 4-bar Signal LED indicators (-73dBm, -65dBm, -55dBm, -45dBm) -->
+      <rect x="47" y="15" width="6" height="10" rx="1" fill="#ef4444"/>
+      <rect x="56" y="12" width="6" height="13" rx="1" fill="#f59e0b"/>
+      <rect x="65" y="9" width="6" height="16" rx="1" fill="#22c55e"/>
+      <rect x="74" y="6" width="6" height="19" rx="1" fill="#22c55e"/>
+      <text x="65" y="34" font-size="6" fill="#94a3b8" text-anchor="middle" font-family="monospace">-54 dBm</text>
+    </g>
+
+    <!-- Bottom Port Hatch (Door Opened to show ports) -->
+    <path d="M 10 280 L 130 280 L 120 320 L 20 320 Z" fill="#e2e8f0" stroke="#94a3b8"/>
+    
+    <!-- Main PoE In Port -->
+    <rect x="30" y="288" width="30" height="24" rx="2" fill="#0f172a" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="45" y="303" text-anchor="middle" font-size="7" fill="#38bdf8" font-family="monospace">MAIN</text>
+    <text x="45" y="325" text-anchor="middle" font-size="6" fill="#64748b" font-family="monospace">PoE In 24V</text>
+
+    <!-- Secondary PoE Passthrough Port -->
+    <rect x="80" y="288" width="30" height="24" rx="2" fill="#0f172a" stroke="#64748b"/>
+    <text x="95" y="303" text-anchor="middle" font-size="7" fill="#cbd5e1" font-family="monospace">SEC</text>
+    <text x="95" y="325" text-anchor="middle" font-size="6" fill="#64748b" font-family="monospace">Passthru</text>
+  </g>
+
+  <!-- Pole Mounting Strap -->
+  <g transform="translate(90, 80)">
+    <rect x="0" y="0" width="20" height="120" rx="3" fill="#64748b" stroke="#334155"/>
+    <circle cx="10" cy="20" r="4" fill="#0f172a"/>
+    <circle cx="10" cy="100" r="4" fill="#0f172a"/>
+    <text x="-15" y="65" font-size="9" fill="#94a3b8" transform="rotate(-90 -15 65)" font-family="sans-serif">قفل التثبيت بالماست</text>
+  </g>
+</svg>

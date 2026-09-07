@@ -1,0 +1,376 @@
+/**
+ * NetworkArchitect Hub - Calculators, Modules & Generator Stylesheet
+ * Enhanced with modern Educational Stepper, Callout Boxes, and Geographic Deployment Portal.
+ */
+
+/* =====================================================================
+   EDUCATIONAL MODULES PORTAL (التصميم الجديد العصري للوحدات التعليمية)
+   ===================================================================== */
+.edu-module-portal {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Stepper Track */
+.edu-stepper-container {
+  background: #090e1a;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.edu-stepper-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.edu-step-node {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  opacity: 0.65;
+}
+
+.edu-step-node:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.edu-step-node.active {
+  opacity: 1;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.edu-step-node.completed {
+  opacity: 0.9;
+}
+
+.edu-step-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0f172a;
+  border: 2px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.edu-step-node.active .edu-step-circle {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+}
+
+.edu-step-node.completed .edu-step-circle {
+  background: #065f46;
+  border-color: #10b981;
+  color: #6ee7b7;
+  font-weight: bold;
+}
+
+.edu-step-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-step-tag {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+  font-weight: bold;
+}
+
+.edu-step-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Hero Banner */
+.edu-hero-banner {
+  background: linear-gradient(135deg, #090e1a 0%, #0f172a 60%, rgba(2, 132, 199, 0.15) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+.edu-hero-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.edu-hero-title {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-top: 0.5rem;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.5px;
+}
+
+.edu-hero-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  max-width: 850px;
+}
+
+/* Section Cards */
+.edu-section-card {
+  background: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.2s;
+}
+
+.edu-section-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.edu-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.edu-section-badge-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #0284c7;
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.edu-section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+/* Content Body Grid */
+.edu-section-body-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Callout Boxes: Why vs How */
+.edu-callout-why {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-right: 5px solid var(--accent-amber);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.edu-callout-how {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-right: 5px solid var(--accent-cyan);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.edu-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.edu-callout-header h4 {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Keypoints Grid */
+.edu-keypoints-box {
+  background: #090e1a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.edu-keypoints-title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.edu-keypoints-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.edu-kp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+.edu-kp-check {
+  color: var(--accent-emerald);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+/* =====================================================================
+   GEOGRAPHIC MULTI-SITE ROLLOUT PORTAL (خطة النشر الجغرافي للمواقع)
+   ===================================================================== */
+.geo-deployment-portal {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.site-deployment-card {
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.site-deployment-card:hover {
+  transform: translateY(-2px);
+}
+
+/* =====================================================================
+   CALCULATORS & SCRIPT GENERATOR
+   ===================================================================== */
+.calculator-card {
+  background: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.calc-input-group {
+  margin-bottom: 1rem;
+}
+
+.calc-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+  font-weight: bold;
+}
+
+.calc-input {
+  width: 100%;
+  background: #020617;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.calc-input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.calc-btn-action {
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  font-family: var(--font-sans);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+  transition: all 0.2s;
+}
+
+.calc-btn-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.5);
+}
+
+/* Script Generator Syntax Highlighting Block */
+.code-generator-box {
+  background: #000000;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.code-header-bar {
+  background: #090e1a;
+  border-bottom: 1px solid #1e293b;
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code-content-pre {
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #38bdf8;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  max-height: 520px;
+  overflow-y: auto;
+  direction: ltr;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .edu-section-body-grid {
+    grid-template-columns: 1fr;
+  }
+  .edu-stepper-track {
+    justify-content: flex-start;
+  }
+}

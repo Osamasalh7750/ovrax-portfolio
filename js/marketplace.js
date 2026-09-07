@@ -6,6 +6,28 @@
 const OVRAX_PRODUCTS = [
   // ==================== المشاريع الفعلية الجاهزة (Live Projects) ====================
   {
+    id: "cyber-network-guard",
+    title: "منظومة هندسة البنية التحتية والشبكات (NetworkArchitect Hub)",
+    category: "iot",
+    categoryName: "إنترنت الأشياء والشبكات",
+    icon: "fa-network-wired",
+    tag: "منظومة شبكات تفاعلية",
+    tagType: "amber",
+    shortDesc: "منصة متكاملة لهندسة الشبكات المؤسسية: خريطة طبولوجيا حية 10G، محاكيات WinBox و airOS، وحاسبات فرينل ومولد سكربتات MikroTik.",
+    fullDesc: "منظومة هندسية شاملة لتخطيط وتصميم وإدارة الشبكات المؤسسية تربط بين المقر الرئيسي والأبراج اللاسلكية والفروع والمستودعات. تتضمن خريطة تدفق الحزم اللحظية، محاكيات لواجهات MikroTik RouterOS v7 و Ubiquiti airOS 8، حاسبات الـ Subnetting وميزانية الرابط اللاسلكي ومنطقة فرينل، ومولد أوامر RouterOS v7 كامل.",
+    features: [
+      "خريطة طبولوجيا تفاعلية عملاقة (Live Topology) تحاكي انقطاع الفايبر والتشويش اللاسلكي",
+      "محاكيات تفاعلية طبق الأصل لواجهات MikroTik WinBox و Ubiquiti airOS",
+      "حاسبات هندسية لتقسيم الشبكات والـ Subnetting وميزانية الروابط اللاسلكية Fresnel Zone",
+      "مولد سكربتات MikroTik RouterOS v7 كامل مع جدار الحماية و Hardware VLANs و PCQ"
+    ],
+    techStack: ["Network Architecture", "MikroTik RouterOS", "Ubiquiti airMAX", "Topology Engine", "Canvas 2D"],
+    price: "واجهة حية متكاملة",
+    licenseType: "جاهز للمعاينة الفورية",
+    demoType: "live-link",
+    projectUrl: "projects/network-architect-hub/index.html"
+  },
+  {
     id: "iot-smart-monitor",
     title: "موسوعة ومعرض إنترنت الأشياء الشاملة (20 نظاماً تطبيقياً متكاملاً)",
     category: "iot",
@@ -313,28 +335,6 @@ const OVRAX_PRODUCTS = [
     price: "$350",
     licenseType: "ترخيص المصدر المفتوح التجاري",
     demoType: "api-sim",
-    projectUrl: ""
-  },
-  {
-    id: "cyber-network-guard",
-    title: "منظومة تأمين ومراقبة أداء الشبكات",
-    category: "iot",
-    categoryName: "إنترنت الأشياء والشبكات",
-    icon: "fa-shield-alt",
-    tag: "أمان متقدم",
-    tagType: "amber",
-    shortDesc: "حل برمجي لهندسة وصيانة البنية التحتية، رصد التهديدات واختناقات الاتصال وأتمتة إصلاح الأعطال.",
-    fullDesc: "نظام إداري شامل لمهندسي الشبكات ومزودي خدمات الإنترنت لمراقبة الأجهزة السلكية واللاسلكية، استهلاك الباندويث، وضمان أقصى موثوقية تشغيلية.",
-    features: [
-      "مراقبة حية لاتصالات الراوترات والسيرفرات (Ping/SNMP)",
-      "تنبيهات تلقائية عند انقطاع الاتصال أو ارتفاع الضغط",
-      "فحص أمان المنافذ والبروتوكولات لمنع الاختراقات",
-      "أتمتة النسخ الاحتياطي لإعدادات الشبكة"
-    ],
-    techStack: ["Python Scripting", "SNMP", "Linux Core", "Grafana / Prometheus"],
-    price: "$499",
-    licenseType: "ترخيص إدارة الشركات",
-    demoType: "network-sim",
     projectUrl: ""
   }
 ];
