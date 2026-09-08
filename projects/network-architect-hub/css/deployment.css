@@ -1,0 +1,326 @@
+/**
+ * NetworkArchitect Hub - Geographic Deployment Plan Stylesheet
+ * Fully responsive, mobile-first design with touch-friendly steppers,
+ * signal strength meters, and hardware cards.
+ */
+
+.geo-deployment-portal {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Quick Site Stepper / Navigation Pills */
+.geo-stepper-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0.6rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+.geo-stepper-bar::-webkit-scrollbar { display: none; }
+
+.geo-step-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  background: #020617;
+  color: #94a3b8;
+  border: 1px solid #1e293b;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.geo-step-pill:hover {
+  background: #1e293b;
+  color: #fff;
+  border-color: #334155;
+}
+
+.geo-step-pill.active {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #fff;
+  border-color: #38bdf8;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+}
+
+/* Master Tower Card */
+.master-tower-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #161f33 50%, #1c1917 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.master-tower-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Site Cards Grid */
+.sites-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.site-card-v2 {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(2, 6, 23, 0.98) 100%);
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.site-card-v2:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 15px 35px rgba(2, 132, 199, 0.2);
+}
+
+/* Header Info */
+.site-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.site-title-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-badge-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+  flex-shrink: 0;
+}
+
+.site-name-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.site-meta-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.site-meta-pill {
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.site-meta-pill.signal {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.site-meta-pill.bandwidth {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.site-meta-pill.distance {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+/* User & Device Stat Row */
+.site-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(2, 6, 23, 0.7);
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  flex-wrap: wrap;
+}
+
+/* Hardware Columns Grid */
+.site-hw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.site-hw-col {
+  background: #090e1a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.site-hw-col:hover {
+  border-color: #334155;
+  background: #0d1527;
+}
+
+.site-hw-photo-box {
+  height: 120px;
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.6) 0%, rgba(2, 6, 23, 0.9) 80%);
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-hw-photo-box img {
+  max-height: 95px;
+  max-width: 90%;
+  object-fit: contain;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.8));
+}
+
+.site-hw-photo-box:hover img {
+  transform: scale(1.08);
+}
+
+.site-hw-inspect-badge {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid #334155;
+  color: #94a3b8;
+  font-size: 0.62rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.site-hw-photo-box:hover .site-hw-inspect-badge {
+  background: #0284c7;
+  color: #fff;
+  border-color: #38bdf8;
+}
+
+/* Wiring & Footer Notes */
+.site-wiring-strip {
+  background: rgba(2, 6, 23, 0.85);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 0.85rem 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+}
+
+/* Mobile Responsive Optimization */
+@media (max-width: 768px) {
+  .master-tower-hero {
+    padding: 1rem;
+  }
+  .site-card-v2 {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+  .site-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .site-name-text {
+    font-size: 0.95rem;
+  }
+  .site-hw-grid {
+    grid-template-columns: 1fr;
+  }
+  .site-hw-photo-box {
+    height: 130px;
+  }
+  .site-hw-photo-box img {
+    max-height: 105px;
+  }
+  .site-wiring-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  .site-stats-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .geo-stepper-bar {
+    gap: 0.35rem;
+    padding: 0.4rem;
+  }
+  .geo-step-pill {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.72rem;
+  }
+}

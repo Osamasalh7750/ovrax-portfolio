@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="metalBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="sfpCage" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="rj45Gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Chassis 1U Rackmount Body -->
+  <rect x="10" y="30" width="780" height="180" rx="8" fill="url(#metalBody)" stroke="#38bdf8" stroke-width="2"/>
+  
+  <!-- Rack Ears & Screws -->
+  <rect x="10" y="30" width="30" height="180" fill="#334155" stroke="#475569"/>
+  <circle cx="25" cy="50" r="6" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="25" cy="190" r="6" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+  
+  <rect x="760" y="30" width="30" height="180" fill="#334155" stroke="#475569"/>
+  <circle cx="775" cy="50" r="6" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="775" cy="190" r="6" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Brand Logo & Model -->
+  <text x="60" y="65" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="22" fill="#38bdf8" letter-spacing="2">MikroTik</text>
+  <text x="60" y="85" font-family="Segoe UI, Arial, sans-serif" font-weight="600" font-size="12" fill="#94a3b8">Cloud Core Router CCR2004-16G-2S+</text>
+  <rect x="60" y="95" width="130" height="4" rx="2" fill="#0284c7"/>
+
+  <!-- Status LEDs Group -->
+  <g transform="translate(60, 125)">
+    <text x="0" y="-8" font-size="9" fill="#64748b" font-family="monospace">PWR1  PWR2  FAULT  USR</text>
+    <circle cx="8" cy="5" r="4" fill="#22c55e"><animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/></circle>
+    <circle cx="34" cy="5" r="4" fill="#22c55e"/>
+    <circle cx="64" cy="5" r="4" fill="#334155"/>
+    <circle cx="88" cy="5" r="4" fill="#38bdf8"><animate attributeName="opacity" values="0.4;1;0.4" dur="1s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Console Port & Reset Button -->
+  <g transform="translate(60, 160)">
+    <rect x="0" y="0" width="32" height="30" rx="3" fill="#0f172a" stroke="#64748b"/>
+    <rect x="6" y="8" width="20" height="15" fill="#1e293b"/>
+    <text x="4" y="42" font-size="8" fill="#64748b" font-family="monospace">CONSOLE</text>
+
+    <circle cx="60" cy="15" r="4" fill="#ef4444"/>
+    <text x="48" y="42" font-size="8" fill="#64748b" font-family="monospace">RESET</text>
+  </g>
+
+  <!-- 2x 10G SFP+ Cages -->
+  <g transform="translate(220, 80)">
+    <rect x="-10" y="-10" width="100" height="110" rx="4" fill="#0f172a" stroke="#475569"/>
+    <text x="40" y="-15" text-anchor="middle" font-size="10" fill="#38bdf8" font-weight="bold" font-family="monospace">10G SFP+ FIBER</text>
+    
+    <!-- SFP+ 1 -->
+    <rect x="0" y="10" width="35" height="70" rx="2" fill="url(#sfpCage)" stroke="#94a3b8"/>
+    <rect x="5" y="25" width="25" height="40" fill="#020617"/>
+    <circle cx="17" cy="8" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.2;1" dur="0.4s" repeatCount="indefinite"/></circle>
+    <text x="17" y="93" text-anchor="middle" font-size="8" fill="#cbd5e1" font-family="monospace">sfp-sfpplus1</text>
+    <text x="17" y="103" text-anchor="middle" font-size="7" fill="#38bdf8" font-family="monospace">[WAN1 10G]</text>
+
+    <!-- SFP+ 2 -->
+    <rect x="45" y="10" width="35" height="70" rx="2" fill="url(#sfpCage)" stroke="#94a3b8"/>
+    <rect x="50" y="25" width="25" height="40" fill="#020617"/>
+    <circle cx="62" cy="8" r="3" fill="#22c55e"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/></circle>
+    <text x="62" y="93" text-anchor="middle" font-size="8" fill="#cbd5e1" font-family="monospace">sfp-sfpplus2</text>
+    <text x="62" y="103" text-anchor="middle" font-size="7" fill="#e2e8f0" font-family="monospace">[CORE TRUNK]</text>
+  </g>
+
+  <!-- 16x Gigabit RJ45 Ports (Grouped in 2x4 blocks) -->
+  <g transform="translate(340, 75)">
+    <rect x="-8" y="-5" width="400" height="115" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text x="190" y="-12" text-anchor="middle" font-size="10" fill="#94a3b8" font-weight="bold" font-family="monospace">GIGABIT ETHERNET PORTS (1 - 16)</text>
+    
+    <!-- ether1 (WAN2 Backup) -->
+    <g transform="translate(10, 10)">
+      <rect x="0" y="0" width="38" height="36" rx="3" fill="#1e293b" stroke="#eab308" stroke-width="2"/>
+      <rect x="6" y="8" width="26" height="20" fill="#020617"/>
+      <line x1="10" y1="12" x2="10" y2="24" stroke="url(#rj45Gold)" stroke-width="1.5"/>
+      <line x1="14" y1="12" x2="14" y2="24" stroke="url(#rj45Gold)" stroke-width="1.5"/>
+      <line x1="18" y1="12" x2="18" y2="24" stroke="url(#rj45Gold)" stroke-width="1.5"/>
+      <line x1="22" y1="12" x2="22" y2="24" stroke="url(#rj45Gold)" stroke-width="1.5"/>
+      <line x1="26" y1="12" x2="26" y2="24" stroke="url(#rj45Gold)" stroke-width="1.5"/>
+      <circle cx="8" cy="-4" r="2.5" fill="#eab308"><animate attributeName="opacity" values="1;0.2;1" dur="0.6s" repeatCount="indefinite"/></circle>
+      <text x="19" y="47" text-anchor="middle" font-size="8" fill="#eab308" font-family="monospace" font-weight="bold">e1 WAN2</text>
+    </g>
+
+    <!-- ether2 (PoE / Master Tower Link) -->
+    <g transform="translate(56, 10)">
+      <rect x="0" y="0" width="38" height="36" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <rect x="6" y="8" width="26" height="20" fill="#020617"/>
+      <circle cx="8" cy="-4" r="2.5" fill="#22c55e"><animate attributeName="opacity" values="1;0.4;1" dur="0.3s" repeatCount="indefinite"/></circle>
+      <text x="19" y="47" text-anchor="middle" font-size="8" fill="#38bdf8" font-family="monospace">e2 TOWER</text>
+    </g>
+    <!-- ether3 (Core Switch Uplink) -->
+    <g transform="translate(102, 10)">
+      <rect x="0" y="0" width="38" height="36" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <rect x="6" y="8" width="26" height="20" fill="#020617"/>
+      <circle cx="8" cy="-4" r="2.5" fill="#22c55e"><animate attributeName="opacity" values="1;0.1;1" dur="0.2s" repeatCount="indefinite"/></circle>
+      <text x="19" y="47" text-anchor="middle" font-size="8" fill="#38bdf8" font-family="monospace">e3 SWITCH</text>
+    </g>
+    <!-- ether4 (Server Farm) -->
+    <g transform="translate(148, 10)">
+      <rect x="0" y="0" width="38" height="36" rx="3" fill="#1e293b" stroke="#64748b"/>
+      <rect x="6" y="8" width="26" height="20" fill="#020617"/>
+      <circle cx="8" cy="-4" r="2.5" fill="#22c55e"/>
+      <text x="19" y="47" text-anchor="middle" font-size="8" fill="#cbd5e1" font-family="monospace">e4 SRV</text>
+    </g>
+    <!-- ether5 (NVR CCTV) -->
+    <g transform="translate(194, 10)">
+      <rect x="0" y="0" width="38" height="36" rx="3" fill="#1e293b" stroke="#64748b"/>
+      <rect x="6" y="8" width="26" height="20" fill="#020617"/>
+      <circle cx="8" cy="-4" r="2.5" fill="#ef4444"><animate attributeName="opacity" values="1;0.5;1" dur="0.4s" repeatCount="indefinite"/></circle>
+      <text x="19" y="47" text-anchor="middle" font-size="8" fill="#cbd5e1" font-family="monospace">e5 CCTV</text>
+    </g>
+    <!-- ether6 (VoIP PBX) -->
+    <g transform="translate(240, 10)">
+      <rect x="0" y="0" width="38" height="36" rx="3" fill="#1e293b" stroke="#64748b"/>
+      <rect x="6" y="8" width="26" height="20" fill="#020617"/>
+      <circle cx="8" cy="-4" r="2.5" fill="#a855f7"/>
+      <text x="19" y="47" text-anchor="middle" font-size="8" fill="#cbd5e1" font-family="monospace">e6 VOIP</text>
+    </g>
+    <!-- ether7 (MGMT) -->
+    <g transform="translate(286, 10)">
+      <rect x="0" y="0" width="38" height="36" rx="3" fill="#1e293b" stroke="#64748b"/>
+      <rect x="6" y="8" width="26" height="20" fill="#020617"/>
+      <circle cx="8" cy="-4" r="2.5" fill="#22c55e"/>
+      <text x="19" y="47" text-anchor="middle" font-size="8" fill="#cbd5e1" font-family="monospace">e7 MGMT</text>
+    </g>
+    <!-- ether8 (RESERVE) -->
+    <g transform="translate(332, 10)">
+      <rect x="0" y="0" width="38" height="36" rx="3" fill="#1e293b" stroke="#334155"/>
+      <rect x="6" y="8" width="26" height="20" fill="#020617"/>
+      <circle cx="8" cy="-4" r="2.5" fill="#334155"/>
+      <text x="19" y="47" text-anchor="middle" font-size="8" fill="#64748b" font-family="monospace">e8 RES</text>
+    </g>
+
+    <!-- Info text -->
+    <g transform="translate(10, 65)">
+      <rect x="0" y="0" width="360" height="26" rx="2" fill="#020617" stroke="#1e293b"/>
+      <text x="180" y="17" text-anchor="middle" font-size="9" fill="#64748b" font-family="monospace">INTERNAL 8-CORE 64-BIT AL32400 CPU @ 1.7GHz | 4GB DDR4 ECC RAM</text>
+    </g>
+  </g>
+</svg>

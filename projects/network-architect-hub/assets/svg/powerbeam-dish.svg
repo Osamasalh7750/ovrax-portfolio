@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 350" width="100%" height="100%">
+  <defs>
+    <radialGradient id="dishGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#e2e8f0"/>
+      <stop offset="95%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </radialGradient>
+    <linearGradient id="feedHornGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Parabolic Dish Rim & Body -->
+  <g transform="translate(40, 20)">
+    <!-- Rear Mount & Isolator Collar (Radome Shielding ring) -->
+    <ellipse cx="160" cy="150" rx="145" ry="145" fill="#64748b" stroke="#334155" stroke-width="4"/>
+    <ellipse cx="160" cy="150" rx="140" ry="140" fill="url(#dishGrad)" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- Concentric Dish Depth Rings -->
+    <ellipse cx="160" cy="150" rx="100" ry="100" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+    <ellipse cx="160" cy="150" rx="60" ry="60" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- Parabolic Central Feeder Struts -->
+    <line x1="160" y1="150" x2="260" y2="150" stroke="#475569" stroke-width="6"/>
+    <line x1="80" y1="90" x2="250" y2="145" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="80" y1="210" x2="250" y2="155" stroke="#94a3b8" stroke-width="2"/>
+
+    <!-- Central Feed Horn (InnerFeed Technology) -->
+    <ellipse cx="255" cy="150" rx="16" ry="26" fill="url(#feedHornGrad)" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="262" cy="150" r="10" fill="#38bdf8"/>
+    <circle cx="262" cy="150" r="4" fill="#ffffff"/>
+
+    <!-- Focused Narrow RF Beam (8-degree pencil beam) -->
+    <path d="M 270 146 L 380 90 L 380 210 Z" fill="none" stroke="#38bdf8" stroke-dasharray="4,4" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Specs Annotations -->
+    <rect x="70" y="275" width="180" height="28" rx="4" fill="#0f172a" stroke="#38bdf8"/>
+    <text x="160" y="293" text-anchor="middle" font-size="10" fill="#f8fafc" font-weight="bold" font-family="Segoe UI, sans-serif">PowerBeam 5AC ISO (400mm 25dBi)</text>
+    
+    <text x="340" y="80" font-size="9" fill="#38bdf8" font-family="monospace">NARROW PENCIL BEAM</text>
+    <text x="340" y="95" font-size="8" fill="#94a3b8" font-family="monospace">HIGH NOISE ISOLATION</text>
+    <text x="340" y="110" font-size="8" fill="#22c55e" font-family="monospace">RANGE: 15-25 KM</text>
+  </g>
+</svg>

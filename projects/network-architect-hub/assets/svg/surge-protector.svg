@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="surgeBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ubiquiti ETH-SP-G2 Surge Protector Body -->
+  <g transform="translate(60, 20)">
+    <!-- Weatherproof casing -->
+    <rect x="0" y="20" width="330" height="200" rx="16" fill="url(#surgeBody)" stroke="#0284c7" stroke-width="2"/>
+
+    <!-- Brand & Title -->
+    <text x="30" y="55" font-family="Segoe UI, sans-serif" font-weight="900" font-size="16" fill="#f8fafc">Ubiquiti ETH-SP-G2</text>
+    <text x="30" y="75" font-family="monospace" font-size="11" fill="#38bdf8">Ethernet Surge Protector (ESD / EMP Protection)</text>
+    <text x="30" y="92" font-family="sans-serif" font-size="9" fill="#94a3b8">أقصى تفريغ: 100A/µs | زمن الاستجابة: أقل من 1 نانوثانية</text>
+
+    <!-- Internal Gas Discharge Tube (GDT) Circuit Visualization -->
+    <g transform="translate(40, 115)">
+      <!-- Input Port 1 (Tower Radio In) -->
+      <rect x="0" y="0" width="100" height="50" rx="4" fill="#020617" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="50" y="28" text-anchor="middle" font-size="9" fill="#38bdf8" font-family="monospace">PORT 1 (TOWER)</text>
+      <text x="50" y="42" text-anchor="middle" font-size="7" fill="#64748b" font-family="sans-serif">قادم من هوائي البرج</text>
+
+      <!-- GDT Spark Arrestor Symbol -->
+      <g transform="translate(115, 10)">
+        <circle cx="15" cy="15" r="14" fill="#0284c7" opacity="0.3"/>
+        <circle cx="15" cy="15" r="10" fill="#0f172a" stroke="#eab308" stroke-width="2"/>
+        <path d="M 12 7 L 18 13 L 13 16 L 17 23" stroke="#f59e0b" stroke-width="2" fill="none"/>
+        <text x="15" y="38" text-anchor="middle" font-size="7" fill="#eab308" font-family="monospace">GDT</text>
+      </g>
+
+      <!-- Output Port 2 (Building In) -->
+      <rect x="150" y="0" width="100" height="50" rx="4" fill="#020617" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="200" y="28" text-anchor="middle" font-size="9" fill="#22c55e" font-family="monospace">PORT 2 (ROUTER)</text>
+      <text x="200" y="42" text-anchor="middle" font-size="7" fill="#64748b" font-family="sans-serif">إلى داخل المبنى / السيرفر</text>
+    </g>
+
+    <!-- Heavy Duty Grounding Lug (تفريغ الصدمات إلى الأرض) -->
+    <g transform="translate(135, 185)">
+      <line x1="30" y1="0" x2="30" y2="30" stroke="#22c55e" stroke-width="4"/>
+      <circle cx="30" cy="15" r="6" fill="#fbbf24" stroke="#78350f" stroke-width="1.5"/>
+      <text x="30" y="45" text-anchor="middle" font-size="9" fill="#86efac" font-family="sans-serif" font-weight="bold">سلك النحاس إلى قضيب الأرضي (Ground Rod)</text>
+    </g>
+  </g>
+</svg>

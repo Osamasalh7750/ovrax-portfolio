@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetworkArchitect Hub | المنظومة المؤسسية للبنية التحتية والشبكات</title>
+
+  <!-- Google Fonts: Cairo for high-readability modern Arabic typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Application Stylesheets (Cache-Busting for GitHub Pages) -->
+  <link rel="stylesheet" href="css/style.css?v=7.0">
+  <link rel="stylesheet" href="css/topology.css?v=7.0">
+  <link rel="stylesheet" href="css/simulators.css?v=7.0">
+  <link rel="stylesheet" href="css/calculators.css?v=7.0">
+  <link rel="stylesheet" href="css/hardware.css?v=7.0">
+  <link rel="stylesheet" href="css/deployment.css?v=7.0">
+  <link rel="stylesheet" href="css/print.css?v=7.0">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم تصميم وتطوير هذه المنظومة بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D8%B4%D8%A8%D9%83%D8%A7%D8%AA%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%D8%A9%20%D9%84%D9%85%D9%86%D8%B5%D8%A9%20NetworkArchitect" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب استشارة شبكات
+    </a>
+  </div>
+</div>
+  <!-- Printable Cover for PDF Export (@media print) -->
+  <div class="print-book-cover">
+    <div style="font-size: 40px; margin-bottom: 10px;">🌐</div>
+    <h1>دليل مهندس البنية التحتية والشبكات الميداني</h1>
+    <p>منظومة الربط المركزي والمؤسسي: ميكروتك، يوبيكويتي نانواستيشن، سويتشات التوزيع، ونقاط الوصول</p>
+    <p style="margin-top: 15px; font-size: 9pt; color: #64748b;">تم الإنشاء عبر منصة NetworkArchitect Hub • وضع أوفلاين مستقل 100%</p>
+  </div>
+
+  <!-- Top Application Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <div class="brand-logo-icon">⚡</div>
+        <div>
+          <span class="brand-title">NetworkArchitect Hub</span>
+          <span class="brand-badge">ENTERPRISE CORE v2.5</span>
+        </div>
+      </div>
+
+      <!-- Quick Global Search -->
+      <div class="header-search">
+        <input type="text" id="global-search-input" class="search-input" placeholder="ابحث عن: فرينل، سكربت، نانو، عطل، VLAN...">
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="header-actions">
+        <button class="btn-header-action" onclick="App.printHandbook()">
+          <span>🖨️</span> طباعة / تصدير PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tab Bar -->
+  <nav class="app-nav-bar">
+    <div class="nav-bar-inner">
+      <button class="nav-tab-btn active" data-view="topology">
+        <span>🌐</span> خريطة الطبولوجيا التفاعلية (Live Topology)
+      </button>
+      <button class="nav-tab-btn" data-view="modules">
+        <span>📚</span> الوحدات التعليمية (5 وحدات منهجية)
+      </button>
+      <button class="nav-tab-btn" data-view="hardware">
+        <span>📦</span> كتالوج العتاد والكابلات (Hardware Specs)
+      </button>
+      <button class="nav-tab-btn" data-view="simulators">
+        <span>🎛️</span> محاكي الواجهات (WinBox & airOS)
+      </button>
+      <button class="nav-tab-btn" data-view="calculators">
+        <span>🧮</span> حاسبات الشبكات وفرينل (Calculators)
+      </button>
+      <button class="nav-tab-btn" data-view="generator">
+        <span>⚙️</span> مولد أوامر ميكروتك (Script Generator)
+      </button>
+      <button class="nav-tab-btn" data-view="deployment">
+        <span>🗺️</span> خطة النشر الجغرافي (Multi-Site Rollout)
+      </button>
+      <button class="nav-tab-btn" data-view="troubleshooter">
+        <span>🛠️</span> مختبر الأعطال الميدانية (Incident Lab)
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Viewport -->
+  <main class="app-main-viewport">
+
+    <!-- VIEW 1: Interactive Mega Topology -->
+    <section id="view-topology" class="app-view-panel">
+      <!-- GRAND STRATEGIC PIPELINE BANNER -->
+      <div class="grand-pipeline-banner mb-4">
+        <div class="pipeline-title-row">
+          <div class="pipeline-title-text">
+            <span class="pipeline-pulse-dot"></span>
+            <span>مسار تدفق الحزم المباشر: المقر الرئيسي &larr; الأبراج &larr; الفروع &larr; المستودع &larr; العاملون عن بعد</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-emerald-400 font-mono font-bold">● تدفق حي لحظي للبيانات (Live Stream)</span>
+          </div>
+        </div>
+
+        <!-- 5 Massive Stages Track -->
+        <div class="pipeline-stages-track">
+          <!-- Stage 1 -->
+          <div class="pipeline-stage-card active" data-stage="hq" onclick="App.topologyInstance.focusStage('hq')">
+            <span class="stage-step-num">المرحلة 1</span>
+            <div class="stage-card-header">
+              <span class="stage-icon">🏛️</span>
+              <strong class="stage-name">المقر الرئيسي</strong>
+            </div>
+            <span class="stage-subtitle">راوتر CCR2004 وسيرفرات الـ ERP وسويتش CRS328</span>
+            <span class="stage-bandwidth-badge">10 Gbps SFP+ Trunk</span>
+          </div>
+
+          <div class="pipeline-stage-arrow">
+            <span>&larr;</span>
+            <span class="pipeline-arrow-label">10G Fiber</span>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="pipeline-stage-card" data-stage="towers" onclick="App.topologyInstance.focusStage('towers')">
+            <span class="stage-step-num">المرحلة 2</span>
+            <div class="stage-card-header">
+              <span class="stage-icon">🗼</span>
+              <strong class="stage-name">أبراج البث والربط</strong>
+            </div>
+            <span class="stage-subtitle">Rocket Prism 5AC + Sector 120° وصحون الـ PtP</span>
+            <span class="stage-bandwidth-badge">5GHz PtP/PtMP 500M</span>
+          </div>
+
+          <div class="pipeline-stage-arrow">
+            <span>&larr;</span>
+            <span class="pipeline-arrow-label">5.8 GHz airMAX</span>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="pipeline-stage-card" data-stage="branches" onclick="App.topologyInstance.focusStage('branches')">
+            <span class="stage-step-num">المرحلة 3</span>
+            <div class="stage-card-header">
+              <span class="stage-icon">🏢</span>
+              <strong class="stage-name">فروع الشركة</strong>
+            </div>
+            <span class="stage-subtitle">محطات NanoStation 5AC وسويتشات PoE والمكاتب</span>
+            <span class="stage-bandwidth-badge">VLAN 30/40 150M</span>
+          </div>
+
+          <div class="pipeline-stage-arrow">
+            <span>&larr;</span>
+            <span class="pipeline-arrow-label">PtP 15km</span>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="pipeline-stage-card" data-stage="warehouses" onclick="App.topologyInstance.focusStage('warehouses')">
+            <span class="stage-step-num">المرحلة 4</span>
+            <div class="stage-card-header">
+              <span class="stage-icon">🏭</span>
+              <strong class="stage-name">المستودع والمصنع</strong>
+            </div>
+            <span class="stage-subtitle">صحون PowerBeam ولواقط Netis الصناعية وكاميرات NVR</span>
+            <span class="stage-bandwidth-badge">VLAN 50 CCTV 200M</span>
+          </div>
+
+          <div class="pipeline-stage-arrow">
+            <span>&larr;</span>
+            <span class="pipeline-arrow-label">WireGuard</span>
+          </div>
+
+          <!-- Stage 5 -->
+          <div class="pipeline-stage-card" data-stage="teleworkers" onclick="App.topologyInstance.focusStage('teleworkers')">
+            <span class="stage-step-num">المرحلة 5</span>
+            <div class="stage-card-header">
+              <span class="stage-icon">🔒</span>
+              <strong class="stage-name">العاملون عن بعد</strong>
+            </div>
+            <span class="stage-subtitle">أنفاق VPN المشفرة للموظفين الميدانيين والمندوبين</span>
+            <span class="stage-bandwidth-badge">ChaCha20 Encrypted</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN TOPOLOGY CANVAS WRAPPER -->
+      <div class="topology-wrapper">
+        <!-- Toolbar -->
+        <div class="topology-toolbar">
+          <div class="topology-toolbar-title flex items-center gap-2">
+            <span class="text-xs font-bold text-white">🎛️ لوحة التحكم والمحاكاة المباشرة</span>
+            <span class="px-2 py-0.5 rounded text-3xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">48 جهاز نشط</span>
+          </div>
+          <div class="topology-actions-group">
+            <button id="btn-sim-wan" class="sim-btn warning" onclick="App.topologyInstance.simulateFailover()">
+              <span>⚡</span> محاكاة انقطاع الفايبر (WAN1 Cut)
+            </button>
+            <button id="btn-sim-rf" class="sim-btn danger" onclick="App.topologyInstance.simulateRFInterference()">
+              <span>📡</span> محاكاة تشويش راديوي (RF Noise)
+            </button>
+
+            <!-- 3D Spatial View Mode Selector -->
+            <div class="topo-segmented-control">
+              <span class="topo-seg-label">المنظور:</span>
+              <button id="btn-view-3d" class="speed-seg-btn active" onclick="App.topologyInstance.setViewMode('3d')">🎮 3D منظور</button>
+              <button id="btn-view-iso" class="speed-seg-btn" onclick="App.topologyInstance.setViewMode('iso')">📐 3D أيزومتريك</button>
+              <button id="btn-view-2d" class="speed-seg-btn" onclick="App.topologyInstance.setViewMode('2d')">🗺️ 2D مسطح</button>
+            </div>
+
+            <!-- 3D Camera Orbit & Rotation Controls -->
+            <div class="topo-tools-group">
+              <button class="topo-tool-btn" onclick="App.topologyInstance.rotateYaw(-15)" title="تدوير لليمين">↺</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.rotateYaw(15)" title="تدوير لليسار">↻</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.togglePitch()" title="إمالة الزاوية">📐</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.reset3DView()" title="إعادة ضبط زاوية 3D">🎯</button>
+            </div>
+            
+            <!-- Segmented Speed Control -->
+            <div class="topo-segmented-control">
+              <span class="topo-seg-label">السرعة:</span>
+              <button class="speed-seg-btn" data-speed="0.5" onclick="App.topologyInstance.setSpeed(0.5)">0.5x</button>
+              <button class="speed-seg-btn active" data-speed="1.0" onclick="App.topologyInstance.setSpeed(1.0)">1.0x</button>
+              <button class="speed-seg-btn" data-speed="2.5" onclick="App.topologyInstance.setSpeed(2.5)">2.5x</button>
+            </div>
+
+            <!-- Unified Tools Group -->
+            <div class="topo-tools-group">
+              <button class="topo-tool-btn" onclick="App.topologyInstance.zoomIn()" title="تكبير">+</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.zoomOut()" title="تصغير">-</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.resetView()" title="إعادة ضبط">🔄</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.toggleTheaterMode()" title="ملء الشاشة الموسع">⛶ الشاشة الكاملة</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canvas Stage (Expanded Mega Height 920px) -->
+        <div class="canvas-container">
+          <canvas id="topology-canvas" width="1550" height="920"></canvas>
+          <!-- Floating HUD for clicked Node -->
+          <div id="topology-hud" class="topology-hud-overlay"></div>
+        </div>
+
+        <!-- Legend -->
+        <div class="topology-legend">
+          <div class="legend-items">
+            <div class="legend-item"><span class="legend-color-dot" style="background:#38bdf8;"></span> تصفح الويب (Web Data 10G)</div>
+            <div class="legend-item"><span class="legend-color-dot" style="background:#c084fc;"></span> مكالمات الـ VoIP (أولوية قصوى QoS)</div>
+            <div class="legend-item"><span class="legend-color-dot" style="background:#f87171;"></span> بث كاميرات المراقبة (CCTV Stream)</div>
+            <div class="legend-item"><span class="legend-color-dot" style="background:#fbbf24;"></span> أنفاق WireGuard VPN المشفرة</div>
+            <div class="legend-item"><span class="legend-color-dot" style="background:#f59e0b;"></span> رابط الأبراج اللاسلكي 5GHz PtP/PtMP</div>
+          </div>
+          <div class="text-xs text-slate-400">انقر على أي مرحلة أعلاه أو أي جهاز لتكبير وعرض تفاصيله | اسحب بالماوس لتحريك الخريطة | بكرة الماوس للتكبير</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: 5 Educational Modules -->
+    <section id="view-modules" class="app-view-panel" style="display: none;">
+      <div id="modules-container"></div>
+    </section>
+
+    <!-- VIEW 3: Hardware & Cabling Engineering Hub -->
+    <section id="view-hardware" class="app-view-panel" style="display: none;">
+      <!-- Hub Header -->
+      <div class="mb-4 flex justify-between items-start flex-wrap gap-3">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">PHYSICAL LAYER ENGINEERING HUB</span>
+            <span class="text-xs text-slate-400 font-mono">19 جهاز معتمد • معايير كابلات T568B • كابلات STP وفايبر</span>
+          </div>
+          <h2 class="text-xl font-bold text-white">مركز هندسة العتاد والكابلات الفيزيائية (Hardware & Cabling Hub)</h2>
+          <p class="text-xs text-slate-400">كتالوج الأجهزة التفاعلي، مخططات ألوان كابلات الـ RJ45، تشريح طبقات كابلات الأبراج، وهندسة الألياف الضوئية</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center gap-1.5" onclick="App.openProductModal('cable-stp')">
+            <span>🛡️</span> فحص كابلات الأبراج المعتمدة
+          </button>
+        </div>
+      </div>
+
+      <!-- Sub-navigation Tabs -->
+      <div class="hw-subnav-container">
+        <div class="hw-subnav-tabs">
+          <button class="hw-subnav-btn active" data-hwtab="catalog" onclick="App.switchHardwareTab('catalog')">
+            <span>📦</span> كتالوج الأجهزة والعتاد <span class="subnav-counter">19</span>
+          </button>
+          <button class="hw-subnav-btn" data-hwtab="cabling" onclick="App.switchHardwareTab('cabling')">
+            <span>🔌</span> معايير الكابلات والربط والتأريض <span class="subnav-counter">دليل شامل</span>
+          </button>
+          <button class="hw-subnav-btn" data-hwtab="matrix" onclick="App.switchHardwareTab('matrix')">
+            <span>⚖️</span> مصفوفة المقارنة الفنية السريعة <span class="subnav-counter">مقارنات</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Tab Content -->
+      <div id="hardware-container"></div>
+    </section>
+
+    <!-- VIEW 4: Simulators (WinBox & airOS) -->
+    <section id="view-simulators" class="app-view-panel" style="display: none;">
+      <div class="mb-4">
+        <h2 class="text-xl font-bold text-white mb-1">محاكيات واجهات التشغيل الأصلية (Live Device Simulators)</h2>
+        <p class="text-xs text-slate-400">تحكم حقيقي وتفاعل مباشر مع واجهات MikroTik RouterOS v7 و Ubiquiti airOS 8</p>
+      </div>
+      <!-- WinBox Simulator -->
+      <div id="winbox-container"></div>
+      <!-- airOS Simulator -->
+      <div id="airos-container"></div>
+    </section>
+
+    <!-- VIEW 5: Calculators (Subnetting & Fresnel Zone) -->
+    <section id="view-calculators" class="app-view-panel" style="display: none;">
+      <div class="grid-2">
+        <!-- Subnet & IP Calculator -->
+        <div class="calculator-card">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xl">🧮</span>
+            <h3 class="text-base font-bold text-white">حاسبة تقسيم الشبكات والـ Subnetting</h3>
+          </div>
+          <p class="text-xs text-slate-400 mb-3">حساب تفصيلي لسعة العناوين، أقنعة الشبكة، وعناوين البث وتجزئة الـ VLANs</p>
+
+          <!-- Quick Presets -->
+          <div class="calc-presets-row mb-3">
+            <span class="text-3xs text-slate-400 font-bold ml-1">أمثلة شائعة:</span>
+            <button type="button" class="calc-preset-btn" onclick="App.setSubnetPreset('10.10.30.1', '24')">/24 موظفين (254)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setSubnetPreset('10.10.20.1', '28')">/28 خوادم (14)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setSubnetPreset('197.200.15.20', '29')">/29 خط فايبر (6)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setSubnetPreset('172.16.1.1', '30')">/30 رابط نقطي (2)</button>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="calc-input-group">
+              <label class="calc-label">عنوان الـ IP (Base IP):</label>
+              <input type="text" id="calc-ip-input" class="calc-input" value="10.10.10.1">
+            </div>
+            <div class="calc-input-group">
+              <label class="calc-label">بادئة الشبكة (CIDR Prefix):</label>
+              <select id="calc-prefix-input" class="calc-input">
+                <option value="16">/16 (65,534 جهاز)</option>
+                <option value="20">/20 (4,094 جهاز)</option>
+                <option value="22">/22 (1,022 جهاز)</option>
+                <option value="23">/23 (510 جهاز - مثالي للموظفين)</option>
+                <option value="24" selected>/24 (254 جهاز - المعياري)</option>
+                <option value="26">/26 (62 جهاز)</option>
+                <option value="28">/28 (14 جهاز)</option>
+                <option value="29">/29 (6 أجهزة - مثالي لخطوط الـ WAN)</option>
+                <option value="30">/30 (جهازان فقط - روابط PtP النقطية)</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="btn-calc-subnet" class="calc-btn-action w-full mb-4">
+            <span>⚙️</span> حساب معلمات الشبكة والتجزئة (Calculate Subnet)
+          </button>
+
+          <div id="subnet-results-output">
+            <div class="p-3 bg-slate-950 rounded-lg text-xs text-slate-400 text-center">اضغط على زر الحساب لعرض النتائج وجدول الـ VLANs المقترح...</div>
+          </div>
+        </div>
+
+        <!-- Fresnel Zone & Link Budget Calculator -->
+        <div class="calculator-card">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xl">📡</span>
+            <h3 class="text-base font-bold text-white">حاسبة منطقة فرينل وميزانية الرابط اللاسلكي</h3>
+          </div>
+          <p class="text-xs text-slate-400 mb-3">حساب فقدان المسار الحر (FSPL)، إشارة الاستقبال المتوقعة (RSSI)، وهامش الخلو 60%</p>
+
+          <!-- Quick Presets -->
+          <div class="calc-presets-row mb-3">
+            <span class="text-3xs text-slate-400 font-bold ml-1">روابط جاهزة:</span>
+            <button type="button" class="calc-preset-btn" onclick="App.setLinkPreset(5, 5.8, 24, 22, 16, 0)">سيكتور الفروع 5km</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setLinkPreset(12, 5.2, 24, 25, 25, 0)">رابط المستودع 12km</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setLinkPreset(18, 5.5, 27, 30, 30, 0)">صحن المصنع 18km</button>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-3">
+            <div class="calc-input-group">
+              <label class="calc-label">المسافة بين البرجين (km):</label>
+              <input type="number" id="link-dist-input" class="calc-input" value="10" step="0.5" min="0.5" max="60">
+            </div>
+            <div class="calc-input-group">
+              <label class="calc-label">تردد الراديو (GHz):</label>
+              <select id="link-freq-input" class="calc-input">
+                <option value="2.4">2.4 GHz (نطاق منزلي/صناعي)</option>
+                <option value="5.2">5.2 GHz [UNII-1]</option>
+                <option value="5.5">5.5 GHz [DFS Clean Band]</option>
+                <option value="5.8" selected>5.8 GHz [UNII-3 Recommended]</option>
+              </select>
+            </div>
+            <div class="calc-input-group">
+              <label class="calc-label">طاقة إرسال البرج TX (dBm):</label>
+              <input type="number" id="link-txp-input" class="calc-input" value="24" min="0" max="30">
+            </div>
+            <div class="calc-input-group">
+              <label class="calc-label">ربح هوائي الإرسال (dBi):</label>
+              <input type="number" id="link-gtx-input" class="calc-input" value="22" min="10" max="34">
+            </div>
+            <div class="calc-input-group">
+              <label class="calc-label">ربح هوائي الاستقبال (dBi):</label>
+              <input type="number" id="link-grx-input" class="calc-input" value="25" min="10" max="34">
+            </div>
+            <div class="calc-input-group">
+              <label class="calc-label">ارتفاع العائق في المنتصف (m):</label>
+              <input type="number" id="link-obs-input" class="calc-input" value="0" min="0" max="50">
+            </div>
+          </div>
+
+          <button id="btn-calc-link" class="calc-btn-action w-full mb-4">
+            <span>📡</span> حساب الرابط ومنطقة فرينل (Calculate Link)
+          </button>
+
+          <div id="link-budget-results-output">
+            <div class="p-3 bg-slate-950 rounded-lg text-xs text-slate-400 text-center">اضغط على زر الحساب لعرض إشارة الاستقبال وتقييم الرابط...</div>
+          </div>
+
+          <!-- Fresnel Vector Visual -->
+          <div class="mt-4 pt-3 border-t border-slate-800">
+            <img src="assets/svg/fresnel-diagram.svg" alt="Fresnel Diagram" class="w-full rounded-lg border border-slate-800 cursor-pointer hover:opacity-90 transition-opacity" onclick="App.openImageLightbox('assets/svg/fresnel-diagram.svg', 'مخطط منطقة فرينل ومسار خط الرؤية (LOS & Fresnel Clearance)', 'يوضح المخطط البيضاوي نصف القطر r1 وهامش الخلو الإلزامي 60% فوق العوائق التضاريسية.')" title="انقر لتكبير المخطط الهندسي">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 6: MikroTik Script Generator -->
+    <section id="view-generator" class="app-view-panel" style="display: none;">
+      <div class="mb-4">
+        <h2 class="text-xl font-bold text-white mb-1">مولد أوامر ميكروتك الاحترافي (RouterOS Script Generator)</h2>
+        <p class="text-xs text-slate-400">توليد سكربت تهيئة كامل للراوترات المركزية يتضمن الـ VLANs وجدار الحماية وخوارزمية PCQ</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Configuration Form -->
+        <div class="bg-slate-900 border border-slate-700/80 p-5 rounded-2xl">
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="text-sm font-bold text-white">معلمات النظام والمزود والشبكة</h3>
+          </div>
+
+          <!-- Quick Script Presets -->
+          <div class="calc-presets-row mb-4">
+            <span class="text-3xs text-slate-400 font-bold ml-1">نماذج سريعة:</span>
+            <button type="button" class="calc-preset-btn" onclick="App.setScriptPreset('HQ-CCR2004-CORE', 'dhcp', 200, 50)">🏢 المقر (CCR2004)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setScriptPreset('BRANCH-RB5009', 'static', 100, 30)">🏬 فرع (RB5009)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setScriptPreset('KIOSK-HEX-S', 'pppoe', 40, 10)">🏪 كشك (hEX S)</button>
+          </div>
+          
+          <div class="space-y-3 text-xs">
+            <div>
+              <label class="calc-label">اسم هوية الراوتر (System Identity):</label>
+              <input type="text" id="script-hostname" class="calc-input" value="HQ-CCR2004-CORE">
+            </div>
+
+            <div>
+              <label class="calc-label">طريقة اتصال خط الإنترنت الرئيسي (WAN 1):</label>
+              <select id="script-wan-mode" class="calc-input">
+                <option value="dhcp" selected>DHCP Client (تلقائي من مودم الفايبر Bridge)</option>
+                <option value="static">Static IP (آي بي عام ثابت)</option>
+                <option value="pppoe">PPPoE Client (اسم مستخدم وكلمة مرور)</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="calc-label">سرعة التنزيل الكلية للخط (Download Mbps):</label>
+                <input type="number" id="script-down-speed" class="calc-input" value="200">
+              </div>
+              <div>
+                <label class="calc-label">سرعة الرفع الكلية للخط (Upload Mbps):</label>
+                <input type="number" id="script-up-speed" class="calc-input" value="50">
+              </div>
+            </div>
+
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 space-y-2 mt-2">
+              <span class="text-2xs font-bold text-slate-400 block">الميزات المؤسسية المضمنة تلقائياً في السكربت:</span>
+              <div class="flex items-center gap-2 text-2xs text-emerald-400">✔ تفعيل Hardware VLAN Filtering وعزل 7 شبكات</div>
+              <div class="flex items-center gap-2 text-2xs text-emerald-400">✔ خوارزمية PCQ للتوزيع العادل ومنع احتكار الباندويث</div>
+              <div class="flex items-center gap-2 text-2xs text-emerald-400">✔ حماية Brute-force وحظر الآي بي المهاجم لمدة 24 ساعة</div>
+              <div class="flex items-center gap-2 text-2xs text-emerald-400">✔ تسريع FastTrack لتقليل استهلاك المعالج بنسبة 70%</div>
+            </div>
+
+            <button id="btn-generate-script" class="calc-btn-action w-full mt-3">
+              <span>⚡</span> توليد كود RouterOS v7 الفوري (Generate Script)
+            </button>
+          </div>
+        </div>
+
+        <!-- Generated Script Output -->
+        <div class="code-generator-box">
+          <div class="code-header-bar">
+            <span class="font-mono text-xs text-slate-300">enterprise_mikrotik_setup.rsc</span>
+            <div class="flex items-center gap-2">
+              <button id="btn-copy-script" class="code-action-btn secondary">
+                <span>📋</span> نسخ الكود
+              </button>
+              <button id="btn-download-script" class="code-action-btn primary">
+                <span>💾</span> تنزيل (.rsc)
+              </button>
+            </div>
+          </div>
+          <pre class="code-content-pre"><code id="generated-script-code"># اضغط على زر "توليد كود RouterOS v7 الفوري" لتوليد الأوامر هنا...</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW: Geographic Multi-Site Rollout Plan -->
+    <section id="view-deployment" class="app-view-panel" style="display: none;">
+      <div id="deployment-container"></div>
+    </section>
+
+    <!-- VIEW 7: Interactive Incident & Troubleshooting Lab -->
+    <section id="view-troubleshooter" class="app-view-panel" style="display: none;">
+      <div id="troubleshooter-container"></div>
+    </section>
+
+  </main>
+
+  <!-- Application Logic Scripts (Cache-Busting for GitHub Pages) -->
+  <script src="js/data.js?v=7.0"></script>
+  <script src="js/calculators.js?v=7.0"></script>
+  <script src="js/script-generator.js?v=7.0"></script>
+  <script src="js/simulators.js?v=7.0"></script>
+  <script src="js/troubleshooter.js?v=7.0"></script>
+  <script src="js/topology.js?v=7.0"></script>
+  <script src="js/app.js?v=7.0"></script>
+</body>
+</html>
