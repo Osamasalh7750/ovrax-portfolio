@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+        <rect width="200" height="200" rx="16" fill="#f8fafc"/>
+        <rect x="45" y="25" width="110" height="150" rx="6" fill="#334155" stroke="#1e293b" stroke-width="2"/>
+        <rect x="55" y="35" width="90" height="24" rx="4" fill="#0f172a"/>
+        <circle cx="70" cy="47" r="4" fill="#10b981"/><circle cx="90" cy="47" r="4" fill="#10b981"/><circle cx="110" cy="47" r="4" fill="#64748b"/><circle cx="130" cy="47" r="4" fill="#64748b"/>
+        <rect x="55" y="70" width="90" height="60" fill="#1e293b" rx="3"/>
+        <text x="100" y="95" font-size="10" font-family="sans-serif" fill="#94a3b8" text-anchor="middle">DIN 4-CH RELAY</text>
+        <text x="100" y="112" font-size="9" font-family="monospace" fill="#38bdf8" text-anchor="middle">16A / 230V~</text>
+        <rect x="55" y="142" width="90" height="20" rx="3" fill="#475569"/>
+    </svg>

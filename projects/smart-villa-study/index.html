@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART VILLA — Interactive Engineering Study & 3D Visualization</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم إعداد وتطوير هذه الدراسة بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9%20%D9%84%D8%AA%D8%AC%D9%87%D9%8A%D8%B2%20%D9%85%D9%86%D8%B2%D9%84%20%D8%B0%D9%83%D9%8A%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20Smart%20Villa" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب استشارة أتمتة
+    </a>
+  </div>
+</div>
+    <!-- TOP ARCHITECTURAL NAVIGATION BAR -->
+    <header class="arch-header">
+        <div class="arch-header-container">
+            <div class="brand-section" onclick="app.switchSection('overview')">
+                <div class="brand-logo-badge">🏛️</div>
+                <div class="brand-info">
+                    <h1>SMART VILLA</h1>
+                    <span>ENGINEERING STUDY &bull; INTERACTIVE 3D</span>
+                </div>
+            </div>
+
+            <!-- TOP NAVIGATION SECTIONS -->
+            <nav class="nav-sections-bar">
+                <a href="#" class="top-nav-link active" data-section="overview">01 نظرة عامة</a>
+                <a href="#" class="top-nav-link" data-section="concept">02 المفهوم والـ IoT</a>
+                <a href="#" class="top-nav-link" data-section="layout">03 المخططات</a>
+                <a href="#" class="top-nav-link" data-section="villa3d">04 الفيلا 3D</a>
+                <a href="#" class="top-nav-link" data-section="devices">05 الأجهزة</a>
+                <a href="#" class="top-nav-link" data-section="rooms">06 الغرف</a>
+                <a href="#" class="top-nav-link" data-section="electrical">07 الكهرباء</a>
+                <a href="#" class="top-nav-link" data-section="network">08 الشبكات</a>
+                <a href="#" class="top-nav-link" data-section="wiring">09 التمديدات</a>
+                <a href="#" class="top-nav-link" data-section="architecture">10 الأتمتة</a>
+                <a href="#" class="top-nav-link" data-section="control">11 التحكم</a>
+                <a href="#" class="top-nav-link" data-section="simulation">12 المحاكاة</a>
+                <a href="#" class="top-nav-link" data-section="security">13 الأمان</a>
+                <a href="#" class="top-nav-link" data-section="energy">14 الطاقة</a>
+                <a href="#" class="top-nav-link" data-section="bom">15 جدول الكميات (BOM)</a>
+                <a href="#" class="top-nav-link" data-section="recommendations">16 التوصيات</a>
+            </nav>
+
+            <!-- HEADER ACTIONS -->
+            <div class="header-actions">
+                <button class="btn-presentation-mode" id="btn-presentation-mode" title="تفعيل وضع العرض التقديمي للشاشات الكبيرة">
+                    📽️ وضع العرض (Presentation)
+                </button>
+                <button class="btn btn-secondary btn-sm" id="btn-notifications-bell" title="مركز الإشعارات">
+                    🔔 <span id="notifs-badge" style="display: none; background: #ef4444; color: #fff; padding: 1px 6px; border-radius: 99px; font-size: 0.7rem; font-weight: bold;">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FLOATING PRESENTATION MODE DOCK -->
+    <div class="presentation-dock" id="presentation-dock">
+        <button class="btn-dock-nav" id="btn-pres-prev">&larr; القسم السابق</button>
+        <div class="presentation-dock-counter" id="pres-dock-counter">01 / 16</div>
+        <button class="btn-dock-nav" id="btn-pres-next">القسم التالي &rarr;</button>
+        <button class="btn-dock-nav" id="btn-exit-presentation" style="border-color: #ef4444; color: #f87171;">✕ إنهاء العرض</button>
+    </div>
+
+    <!-- MAIN PRESENTATION BODY -->
+    <main class="presentation-container">
+
+        <!-- 01 / PROJECT OVERVIEW -->
+        <section class="study-section" id="sec-overview">
+            <div class="hero-engineering-banner">
+                <span class="hero-tag">ENGINEERING PROPOSAL &bull; RESIDENTIAL SMART VILLA</span>
+                <h2 class="hero-title">دراسة هندسية وتقنية متكاملة لمنظومة المنزل الذكي (SMART VILLA)</h2>
+                <p class="hero-lead">
+                    دراسة هندسية وتطبيقية شاملة لتجهيز فيلا سكنية فاخرة (520 م²) ببنية تحتية رقمية ذكية معتمدة على مبدأ الأتمتة المحلية (Local Edge Intelligence). تم تصميم هذا العرض كأداة هندسية تفاعلية حية تدمج النموذج المعماري ثلاثي الأبعاد، مخططات الشبكات والتمديدات السلكية، وجدول الكميات والمواصفات المعتمدة (BOM).
+                </p>
+                <div class="hero-actions-bar">
+                    <button class="btn btn-primary" onclick="app.switchSection('villa3d')">
+                        استكشاف الفيلا ثلاثية الأبعاد (Explore 3D Model) &larr;
+                    </button>
+                    <button class="btn btn-secondary" onclick="app.switchSection('bom')">
+                        جدول الكميات والمواصفات (BOM with Images)
+                    </button>
+                    <button class="btn btn-outline" onclick="app.switchSection('simulation')">
+                        مختبر المحاكاة والسيناريوهات (Simulation Lab)
+                    </button>
+                </div>
+            </div>
+
+            <!-- KEY STATS -->
+            <div class="engineering-stats-grid" id="overview-metrics-grid"></div>
+
+            <!-- 24-HOUR DAY SIMULATION BAR -->
+            <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 40px; box-shadow: var(--shadow-subtle);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800;">محاكاة اليوم الكامل (24-Hour Day Simulation)</h3>
+                        <span style="font-size: 0.82rem; color: var(--text-muted);">تحكم تفاعلي بمسار الإضاءة والتكييف ومواقع الشمس خلال ساعات اليوم</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <span style="font-family: monospace; font-size: 1.8rem; font-weight: 900; color: var(--accent-blue);" id="day-sim-time">07:00</span>
+                        <button class="btn btn-primary btn-sm" id="btn-day-sim-play">تشغيل العرض (Play Demo)</button>
+                    </div>
+                </div>
+                <input type="range" id="day-sim-slider" min="0" max="5" value="0" step="1" style="width: 100%; accent-color: var(--accent-blue); margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <strong id="day-sim-label" style="color: var(--accent-blue); font-size: 1rem;">صباح مشرق (Good Morning)</strong>
+                    <p id="day-sim-desc" style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">تبدأ الستائر بالفتح تدريجيًا وتضاء إنارة المطبخ للتحضير.</p>
+                </div>
+            </div>
+
+            <!-- 3D PREVIEW MOUNT POINT IN OVERVIEW -->
+            <div id="sec-overview-mount">
+                <div class="viewer-3d-frame" id="main-3d-viewer">
+                    <div class="viewer-top-toolbar">
+                        <div class="viewer-headline">
+                            <h3>المستكشف ثلاثي الأبعاد التفاعلي (Interactive 3D Villa Explorer)</h3>
+                            <span>استخدم الفأرة للتدوير والتقريب والتجوال، أو انقر على الأجهزة المضيئة لفحص المواصفات الهندسية</span>
+                        </div>
+                        <div class="viewer-controls-group">
+                            <div class="pill-segmented">
+                                <button class="pill-opt active" data-floor="all">كافة الطوابق</button>
+                                <button class="pill-opt" data-floor="ground">الطابق الأرضي</button>
+                                <button class="pill-opt" data-floor="first">الطابق الأول</button>
+                            </div>
+                            <button class="btn btn-secondary btn-sm" id="btn-toggle-roof">السقف On/Off</button>
+                            <button class="btn btn-outline btn-sm" id="btn-quick-wiring">⚡ مسارات التمديدات (Wiring X-Ray)</button>
+                        </div>
+                    </div>
+                    <div class="canvas-container" id="villa-3d-canvas">
+                        <!-- Camera Presets -->
+                        <div class="camera-presets-dock">
+                            <button class="preset-chip" data-campreset="isometric">نظرة عامة (Overview)</button>
+                            <button class="preset-chip" data-campreset="top">مسقط رأسي (Top-Down)</button>
+                            <button class="preset-chip" data-campreset="entrance">المدخل الرئيسي</button>
+                            <button class="preset-chip" data-campreset="living">صالة المعيشة</button>
+                            <button class="preset-chip" data-campreset="majlis">المجلس الفاخر</button>
+                            <button class="preset-chip" data-campreset="master">جناح الماستر</button>
+                            <button class="preset-chip" data-campreset="tech">غرفة السيرفر (Rack)</button>
+                        </div>
+
+                        <!-- System Layer Toggles -->
+                        <div class="overlay-layers-box">
+                            <div class="overlay-layers-title">طبقات الأنظمة الهندسية (System Layers)</div>
+                            <div class="layers-row">
+                                <label class="layer-toggle-label"><input type="checkbox" data-layer="architecture" checked> الهيكل والمعمار</label>
+                                <label class="layer-toggle-label"><input type="checkbox" data-layer="furniture" checked> الأثاث الداخلي</label>
+                                <label class="layer-toggle-label"><input type="checkbox" data-layer="lighting" checked> الإضاءة 💡</label>
+                                <label class="layer-toggle-label"><input type="checkbox" data-layer="security" checked> الأمان 🛡️</label>
+                                <label class="layer-toggle-label"><input type="checkbox" data-layer="hvac" checked> التكييف ❄️</label>
+                                <label class="layer-toggle-label"><input type="checkbox" data-layer="network" checked> الشبكة 🌐</label>
+                                <label class="layer-toggle-label"><input type="checkbox" data-layer="wiring"> التمديدات 🔌</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 / SMART HOME CONCEPT -->
+        <section class="study-section" id="sec-concept" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">02 / SMART HOME CONCEPT</span>
+                <h2 class="section-headline">مفهوم المنزل الذكي وإنترنت الأشياء (IoT Architecture)</h2>
+                <p class="section-subtext">الركائز التصميمية، فلسفة الأتمتة المحلية، ومقارنة البروتوكولات المعيارية المعتمدة لضمان استقلالية الفيلا.</p>
+            </div>
+
+            <div class="cards-grid-3">
+                <div class="arch-card">
+                    <div class="arch-card-header">
+                        <div class="arch-card-icon">🧠</div>
+                        <h4>الأتمتة المحلية (Local Edge Intelligence)</h4>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        معالج الأتمتة المركزي بالفيلا ينفذ كافة السيناريوهات والقرارات محليًا في أقل من 15ms دون انتظار استجابة السيرفرات السحابية، مما يضمن الاستمرارية بنسبة 100% حتى عند انقطاع الإنترنت.
+                    </p>
+                </div>
+
+                <div class="arch-card">
+                    <div class="arch-card-header">
+                        <div class="arch-card-icon">🔗</div>
+                        <h4>تكامل البروتوكولات المعيارية</h4>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        اعتماد معيار <strong>Matter over Thread</strong> للأجهزة الحديثة، و <strong>Zigbee 3.0</strong> كشبكة تكرار محلية منخفضة الطاقة للحساسات والمفاتيح، و <strong>PoE Cat6A</strong> الفائق لكاميرات المراقبة.
+                    </p>
+                </div>
+
+                <div class="arch-card">
+                    <div class="arch-card-header">
+                        <div class="arch-card-icon">🔒</div>
+                        <h4>الأمن والخصوصية الصارمة</h4>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        عزل أجهزة الـ IoT وكاميرات المراقبة في شبكات افتراضية مستقلة (Isolated VLANs) مع حفظ تسجيلات الفيديو محليًا على وحدة NVR مشفرة دون تسريب بيانات المالك للخارج.
+                    </p>
+                </div>
+            </div>
+
+            <!-- PROTOCOLS COMPARISON TABLE -->
+            <div class="arch-card" style="margin-bottom: 36px;">
+                <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 16px;">مصفوفة مقارنة البروتوكولات المعيارية</h3>
+                <div class="bom-table-container">
+                    <table class="bom-schedule-table">
+                        <thead>
+                            <tr>
+                                <th>البروتوكول المعياري</th>
+                                <th>الدور الهندسي في المشروع</th>
+                                <th>زمن الاستجابة والاستقرار</th>
+                                <th>استهلاك الطاقة</th>
+                                <th>مجال الاستخدام الرئيسي</th>
+                            </tr>
+                        </thead>
+                        <tbody id="protocols-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 / ARCHITECTURAL LAYOUT -->
+        <section class="study-section" id="sec-layout" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">03 / ARCHITECTURAL LAYOUT</span>
+                <h2 class="section-headline">المخططات المعمارية وتوزيع الفراغات (Spatial Design)</h2>
+                <p class="section-subtext">توزيع الفراغات والمساحات والأجهزة الذكية على الطابقين الأرضي والأول والمحيط الخارجي.</p>
+            </div>
+
+            <div class="cards-grid-2" id="layout-rooms-list"></div>
+        </section>
+
+        <!-- 04 / 3D SMART VILLA -->
+        <section class="study-section" id="sec-villa3d" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">04 / 3D SMART VILLA</span>
+                <h2 class="section-headline">المستكشف ثلاثي الأبعاد للمنزل الذكي (3D Studio)</h2>
+                <p class="section-subtext">الواجهة المرئية الرئيسية: عزل الطوابق، إظهار التمديدات السلكية، وفحص الأجهزة في أماكن تركيبها الواقعية.</p>
+            </div>
+
+            <!-- MOUNT CONTAINER FOR SECTION 4 -->
+            <div id="sec-villa3d-mount"></div>
+        </section>
+
+        <!-- 05 / SMART DEVICES -->
+        <section class="study-section" id="sec-devices" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">05 / SMART DEVICES</span>
+                <h2 class="section-headline">مكتبة أجهزة وتقنيات الـ IoT (Technical Catalog)</h2>
+                <p class="section-subtext">كتالوج شامل لجميع الأجهزة والقطع الذكية مع المواصفات الفنية، متطلبات التغذية، والمسارات السلكية.</p>
+            </div>
+
+            <div class="filter-bar" id="devices-category-filters" style="margin-bottom: 24px;"></div>
+            <div class="cards-grid-3" id="devices-catalog-grid"></div>
+        </section>
+
+        <!-- 06 / ROOM-BY-ROOM STUDY -->
+        <section class="study-section" id="sec-rooms" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">06 / ROOM-BY-ROOM STUDY</span>
+                <h2 class="section-headline">الدراسة التفصيلية لكل فراغ (Room-by-Room Analysis)</h2>
+                <p class="section-subtext">تحليل هندسي لكل غرفة: الأجهزة، مبررات الاختيار، التمديدات المطلوبة، والسيناريوهات المرتبطة.</p>
+            </div>
+
+            <div id="room-study-accordion"></div>
+        </section>
+
+        <!-- 07 / ELECTRICAL INFRASTRUCTURE -->
+        <section class="study-section" id="sec-electrical" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">07 / ELECTRICAL INFRASTRUCTURE</span>
+                <h2 class="section-headline">البنية التحتية الكهربائية (Electrical Systems)</h2>
+                <p class="section-subtext">لوحات التوزيع الذكية SMDB، قواطع القياس، حماية الصواعق، ومتطلب السلك المحايد الإلزامي.</p>
+            </div>
+
+            <div class="engineering-notice">
+                ⚠️ <strong>تنبيه هندسي معتمد:</strong> هذه الدراسة توضح المتطلبات التقنية الخاصة بأنظمة المنزل الذكي والتيار الخفيف. التفاصيل التنفيذية للأحمال الكهربائية ومقاطع الكابلات وقواطع الحماية تخضع لمخططات المهندس الكهربائي المعتمد وفق الكود المحلي (SBC / NEC / IEC).
+            </div>
+
+            <div class="cards-grid-2" id="electrical-panels-list"></div>
+
+            <div class="arch-card" style="margin-top: 24px;">
+                <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;">متطلب السلك المحايد الإلزامي (Neutral Wire Requirement)</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    يلتزم مقاول الأعمال الكهربائية بتمديد السلك المحايد (Neutral N) داخل كافة علب المفاتيح الجدارية في الفيلا بلا استثناء (بعلب مربعة 86x86mm بعمق 50mm على الأقل). يمنع هذا المتطلب وميض مصابيح LED المنخفضة الاستهلاك (Ghost Glow) ويضمن تزويد المفاتيح الذكية بتغذية مستمرة تحافظ على استقرار شبكة التكرار Mesh Network حتى عند إطفاء المصباح.
+                </p>
+            </div>
+        </section>
+
+        <!-- 08 / NETWORK INFRASTRUCTURE -->
+        <section class="study-section" id="sec-network" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">08 / NETWORK INFRASTRUCTURE</span>
+                <h2 class="section-headline">البنية التحتية للشبكات والاتصالات (Network Architecture)</h2>
+                <p class="section-subtext">كابينة السيرفر 12U، موزع PoE+ مُدار 370W، نقاط وصول Wi-Fi 6، ومصفوفة تقسيم الشبكات الافتراضية VLANs.</p>
+            </div>
+
+            <div class="arch-card" style="margin-bottom: 28px;">
+                <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 16px;">مخطط تدفق الشبكة الفائق (End-to-End Enterprise Flow)</h3>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;" id="network-flow-steps"></div>
+            </div>
+
+            <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 16px;">مصفوفة تقسيم الشبكات الافتراضية (VLAN Segregation Matrix)</h3>
+            <div class="cards-grid-3" id="network-vlans-list"></div>
+        </section>
+
+        <!-- 09 / WIRING & CABLING -->
+        <section class="study-section" id="sec-wiring" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">09 / WIRING & CABLING</span>
+                <h2 class="section-headline">دليل التمديدات والمسارات السلكية (Conduit & Cabling Guide)</h2>
+                <p class="section-subtext">معايير سحب كابلات Cat6A، قياسات مواسير PVC، وفصل مسارات التيار الخفيف عن التيار العالي.</p>
+            </div>
+
+            <div class="cards-grid-2" id="wiring-principles-grid"></div>
+
+            <div class="arch-card">
+                <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 10px;">معاينة مسارات التمديدات ثلاثية الأبعاد (3D Wiring X-Ray)</h3>
+                <p style="color: var(--text-muted); margin-bottom: 16px;">
+                    يمكنك تشغيل وضع فحص التمديدات ثلاثي الأبعاد لتحويل جدران الفيلا إلى شبه شفافة وتتبع مسارات المواسير الحقيقية المتجهة من كابينة الشبكة إلى نقاط الإضاءة والكاميرات ونقاط الوصول:
+                </p>
+                <button class="btn btn-primary" onclick="app.switchSection('villa3d'); document.getElementById('btn-quick-wiring').click();">
+                    تشغيل وضع فحص التمديدات في الـ 3D &larr;
+                </button>
+            </div>
+        </section>
+
+        <!-- 10 / AUTOMATION SCENARIOS -->
+        <section class="study-section" id="sec-architecture" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">10 / AUTOMATION SCENARIOS</span>
+                <h2 class="section-headline">معمارية النظام وسيناريوهات الأتمتة (System Architecture)</h2>
+                <p class="section-subtext">المخطط الطبقي الرباعي (4-Tier Architecture) ومسارات السبب والنتيجة للأتمتة الذكية.</p>
+            </div>
+
+            <div class="cards-grid-2" id="architecture-tiers-container"></div>
+        </section>
+
+        <!-- 11 / SMART HOME CONTROL -->
+        <section class="study-section" id="sec-control" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">11 / SMART HOME CONTROL</span>
+                <h2 class="section-headline">لوحة التحكم الافتراضية (Virtual Control Panel)</h2>
+                <p class="section-subtext">واجهة تفاعلية للتحكم بأجهزة الفيلا مع استجابة متزامنة ولحظية في النموذج ثلاثي الأبعاد.</p>
+            </div>
+
+            <div id="control-panel-grid"></div>
+        </section>
+
+        <!-- 12 / SIMULATION LAB -->
+        <section class="study-section" id="sec-simulation" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">12 / SIMULATION LAB</span>
+                <h2 class="section-headline">مختبر المحاكاة والسيناريوهات (Simulation Lab)</h2>
+                <p class="section-subtext">اختبار استجابة الأنظمة الذكية لحالات الطوارئ، إنذار الحريق، تسرب المياه، واستهلاك الأجهزة.</p>
+            </div>
+
+            <div id="simulation-lab-content"></div>
+        </section>
+
+        <!-- 13 / SECURITY ARCHITECTURE -->
+        <section class="study-section" id="sec-security" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">13 / SECURITY ARCHITECTURE</span>
+                <h2 class="section-headline">منظومة الأمان والتحكم بالدخول (Security Systems)</h2>
+                <p class="section-subtext">الحماية المحيطية، زوايا رؤية كاميرات 4K، الأقفال البيومترية، والتسجيل المحلي الآمن NVR.</p>
+            </div>
+
+            <div class="cards-grid-3">
+                <div class="arch-card">
+                    <div class="arch-card-header">
+                        <div class="arch-card-icon">📹</div>
+                        <h4>تغطية كاميرات 4K الذكية</h4>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        توزيع 8 كاميرات 4K PoE تغطي المحيط الخارجي، المداخل، الحديقة، والمرآب مع تمييز المركبات والبشر وزاوية رؤية 110 درجات.
+                    </p>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-card-header">
+                        <div class="arch-card-icon">🔐</div>
+                        <h4>القفل البيومتري عالي الأمان</h4>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        مورتيز 6068 متعدد نقاط القفل يدعم البصمة ثلاثية الأبعاد، بطاقات RFID، كود سري مشفر، وتنبيه محاولات العبث.
+                    </p>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-card-header">
+                        <div class="arch-card-icon">🔔</div>
+                        <h4>جرس الباب المرئي التفاعلي</h4>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        كاميرا 2K بزاوية 160 درجة ومكالمة ثنائية الاتجاه مع ربط بالشاشات الداخلية وتخزين الفيديو محليًا داخل الـ NVR.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14 / ENERGY MANAGEMENT -->
+        <section class="study-section" id="sec-energy" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">14 / ENERGY MANAGEMENT</span>
+                <h2 class="section-headline">إدارة الطاقة والاستدامة (Energy & Sustainability)</h2>
+                <p class="section-subtext">تحليل وفورات الطاقة المتوقعة بنسبة 28% والجاهزية للمنظومة الشمسية Solar PV Ready.</p>
+            </div>
+
+            <div class="cards-grid-2">
+                <div class="arch-card">
+                    <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;">تحليل وفورات استهلاك الطاقة السنوية</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
+                        تظهر الحسابات الهندسية إمكانية توفير <strong>24% إلى 28%</strong> من الاستهلاك السنوي عبر جدولة التكييف الذكي في الفترات غير المشغولة، إطفاء الإنارة التلقائي بحساسات mmWave، وتعتيم المصابيح للاستفادة من ضوء الشمس الطبيعي (Daylight Harvesting).
+                    </p>
+                </div>
+                <div class="arch-card">
+                    <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;">الجاهزية للطاقة الشمسية (Solar PV Ready)</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
+                        تم تخصيص مسار مواسير 32mm من سطح الفيلا مباشرة إلى اللوحة الرئيسية MDB لتركيب محولات الطاقة الشمسية مع عداد طاقة ثنائي الاتجاه لقياس الإنتاج والاستهلاك لحظيًا.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15 / BILL OF MATERIALS (BOM) -->
+        <section class="study-section" id="sec-bom" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">15 / BILL OF MATERIALS</span>
+                <h2 class="section-headline">جدول الكميات والمواصفات التقديرية (Bill of Materials — BOM)</h2>
+                <p class="section-subtext">حصر شامل ومصور لجميع أجهزة ومكونات المنزل الذكي متضمنًا المواصفة، الكمية، والأسعار التقديرية (SAR / USD).</p>
+            </div>
+
+            <div class="bom-schedule-wrapper">
+                <div class="bom-toolbar">
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <button class="btn btn-sm btn-secondary" onclick="app.filterBOM('all')">الكل (All)</button>
+                        <button class="btn btn-sm btn-secondary" onclick="app.filterBOM('الإضاءة')">الإضاءة</button>
+                        <button class="btn btn-sm btn-secondary" onclick="app.filterBOM('الحساسات')">الحساسات</button>
+                        <button class="btn btn-sm btn-secondary" onclick="app.filterBOM('الأمن')">الأمن والمراقبة</button>
+                        <button class="btn btn-sm btn-secondary" onclick="app.filterBOM('التكييف')">التكييف</button>
+                        <button class="btn btn-sm btn-secondary" onclick="app.filterBOM('الشبكات')">الشبكات</button>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ طباعة الجدول / حفظ PDF</button>
+                </div>
+
+                <div class="bom-table-container">
+                    <table class="bom-schedule-table">
+                        <thead>
+                            <tr>
+                                <th>رمز البند</th>
+                                <th style="text-align: center;">صورة البند</th>
+                                <th>البند والمواصفة الفنية</th>
+                                <th>الفئة</th>
+                                <th>موقع التركيب</th>
+                                <th>الكمية</th>
+                                <th>بروتوكول الاتصال</th>
+                                <th>سعر الوحدة التقديري</th>
+                                <th>الإجمالي التقديري</th>
+                                <th>ملاحظات التمديدات السلكية</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bom-table-body"></tbody>
+                    </table>
+                </div>
+
+                <div class="bom-total-summary-card">
+                    <div>
+                        <h4 style="font-size: 1.1rem; font-weight: 800;">إجمالي القيمة التقديرية لمكونات البنية التحتية الذكية:</h4>
+                        <span style="font-size: 0.82rem; color: var(--text-muted);">شاملة الأجهزة، الحساسات، كابينة الشبكة المركزية 12U، والمفاتيح الذكية</span>
+                    </div>
+                    <div style="text-align: left;">
+                        <div class="bom-total-amount" id="bom-total-sar">31,500 ر.س</div>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);" id="bom-total-usd">~$8,400 USD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 16 / FINAL RECOMMENDATIONS -->
+        <section class="study-section" id="sec-recommendations" style="display: none;">
+            <div class="arch-section-header">
+                <span class="section-number-tag">16 / FINAL RECOMMENDATIONS</span>
+                <h2 class="section-headline">التوصيات الهندسية وخطة التنفيذ (Roadmap & Handoff)</h2>
+                <p class="section-subtext">مراحل التنفيذ الأربع، إرشادات التنسيق مع المقاولين، وقائمة التحقق قبل التشغيل النهائي.</p>
+            </div>
+
+            <div class="cards-grid-2">
+                <div class="arch-card">
+                    <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 14px;">مراحل التنفيذ الهندسية الأربع (Implementation Roadmap)</h4>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div>
+                            <strong>المرحلة 1: التأسيس الإنشائي (مرحلة العظم)</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">زرع مواسير PVC 25mm وتثبيت العلب المربعة العميقة 50mm وتمديد مسارات الكاميرات الخارجية.</p>
+                        </div>
+                        <div>
+                            <strong>المرحلة 2: سحب الكابلات (قبل اللياسة والدهان)</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">سحب كابلات Cat6A، كابلات التكييف الخماسية، والتأكد من وجود السلك المحايد (Neutral) في كل علبة مفتاح.</p>
+                        </div>
+                        <div>
+                            <strong>المرحلة 3: تركيب الأجهزة (بعد انتهاء الدهان والتشطيب)</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">تجميع كابينة الشبكة 12U، تركيب المفاتيح الذكية، الحساسات السقفية، الكاميرات، والقفل البيومتري.</p>
+                        </div>
+                        <div>
+                            <strong>المرحلة 4: البرمجة والتشغيل (Commissioning & Handover)</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">ضبط الـ VLANs، برمجة السيناريوهات المحلية، اختبار محاكاة الحريق، وتسليم التطبيق للمالك.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-card">
+                    <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 14px;">قائمة التحقق الإلزامية للمقاولين (Contractor Checklist)</h4>
+                    <ul style="padding-right: 20px; font-size: 0.88rem; color: var(--text-secondary); line-height: 2;">
+                        <li>✅ التأكد من فصل كابلات الشبكة عن كابلات التيار العالي بأكثر من 20 سم.</li>
+                        <li>✅ اختبار جميع نقاط Cat6A بجهاز Fluke للتأكد من وصول سرعة 10Gbps بدون فقد.</li>
+                        <li>✅ التحقق من ربط كابينة الشبكة بخط أرضي نحاسي معزول مستقل.</li>
+                        <li>✅ فحص إغلاق محبس المياه الكهرومغناطيسي عند استشعار التسرب.</li>
+                        <li>✅ اختبار استمرارية عمل الأتمتة المحلية عند فصل كابل الإنترنت الرئيسي.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="presentation-footer">
+            <p>SMART VILLA &bull; Interactive Smart Home & IoT Infrastructure Engineering Study &bull; 100% Offline Static Presentation</p>
+        </footer>
+    </main>
+
+    <!-- DEVICE SPECIFICATION MODAL -->
+    <div class="modal-overlay" id="device-modal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" onclick="app.closeDeviceModal()">&times;</button>
+            <div class="modal-body" id="device-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATIONS DRAWER -->
+    <div class="notifications-drawer" id="notifications-drawer">
+        <div class="drawer-header">
+            <h3>سجل الإشعارات والتنبيهات (System Notifications)</h3>
+            <button class="btn btn-secondary btn-sm" id="btn-close-notifs">&times; إغلاق</button>
+        </div>
+        <div class="drawer-content" id="notifs-drawer-list"></div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- LIBRARIES (OFFLINE BUNDLED) -->
+    <script src="js/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+    <script src="js/data.js"></script>
+    <script src="js/villa3d.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

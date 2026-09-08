@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قصر الفخامة للأثاث المنزلي | Luxury Home Furniture</title>
+  
+  <!-- خط Cairo الأيقوني وأيقونات Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ملف التنسيق الأساسي للمتجر -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- شريط العودة العائم للموقع الرئيسي (OVRAX Return Bar) -->
+<div id="ovrax-return-bar" style="position: sticky; top: 0; left: 0; width: 100%; background: #06090e; color: #fff; border-bottom: 2px solid #00e5ff; padding: 10px 20px; z-index: 999999; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; font-size: 0.88rem; direction: rtl;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="background: #00e5ff; color: #06090e; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">معاينة نموذج عمل</span>
+    <span style="color: #cbd5e1;">تم تصميم وتطوير هذا المتجر بواسطة: <strong style="color: #00e5ff;">المهندس أسامة صالح</strong></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="../../index.html" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid #00e5ff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fas fa-arrow-right"></i> العودة لموقع المهندس أسامة
+    </a>
+    <a href="https://wa.me/966553074762?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D8%B3%D8%A7%D9%85%D8%A9%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D8%AA%D8%AC%D8%B1%20%D8%A3%D8%AB%D8%A7%D8%AB%20%D9%85%D9%85%D8%A7%D8%AB%D9%84%20%D9%84%D9%85%D8%AA%D8%AC%D8%B1%20%D9%82%D8%B5%D8%B1%20%D8%A7%D9%84%D9%81%D8%AE%D8%A7%D9%85%D8%A9" target="_blank" style="background: #25d366; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+      <i class="fab fa-whatsapp"></i> طلب متجر مماثل
+    </a>
+  </div>
+</div>
+  <!-- شريط التنبيهات والعروض الترويجية العلوي -->
+  <div class="top-announcement">
+    <div class="container">
+      <div class="announcement-highlights">
+        <span class="announcement-item">
+          <i class="fas fa-truck-fast"></i>
+          <span>توصيل مجاني لجميع مناطق المملكة</span>
+        </span>
+        <span class="announcement-item">
+          <i class="fas fa-tools"></i>
+          <span>تركيب وتجميع مجاني بأيدي فنيين محترفين</span>
+        </span>
+        <span class="announcement-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>ضمان ذهبي ممتد حتى 10 سنوات</span>
+        </span>
+      </div>
+      <div>
+        <span class="promo-badge">كود الخصم: LUXURY10</span>
+        <span style="font-size: 0.8rem; color: #cbd5e1; margin-right: 6px;">احصل على 10% خصم إضافي</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- الهيدر الرئيسي -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- شعار المتجر -->
+        <div class="brand-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <div class="brand-icon-box">
+            <i class="fas fa-couch"></i>
+          </div>
+          <div class="brand-text">
+            <h1>قصر الفخامة</h1>
+            <p>LUXURY FURNITURE</p>
+          </div>
+        </div>
+
+        <!-- محرك البحث المباشر -->
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" 
+                   id="mainSearchInput" 
+                   class="search-input" 
+                   placeholder="ابحث بين 50 قطعة أثاث فاخرة (كنب، غرف نوم، طاولات، مكاتب)...">
+            <button id="clearSearchBtn" class="search-clear-btn" title="مسح البحث">
+              <i class="fas fa-times-circle"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- أزرار الإجراءات السريعة -->
+        <div class="header-actions">
+          <!-- زر المفضلة -->
+          <button class="action-btn action-btn-icon" title="المفضلة" onclick="openWishlistModal()">
+            <i class="far fa-heart" style="font-size: 1.15rem;"></i>
+            <span id="wishlistCounterBadge" class="counter-badge" style="display: none;">0</span>
+          </button>
+
+          <!-- زر سلة التسوق -->
+          <button class="action-btn cart-btn" onclick="openCartDrawer()">
+            <i class="fas fa-shopping-bag"></i>
+            <span>السلة</span>
+            <span id="cartCounterBadge" class="counter-badge" style="display: none;">0</span>
+          </button>
+
+          <!-- زر التبديل إلى لوحة تحكم المتجر -->
+          <button id="adminToggleBtn" class="action-btn admin-toggle-btn" onclick="toggleAdminView()">
+            <i class="fas fa-chart-line"></i>
+            <span>إدارة المتجر</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- شريط تصفح الأقسام السريع -->
+    <nav class="nav-categories-bar">
+      <div class="container">
+        <ul id="navCategoriesList" class="nav-categories-list">
+          <!-- يتم توليد الأقسام ديناميكياً عبر JavaScript -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       الواجهة الرئيسية للمتجر (Storefront View)
+       ========================================================================== -->
+  <main id="storeMainSection" class="store-view-section">
+    
+    <!-- قسم البانر الترويجي الفاخر (Hero Section) -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-banner">
+          <div class="hero-content">
+            <div class="hero-tag">
+              <i class="fas fa-award"></i> تشكيلة الأثاث الملكي لعام 2026
+            </div>
+            <h2 class="hero-title">
+              حوّل منزلك إلى <span>تحفة فنية</span> من الفخامة والراحة
+            </h2>
+            <p class="hero-desc">
+              اكتشف أحدث التصاميم الأوروبية المصنوعة من أفخر الأخشاب الطبيعية والأقمشة المقاومة للبقع، مع باقة متكاملة من خدمات التوصيل والتركيب المجاني الشامل.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#productsCatalog" class="btn-primary-gold">
+                <i class="fas fa-sparkles"></i> تصفح المعروضات (50 قطعة)
+              </a>
+              <button class="btn-outline-light" onclick="openCartDrawer()">
+                <i class="fas fa-shopping-cart"></i> سلة المشتريات
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80" 
+                 alt="أثاث فاخر" 
+                 class="hero-main-img"
+                 onerror="this.onerror=null; this.src=window.FALLBACK_IMAGE;">
+            <div class="hero-float-badge">
+              <i class="fas fa-shield-check"></i>
+              <div>
+                <h4>ضمان ذهبي 10 سنوات</h4>
+                <p>خشب زان طبيعي 100%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- شريط مزايا المتجر الحصرية (Perks) -->
+    <section class="perks-section">
+      <div class="container">
+        <div class="perks-grid">
+          <div class="perk-card">
+            <div class="perk-icon">
+              <i class="fas fa-truck-moving"></i>
+            </div>
+            <div class="perk-info">
+              <h3>توصيل مجاني وسريع</h3>
+              <p>شحن مبرد حتى باب غرفتك لجميع المدن</p>
+            </div>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="perk-info">
+              <h3>تركيب احترافي مجاناً</h3>
+              <p>فريق فني متخصص للتجميع والضبط</p>
+            </div>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <div class="perk-info">
+              <h3>أخشاب طبيعية 100%</h3>
+              <p>خشب زان وبلوط مجفف مع ضمان 10 سنوات</p>
+            </div>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <div class="perk-info">
+              <h3>تقسيط ميسر 0% فوائد</h3>
+              <p>دفع مريح على 4 دفعات عبر تابي وتمارا</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- كتالوج المعروضات وفلاتر البحث -->
+    <section id="productsCatalog" class="products-section">
+      <div class="container">
+        <!-- شريط الفلترة والأدوات -->
+        <div class="catalog-toolbar">
+          <div class="toolbar-row">
+            <div class="toolbar-stats">
+              <h3 class="catalog-title">معرض الأثاث الفاخر</h3>
+              <span id="catalogCountBadge" class="results-badge">عرض 50 منتج</span>
+            </div>
+
+            <div class="toolbar-controls">
+              <!-- نطاق السعر -->
+              <div class="price-range-wrapper">
+                <span>الحد الأقصى:</span>
+                <input type="range" 
+                       id="priceRangeSlider" 
+                       class="price-range-slider" 
+                       min="500" 
+                       max="15000" 
+                       step="500" 
+                       value="15000">
+                <strong id="maxPriceLabel" style="color: var(--dark-charcoal);">15,000 ر.س</strong>
+              </div>
+
+              <!-- ترتيب حسب -->
+              <div class="filter-group">
+                <label for="catalogSortSelect"><i class="fas fa-sort-amount-down"></i> الترتيب:</label>
+                <select id="catalogSortSelect" class="custom-select">
+                  <option value="default">الافتراضي (الأبرز)</option>
+                  <option value="price-asc">السعر: من الأقل للأعلى</option>
+                  <option value="price-desc">السعر: من الأعلى للأقل</option>
+                  <option value="rating">الأعلى تقييماً</option>
+                  <option value="discount">أكبر الخصومات</option>
+                </select>
+              </div>
+
+              <!-- زر إعادة ضبط الفلاتر -->
+              <button class="reset-filters-btn" onclick="resetAllFilters()" title="إعادة ضبط">
+                <i class="fas fa-redo-alt"></i> استعادة الفلاتر
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- شبكة المنتجات الـ 50 -->
+        <div id="productsGrid" class="products-grid">
+          <!-- يتم ملء الـ 50 منتج ديناميكياً بواسطة JavaScript -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       واجهة لوحة تحكم إدارة المتجر (Admin Dashboard)
+       ========================================================================== -->
+  <section id="adminMainSection" class="admin-view-section">
+    <div class="container">
+      
+      <!-- الشريط العلوي للوحة الإدارة -->
+      <div class="admin-header-strip">
+        <div class="admin-title-group">
+          <h2>لوحة إدارة متجر قصر الفخامة</h2>
+          <p>إدارة المنتجات، متابعة الطلبات الواردة، والإحصائيات الحية</p>
+        </div>
+        <div class="admin-top-actions">
+          <button class="btn-admin-primary" onclick="adminDashboard.openAddProductModal()">
+            <i class="fas fa-plus-circle"></i> إضافة قطعة أثاث جديدة
+          </button>
+          <button class="btn-admin-secondary" onclick="toggleAdminView()">
+            <i class="fas fa-arrow-left"></i> العودة لواجهة المتجر
+          </button>
+        </div>
+      </div>
+
+      <!-- مؤشرات الأداء الحية (KPIs) -->
+      <div class="admin-kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon sales">
+            <i class="fas fa-sack-dollar"></i>
+          </div>
+          <div class="kpi-content">
+            <h4>إجمالي المبيعات</h4>
+            <div id="kpiTotalSales" class="kpi-number">0 ر.س</div>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon orders">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <div class="kpi-content">
+            <h4>إجمالي الطلبات</h4>
+            <div id="kpiTotalOrders" class="kpi-number">0 طلب</div>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon products">
+            <i class="fas fa-couch"></i>
+          </div>
+          <div class="kpi-content">
+            <h4>قطع الأثاث المعروضة</h4>
+            <div id="kpiTotalProducts" class="kpi-number">50 قطعة</div>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon stock">
+            <i class="fas fa-box-open"></i>
+          </div>
+          <div class="kpi-content">
+            <h4>تنبيه انخفاض المخزون</h4>
+            <div id="kpiLowStock" class="kpi-number">0 منتجات</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- تبويبات لوحة التحكم -->
+      <div class="admin-tabs-nav">
+        <button class="admin-tab-btn active" data-tab="products">
+          <i class="fas fa-boxes"></i> إدارة المنتجات والكتالوج
+        </button>
+        <button class="admin-tab-btn" data-tab="orders">
+          <i class="fas fa-shopping-basket"></i> إدارة الطلبات المستلمة
+        </button>
+        <button class="admin-tab-btn" data-tab="settings">
+          <i class="fas fa-database"></i> إدارة وتصدير البيانات
+        </button>
+      </div>
+
+      <!-- محتوى تبويب المنتجات -->
+      <div id="adminPanel_products" class="admin-tab-panel active">
+        <div class="admin-card-wrapper">
+          <div class="admin-card-header">
+            <div class="search-input-wrapper" style="width: 320px;">
+              <i class="fas fa-search"></i>
+              <input type="text" 
+                     id="adminProductSearch" 
+                     class="search-input" 
+                     placeholder="بحث باسم المنتج أو رقمه...">
+            </div>
+            <button class="btn-primary-gold" onclick="adminDashboard.openAddProductModal()">
+              <i class="fas fa-plus"></i> إضافة منتج جديد
+            </button>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 70px;">الرقم</th>
+                  <th>المنتج</th>
+                  <th>القسم</th>
+                  <th>السعر</th>
+                  <th>المخزون</th>
+                  <th style="width: 110px;">الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTableBody">
+                <!-- يتم تعبئة المنتجات تلقائياً -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- محتوى تبويب الطلبات -->
+      <div id="adminPanel_orders" class="admin-tab-panel">
+        <div class="admin-card-wrapper">
+          <div class="admin-card-header">
+            <h3 style="font-weight: 800; font-size: 1.1rem;"><i class="fas fa-list-check" style="color: var(--primary-gold); margin-left: 8px;"></i> قائمة الطلبات الواردة من المتجر</h3>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">يمكنك تغيير حالة الطلب مباشرة من الجدول</span>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>رقم الطلب</th>
+                  <th>بيانات العميل</th>
+                  <th>القطع المطلوبة</th>
+                  <th>الإجمالي</th>
+                  <th>طريقة الدفع</th>
+                  <th>حالة الطلب</th>
+                  <th>تاريخ الطلب</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTableBody">
+                <!-- يتم تعبئة الطلبات تلقائياً -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- محتوى تبويب البيانات والإعدادات -->
+      <div id="adminPanel_settings" class="admin-tab-panel">
+        <div class="admin-card-wrapper" style="padding: 30px;">
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;">أدوات التحكم والنسخ الاحتياطي</h3>
+          <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.92rem;">
+            تُحفظ كافة التعديلات والإضافات على المتجر محلياً في متصفحك (LocalStorage). تتيح لك هذه الأدوات إدارة البيانات واستعادتها بسهولة:
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <button class="btn-primary-gold" onclick="adminDashboard.exportStoreData()">
+              <i class="fas fa-file-export"></i> تصدير نسخة احتياطية من البيانات (JSON)
+            </button>
+            <button class="btn-admin-secondary" style="color: var(--dark-charcoal); border-color: var(--border-light);" onclick="adminDashboard.clearOrders()">
+              <i class="fas fa-broom"></i> تفريغ سجل الطلبات
+            </button>
+            <button class="reset-filters-btn" style="padding: 12px 20px; font-size: 0.95rem;" onclick="adminDashboard.resetToDefaultData()">
+              <i class="fas fa-history"></i> استعادة الـ 50 منتج الافتراضية
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       النافذة المنبثقة لتفاصيل المنتج (Product Detail Modal)
+       ========================================================================== -->
+  <div id="productDetailModal" class="modal-backdrop" onclick="if(event.target === this) closeProductModal()">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeProductModal()" title="إغلاق">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="product-detail-layout">
+        <!-- عمود معرض الصور -->
+        <div class="modal-gallery">
+          <div class="modal-main-image-box">
+            <img id="modalMainImage" src="" alt="صورة المنتج" class="modal-main-image">
+          </div>
+          <div id="modalThumbsContainer" class="modal-thumbs-row">
+            <!-- الصور المصغرة -->
+          </div>
+        </div>
+
+        <!-- عمود البيانات والمواصفات -->
+        <div class="modal-info-col">
+          <span id="modalCategoryTag" class="modal-cat-tag">غرف المعيشة</span>
+          <h2 id="modalTitle" class="modal-title">طقم كنب رويال إمبيريال</h2>
+
+          <div class="modal-rating-row">
+            <div class="modal-rating-stars">
+              <i class="fas fa-star"></i>
+              <strong id="modalRatingVal" style="color: var(--text-dark); margin-right: 4px;">4.9</strong>
+            </div>
+            <span id="modalReviewCount" style="color: var(--text-light);">(35 تقييم حقيقي)</span>
+          </div>
+
+          <div class="modal-price-box">
+            <span id="modalCurrentPrice" class="modal-current-price">5,490 ر.س</span>
+            <span id="modalOldPrice" class="modal-old-price">6,990 ر.س</span>
+          </div>
+
+          <p id="modalDesc" class="modal-desc">
+            طقم كنب فاخر يجمع بين الأصالة الملكية والراحة العصرية، مصنوع من خشب الزان الروماني المتين.
+          </p>
+
+          <!-- منتقي الألوان -->
+          <div id="modalColorsContainer" class="colors-selector-box"></div>
+
+          <!-- جدول المواصفات الفنية -->
+          <table class="modal-specs-table">
+            <tbody>
+              <tr>
+                <td class="spec-name"><i class="fas fa-ruler"></i> الأبعاد:</td>
+                <td id="modalSpecDimensions" class="spec-value">-</td>
+              </tr>
+              <tr>
+                <td class="spec-name"><i class="fas fa-cubes"></i> الخامات:</td>
+                <td id="modalSpecMaterial" class="spec-value">-</td>
+              </tr>
+              <tr>
+                <td class="spec-name"><i class="fas fa-boxes"></i> التوفر:</td>
+                <td id="modalSpecStock" class="spec-value">-</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- مزايا المنتج -->
+          <ul id="modalFeaturesList" class="modal-features-list"></ul>
+
+          <!-- أزرار الإضافة للسلة -->
+          <div class="modal-actions-row">
+            <div class="quantity-stepper">
+              <button class="qty-btn" onclick="changeModalQty(-1)">-</button>
+              <input type="text" id="modalQtyInput" class="qty-input" value="1" readonly>
+              <button class="qty-btn" onclick="changeModalQty(1)">+</button>
+            </div>
+            <button class="btn-modal-add-cart" onclick="addModalProductToCart()">
+              <i class="fas fa-shopping-bag"></i> إضافة إلى السلة
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       سلة التسوق الجانبية (Cart Drawer)
+       ========================================================================== -->
+  <div id="cartDrawerOverlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i class="fas fa-shopping-bag" style="color: var(--primary-gold);"></i>
+        <h3>سلة المشتريات</h3>
+      </div>
+      <button class="cart-drawer-close" onclick="closeCartDrawer()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- شريط مؤشر التوصيل والتركيب المجاني -->
+    <div class="cart-free-shipping-bar">
+      <div class="shipping-bar-text">
+        <i class="fas fa-truck-fast"></i>
+        <span>تهانينا! طلبيتك مؤهلة للتوصيل والتركيب المجاني الشامل 🎉</span>
+      </div>
+      <div class="shipping-progress-bg">
+        <div class="shipping-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- قائمة محتويات السلة -->
+    <div id="cartItemsList" class="cart-items-list">
+      <!-- يتم ملء العناصر عبر JavaScript -->
+    </div>
+
+    <!-- حالة السلة الفارغة -->
+    <div id="emptyCartView" class="empty-cart-view" style="display: none;">
+      <i class="fas fa-shopping-cart"></i>
+      <h3>سلة التسوق فارغة حالياً</h3>
+      <p>استكشف تشكيلتنا الفاخرة وأضف قطع الأثاث التي تليق بمنزلك.</p>
+      <button class="btn-primary-gold" onclick="closeCartDrawer()">تصفح المنتجات الآن</button>
+    </div>
+
+    <!-- تذييل السلة والحسابات -->
+    <div id="cartDrawerFooter" class="cart-drawer-footer">
+      <div class="promo-code-box">
+        <input type="text" id="cartPromoInput" class="promo-input" placeholder="كود الخصم (جرب: LUXURY10)">
+        <button class="btn-apply-promo" onclick="applyCartPromo()">تطبيق</button>
+      </div>
+
+      <div class="cart-summary-row">
+        <span>المجموع الفرعي:</span>
+        <strong id="cartSubtotalAmount">0 ر.س</strong>
+      </div>
+      <div class="cart-summary-row">
+        <span>الخصم المطبق:</span>
+        <strong id="cartDiscountAmount" style="color: var(--accent-danger);">0 ر.س</strong>
+      </div>
+      <div class="cart-summary-row">
+        <span>التوصيل والتركيب:</span>
+        <strong style="color: var(--accent-success);">مجاناً (0 ر.س)</strong>
+      </div>
+      <div class="cart-summary-row total">
+        <span>الإجمالي النهائي:</span>
+        <strong id="cartTotalAmount">0 ر.س</strong>
+      </div>
+
+      <button class="btn-checkout" onclick="openCheckoutModal()">
+        <i class="fas fa-lock"></i> إتمام الطلب الآمن الآن
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       نافذة إتمام الطلب (Checkout Modal)
+       ========================================================================== -->
+  <div id="checkoutModal" class="modal-backdrop" onclick="if(event.target === this) closeCheckoutModal()">
+    <div class="modal-container checkout-modal-container">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" title="إغلاق">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="checkout-header">
+        <h3 style="font-weight: 800; font-size: 1.25rem;">
+          <i class="fas fa-shield-alt" style="color: var(--primary-gold); margin-left: 8px;"></i>
+          إتمام الطلب وتحديد عنوان التوصيل
+        </h3>
+        <span id="checkoutSummaryText" style="font-weight: 700; color: var(--text-muted); font-size: 0.9rem;"></span>
+      </div>
+
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label for="orderCustomerName">الاسم الكامل *</label>
+            <input type="text" id="orderCustomerName" required placeholder="مثال: عبدالله محمد الشمري">
+          </div>
+          <div class="form-field">
+            <label for="orderCustomerPhone">رقم الجوال *</label>
+            <input type="tel" id="orderCustomerPhone" required placeholder="مثال: 0501234567">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label for="orderCustomerCity">المدينة *</label>
+            <select id="orderCustomerCity" class="custom-select" style="width: 100%;" required>
+              <option value="الرياض">الرياض</option>
+              <option value="جدة">جدة</option>
+              <option value="الدمام">الدمام والخبر</option>
+              <option value="مكة المكرمة">مكة المكرمة</option>
+              <option value="المدينة المنورة">المدينة المنورة</option>
+              <option value="أبها">أبها وخميس مشيط</option>
+              <option value="القصيم">بريدة وعنيزة</option>
+              <option value="تبوك">تبوك</option>
+              <option value="أخرى">مدينة أخرى</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="orderDeliveryTime">وقت التوصيل المفضل</label>
+            <select id="orderDeliveryTime" class="custom-select" style="width: 100%;">
+              <option value="مساءً (4م - 9م)">الفترة المسائية (4م - 9م)</option>
+              <option value="صباحاً (9ص - 2م)">الفترة الصباحية (9ص - 2م)</option>
+              <option value="نهاية الأسبوع">عطلة نهاية الأسبوع (الجمعة / السبت)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="orderCustomerAddress">العنوان التفصيلي (الحي، الشارع، رقم المبنى) *</label>
+          <input type="text" id="orderCustomerAddress" required placeholder="مثال: حي الياسمين، شارع أنس بن مالك">
+        </div>
+
+        <!-- خيار خدمة التركيب المجاني المسبق -->
+        <label class="checkbox-field">
+          <input type="checkbox" id="orderNeedInstall" checked>
+          <span><i class="fas fa-tools"></i> أرغب في خدمة التجميع والتركيب المجاني في الموقع بواسطة الفنيين</span>
+        </label>
+
+        <!-- اختيار طريقة الدفع -->
+        <div class="form-field">
+          <label>طريقة الدفع المفضلة</label>
+          <input type="hidden" id="selectedPaymentMethodInput" value="الدفع عند الاستلام">
+          <div class="payment-methods-grid">
+            <div class="payment-method-card active" onclick="selectPaymentMethod(this, 'الدفع عند الاستلام')">
+              <i class="fas fa-hand-holding-dollar"></i>
+              <span>الدفع عند الاستلام</span>
+            </div>
+            <div class="payment-method-card" onclick="selectPaymentMethod(this, 'بطاقة مدى / فيزا')">
+              <i class="fas fa-credit-card"></i>
+              <span>مدى / البطاقة البنكية</span>
+            </div>
+            <div class="payment-method-card" onclick="selectPaymentMethod(this, 'تقسيط تمارا أو تابي')">
+              <i class="fas fa-calendar-check"></i>
+              <span>تقسيط تابي / تمارا (0%)</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary-gold" style="width: 100%; justify-content: center; margin-top: 20px; font-size: 1.05rem;">
+          <i class="fas fa-check-circle"></i> تأكيد الطلب وإصدار الفاتورة
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       نافذة نجاح الطلب والفاتورة الرسمية (Order Success & Receipt)
+       ========================================================================== -->
+  <div id="orderSuccessModal" class="modal-backdrop">
+    <div class="modal-container" style="max-width: 600px;">
+      <div class="order-success-box">
+        <div class="success-icon-animated">
+          <i class="fas fa-check"></i>
+        </div>
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--dark-charcoal); margin-bottom: 6px;">
+          تهانينا! تم استلام طلبك بنجاح
+        </h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          شكراً لتسوقك من قصر الفخامة. سيتواصل معك مندوب التوصيل لتأكيد موعد التسليم والتركيب.
+        </p>
+
+        <div class="order-receipt-card">
+          <div class="receipt-row">
+            <span>رقم الطلب المرجعي:</span>
+            <strong id="receiptOrderId" style="color: var(--primary-gold-hover); font-size: 1.05rem;">-</strong>
+          </div>
+          <div class="receipt-row">
+            <span>اسم المشتري:</span>
+            <strong id="receiptCustomerName">-</strong>
+          </div>
+          <div class="receipt-row">
+            <span>رقم الجوال:</span>
+            <strong id="receiptPhone">-</strong>
+          </div>
+          <div class="receipt-row">
+            <span>عنوان التوصيل:</span>
+            <span id="receiptAddress">-</span>
+          </div>
+          <div class="receipt-row">
+            <span>طريقة الدفع:</span>
+            <strong id="receiptPayment">-</strong>
+          </div>
+          <div class="receipt-row">
+            <span>خدمة التركيب المجانية:</span>
+            <strong id="receiptInstallBadge" style="color: var(--accent-success);">-</strong>
+          </div>
+          <div class="receipt-row">
+            <span>عدد قطع الأثاث:</span>
+            <strong id="receiptItemsCount">-</strong>
+          </div>
+          <div class="receipt-row" style="font-size: 1.15rem; font-weight: 800; border-top: 1.5px solid #CBD5E1; padding-top: 12px; margin-top: 6px;">
+            <span>المبلغ الإجمالي المدفوع:</span>
+            <strong id="receiptTotal" style="color: var(--dark-charcoal);">-</strong>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: center;">
+          <button class="btn-primary-gold" onclick="closeOrderSuccessModal()">
+            <i class="fas fa-store"></i> متابعة التسوق
+          </button>
+          <button class="btn-outline-light" style="color: var(--dark-charcoal); border-color: var(--border-light);" onclick="closeOrderSuccessModal(); toggleAdminView();">
+            <i class="fas fa-clipboard-list"></i> مشاهدة الطلب في لوحة الإدارة
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       نافذة إضافة وتعديل منتج في لوحة الإدارة (Admin Add/Edit Modal)
+       ========================================================================== -->
+  <div id="adminProductModal" class="modal-backdrop" onclick="if(event.target === this) adminDashboard.closeProductModal()">
+    <div class="modal-container admin-modal-container">
+      <button class="modal-close-btn" onclick="adminDashboard.closeProductModal()" title="إغلاق">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div style="padding: 24px 30px; border-bottom: 1px solid var(--border-light);">
+        <h3 id="adminModalTitle" style="font-weight: 800; font-size: 1.3rem;">إضافة قطعة أثاث جديدة</h3>
+      </div>
+
+      <form id="adminProductForm" style="padding: 30px;">
+        <div class="form-field">
+          <label for="adminProdTitle">اسم قطعة الأثاث *</label>
+          <input type="text" id="adminProdTitle" required placeholder="مثال: طقم كنب ملكي 7 مقاعد">
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label for="adminProdCategory">القسم / التصنيف *</label>
+            <select id="adminProdCategory" class="custom-select" style="width: 100%;" required>
+              <option value="living-room">غرف المعيشة والكنب</option>
+              <option value="bedroom">غرف النوم والسرائر</option>
+              <option value="dining-room">غرف وسفر الطعام</option>
+              <option value="office">أثاث المكاتب المنزلية</option>
+              <option value="outdoor">أثاث الحدائق والخارجي</option>
+              <option value="decor">المفروشات والديكور</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="adminProdStock">الكمية المتوفرة بالمستودع *</label>
+            <input type="number" id="adminProdStock" min="0" value="10" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label for="adminProdPrice">السعر الحالي (ر.س) *</label>
+            <input type="number" id="adminProdPrice" min="1" step="any" required placeholder="مثال: 3850">
+          </div>
+          <div class="form-field">
+            <label for="adminProdOldPrice">السعر قبل الخصم (اختياري)</label>
+            <input type="number" id="adminProdOldPrice" min="1" step="any" placeholder="مثال: 4700">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="adminProdImage">رابط صورة المنتج (URL)</label>
+          <input type="url" id="adminProdImage" placeholder="https://images.unsplash.com/photo-...">
+          <small style="color: var(--text-muted); font-size: 0.78rem;">إذا تركت الرابط فارغاً، سيتم وضع صورة أثاث فاخرة افتراضية تلقائياً.</small>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label for="adminProdDimensions">الأبعاد القياسية</label>
+            <input type="text" id="adminProdDimensions" placeholder="مثال: العرض: 220 سم | العمق: 90 سم | الارتفاع: 85 سم">
+          </div>
+          <div class="form-field">
+            <label for="adminProdMaterial">الخامات ونوع الخشب</label>
+            <input type="text" id="adminProdMaterial" placeholder="مثال: خشب زان روماني + قماش كتان تركي">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="adminProdDesc">الوصف التفصيلي لقطعة الأثاث</label>
+          <textarea id="adminProdDesc" rows="3" placeholder="وصف لتفاصيل القطعة ومميزاتها الجمالية والعملية..."></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 20px;">
+          <button type="button" class="btn-outline-light" style="color: var(--dark-charcoal); border-color: var(--border-light);" onclick="adminDashboard.closeProductModal()">
+            إلغاء
+          </button>
+          <button type="submit" class="btn-primary-gold">
+            <i class="fas fa-save"></i> حفظ وتحديث المتجر
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- التذييل الفاخر (Footer) -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-icon-box">
+              <i class="fas fa-couch"></i>
+            </div>
+            <div class="brand-text">
+              <h2 style="color: #fff; font-size: 1.3rem;">قصر الفخامة للأثاث</h2>
+              <p>LUXURY HOME FURNITURE</p>
+            </div>
+          </div>
+          <p>
+            وجهتك الأولى للأثاث المنزلي الفاخر، نجمع بين عراقة التصميم وحرفية الأخشاب الطبيعية لنصنع لكل منزل حكاية من الأناقة والراحة الدائمة.
+          </p>
+          <div style="display: flex; gap: 12px; font-size: 1.1rem; color: var(--primary-gold);">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-snapchat"></i>
+            <i class="fab fa-whatsapp"></i>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>أقسام المعرض</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="appState.activeCategory='living-room'; renderProducts();">أطقم كنب ومجالس</a></li>
+            <li><a href="javascript:void(0)" onclick="appState.activeCategory='bedroom'; renderProducts();">غرف نوم ملكية وسرائر</a></li>
+            <li><a href="javascript:void(0)" onclick="appState.activeCategory='dining-room'; renderProducts();">طاولات طعام وسفر</a></li>
+            <li><a href="javascript:void(0)" onclick="appState.activeCategory='office'; renderProducts();">أثاث مكاتب منزلية</a></li>
+            <li><a href="javascript:void(0)" onclick="appState.activeCategory='outdoor'; renderProducts();">جلسات حدائق وخارجي</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>خدماتنا المميزة</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)">خدمة التركيب المجاني الشامل</a></li>
+            <li><a href="javascript:void(0)">الشحن السريع لكافة المناطق</a></li>
+            <li><a href="javascript:void(0)">الضمان الذهبي الممتد</a></li>
+            <li><a href="javascript:void(0)">استرجاع واستبدال مرن</a></li>
+            <li><a href="javascript:void(0)" onclick="toggleAdminView()">لوحة إدارة المتجر</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>خدمة العملاء والمبيعات</h4>
+          <p>فريقنا في خدمتكم على مدار الساعة للإجابة على استفساراتكم وترتيب مواعيد التركيب.</p>
+          <p style="color: #fff; font-weight: 700; margin-bottom: 6px;">
+            <i class="fas fa-phone-alt" style="color: var(--primary-gold); margin-left: 8px;"></i> 920001234
+          </p>
+          <p style="color: #fff; font-weight: 700;">
+            <i class="fas fa-envelope" style="color: var(--primary-gold); margin-left: 8px;"></i> care@luxuryfurniture.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 متجر قصر الفخامة للأثاث المنزلي. جميع الحقوق محفوظة.</span>
+        <span>موقع Static متكامل يعمل مباشرة بالنقر المزدوج (Zero Server / Pure Frontend)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- مكتبات وأكواد الجافاسكريبت (الترتيب مهم لضمان عمل التشغيل المباشر) -->
+  <script src="js/products-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
