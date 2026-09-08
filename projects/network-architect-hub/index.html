@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/topology.css">
   <link rel="stylesheet" href="css/simulators.css">
   <link rel="stylesheet" href="css/calculators.css">
+  <link rel="stylesheet" href="css/hardware.css">
   <link rel="stylesheet" href="css/print.css">
 </head>
 <body>
@@ -33,7 +34,6 @@
     </a>
   </div>
 </div>
-
   <!-- Printable Cover for PDF Export (@media print) -->
   <div class="print-book-cover">
     <div style="font-size: 40px; margin-bottom: 10px;">🌐</div>
@@ -200,6 +200,7 @@
         <div class="topology-toolbar">
           <div class="topology-toolbar-title flex items-center gap-2">
             <span class="text-xs font-bold text-white">🎛️ لوحة التحكم والمحاكاة المباشرة</span>
+            <span class="px-2 py-0.5 rounded text-3xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">48 جهاز نشط</span>
           </div>
           <div class="topology-actions-group">
             <button id="btn-sim-wan" class="sim-btn warning" onclick="App.topologyInstance.simulateFailover()">
@@ -208,19 +209,37 @@
             <button id="btn-sim-rf" class="sim-btn danger" onclick="App.topologyInstance.simulateRFInterference()">
               <span>📡</span> محاكاة تشويش راديوي (RF Noise)
             </button>
-            
-            <div class="flex items-center gap-1 bg-slate-900 px-2 py-1 rounded-lg border border-slate-700 text-xs">
-              <span class="text-slate-400">السرعة:</span>
-              <button class="px-1.5 py-0.5 bg-slate-800 hover:bg-slate-700 text-white rounded text-2xs" onclick="App.topologyInstance.setSpeed(0.5)">0.5x</button>
-              <button class="px-1.5 py-0.5 bg-slate-800 hover:bg-slate-700 text-white rounded text-2xs" onclick="App.topologyInstance.setSpeed(1.0)">1x</button>
-              <button class="px-1.5 py-0.5 bg-slate-800 hover:bg-slate-700 text-white rounded text-2xs" onclick="App.topologyInstance.setSpeed(2.5)">2.5x</button>
+
+            <!-- 3D Spatial View Mode Selector -->
+            <div class="topo-segmented-control">
+              <span class="topo-seg-label">المنظور:</span>
+              <button id="btn-view-3d" class="speed-seg-btn active" onclick="App.topologyInstance.setViewMode('3d')">🎮 3D منظور</button>
+              <button id="btn-view-iso" class="speed-seg-btn" onclick="App.topologyInstance.setViewMode('iso')">📐 3D أيزومتريك</button>
+              <button id="btn-view-2d" class="speed-seg-btn" onclick="App.topologyInstance.setViewMode('2d')">🗺️ 2D مسطح</button>
             </div>
 
-            <div class="flex items-center gap-1">
-              <button class="sim-btn tool" onclick="App.topologyInstance.zoomIn()" title="تكبير">+</button>
-              <button class="sim-btn tool" onclick="App.topologyInstance.zoomOut()" title="تصغير">-</button>
-              <button class="sim-btn tool" onclick="App.topologyInstance.resetView()" title="إعادة ضبط">🔄</button>
-              <button class="sim-btn tool" onclick="App.topologyInstance.toggleTheaterMode()" title="ملء الشاشة الموسع">⛶ الشاشة الكاملة</button>
+            <!-- 3D Camera Orbit & Rotation Controls -->
+            <div class="topo-tools-group">
+              <button class="topo-tool-btn" onclick="App.topologyInstance.rotateYaw(-15)" title="تدوير لليمين">↺</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.rotateYaw(15)" title="تدوير لليسار">↻</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.togglePitch()" title="إمالة الزاوية">📐</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.reset3DView()" title="إعادة ضبط زاوية 3D">🎯</button>
+            </div>
+            
+            <!-- Segmented Speed Control -->
+            <div class="topo-segmented-control">
+              <span class="topo-seg-label">السرعة:</span>
+              <button class="speed-seg-btn" data-speed="0.5" onclick="App.topologyInstance.setSpeed(0.5)">0.5x</button>
+              <button class="speed-seg-btn active" data-speed="1.0" onclick="App.topologyInstance.setSpeed(1.0)">1.0x</button>
+              <button class="speed-seg-btn" data-speed="2.5" onclick="App.topologyInstance.setSpeed(2.5)">2.5x</button>
+            </div>
+
+            <!-- Unified Tools Group -->
+            <div class="topo-tools-group">
+              <button class="topo-tool-btn" onclick="App.topologyInstance.zoomIn()" title="تكبير">+</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.zoomOut()" title="تصغير">-</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.resetView()" title="إعادة ضبط">🔄</button>
+              <button class="topo-tool-btn" onclick="App.topologyInstance.toggleTheaterMode()" title="ملء الشاشة الموسع">⛶ الشاشة الكاملة</button>
             </div>
           </div>
         </div>
@@ -251,12 +270,41 @@
       <div id="modules-container"></div>
     </section>
 
-    <!-- VIEW 3: Hardware Catalog -->
+    <!-- VIEW 3: Hardware & Cabling Engineering Hub -->
     <section id="view-hardware" class="app-view-panel" style="display: none;">
-      <div class="mb-4">
-        <h2 class="text-xl font-bold text-white mb-1">دليل ومخططات العتاد الفيزيائي (Hardware & Cabling Schematics)</h2>
-        <p class="text-xs text-slate-400">مخططات هندسية تفصيلية للأجهزة، توزيع المنافذ، كابلات التأريض STP، ومحاقن الطاقة PoE</p>
+      <!-- Hub Header -->
+      <div class="mb-4 flex justify-between items-start flex-wrap gap-3">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">PHYSICAL LAYER ENGINEERING HUB</span>
+            <span class="text-xs text-slate-400 font-mono">19 جهاز معتمد • معايير كابلات T568B • كابلات STP وفايبر</span>
+          </div>
+          <h2 class="text-xl font-bold text-white">مركز هندسة العتاد والكابلات الفيزيائية (Hardware & Cabling Hub)</h2>
+          <p class="text-xs text-slate-400">كتالوج الأجهزة التفاعلي، مخططات ألوان كابلات الـ RJ45، تشريح طبقات كابلات الأبراج، وهندسة الألياف الضوئية</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center gap-1.5" onclick="App.openProductModal('cable-stp')">
+            <span>🛡️</span> فحص كابلات الأبراج المعتمدة
+          </button>
+        </div>
       </div>
+
+      <!-- Sub-navigation Tabs -->
+      <div class="hw-subnav-container">
+        <div class="hw-subnav-tabs">
+          <button class="hw-subnav-btn active" data-hwtab="catalog" onclick="App.switchHardwareTab('catalog')">
+            <span>📦</span> كتالوج الأجهزة والعتاد <span class="subnav-counter">19</span>
+          </button>
+          <button class="hw-subnav-btn" data-hwtab="cabling" onclick="App.switchHardwareTab('cabling')">
+            <span>🔌</span> معايير الكابلات والربط والتأريض <span class="subnav-counter">دليل شامل</span>
+          </button>
+          <button class="hw-subnav-btn" data-hwtab="matrix" onclick="App.switchHardwareTab('matrix')">
+            <span>⚖️</span> مصفوفة المقارنة الفنية السريعة <span class="subnav-counter">مقارنات</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Tab Content -->
       <div id="hardware-container"></div>
     </section>
 
@@ -281,7 +329,16 @@
             <span class="text-xl">🧮</span>
             <h3 class="text-base font-bold text-white">حاسبة تقسيم الشبكات والـ Subnetting</h3>
           </div>
-          <p class="text-xs text-slate-400 mb-4">حساب تفصيلي لسعة العناوين، أقنعة الشبكة، وعناوين البث وتجزئة الـ VLANs</p>
+          <p class="text-xs text-slate-400 mb-3">حساب تفصيلي لسعة العناوين، أقنعة الشبكة، وعناوين البث وتجزئة الـ VLANs</p>
+
+          <!-- Quick Presets -->
+          <div class="calc-presets-row mb-3">
+            <span class="text-3xs text-slate-400 font-bold ml-1">أمثلة شائعة:</span>
+            <button type="button" class="calc-preset-btn" onclick="App.setSubnetPreset('10.10.30.1', '24')">/24 موظفين (254)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setSubnetPreset('10.10.20.1', '28')">/28 خوادم (14)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setSubnetPreset('197.200.15.20', '29')">/29 خط فايبر (6)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setSubnetPreset('172.16.1.1', '30')">/30 رابط نقطي (2)</button>
+          </div>
 
           <div class="grid grid-cols-2 gap-3 mb-4">
             <div class="calc-input-group">
@@ -305,7 +362,7 @@
           </div>
 
           <button id="btn-calc-subnet" class="calc-btn-action w-full mb-4">
-            حساب معلمات الشبكة والتجزئة (Calculate Subnet)
+            <span>⚙️</span> حساب معلمات الشبكة والتجزئة (Calculate Subnet)
           </button>
 
           <div id="subnet-results-output">
@@ -319,7 +376,15 @@
             <span class="text-xl">📡</span>
             <h3 class="text-base font-bold text-white">حاسبة منطقة فرينل وميزانية الرابط اللاسلكي</h3>
           </div>
-          <p class="text-xs text-slate-400 mb-4">حساب فقدان المسار الحر (FSPL)، إشارة الاستقبال المتوقعة (RSSI)، وهامش الخلو 60%</p>
+          <p class="text-xs text-slate-400 mb-3">حساب فقدان المسار الحر (FSPL)، إشارة الاستقبال المتوقعة (RSSI)، وهامش الخلو 60%</p>
+
+          <!-- Quick Presets -->
+          <div class="calc-presets-row mb-3">
+            <span class="text-3xs text-slate-400 font-bold ml-1">روابط جاهزة:</span>
+            <button type="button" class="calc-preset-btn" onclick="App.setLinkPreset(5, 5.8, 24, 22, 16, 0)">سيكتور الفروع 5km</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setLinkPreset(12, 5.2, 24, 25, 25, 0)">رابط المستودع 12km</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setLinkPreset(18, 5.5, 27, 30, 30, 0)">صحن المصنع 18km</button>
+          </div>
 
           <div class="grid grid-cols-2 gap-3 mb-3">
             <div class="calc-input-group">
@@ -354,7 +419,7 @@
           </div>
 
           <button id="btn-calc-link" class="calc-btn-action w-full mb-4">
-            حساب الرابط ومنطقة فرينل (Calculate Link)
+            <span>📡</span> حساب الرابط ومنطقة فرينل (Calculate Link)
           </button>
 
           <div id="link-budget-results-output">
@@ -363,7 +428,7 @@
 
           <!-- Fresnel Vector Visual -->
           <div class="mt-4 pt-3 border-t border-slate-800">
-            <img src="assets/svg/fresnel-diagram.svg" alt="Fresnel Diagram" class="w-full rounded-lg border border-slate-800">
+            <img src="assets/svg/fresnel-diagram.svg" alt="Fresnel Diagram" class="w-full rounded-lg border border-slate-800 cursor-pointer hover:opacity-90 transition-opacity" onclick="App.openImageLightbox('assets/svg/fresnel-diagram.svg', 'مخطط منطقة فرينل ومسار خط الرؤية (LOS & Fresnel Clearance)', 'يوضح المخطط البيضاوي نصف القطر r1 وهامش الخلو الإلزامي 60% فوق العوائق التضاريسية.')" title="انقر لتكبير المخطط الهندسي">
           </div>
         </div>
       </div>
@@ -379,7 +444,17 @@
       <div class="grid-2">
         <!-- Configuration Form -->
         <div class="bg-slate-900 border border-slate-700/80 p-5 rounded-2xl">
-          <h3 class="text-sm font-bold text-white mb-3">معلمات النظام والمزود والشبكة</h3>
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="text-sm font-bold text-white">معلمات النظام والمزود والشبكة</h3>
+          </div>
+
+          <!-- Quick Script Presets -->
+          <div class="calc-presets-row mb-4">
+            <span class="text-3xs text-slate-400 font-bold ml-1">نماذج سريعة:</span>
+            <button type="button" class="calc-preset-btn" onclick="App.setScriptPreset('HQ-CCR2004-CORE', 'dhcp', 200, 50)">🏢 المقر (CCR2004)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setScriptPreset('BRANCH-RB5009', 'static', 100, 30)">🏬 فرع (RB5009)</button>
+            <button type="button" class="calc-preset-btn" onclick="App.setScriptPreset('KIOSK-HEX-S', 'pppoe', 40, 10)">🏪 كشك (hEX S)</button>
+          </div>
           
           <div class="space-y-3 text-xs">
             <div>
@@ -416,7 +491,7 @@
             </div>
 
             <button id="btn-generate-script" class="calc-btn-action w-full mt-3">
-              ⚡ توليد كود RouterOS v7 الفوري (Generate Script)
+              <span>⚡</span> توليد كود RouterOS v7 الفوري (Generate Script)
             </button>
           </div>
         </div>
@@ -425,12 +500,12 @@
         <div class="code-generator-box">
           <div class="code-header-bar">
             <span class="font-mono text-xs text-slate-300">enterprise_mikrotik_setup.rsc</span>
-            <div class="flex gap-2">
-              <button id="btn-copy-script" class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded text-xs">
-                📋 نسخ الكود
+            <div class="flex items-center gap-2">
+              <button id="btn-copy-script" class="code-action-btn secondary">
+                <span>📋</span> نسخ الكود
               </button>
-              <button id="btn-download-script" class="px-3 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded text-xs font-bold">
-                💾 تنزيل (.rsc)
+              <button id="btn-download-script" class="code-action-btn primary">
+                <span>💾</span> تنزيل (.rsc)
               </button>
             </div>
           </div>

@@ -391,6 +391,7 @@ const NETWORK_DATA = {
       category: "Routing & Security",
       badge: "Flagship Core",
       svg: "assets/svg/mikrotik-core.svg",
+      image: "assets/images/ccr2004.jpg",
       specs: {
         cpu: "Annapurna Labs AL32400 64-bit 4-Core @ 1.7GHz",
         ram: "4GB DDR4 ECC RAM",
@@ -417,6 +418,7 @@ const NETWORK_DATA = {
       category: "Routing & Security",
       badge: "Compact Gigabit + SFP",
       svg: "assets/svg/mikrotik-core.svg",
+      image: "assets/images/hex-s.jpg",
       specs: {
         cpu: "MediaTek MT7621A Dual-Core 4-Threads @ 880MHz",
         ram: "256MB RAM + MicroSD slot for Dude server",
@@ -441,6 +443,7 @@ const NETWORK_DATA = {
       category: "Switching & PoE",
       badge: "Smart PoE+ 500W",
       svg: "assets/svg/core-switch.svg",
+      image: "assets/images/crs328.jpg",
       specs: {
         cpu: "98DX3236 @ 800MHz",
         ram: "512MB RAM + RouterOS / SwOS Dual Boot",
@@ -467,6 +470,7 @@ const NETWORK_DATA = {
       category: "Switching & PoE",
       badge: "Industry Standard",
       svg: "assets/svg/core-switch.svg",
+      image: "assets/images/cisco-2960x.jpg",
       specs: {
         ports: "24x أو 48x Gigabit Ethernet 802.3at PoE+ + 4x 1G SFP أو 2x 10G SFP+",
         poeBudget: "370W إلى 740W ميزانية طاقة كاملة",
@@ -487,6 +491,7 @@ const NETWORK_DATA = {
       category: "Switching & PoE",
       badge: "Cost-Effective PoE+ 384W",
       svg: "assets/svg/core-switch.svg",
+      image: "assets/images/tplink-sg3428mp.jpg",
       specs: {
         ports: "24x Gigabit PoE+ (802.3at/af) + 4x Gigabit SFP Slots",
         poeBudget: "384 واط ميزانية طاقة إجمالية (حتى 30W لكل منفذ)",
@@ -507,6 +512,7 @@ const NETWORK_DATA = {
       category: "Switching & PoE",
       badge: "Auto Surveillance VLAN",
       svg: "assets/svg/core-switch.svg",
+      image: "assets/images/dlink-dgs1210.jpg",
       specs: {
         ports: "24x Gigabit PoE + 4x Combo Gigabit/SFP",
         poeBudget: "193W (قابلة للتوسيع حتى 370W في طرازات Max)",
@@ -527,6 +533,7 @@ const NETWORK_DATA = {
       category: "Wireless Long-Range",
       badge: "airMAX AC Classic",
       svg: "assets/svg/nanostation-ac.svg",
+      image: "assets/images/nanostation-5ac.jpg",
       specs: {
         gain: "16 dBi هوائي مدمج ثنائي الاستقطاب (Dual-Polarity 45°)",
         frequency: "5150 - 5875 MHz (5GHz airMAX AC)",
@@ -549,6 +556,7 @@ const NETWORK_DATA = {
       category: "Wireless Long-Range",
       badge: "Compact & Powerful",
       svg: "assets/svg/nanostation-ac.svg",
+      image: "assets/images/nanostation-loco5ac.jpg",
       specs: {
         gain: "13 dBi هوائي لوحي مدمج",
         throughput: "450+ Mbps على قنوات 20/40/80 MHz",
@@ -568,6 +576,7 @@ const NETWORK_DATA = {
       category: "Wireless Long-Range",
       badge: "airPrism Active Filter",
       svg: "assets/svg/rocket-prism.svg",
+      image: "assets/images/rocket-prism.jpg",
       specs: {
         frequency: "5.15 - 5.875 GHz (النطاق الكامل متضمناً قنوات DFS)",
         filtering: "تقنية airPrism النشطة لعزل الضوضاء المجاورة وتحسين الـ SNR",
@@ -590,6 +599,7 @@ const NETWORK_DATA = {
       category: "Wireless Long-Range",
       badge: "Pencil Beam 25dBi",
       svg: "assets/svg/powerbeam-dish.svg",
+      image: "assets/images/powerbeam.jpg",
       specs: {
         dishDiameter: "400 ملم مع حلقة عزل رادارية مدمجة (Integrated Isolator Radome)",
         gain: "25 dBi تركيز إشعاعي حاد جداً (حزمة شعاعية قلمية بعرض 8 درجات)",
@@ -612,6 +622,7 @@ const NETWORK_DATA = {
       category: "Receivers & CPEs",
       badge: "Outdoor 300Mbps",
       svg: "assets/svg/nanostation-ac.svg",
+      image: "assets/images/netis-wf2322.jpg",
       specs: {
         speed: "300 Mbps على تردد 2.4GHz",
         power: "طاقة إرسال عالية تصل إلى 1000mW (30 dBm)",
@@ -634,6 +645,7 @@ const NETWORK_DATA = {
       category: "Receivers & CPEs",
       badge: "Pharos 5GHz 13-23dBi",
       svg: "assets/svg/powerbeam-dish.svg",
+      image: "assets/images/tplink-cpe510.jpg",
       specs: {
         frequency: "5 GHz (5150 - 5850 MHz) خالٍ من تشويش 2.4GHz",
         gain: "13 dBi (في CPE510) أو 23 dBi صحن شبكي (في CPE610)",
@@ -655,6 +667,7 @@ const NETWORK_DATA = {
       category: "Access Points",
       badge: "Dual Band Gigabit",
       svg: "assets/svg/wifi6-ap.svg",
+      image: "assets/images/tplink-archer-c6.jpg",
       specs: {
         speed: "300 Mbps (2.4GHz) + 867 Mbps (5GHz) AC1200",
         ports: "4x Gigabit LAN + 1x Gigabit WAN",
@@ -676,6 +689,7 @@ const NETWORK_DATA = {
       category: "Access Points",
       badge: "Classic 300Mbps",
       svg: "assets/svg/wifi6-ap.svg",
+      image: "assets/images/tplink-wr840n.jpg",
       specs: {
         speed: "300 Mbps على تردد 2.4GHz",
         ports: "4x 10/100 Mbps LAN + 1x WAN",
@@ -696,6 +710,7 @@ const NETWORK_DATA = {
       category: "Access Points",
       badge: "Gigabit AC1200",
       svg: "assets/svg/wifi6-ap.svg",
+      image: "assets/images/dlink-dir842.png",
       specs: {
         speed: "1200 Mbps Dual Band",
         ports: "4x Gigabit LAN + 1x Gigabit WAN",
@@ -714,6 +729,7 @@ const NETWORK_DATA = {
       category: "Receivers & CPEs",
       badge: "Outdoor 5km 12dBi",
       svg: "assets/svg/nanostation-ac.svg",
+      image: "assets/images/tenda-o3.jpg",
       specs: {
         gain: "12 dBi هوائي اتجاهي مدمج",
         range: "مصمم للمسافات حتى 5 كم",
@@ -735,6 +751,7 @@ const NETWORK_DATA = {
       category: "Access Points",
       badge: "Wi-Fi 6 AX1800",
       svg: "assets/svg/wifi6-ap.svg",
+      image: "assets/images/cap-ax.jpg",
       specs: {
         standards: "802.11ax (Wi-Fi 6) Dual-Band Dual-Chain",
         speed: "574 Mbps على 2.4GHz + 1200 Mbps على 5GHz",
@@ -757,6 +774,7 @@ const NETWORK_DATA = {
       category: "Infrastructure & Protection",
       badge: "Military Grade",
       svg: "assets/svg/cat6-stp-ground.svg",
+      image: "assets/images/cable-stp.png",
       specs: {
         category: "CAT6 STP / FTP مع غلاف خارجي مضاعف UV Weatherproof",
         shielding: "درع قصديري Al Foil + شبكة ألياف معدنية Braided Shield + سلك تصريف أرضي (Drain Wire)",
@@ -777,6 +795,7 @@ const NETWORK_DATA = {
       category: "Power Systems",
       badge: "24V Stable DC",
       svg: "assets/svg/poe-injector.svg",
+      image: "assets/images/poe-inj.png",
       specs: {
         input: "100-240V AC 50/60Hz",
         output: "24V DC @ 0.5A (12W)",

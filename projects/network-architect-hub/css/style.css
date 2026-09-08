@@ -335,3 +335,90 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #475569;
 }
+
+/* =====================================================================
+   RESPONSIVE DESIGN SYSTEM FOR MOBILE & TABLETS (تصميم متجاوب للهواتف)
+   ===================================================================== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.65rem 0.85rem;
+    gap: 0.6rem;
+  }
+  
+  .header-brand {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-badge {
+    display: none;
+  }
+
+  .header-search {
+    max-width: 100%;
+  }
+
+  .search-input {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.85rem 0.5rem 2rem;
+  }
+
+  .header-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .btn-header-action {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.72rem;
+  }
+
+  /* Nav Tabs Bar - Native Touch Swiper */
+  .nav-bar-inner {
+    padding: 0.35rem 0.5rem;
+    gap: 0.35rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-bar-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-tab-btn {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    border-bottom: none;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    flex-shrink: 0;
+  }
+
+  .nav-tab-btn.active {
+    background: rgba(56, 189, 248, 0.15);
+    border-color: rgba(56, 189, 248, 0.5);
+    color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+  }
+
+  /* Main Viewport Padding */
+  .app-main-viewport {
+    padding: 0.65rem 0.5rem;
+  }
+
+  /* Tables horizontal scroll */
+  .wb-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+}
+
