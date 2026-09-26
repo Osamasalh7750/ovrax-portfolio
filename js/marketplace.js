@@ -310,7 +310,7 @@ const OVRAX_PRODUCTS = [
       "لوحة تحكم تفاعلية مع تقارير وإحصائيات مباشرة"
     ],
     techStack: ["Node.js", "Python", "Meta API", "TikTok API", "React/Vue", "PostgreSQL"],
-    price: "$799",
+    
     licenseType: "ترخيص تجاري كامل",
     demoType: "marketing-sim",
     projectUrl: ""
@@ -332,7 +332,7 @@ const OVRAX_PRODUCTS = [
       "نظام صلاحيات متقدم للموظفين والكاشير والإدارة"
     ],
     techStack: ["Full-Stack", "FastAPI / Node", "MySQL / PostgreSQL", "Electron / Web", "PWA"],
-    price: "$599",
+    
     licenseType: "ترخيص دائم مدى الحياة",
     demoType: "pos-sim",
     projectUrl: ""
@@ -354,7 +354,7 @@ const OVRAX_PRODUCTS = [
       "ربط مع واجهات برمجية لتوليد آلاف الصور دفعة واحدة"
     ],
     techStack: ["Python", "PyTorch", "Diffusers", "FastAPI", "React UI", "Docker"],
-    price: "$899",
+    
     licenseType: "ترخيص SaaS أو كود مصدري",
     demoType: "genai-sim",
     projectUrl: ""
@@ -376,7 +376,7 @@ const OVRAX_PRODUCTS = [
       "دعم Webhooks متبادلة وفلترة الأحداث"
     ],
     techStack: ["Go / Node.js", "Redis Cache", "Docker", "RESTful Architecture"],
-    price: "$350",
+    
     licenseType: "ترخيص المصدر المفتوح التجاري",
     demoType: "api-sim",
     projectUrl: ""
